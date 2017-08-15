@@ -1,0 +1,6 @@
+# Research Question 1
+
+**Is perceived social support received from Facebook associated with lower rates of psychiatric symptoms?**
+
+* Facebook social support (overall)
+* Facebook social support (emotional support subscale)
