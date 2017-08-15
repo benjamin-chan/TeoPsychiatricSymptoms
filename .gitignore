@@ -1,2 +1,38 @@
+# History files
+.Rhistory
+.Rapp.history
 
-Facebook pilot - Statisticians - Shortcut\.lnk
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# Temporary files
+~$*.*
+
+# Sublime files
+*.sublime*
+
+# Zip files
+*.zip
+
+# Scratch files
+scratch.*
+
+# R logs
+script.log
+session.log
+
+# OS files
+*.lnk
+
+# Business documents
+background/*.*
