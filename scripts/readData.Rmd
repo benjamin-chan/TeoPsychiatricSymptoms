@@ -48,6 +48,8 @@ Cleaning
 * Score the DSI-SS inventory
   * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
   * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
+* Score the Modified Facebook Measure of Social Support (FMSS)
+  * Reverse-scored items are `fmss_r7` through `fmss_r10`
 
 ```{r}
 df <-
@@ -67,7 +69,21 @@ df <-
   mutate(indScreenerParticipation = case_when(is.na(.$eligible) ~ FALSE,
                                               .$eligible == 1 ~ TRUE,
                                               TRUE ~ FALSE)) %>% 
-  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses)
+  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses) %>%
+  mutate(fmss = fmss_r1 +
+                fmss_r2 +
+                fmss_r3 +
+                fmss_r4 +
+                fmss_r5 +
+                fmss_r6 +
+                (4 - fmss_r7) +
+                (4 - fmss_r8) +
+                (4 - fmss_r9) +
+                (4 - fmss_r10) +
+                fmss_r11 +
+                fmss_r12 +
+                fmss_r13 +
+                fmss_r14)
 df %>% 
   group_by(image, text) %>% 
   summarize(n = n()) %>% 
