@@ -1,0 +1,158 @@
+# Read data
+
+**Use only the REDCap survey data**
+
+Notes on the REDCap identifier variables:
+
+* If `[consent] == 1`, they started the eligibility survey; 
+  * if `== 0` or `== NA`, they didn't.
+* If `[consent_and_eligibility_complete] == 2`, they finished the screener (whether eligible or ineligible); 
+  * if `== 0`, they dropped out or never started.
+* If `[eligible] == 1`, they completed the screener and were eligible; 
+  * if `== 0`, they completed and were ineligible;
+  * if `== NA` , they dropped out or never started.
+* If `[veterans_and_social_media_use_co] == 2`, they finished the survey; 
+  * if `== 0`, they dropped out or never started (this includes people who were ineligible or didn't consent).
+* If `[analytic_sample] == 0`, they completed the survey but were disqualified for data quality reasons; 
+  * if `== 1`, they completed survey and was not disqualified for data quality reasons;
+  * if `== NA`, they didn't complete the survey.
+
+```{r}
+df <-
+  "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
+  read.csv(stringsAsFactors = FALSE)
+df %>% 
+  group_by(consent, 
+           consent_and_eligibility_complete, 
+           eligible, 
+           veterans_and_social_media_use_co, 
+           analytic_sample) %>% 
+  summarize(n = n()) %>% 
+  kable
+```
+
+Inclusion criteria
+
+* Respondents who consented
+* Eligible, ineligible, or missing eligibility indicator
+
+**`r sprintf("Number included: n = %d", df %>% filter(consent == 1) %>% nrow)`**
+
+Cleaning
+
+* Parse out `fba` into 2 separate variables for `image` and `text`
+* Assign indicator for survey participation, `indSurveyParticipation`
+  * `analytic_sample == 1`: Participant completed survey and was not disqualified for data quality reasons
+* Assign indicator for eligibility screener participation, `indScreenerParticipation`
+  * `eligible == 1`: Participant completed eligibility screener and was eligible to participate in full survey
+* Score the DSI-SS inventory
+  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
+  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
+
+```{r}
+df <-
+  df %>% 
+  filter(consent == 1) %>% 
+  mutate(image = 
+           substr(fba, 1, 1) %>%
+           factor(levels = c("c", "f", "v"),
+                  labels = c("Computer", "Family", "Veteran")),
+         text = 
+           substr(fba, 2, 4) %>% 
+           factor(levels = c("inc", "alt", "emp", "sha", "soc"),
+                  labels = c("Incentive", "Altruism", "Empowerment", "Sharing", "SocialNorms"))) %>% 
+  mutate(indSurveyParticipation = case_when(is.na(.$analytic_sample) ~ FALSE,
+                                            .$analytic_sample == 1 ~ TRUE, 
+                                            TRUE ~ FALSE)) %>%
+  mutate(indScreenerParticipation = case_when(is.na(.$eligible) ~ FALSE,
+                                              .$eligible == 1 ~ TRUE,
+                                              TRUE ~ FALSE)) %>% 
+  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses)
+df %>% 
+  group_by(image, text) %>% 
+  summarize(n = n()) %>% 
+  kable
+df %>% 
+  group_by(analytic_sample, indSurveyParticipation) %>% 
+  summarize(n = n()) %>% 
+  kable
+df %>% 
+  group_by(eligible, indScreenerParticipation) %>% 
+  summarize(n = n()) %>% 
+  kable
+df %>% 
+  group_by(indSurveyParticipation, indScreenerParticipation) %>% 
+  summarize(n = n()) %>% 
+  kable
+```
+
+### Use of VA health services
+
+```{r}
+df %>% 
+  mutate(desc = "Before recoding") %>% 
+  group_by(desc, va_ever_enrolled, va_use_12mo) %>% 
+  summarize(n = n()) %>% 
+  kable
+```
+
+Recoding logic
+
+* Primary analysis will code `9` (not sure) as `0` (No)
+* Sensitivity analysis will exclude the `9` values from the analysis
+* If `va_ever_enrolled == FALSE` & `is.na(va_use_12mo)`, then recode `va_use_12mo` to `FALSE`
+* If `va_use_12mo == TRUE` & `va_ever_enrolled == FALSE`, then recode `va_ever_enrolled` to `TRUE`
+* Code indicators `indVANeverEnrolled` and `indVANotUse12mo` as the logical opposites of `va_ever_enrolled` and `va_use_12mo`
+
+```{r}
+df <-
+  df %>%
+  mutate(va_ever_enrolled = case_when(is.na(.$va_ever_enrolled) ~ NA,
+                                      .$va_ever_enrolled == 9 ~ FALSE, 
+                                      TRUE ~ as.logical(.$va_ever_enrolled))) %>%
+  mutate(va_use_12mo = case_when(is.na(.$va_use_12mo) ~ NA,
+                                 .$va_use_12mo == 9 ~ FALSE, 
+                                 TRUE ~ as.logical(.$va_use_12mo)))
+weirdRows <- which(df$va_ever_enrolled == FALSE & is.na(df$va_use_12mo))
+df <- 
+  df %>% 
+  mutate(va_use_12mo = case_when(is.na(.$va_ever_enrolled) & is.na(.$va_use_12mo) ~ NA,
+                                 row_number() %in% weirdRows ~ FALSE,
+                                 TRUE ~ .$va_use_12mo))
+weirdRows <- which(df$va_ever_enrolled == FALSE & df$va_use_12mo == TRUE)
+df <- 
+  df %>% 
+  mutate(va_ever_enrolled = case_when(is.na(.$va_ever_enrolled) & is.na(.$va_use_12mo) ~ NA,
+                                      row_number() %in% weirdRows ~ TRUE,
+                                      TRUE ~ .$va_ever_enrolled))
+df <-
+  df %>%
+  mutate(indVANeverEnrolled = !va_ever_enrolled,
+         indVANotUse12mo = !va_use_12mo)
+df %>% 
+  mutate(desc = "After recoding") %>% 
+  group_by(desc, va_ever_enrolled, va_use_12mo, indVANeverEnrolled, indVANotUse12mo) %>%
+  summarize(n = n()) %>% 
+  kable
+```
+
+### Presence of suicidality
+
+DSI-SS score $\ge$ 2 (this cut-off score was chosen based on recommendations for population-based samples noted in [von Glischinski M Clin Psychol Psychotherapy 2015]
+
+```{r}
+df <-
+  df %>%
+  mutate(indDSISS = dsiss >= 2) 
+df %>% 
+  filter(!is.na(dsiss)) %>% 
+  group_by(indDSISS, dsiss) %>% 
+  summarize(n = n()) %>% 
+  kable(digits = 3)
+df %>% 
+  filter(!is.na(dsiss)) %>% 
+  group_by(indDSISS) %>% 
+  summarize(n = n()) %>%
+  mutate(freq = n / sum(n)) %>%
+  kable(digits = 3)
+```
