@@ -211,8 +211,10 @@ df <-
 Check.
 
 ```{r}
-means2Group("ptsd", "indPTSD") %>% kable()
-means2Group("phq", "indPHQ") %>% kable()
-means2Group("auditc", "indAuditC") %>% kable()
-means2Group("dsiss", "indDSISS") %>% kable()
+align <- "llccccc"
+digits <- c(0, 0, 1, 0, 0, 0, 0)
+means2Group("ptsd", "indPTSD") %>% kable(align = align, digits = digits)
+means2Group("phq", "indPHQ") %>% kable(align = align, digits = digits)
+means2Group("auditc", "indAuditC") %>% kable(align = align, digits = digits)
+means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
