@@ -218,3 +218,62 @@ means2Group("phq", "indPHQ") %>% kable(align = align, digits = digits)
 means2Group("auditc", "indAuditC") %>% kable(align = align, digits = digits)
 means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
+
+
+## Covariates
+
+* Social media platforms used: `sm_used___1`, ..., `sm_used___7`, `sm_used___99`, `sm_used_other`
+* Offline social contact: `comm_inperson`
+* History of suicidal ideation and suicide attempts
+  * `suicide_considered_ever`
+  * `suicide_considered_12mo`
+  * `suicide_attempts` 
+
+```{r}
+df <-
+  df %>%
+  mutate(smFacebook = as.logical(sm_used___1)) %>%
+  mutate(smInstagram = as.logical(sm_used___2)) %>%
+  mutate(smPinterest = as.logical(sm_used___3)) %>%
+  mutate(smTumblr = as.logical(sm_used___4)) %>%
+  mutate(smTwitter = as.logical(sm_used___5)) %>%
+  mutate(smYikYak = as.logical(sm_used___6)) %>%
+  mutate(smYoutube = as.logical(sm_used___7)) %>%
+  mutate(smOther = as.logical(sm_used___99)) %>% 
+  select(-c(sm_used___1, sm_used___2, sm_used___3, sm_used___4, sm_used___5, sm_used___6, sm_used___7, sm_used___99)) %>%
+  mutate(smUseAny = smFacebook | 
+                    smInstagram | 
+                    smPinterest | 
+                    smTumblr | 
+                    smTwitter | 
+                    smYikYak | 
+                    smYoutube | 
+                    smOther) %>%
+  mutate(comm_inperson = factor(comm_inperson,
+                                levels = seq(5, 1, -1),
+                                labels = c("Several times a day", 
+                                           "Once a day", 
+                                           "A few times a week", 
+                                           "Once a week", 
+                                           "Every few weeks or less often"))) %>%
+  mutate(indSuicideConsideredEver = as.logical(suicide_considered_ever)) %>% 
+  mutate(indSuicideConsidered12mo = case_when(
+                                      !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == FALSE ~ FALSE,
+                                      !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == TRUE ~ as.logical(suicide_considered_12mo),
+                                      TRUE ~ NA)) %>% 
+  mutate(indSuicideAttempt = case_when(
+                               !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == FALSE ~ FALSE,
+                               !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == TRUE ~ suicide_attempts > 0,
+                               TRUE ~ NA)) %>% 
+  mutate(countSuicideAttempts = case_when(
+                                  !is.na(indSuicideAttempt) & indSuicideAttempt == FALSE ~ 0,
+                                  !is.na(indSuicideAttempt) & indSuicideAttempt == TRUE ~ as.numeric(suicide_attempts),
+                                  TRUE ~ NaN))
+df %>% group_by(smUseAny) %>% summarize(n = n()) %>% kable()
+df %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
+df %>% 
+  group_by(indSuicideConsideredEver, indSuicideConsidered12mo, indSuicideAttempt, countSuicideAttempts) %>% 
+  summarize(n = n()) %>% 
+  arrange(desc(n)) %>%
+  kable()
+```
