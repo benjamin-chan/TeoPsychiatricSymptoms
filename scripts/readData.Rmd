@@ -45,11 +45,6 @@ Cleaning
   * `analytic_sample == 1`: Participant completed survey and was not disqualified for data quality reasons
 * Assign indicator for eligibility screener participation, `indScreenerParticipation`
   * `eligible == 1`: Participant completed eligibility screener and was eligible to participate in full survey
-* Score the DSI-SS inventory
-  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
-  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
-* Score the Modified Facebook Measure of Social Support (FMSS)
-  * Reverse-scored items are `fmss_r7` through `fmss_r10`
 
 ```{r}
 df <-
@@ -68,22 +63,7 @@ df <-
                                             TRUE ~ FALSE)) %>%
   mutate(indScreenerParticipation = case_when(is.na(.$eligible) ~ FALSE,
                                               .$eligible == 1 ~ TRUE,
-                                              TRUE ~ FALSE)) %>% 
-  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses) %>%
-  mutate(fmss = fmss_r1 +
-                fmss_r2 +
-                fmss_r3 +
-                fmss_r4 +
-                fmss_r5 +
-                fmss_r6 +
-                (4 - fmss_r7) +
-                (4 - fmss_r8) +
-                (4 - fmss_r9) +
-                (4 - fmss_r10) +
-                fmss_r11 +
-                fmss_r12 +
-                fmss_r13 +
-                fmss_r14)
+                                              TRUE ~ FALSE))
 df %>% 
   group_by(image, text) %>% 
   summarize(n = n()) %>% 
@@ -102,7 +82,7 @@ df %>%
   kable
 ```
 
-### Use of VA health services
+## Use of VA health services
 
 ```{r}
 df %>% 
@@ -152,23 +132,87 @@ df %>%
   kable
 ```
 
-### Presence of suicidality
 
-DSI-SS score $\ge$ 2 (this cut-off score was chosen based on recommendations for population-based samples noted in [von Glischinski M Clin Psychol Psychotherapy 2015]
+## Independent variables
+
+* Score the Modified Facebook Measure of Social Support (FMSS)
+  * Reverse-scored items are `fmss_r7` through `fmss_r10`
+
+```{r}
+df <- 
+  df %>%
+  mutate(fmss = fmss_r1 +
+                fmss_r2 +
+                fmss_r3 +
+                fmss_r4 +
+                fmss_r5 +
+                fmss_r6 +
+                (4 - fmss_r7) +
+                (4 - fmss_r8) +
+                (4 - fmss_r9) +
+                (4 - fmss_r10) +
+                fmss_r11 +
+                fmss_r12 +
+                fmss_r13 +
+                fmss_r14)
+```
+
+Check.
+
+```{r histogramFMSS}
+df %>% 
+  filter(!is.na(fmss)) %>% 
+  ggplot() + 
+    aes(x = fmss) + 
+    geom_histogram(binwidth = 1, alpha = 1/2) + 
+    scale_x_continuous("FMSS") + 
+    scale_y_continuous("Count")
+```
+
+
+## Psychiatric symptoms
+
+Code indicators for psychiatric disorder screening scales
+
+* PTSD
+  * Name of scale: PC-PTSD 
+  * Positive screen: `ptsd_intrusive` + `ptsd_avoidant` + `ptsd_guarded` + `ptsd_numb` + `ptsd_guilty` $\ge$ 3
+* Major depression
+  * Name of scale: PHQ-2
+  * Positive screen: `phq_interest` + `phq_mood` $\ge$ 3
+* Alcohol misuse
+  * Name of scale: AUDIT-C
+  * Positive screen: `auditc_freq` + `auditc_amount` + `auditc_binge` $\ge$ 4 for men, $\ge$ 3 for women
+
+Presence of suicidality is defined as DSI-SS score $\ge$ 2.
+This cut-off score was chosen based on recommendations for population-based samples noted in 
+[von Glischinski M Clin Psychol Psychotherapy 2015](http://onlinelibrary.wiley.com/doi/10.1002/cpp.2007/full)
+
+* Score the DSI-SS inventory
+  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
+  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
 
 ```{r}
 df <-
   df %>%
-  mutate(indDSISS = dsiss >= 2) 
-df %>% 
-  filter(!is.na(dsiss)) %>% 
-  group_by(indDSISS, dsiss) %>% 
-  summarize(n = n()) %>% 
-  kable(digits = 3)
-df %>% 
-  filter(!is.na(dsiss)) %>% 
-  group_by(indDSISS) %>% 
-  summarize(n = n()) %>%
-  mutate(freq = n / sum(n)) %>%
-  kable(digits = 3)
+  mutate(ptsd = ptsd_intrusive + ptsd_avoidant + ptsd_guarded + ptsd_numb + ptsd_guilty) %>%
+  mutate(indPTSD = ptsd >= 3) %>%
+  mutate(phq = phq_interest + phq_mood) %>%
+  mutate(indPHQ = phq >= 3) %>%
+  mutate(auditc = auditc_freq + auditc_amount + auditc_binge) %>%
+  mutate(indAuditC = case_when(
+                       !is.na(gender) & gender == 1 ~ auditc >= 4,
+                       !is.na(gender) & gender == 2 ~ auditc >= 3,
+                       TRUE ~ NA)) %>% 
+  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses) %>%
+  mutate(indDSISS = dsiss >= 2)
+```
+
+Check.
+
+```{r}
+means2Group("ptsd", "indPTSD") %>% kable()
+means2Group("phq", "indPHQ") %>% kable()
+means2Group("auditc", "indAuditC") %>% kable()
+means2Group("dsiss", "indDSISS") %>% kable()
 ```
