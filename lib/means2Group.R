@@ -1,7 +1,7 @@
 means2Group <- function (y, x) {
   df %>% 
     select(c(y, x)) %>% 
-    filter(!is.na(eval(parse(text = y)))) %>% 
+    filter(!is.na(eval(parse(text = y))) & !is.na(eval(parse(text = x)))) %>% 
     group_by_(x) %>% 
     summarize(mean = mean(eval(parse(text = y))),
               min = min(eval(parse(text = y))), 
