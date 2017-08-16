@@ -1,6 +1,29 @@
 # Research Question 1
 
-**Is perceived social support received from Facebook associated with lower rates of psychiatric symptoms?**
+Is perceived social support received from Facebook (FMSS) associated with lower rates of 
 
-* Facebook social support (overall)
-* Facebook social support (emotional support subscale)
+* Positive screens for psychiatric disorders
+  * PC-PTSD
+  * PHQ-2
+  * AUDIT-C
+* Positive screen for suicidality?
+  * DSI-SS
+
+
+## Unadjusted comparisons
+
+```{r}
+align <- "llccccc"
+digits <- c(0, 0, 1, 0, 0, 0, 0)
+means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
+means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
+means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)
+means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
+```
+
+```{r plot2Groups}
+plot2Groups("fmss", "indPTSD", "FMSS", "PC-PTSD")
+plot2Groups("fmss", "indPHQ", "FMSS", "PHQ-2")
+plot2Groups("fmss", "indAuditC", "FMSS", "AUDIT-C")
+plot2Groups("fmss", "indDSISS", "FMSS", "DSI-SS")
+```
