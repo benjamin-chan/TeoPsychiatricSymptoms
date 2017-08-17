@@ -1,5 +1,8 @@
 # Read data
 
+**Most of this code was developed in Phase 1.**
+Results will be suppressed for brevity.
+
 **Use only the REDCap survey data**
 
 Notes on the REDCap identifier variables:
@@ -17,7 +20,7 @@ Notes on the REDCap identifier variables:
   * if `== 1`, they completed survey and was not disqualified for data quality reasons;
   * if `== NA`, they didn't complete the survey.
 
-```{r}
+```{r, results = FALSE}
 df <-
   "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
   read.csv(stringsAsFactors = FALSE)
@@ -45,11 +48,8 @@ Cleaning
   * `analytic_sample == 1`: Participant completed survey and was not disqualified for data quality reasons
 * Assign indicator for eligibility screener participation, `indScreenerParticipation`
   * `eligible == 1`: Participant completed eligibility screener and was eligible to participate in full survey
-* Score the DSI-SS inventory
-  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
-  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
 
-```{r}
+```{r, results = FALSE}
 df <-
   df %>% 
   filter(consent == 1) %>% 
@@ -66,8 +66,7 @@ df <-
                                             TRUE ~ FALSE)) %>%
   mutate(indScreenerParticipation = case_when(is.na(.$eligible) ~ FALSE,
                                               .$eligible == 1 ~ TRUE,
-                                              TRUE ~ FALSE)) %>% 
-  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses)
+                                              TRUE ~ FALSE))
 df %>% 
   group_by(image, text) %>% 
   summarize(n = n()) %>% 
@@ -86,9 +85,9 @@ df %>%
   kable
 ```
 
-### Use of VA health services
+## Use of VA health services
 
-```{r}
+```{r, results = FALSE}
 df %>% 
   mutate(desc = "Before recoding") %>% 
   group_by(desc, va_ever_enrolled, va_use_12mo) %>% 
@@ -104,7 +103,7 @@ Recoding logic
 * If `va_use_12mo == TRUE` & `va_ever_enrolled == FALSE`, then recode `va_ever_enrolled` to `TRUE`
 * Code indicators `indVANeverEnrolled` and `indVANotUse12mo` as the logical opposites of `va_ever_enrolled` and `va_use_12mo`
 
-```{r}
+```{r, results = FALSE}
 df <-
   df %>%
   mutate(va_ever_enrolled = case_when(is.na(.$va_ever_enrolled) ~ NA,
@@ -136,23 +135,173 @@ df %>%
   kable
 ```
 
-### Presence of suicidality
 
-DSI-SS score $\ge$ 2 (this cut-off score was chosen based on recommendations for population-based samples noted in [von Glischinski M Clin Psychol Psychotherapy 2015]
+## Independent variables
+
+* Score the Modified Facebook Measure of Social Support (FMSS)
+  * Reverse-scored items are `fmss_r7` through `fmss_r10`
+
+```{r}
+df <- 
+  df %>%
+  mutate(fmss = fmss_r1 +
+                fmss_r2 +
+                fmss_r3 +
+                fmss_r4 +
+                fmss_r5 +
+                fmss_r6 +
+                (4 - fmss_r7) +
+                (4 - fmss_r8) +
+                (4 - fmss_r9) +
+                (4 - fmss_r10) +
+                fmss_r11 +
+                fmss_r12 +
+                fmss_r13 +
+                fmss_r14)
+```
+
+Check.
+
+```{r histogramFMSS}
+df %>% 
+  filter(!is.na(fmss)) %>% 
+  ggplot() + 
+    aes(x = fmss) + 
+    geom_histogram(binwidth = 1, alpha = 1/2) + 
+    scale_x_continuous("FMSS") + 
+    scale_y_continuous("Count")
+```
+
+
+## Psychiatric symptoms
+
+Code indicators for psychiatric disorder screening scales
+
+* PTSD
+  * Name of scale: PC-PTSD 
+  * Positive screen: `ptsd_intrusive` + `ptsd_avoidant` + `ptsd_guarded` + `ptsd_numb` + `ptsd_guilty` $\ge$ 3
+* Major depression
+  * Name of scale: PHQ-2
+  * Positive screen: `phq_interest` + `phq_mood` $\ge$ 3
+* Alcohol misuse
+  * Name of scale: AUDIT-C
+  * Positive screen: `auditc_freq` + `auditc_amount` + `auditc_binge` $\ge$ 4 for men, $\ge$ 3 for women
+
+Presence of suicidality is defined as DSI-SS score $\ge$ 2.
+This cut-off score was chosen based on recommendations for population-based samples noted in 
+[von Glischinski M Clin Psychol Psychotherapy 2015](http://onlinelibrary.wiley.com/doi/10.1002/cpp.2007/full)
+
+* Score the DSI-SS inventory
+  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
+  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
 
 ```{r}
 df <-
   df %>%
-  mutate(indDSISS = dsiss >= 2) 
+  mutate(ptsd = ptsd_intrusive + ptsd_avoidant + ptsd_guarded + ptsd_numb + ptsd_guilty) %>%
+  mutate(indPTSD = ptsd >= 3) %>%
+  mutate(phq = phq_interest + phq_mood) %>%
+  mutate(indPHQ = phq >= 3) %>%
+  mutate(auditc = auditc_freq + auditc_amount + auditc_binge) %>%
+  mutate(indAuditC = case_when(
+                       !is.na(gender) & gender == 1 ~ auditc >= 4,
+                       !is.na(gender) & gender == 2 ~ auditc >= 3,
+                       TRUE ~ NA)) %>% 
+  mutate(dsiss = dsiss_thoughts + dsiss_plans + dsiss_control + dsiss_impulses) %>%
+  mutate(indDSISS = dsiss >= 2)
+```
+
+Check.
+
+```{r}
+align <- "llccccc"
+digits <- c(0, 0, 1, 0, 0, 0, 0)
+means2Group("ptsd", "indPTSD") %>% kable(align = align, digits = digits)
+means2Group("phq", "indPHQ") %>% kable(align = align, digits = digits)
+means2Group("auditc", "indAuditC") %>% kable(align = align, digits = digits)
+means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
+```
+
+
+## Covariates
+
+* Social media platforms used: `sm_used___1`, ..., `sm_used___7`, `sm_used___99`, `sm_used_other`
+  * Recode the following `sm_used_other` values such that `sm_used___99 = 0`
+    * `I use Wikipedia to read about illnesses I don't have; it's a curiosity/hobby thing.`
+    * `just in person`
+    * `Just plain internet search`
+    * `TV/phone conversations, veterans group meetings`
+    * `google; bing`
+    * `aol`
+    * `e-mail`
+    * `Web MD`
+    * `webmd`
+* Offline social contact: `comm_inperson`
+* History of suicidal ideation and suicide attempts
+  * `suicide_considered_ever`
+  * `suicide_considered_12mo`
+  * `suicide_attempts` 
+
+```{r}
+notSocialMedia <- c("I use Wikipedia to read about illnesses I don't have; it's a curiosity/hobby thing.",
+                    "just in person",
+                    "Just plain internet search",
+                    "TV/phone conversations, veterans group meetings",
+                    "google; bing",
+                    "aol",
+                    "e-mail",
+                    "Web MD,",
+                    "webmd")
+df <-
+  df %>%
+  mutate(smFacebook = as.logical(sm_used___1)) %>%
+  mutate(smInstagram = as.logical(sm_used___2)) %>%
+  mutate(smPinterest = as.logical(sm_used___3)) %>%
+  mutate(smTumblr = as.logical(sm_used___4)) %>%
+  mutate(smTwitter = as.logical(sm_used___5)) %>%
+  mutate(smYikYak = as.logical(sm_used___6)) %>%
+  mutate(smYoutube = as.logical(sm_used___7)) %>%
+  mutate(smOther = case_when(trimws(sm_used_other) %in% notSocialMedia ~ FALSE,
+                             TRUE ~ as.logical(sm_used___99))) %>%
+  select(-c(sm_used___1, sm_used___2, sm_used___3, sm_used___4, sm_used___5, sm_used___6, sm_used___7, sm_used___99)) %>%
+  mutate(countSocialMediaExclFB = smInstagram +
+                                  smPinterest +
+                                  smTumblr +
+                                  smTwitter +
+                                  smYikYak +
+                                  smYoutube +
+                                  smOther) %>%
+  mutate(comm_inperson = factor(comm_inperson,
+                                levels = seq(5, 1, -1),
+                                labels = c("Several times a day", 
+                                           "Once a day", 
+                                           "A few times a week", 
+                                           "Once a week", 
+                                           "Every few weeks or less often"))) %>%
+  mutate(indSuicideConsideredEver = as.logical(suicide_considered_ever)) %>% 
+  mutate(indSuicideConsidered12mo = case_when(
+                                      !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == FALSE ~ FALSE,
+                                      !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == TRUE ~ as.logical(suicide_considered_12mo),
+                                      TRUE ~ NA)) %>% 
+  mutate(indSuicideAttempt = case_when(
+                               !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == FALSE ~ FALSE,
+                               !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == TRUE ~ suicide_attempts > 0,
+                               TRUE ~ NA)) %>% 
+  mutate(countSuicideAttempts = case_when(
+                                  !is.na(indSuicideAttempt) & indSuicideAttempt == FALSE ~ 0,
+                                  !is.na(indSuicideAttempt) & indSuicideAttempt == TRUE ~ as.numeric(suicide_attempts),
+                                  TRUE ~ NaN))
+```
+
+Check.
+
+```{r}
+df %>% group_by(smOther, sm_used_other) %>% summarize(n = n()) %>% kable()
+df %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
+df %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
 df %>% 
-  filter(!is.na(dsiss)) %>% 
-  group_by(indDSISS, dsiss) %>% 
+  group_by(indSuicideConsideredEver, indSuicideConsidered12mo, indSuicideAttempt, countSuicideAttempts) %>% 
   summarize(n = n()) %>% 
-  kable(digits = 3)
-df %>% 
-  filter(!is.na(dsiss)) %>% 
-  group_by(indDSISS) %>% 
-  summarize(n = n()) %>%
-  mutate(freq = n / sum(n)) %>%
-  kable(digits = 3)
+  arrange(desc(n)) %>%
+  kable()
 ```

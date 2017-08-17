@@ -1,32 +1,14 @@
-# Preamble
-
-Set working directory and load libraries.
-
-```{r}
-setwd("~/Projects/TeoSocialMediaVeterans/scripts")
+```{r, results = "hide", message = FALSE, warning = FALSE}
+# Set working directory and load libraries.
+setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
 library(magrittr)
 library(tidyverse)
 theme_set(theme_bw())
 library(svglite)
 library(knitr)
 library(broom)
-```
-
-Reproducibility steps.
-
-```{r}
-sessionInfo() %>% print(locale = FALSE)
+# Reproducibility steps.
 set.seed(as.integer(as.Date("2017-08-15")))
-```
-
-References
-
-```{r}
-citation()
-```
-
-Source user-defined functions.
-
-```{r, eval = TRUE}
+# Source user-defined functions.
 sapply(list.files("../lib", full.names = TRUE), source)
 ```
