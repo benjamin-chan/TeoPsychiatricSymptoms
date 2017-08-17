@@ -27,3 +27,69 @@ plot2Groups("fmss", "indPHQ", "FMSS", "PHQ-2")
 plot2Groups("fmss", "indAuditC", "FMSS", "AUDIT-C")
 plot2Groups("fmss", "indDSISS", "FMSS", "DSI-SS")
 ```
+
+
+## Adjusted comparisons
+
+```{r}
+covar <- c("countSocialMediaExclFB",
+           "comm_inperson",
+           "indSuicideConsideredEver",
+           "countSuicideAttempts")
+```
+
+Filter subjects with missing covariates.
+
+```{r}
+df <-
+  df %>% 
+  select_(.dots = c("record_id", covar)) %>% 
+  na.omit() %>% 
+  select(record_id) %>% 
+  merge(., df, by = "record_id")
+```
+
+
+### PC-PTSD
+
+```{r}
+y <- "indPTSD"
+fitModel(y) %>% .[["summary"]]
+M <- fitModel(y, covar)
+M[["summary"]] %>% tidy()
+M[["summary"]] %>% glance()
+M[["plotResid"]]
+```
+
+### PHQ-2
+
+```{r}
+y <- "indPHQ"
+fitModel(y) %>% .[["summary"]]
+M <- fitModel(y, covar)
+M[["summary"]] %>% tidy()
+M[["summary"]] %>% glance()
+M[["plotResid"]]
+```
+
+### AUDIT-C
+
+```{r}
+y <- "indAuditC"
+fitModel(y) %>% .[["summary"]]
+M <- fitModel(y, covar)
+M[["summary"]] %>% tidy()
+M[["summary"]] %>% glance()
+M[["plotResid"]]
+```
+
+### DSI-SS
+
+```{r}
+y <- "indDSISS"
+fitModel(y) %>% .[["summary"]]
+M <- fitModel(y, covar)
+M[["summary"]] %>% tidy()
+M[["summary"]] %>% glance()
+M[["plotResid"]]
+```
