@@ -162,7 +162,7 @@ df <-
 
 Check.
 
-```{r histogramFMSS}
+```{r histogramFMSS, fig.height = 3}
 df %>% 
   filter(!is.na(fmss)) %>% 
   ggplot() + 
