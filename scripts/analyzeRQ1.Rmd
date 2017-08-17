@@ -53,9 +53,9 @@ df <-
 ### PC-PTSD
 
 ```{r}
-y <- "indPTSD"
-fitModel(y) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
-M <- fitModel(y, covar)
+x <- "indPTSD"
+fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
 M[["summary"]] %>% glance() %>% kable(digits = 3)
 M[["plotResid"]]
@@ -64,9 +64,9 @@ M[["plotResid"]]
 ### PHQ-2
 
 ```{r}
-y <- "indPHQ"
-fitModel(y) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
-M <- fitModel(y, covar)
+x <- "indPHQ"
+fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
 M[["summary"]] %>% glance() %>% kable(digits = 3)
 M[["plotResid"]]
@@ -75,9 +75,9 @@ M[["plotResid"]]
 ### AUDIT-C
 
 ```{r}
-y <- "indAuditC"
-fitModel(y) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
-M <- fitModel(y, covar)
+x <- "indAuditC"
+fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
 M[["summary"]] %>% glance() %>% kable(digits = 3)
 M[["plotResid"]]
@@ -86,9 +86,9 @@ M[["plotResid"]]
 ### DSI-SS
 
 ```{r}
-y <- "indDSISS"
-fitModel(y) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
-M <- fitModel(y, covar)
+x <- "indDSISS"
+fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
 M[["summary"]] %>% glance() %>% kable(digits = 3)
 M[["plotResid"]]

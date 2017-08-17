@@ -6,5 +6,5 @@ fitModel <- function (x, covar = NULL) {
   }
   M <- lm(f, data = df)
   list(summary = M %>% summary(),
-       plotResid = M %>% plotResid("fmss"))
+       plotResid = M %>% plotResid("fmss", x))
 }
