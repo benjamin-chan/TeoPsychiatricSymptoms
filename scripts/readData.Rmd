@@ -223,6 +223,16 @@ means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ## Covariates
 
 * Social media platforms used: `sm_used___1`, ..., `sm_used___7`, `sm_used___99`, `sm_used_other`
+  * Recode the following `sm_used_other` values such that `sm_used___99 = 0`
+    * `I use Wikipedia to read about illnesses I don't have; it's a curiosity/hobby thing.`
+    * `just in person`
+    * `Just plain internet search`
+    * `TV/phone conversations, veterans group meetings`
+    * `google; bing`
+    * `aol`
+    * `e-mail`
+    * `Web MD`
+    * `webmd`
 * Offline social contact: `comm_inperson`
 * History of suicidal ideation and suicide attempts
   * `suicide_considered_ever`
@@ -230,6 +240,15 @@ means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
   * `suicide_attempts` 
 
 ```{r}
+notSocialMedia <- c("I use Wikipedia to read about illnesses I don't have; it's a curiosity/hobby thing.",
+                    "just in person",
+                    "Just plain internet search",
+                    "TV/phone conversations, veterans group meetings",
+                    "google; bing",
+                    "aol",
+                    "e-mail",
+                    "Web MD,",
+                    "webmd")
 df <-
   df %>%
   mutate(smFacebook = as.logical(sm_used___1)) %>%
@@ -239,16 +258,16 @@ df <-
   mutate(smTwitter = as.logical(sm_used___5)) %>%
   mutate(smYikYak = as.logical(sm_used___6)) %>%
   mutate(smYoutube = as.logical(sm_used___7)) %>%
-  mutate(smOther = as.logical(sm_used___99)) %>% 
+  mutate(smOther = case_when(trimws(sm_used_other) %in% notSocialMedia ~ FALSE,
+                             TRUE ~ as.logical(sm_used___99))) %>%
   select(-c(sm_used___1, sm_used___2, sm_used___3, sm_used___4, sm_used___5, sm_used___6, sm_used___7, sm_used___99)) %>%
-  mutate(smUseAny = smFacebook | 
-                    smInstagram | 
-                    smPinterest | 
-                    smTumblr | 
-                    smTwitter | 
-                    smYikYak | 
-                    smYoutube | 
-                    smOther) %>%
+  mutate(countSocialMediaExclFB = smInstagram +
+                                  smPinterest +
+                                  smTumblr +
+                                  smTwitter +
+                                  smYikYak +
+                                  smYoutube +
+                                  smOther) %>%
   mutate(comm_inperson = factor(comm_inperson,
                                 levels = seq(5, 1, -1),
                                 labels = c("Several times a day", 
@@ -269,7 +288,13 @@ df <-
                                   !is.na(indSuicideAttempt) & indSuicideAttempt == FALSE ~ 0,
                                   !is.na(indSuicideAttempt) & indSuicideAttempt == TRUE ~ as.numeric(suicide_attempts),
                                   TRUE ~ NaN))
-df %>% group_by(smUseAny) %>% summarize(n = n()) %>% kable()
+```
+
+Check.
+
+```{r}
+df %>% group_by(smOther, sm_used_other) %>% summarize(n = n()) %>% kable()
+df %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
 df %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
 df %>% 
   group_by(indSuicideConsideredEver, indSuicideConsidered12mo, indSuicideAttempt, countSuicideAttempts) %>% 
