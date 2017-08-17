@@ -3,6 +3,7 @@
 setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
 library(magrittr)
 library(tidyverse)
+library(reshape2)
 theme_set(theme_bw())
 library(svglite)
 library(knitr)

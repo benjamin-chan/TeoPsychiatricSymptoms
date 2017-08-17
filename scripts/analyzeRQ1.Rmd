@@ -13,19 +13,51 @@ Is perceived social support received from Facebook (FMSS) associated with lower 
 ## Unadjusted comparisons
 
 ```{r}
-align <- "llccccc"
-digits <- c(0, 0, 1, 0, 0, 0, 0)
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
 means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
+\newline
+
 ```{r plot2Groups}
-plot2Groups("fmss", "indPTSD", "FMSS", "PC-PTSD")
-plot2Groups("fmss", "indPHQ", "FMSS", "PHQ-2")
-plot2Groups("fmss", "indAuditC", "FMSS", "AUDIT-C")
-plot2Groups("fmss", "indDSISS", "FMSS", "DSI-SS")
+df %>% 
+  melt(id.vars = c("record_id", "fmss"),
+       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  filter(!is.na(value) & !is.na(fmss)) %>% 
+  mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
+                              variable == "indPHQ" ~ "PHQ-2",
+                              variable == "indAuditC" ~ "AUDIT-C",
+                              variable == "indDSISS" ~ "DSI-SS")) %>% 
+  mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
+  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
+  ggplot() +
+  aes(x = value, y = fmss, color = value, fill = value) +
+  geom_violin(alpha = 1/2) +
+  scale_x_discrete("") +
+  scale_y_continuous("FMSS") +
+  scale_color_brewer(palette = "Set1") + 
+  scale_fill_brewer(palette = "Set1") +
+  facet_wrap(~ variable) +
+  theme(legend.position = "none")
 ```
 
 
@@ -55,9 +87,22 @@ df <-
 ```{r}
 x <- "indPTSD"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidPTSD}
 M[["plotResid"]]
 ```
 
@@ -66,9 +111,22 @@ M[["plotResid"]]
 ```{r}
 x <- "indPHQ"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidPHQ}
 M[["plotResid"]]
 ```
 
@@ -77,9 +135,22 @@ M[["plotResid"]]
 ```{r}
 x <- "indAuditC"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidAuditC}
 M[["plotResid"]]
 ```
 
@@ -88,8 +159,21 @@ M[["plotResid"]]
 ```{r}
 x <- "indDSISS"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidDSISS}
 M[["plotResid"]]
 ```

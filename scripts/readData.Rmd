@@ -162,7 +162,7 @@ df <-
 
 Check.
 
-```{r histogramFMSS}
+```{r histogramFMSS, fig.height = 3}
 df %>% 
   filter(!is.na(fmss)) %>% 
   ggplot() + 
@@ -214,11 +214,26 @@ df <-
 Check.
 
 ```{r}
-align <- "llccccc"
-digits <- c(0, 0, 1, 0, 0, 0, 0)
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
 means2Group("ptsd", "indPTSD") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("phq", "indPHQ") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("auditc", "indAuditC") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
@@ -297,8 +312,23 @@ Check.
 
 ```{r}
 df %>% group_by(smOther, sm_used_other) %>% summarize(n = n()) %>% kable()
+```
+
+\newline
+
+```{r}
 df %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
+```
+
+\newline
+
+```{r}
 df %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
+```
+
+\newline
+
+```{r}
 df %>% 
   group_by(indSuicideConsideredEver, indSuicideConsidered12mo, indSuicideAttempt, countSuicideAttempts) %>% 
   summarize(n = n()) %>% 
