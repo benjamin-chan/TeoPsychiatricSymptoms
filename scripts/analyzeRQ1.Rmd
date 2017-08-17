@@ -16,10 +16,27 @@ Is perceived social support received from Facebook (FMSS) associated with lower 
 align <- "llcccccc"
 digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
 means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
 means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
+
+\newline
 
 ```{r plot2Groups}
 df %>% 
@@ -70,9 +87,22 @@ df <-
 ```{r}
 x <- "indPTSD"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidPTSD}
 M[["plotResid"]]
 ```
 
@@ -81,9 +111,22 @@ M[["plotResid"]]
 ```{r}
 x <- "indPHQ"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidPHQ}
 M[["plotResid"]]
 ```
 
@@ -92,9 +135,22 @@ M[["plotResid"]]
 ```{r}
 x <- "indAuditC"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidAuditC}
 M[["plotResid"]]
 ```
 
@@ -103,8 +159,21 @@ M[["plotResid"]]
 ```{r}
 x <- "indDSISS"
 fitModel(x) %>% .[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M <- fitModel(x, covar)
 M[["summary"]] %>% tidy() %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
 M[["summary"]] %>% glance() %>% kable(digits = 3)
+```
+
+```{r plotResidDSISS}
 M[["plotResid"]]
 ```
