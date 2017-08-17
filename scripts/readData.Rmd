@@ -1,5 +1,8 @@
 # Read data
 
+**Most of this code was developed in Phase 1.**
+Results will be suppressed for brevity.
+
 **Use only the REDCap survey data**
 
 Notes on the REDCap identifier variables:
@@ -17,7 +20,7 @@ Notes on the REDCap identifier variables:
   * if `== 1`, they completed survey and was not disqualified for data quality reasons;
   * if `== NA`, they didn't complete the survey.
 
-```{r}
+```{r, results = FALSE}
 df <-
   "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
   read.csv(stringsAsFactors = FALSE)
@@ -46,7 +49,7 @@ Cleaning
 * Assign indicator for eligibility screener participation, `indScreenerParticipation`
   * `eligible == 1`: Participant completed eligibility screener and was eligible to participate in full survey
 
-```{r}
+```{r, results = FALSE}
 df <-
   df %>% 
   filter(consent == 1) %>% 
@@ -84,7 +87,7 @@ df %>%
 
 ## Use of VA health services
 
-```{r}
+```{r, results = FALSE}
 df %>% 
   mutate(desc = "Before recoding") %>% 
   group_by(desc, va_ever_enrolled, va_use_12mo) %>% 
@@ -100,7 +103,7 @@ Recoding logic
 * If `va_use_12mo == TRUE` & `va_ever_enrolled == FALSE`, then recode `va_ever_enrolled` to `TRUE`
 * Code indicators `indVANeverEnrolled` and `indVANotUse12mo` as the logical opposites of `va_ever_enrolled` and `va_use_12mo`
 
-```{r}
+```{r, results = FALSE}
 df <-
   df %>%
   mutate(va_ever_enrolled = case_when(is.na(.$va_ever_enrolled) ~ NA,
