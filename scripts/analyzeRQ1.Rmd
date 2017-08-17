@@ -13,8 +13,8 @@ Is perceived social support received from Facebook (FMSS) associated with lower 
 ## Unadjusted comparisons
 
 ```{r}
-align <- "llccccc"
-digits <- c(0, 0, 1, 0, 0, 0, 0)
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
 means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
 means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
 means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)

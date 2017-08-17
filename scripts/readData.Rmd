@@ -214,8 +214,8 @@ df <-
 Check.
 
 ```{r}
-align <- "llccccc"
-digits <- c(0, 0, 1, 0, 0, 0, 0)
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
 means2Group("ptsd", "indPTSD") %>% kable(align = align, digits = digits)
 means2Group("phq", "indPHQ") %>% kable(align = align, digits = digits)
 means2Group("auditc", "indAuditC") %>% kable(align = align, digits = digits)
