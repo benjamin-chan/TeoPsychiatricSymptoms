@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-08-18 09:46:25"
+date: "2017-08-18 10:24:59"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -76,7 +76,9 @@ Check.
 ![plot of chunk histogramFMSS](../figures/histogramFMSS-1.png)
 
 
-## Psychiatric symptoms
+## Dependent variables
+
+### Psychiatric symptoms
 
 Code indicators for psychiatric disorder screening scales
 
@@ -293,127 +295,102 @@ Filter subjects with missing covariates.
 ### PC-PTSD
 
 
-|model      |term                                       | estimate| std.error| statistic| p.value|
-|:----------|:------------------------------------------|--------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |   29.372|     0.431|    68.149|   0.000|
-|Unadjusted |indPTSDTRUE                                |   -0.994|     0.595|    -1.670|   0.096|
-|Adjusted   |(Intercept)                                |   29.207|     0.664|    43.998|   0.000|
-|Adjusted   |indPTSDTRUE                                |   -0.834|     0.629|    -1.326|   0.185|
-|Adjusted   |countSocialMediaExclFB                     |    0.975|     0.297|     3.284|   0.001|
-|Adjusted   |comm_inpersonOnce a day                    |   -0.081|     1.110|    -0.073|   0.942|
-|Adjusted   |comm_inpersonA few times a week            |   -0.045|     0.866|    -0.052|   0.959|
-|Adjusted   |comm_inpersonOnce a week                   |   -1.226|     1.033|    -1.187|   0.236|
-|Adjusted   |comm_inpersonEvery few weeks or less often |   -0.787|     0.788|    -0.999|   0.318|
-|Adjusted   |indSuicideConsideredEverTRUE               |   -0.717|     0.674|    -1.063|   0.288|
-|Adjusted   |countSuicideAttempts                       |    0.440|     0.405|     1.086|   0.278|
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     2.092|     0.395|     1.870|   0.062|
+|Unadjusted |fmss                                       |     0.978|     0.013|    -1.664|   0.096|
+|Adjusted   |(Intercept)                                |     0.743|     0.464|    -0.642|   0.521|
+|Adjusted   |fmss                                       |     0.981|     0.015|    -1.307|   0.191|
+|Adjusted   |countSocialMediaExclFB                     |     1.027|     0.097|     0.270|   0.787|
+|Adjusted   |comm_inpersonOnce a day                    |     1.419|     0.348|     1.006|   0.315|
+|Adjusted   |comm_inpersonA few times a week            |     1.321|     0.274|     1.015|   0.310|
+|Adjusted   |comm_inpersonOnce a week                   |     1.918|     0.333|     1.956|   0.050|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     2.770|     0.251|     4.060|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE               |     2.085|     0.211|     3.484|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.675|     0.175|     2.952|   0.003|
 
 \newline
 
 
-|model      | r.squared| adj.r.squared| sigma| statistic| p.value| df|
-|:----------|---------:|-------------:|-----:|---------:|-------:|--:|
-|Unadjusted |     0.005|         0.004| 6.705|     2.788|   0.096|  2|
-|Adjusted   |     0.035|         0.019| 6.651|     2.251|   0.023|  9|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       704.395|     508| -350.803| 705.606| 714.071|  701.606|         507|
+|Adjusted   |       704.395|     508| -318.709| 655.418| 693.510|  637.418|         500|
 
-
-```
-## Warning: Removed 105 rows containing missing values (geom_point).
-```
-
-![plot of chunk plotResidPTSD](../figures/plotResidPTSD-1.png)
 
 ### PHQ-2
 
 
-|model      |term                                       | estimate| std.error| statistic| p.value|
-|:----------|:------------------------------------------|--------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |   29.564|     0.316|    93.699|   0.000|
-|Unadjusted |indPHQTRUE                                 |   -1.618|     0.600|    -2.699|   0.007|
-|Adjusted   |(Intercept)                                |   29.594|     0.566|    52.330|   0.000|
-|Adjusted   |indPHQTRUE                                 |   -1.266|     0.637|    -1.987|   0.047|
-|Adjusted   |countSocialMediaExclFB                     |    0.862|     0.278|     3.099|   0.002|
-|Adjusted   |comm_inpersonOnce a day                    |   -0.003|     0.974|    -0.003|   0.997|
-|Adjusted   |comm_inpersonA few times a week            |   -0.327|     0.784|    -0.416|   0.677|
-|Adjusted   |comm_inpersonOnce a week                   |   -0.940|     0.947|    -0.993|   0.321|
-|Adjusted   |comm_inpersonEvery few weeks or less often |   -1.036|     0.709|    -1.461|   0.145|
-|Adjusted   |indSuicideConsideredEverTRUE               |   -0.730|     0.614|    -1.189|   0.235|
-|Adjusted   |countSuicideAttempts                       |    0.345|     0.383|     0.902|   0.368|
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     1.147|     0.416|     0.330|   0.741|
+|Unadjusted |fmss                                       |     0.963|     0.014|    -2.672|   0.008|
+|Adjusted   |(Intercept)                                |     0.330|     0.489|    -2.268|   0.023|
+|Adjusted   |fmss                                       |     0.970|     0.015|    -2.005|   0.045|
+|Adjusted   |countSocialMediaExclFB                     |     0.972|     0.103|    -0.278|   0.781|
+|Adjusted   |comm_inpersonOnce a day                    |     0.999|     0.410|    -0.003|   0.998|
+|Adjusted   |comm_inpersonA few times a week            |     0.985|     0.314|    -0.048|   0.961|
+|Adjusted   |comm_inpersonOnce a week                   |     2.073|     0.329|     2.216|   0.027|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     2.642|     0.259|     3.752|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE               |     2.969|     0.218|     4.998|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.232|     0.123|     1.699|   0.089|
 
 \newline
 
 
-|model      | r.squared| adj.r.squared| sigma| statistic| p.value| df|
-|:----------|---------:|-------------:|-----:|---------:|-------:|--:|
-|Unadjusted |     0.012|         0.010| 6.550|     7.283|   0.007|  2|
-|Adjusted   |     0.036|         0.022| 6.511|     2.704|   0.006|  9|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |        703.22|     595| -347.957| 699.914| 708.694|  695.914|         594|
+|Adjusted   |        703.22|     595| -312.064| 642.127| 681.639|  624.127|         587|
 
-
-```
-## Warning: Removed 18 rows containing missing values (geom_point).
-```
-
-![plot of chunk plotResidPHQ](../figures/plotResidPHQ-1.png)
 
 ### AUDIT-C
 
 
-|model      |term                                       | estimate| std.error| statistic| p.value|
-|:----------|:------------------------------------------|--------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |   29.664|     0.423|    70.175|   0.000|
-|Unadjusted |indAuditCTRUE                              |   -0.570|     0.593|    -0.962|   0.337|
-|Adjusted   |(Intercept)                                |   30.022|     0.673|    44.599|   0.000|
-|Adjusted   |indAuditCTRUE                              |   -0.411|     0.593|    -0.693|   0.489|
-|Adjusted   |countSocialMediaExclFB                     |    0.963|     0.300|     3.206|   0.001|
-|Adjusted   |comm_inpersonOnce a day                    |   -0.064|     1.083|    -0.059|   0.953|
-|Adjusted   |comm_inpersonA few times a week            |   -0.687|     0.841|    -0.817|   0.414|
-|Adjusted   |comm_inpersonOnce a week                   |   -0.525|     1.035|    -0.508|   0.612|
-|Adjusted   |comm_inpersonEvery few weeks or less often |   -1.266|     0.789|    -1.605|   0.109|
-|Adjusted   |indSuicideConsideredEverTRUE               |   -1.440|     0.666|    -2.162|   0.031|
-|Adjusted   |countSuicideAttempts                       |    0.326|     0.415|     0.784|   0.434|
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     1.535|     0.421|     1.018|   0.309|
+|Unadjusted |fmss                                       |     0.987|     0.014|    -0.962|   0.336|
+|Adjusted   |(Intercept)                                |     0.897|     0.472|    -0.231|   0.818|
+|Adjusted   |fmss                                       |     0.990|     0.014|    -0.701|   0.484|
+|Adjusted   |countSocialMediaExclFB                     |     1.061|     0.095|     0.616|   0.538|
+|Adjusted   |comm_inpersonOnce a day                    |     1.268|     0.338|     0.704|   0.482|
+|Adjusted   |comm_inpersonA few times a week            |     1.150|     0.263|     0.532|   0.595|
+|Adjusted   |comm_inpersonOnce a week                   |     1.828|     0.327|     1.846|   0.065|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     1.656|     0.247|     2.041|   0.041|
+|Adjusted   |indSuicideConsideredEverTRUE               |     1.481|     0.210|     1.876|   0.061|
+|Adjusted   |countSuicideAttempts                       |     0.876|     0.131|    -1.009|   0.313|
 
 \newline
 
 
-|model      | r.squared| adj.r.squared| sigma| statistic| p.value| df|
-|:----------|---------:|-------------:|-----:|---------:|-------:|--:|
-|Unadjusted |     0.002|         0.000| 6.521|     0.925|   0.337|  2|
-|Adjusted   |     0.037|         0.021| 6.451|     2.306|   0.020|  9|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       670.834|     483| -334.953| 673.906| 682.270|  669.906|         482|
+|Adjusted   |       670.834|     483| -329.692| 677.384| 715.023|  659.384|         475|
 
-
-```
-## Warning: Removed 130 rows containing missing values (geom_point).
-```
-
-![plot of chunk plotResidAuditC](../figures/plotResidAuditC-1.png)
 
 ### DSI-SS
 
 
-|model      |term                                       | estimate| std.error| statistic| p.value|
-|:----------|:------------------------------------------|--------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |   29.525|     0.303|    97.437|   0.000|
-|Unadjusted |indDSISSTRUE                               |   -1.935|     0.651|    -2.972|   0.003|
-|Adjusted   |(Intercept)                                |   29.568|     0.564|    52.456|   0.000|
-|Adjusted   |indDSISSTRUE                               |   -1.787|     0.703|    -2.543|   0.011|
-|Adjusted   |countSocialMediaExclFB                     |    0.886|     0.277|     3.193|   0.001|
-|Adjusted   |comm_inpersonOnce a day                    |   -0.025|     0.973|    -0.025|   0.980|
-|Adjusted   |comm_inpersonA few times a week            |   -0.361|     0.782|    -0.462|   0.644|
-|Adjusted   |comm_inpersonOnce a week                   |   -1.017|     0.943|    -1.079|   0.281|
-|Adjusted   |comm_inpersonEvery few weeks or less often |   -1.155|     0.701|    -1.647|   0.100|
-|Adjusted   |indSuicideConsideredEverTRUE               |   -0.553|     0.627|    -0.883|   0.378|
-|Adjusted   |countSuicideAttempts                       |    0.393|     0.383|     1.026|   0.305|
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     1.025|     0.450|     0.056|   0.956|
+|Unadjusted |fmss                                       |     0.955|     0.016|    -2.933|   0.003|
+|Adjusted   |(Intercept)                                |     0.250|     0.547|    -2.533|   0.011|
+|Adjusted   |fmss                                       |     0.958|     0.017|    -2.544|   0.011|
+|Adjusted   |countSocialMediaExclFB                     |     1.056|     0.109|     0.501|   0.616|
+|Adjusted   |comm_inpersonOnce a day                    |     0.950|     0.463|    -0.111|   0.911|
+|Adjusted   |comm_inpersonA few times a week            |     1.097|     0.333|     0.277|   0.782|
+|Adjusted   |comm_inpersonOnce a week                   |     1.432|     0.358|     1.004|   0.315|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     1.572|     0.290|     1.557|   0.119|
+|Adjusted   |indSuicideConsideredEverTRUE               |     5.764|     0.254|     6.898|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.258|     0.121|     1.893|   0.058|
 
 \newline
 
 
-|model      | r.squared| adj.r.squared| sigma| statistic| p.value| df|
-|:----------|---------:|-------------:|-----:|---------:|-------:|--:|
-|Unadjusted |     0.015|         0.013| 6.548|     8.831|   0.003|  2|
-|Adjusted   |     0.040|         0.027| 6.501|     3.067|   0.002|  9|
-
-
-```
-## Warning: Removed 18 rows containing missing values (geom_point).
-```
-
-![plot of chunk plotResidDSISS](../figures/plotResidDSISS-1.png)
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       622.664|     595| -306.892| 617.784| 626.565|  613.784|         594|
+|Adjusted   |       622.664|     595| -262.037| 542.074| 581.586|  524.074|         587|
