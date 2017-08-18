@@ -1,10 +1,10 @@
-fitModel <- function (x, covar = NULL) {
+fitModel <- function (y, x, covar = NULL) {
   if (is.null(covar)) {
-    f <- formula(sprintf("%s ~ %s", "fmss", x))
+    f <- formula(sprintf("%s ~ %s", y, x))
   } else {
-    f <- formula(sprintf("%s ~ %s + %s", "fmss", x, paste(covar, collapse = " + ")))
+    f <- formula(sprintf("%s ~ %s + %s", y, x, paste(covar, collapse = " + ")))
   }
-  M <- lm(f, data = df)
-  list(summary = M %>% summary(),
-       plotResid = M %>% plotResid("fmss", x))
+  M <- glm(f, data = df, family = "binomial")
+  list(modelObject = M,
+       summary = M %>% summary())
 }
