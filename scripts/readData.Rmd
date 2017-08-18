@@ -173,7 +173,9 @@ df %>%
 ```
 
 
-## Psychiatric symptoms
+## Dependent variables
+
+### Psychiatric symptoms
 
 Code indicators for psychiatric disorder screening scales
 
