@@ -64,6 +64,7 @@ df %>%
 ## Adjusted comparisons
 
 ```{r}
+x <- "fmss"
 covar <- c("countSocialMediaExclFB",
            "comm_inperson",
            "indSuicideConsideredEver",
@@ -85,91 +86,78 @@ df <-
 ### PC-PTSD
 
 ```{r}
-x <- "indPTSD"
-M0 <- fitModel(x)
-table0 <- M0[["summary"]] %>% tidy() %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(x, covar)
-table1 <- M[["summary"]] %>% tidy() %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% kable(digits = 3)
+y <- "indPTSD"
+M0 <- fitModel(y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-bind_rows(M0[["summary"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["summary"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
 
-```{r plotResidPTSD}
-M[["plotResid"]]
-```
 
 ### PHQ-2
 
 ```{r}
-x <- "indPHQ"
-M0 <- fitModel(x)
-table0 <- M0[["summary"]] %>% tidy() %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(x, covar)
-table1 <- M[["summary"]] %>% tidy() %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% kable(digits = 3)
+y <- "indPHQ"
+M0 <- fitModel(y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-bind_rows(M0[["summary"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["summary"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
 
-```{r plotResidPHQ}
-M[["plotResid"]]
-```
 
 ### AUDIT-C
 
 ```{r}
-x <- "indAuditC"
-M0 <- fitModel(x)
-table0 <- M0[["summary"]] %>% tidy() %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(x, covar)
-table1 <- M[["summary"]] %>% tidy() %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% kable(digits = 3)
+y <- "indAuditC"
+M0 <- fitModel(y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-bind_rows(M0[["summary"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["summary"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
 
-```{r plotResidAuditC}
-M[["plotResid"]]
-```
 
 ### DSI-SS
 
 ```{r}
-x <- "indDSISS"
-M0 <- fitModel(x)
-table0 <- M0[["summary"]] %>% tidy() %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(x, covar)
-table1 <- M[["summary"]] %>% tidy() %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% kable(digits = 3)
+y <- "indDSISS"
+M0 <- fitModel(y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-bind_rows(M0[["summary"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["summary"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
-```
-
-```{r plotResidDSISS}
-M[["plotResid"]]
 ```
