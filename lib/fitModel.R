@@ -4,7 +4,7 @@ fitModel <- function (y, x, covar = NULL) {
   } else {
     f <- formula(sprintf("%s ~ %s + %s", y, x, paste(covar, collapse = " + ")))
   }
-  M <- lm(f, data = df)
-  list(summary = M %>% summary(),
-       plotResid = M %>% plotResid("fmss", x))
+  M <- glm(f, data = df, family = "binomial")
+  list(modelObject = M,
+       summary = M %>% summary())
 }
