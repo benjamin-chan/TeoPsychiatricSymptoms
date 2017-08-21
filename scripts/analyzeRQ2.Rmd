@@ -1,7 +1,23 @@
 # Research Question 2
 
-**What features of social media use associated with more or fewer psychiatric symptoms?**
+Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?
 
-* Spending more time on social media? 
-* Sharing more personal information on Facebook?
-* Using social media for health-related reasons?
+* Spending more time on Facebook?
+  * Frequency of Facebook use: `fb_freq`
+  * Active use of Facebook: `comm_facebook`
+* Sharing more personal or health-related information on social media?
+  * `sm_emot_support`
+  * `sm_med_info`
+  * `sm_med_advice`
+  * `sm_med_questions`
+  * `sm_share_symptoms`
+  * `sm_share_health`
+  * `sm_share_suicide`
+  
+  
+## Association between frequency of Facebook use and active use of Facebook
+
+```{r}
+df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% kable(digits = 3)
+```
+
