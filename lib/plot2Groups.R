@@ -8,7 +8,7 @@ plot2Groups <- function (y, x, ylab = "Y", xlab = "X") {
         y = eval(parse(text = y)), 
         fill = eval(parse(text = x)), 
         color = eval(parse(text = x))) + 
-    geom_violin(alpha = 1/2) + 
+    geom_violin(alpha = 1/1) + 
     scale_x_discrete(xlab) + 
     scale_y_continuous(ylab) +
     scale_fill_brewer(xlab, palette = "Set1") +
