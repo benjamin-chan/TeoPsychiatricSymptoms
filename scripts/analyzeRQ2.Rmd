@@ -21,3 +21,105 @@ Are certains features of social media use are associated with positive screens f
 df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% kable(digits = 3)
 ```
 
+
+## Unadjusted comparisons
+
+```{r}
+align <- "lcccc"
+digits <- c(0, 0, 0, 0, 3)
+freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("fb_freq", "indPHQ") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("comm_facebook", "indPHQ") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("fb_freq", "indAuditC") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("comm_facebook", "indAuditC") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r plot2Groups}
+df %>% 
+  melt(id.vars = c("record_id", "fb_freq"),
+       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  filter(!is.na(value) & !is.na(fb_freq)) %>% 
+  mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
+                              variable == "indPHQ" ~ "PHQ-2",
+                              variable == "indAuditC" ~ "AUDIT-C",
+                              variable == "indDSISS" ~ "DSI-SS")) %>% 
+  mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
+  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
+  mutate(fb_freq = factor(fb_freq)) %>% 
+  ggplot() +
+  aes(x = fb_freq, color = value, fill = value) +
+  geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
+  geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
+  scale_x_discrete("Frequency of Facebook use") +
+  scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
+  scale_color_brewer("Screened", palette = "Set1") + 
+  scale_fill_brewer("Screened", palette = "Set1") + 
+  facet_wrap(~ variable)
+```
+
+```{r plot2Groups}
+df %>% 
+  melt(id.vars = c("record_id", "comm_facebook"),
+       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  filter(!is.na(value) & !is.na(comm_facebook)) %>% 
+  mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
+                              variable == "indPHQ" ~ "PHQ-2",
+                              variable == "indAuditC" ~ "AUDIT-C",
+                              variable == "indDSISS" ~ "DSI-SS")) %>% 
+  mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
+  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
+  mutate(comm_facebook = factor(comm_facebook)) %>% 
+  ggplot() +
+  aes(x = comm_facebook, color = value, fill = value) +
+  geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
+  geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
+  scale_x_discrete("Active use of Facebook") +
+  scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
+  scale_color_brewer("Screened", palette = "Set1") + 
+  scale_fill_brewer("Screened", palette = "Set1") + 
+  facet_wrap(~ variable)
+```
+
+
+
+```
