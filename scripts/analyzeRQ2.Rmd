@@ -152,6 +152,9 @@ df <-
 ```
 
 
+**TO-DO: Global hypothesis test of $beta_1, \ldots, beta_k$**
+
+
 ### PC-PTSD
 
 ```{r}
