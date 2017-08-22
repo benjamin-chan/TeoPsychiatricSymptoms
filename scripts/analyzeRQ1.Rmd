@@ -38,7 +38,7 @@ means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
 
 \newline
 
-```{r plot2Groups}
+```{r plot2GroupsRQ1}
 df %>% 
   select(record_id, fmss, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
   gather(key = variable, value = value, -record_id, -fmss) %>% 

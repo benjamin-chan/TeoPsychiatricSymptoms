@@ -74,7 +74,7 @@ freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits
 
 \newline
 
-```{r plot2Groups}
+```{r plot2GroupsRQ2}
 df %>% 
   select(record_id, fb_freq, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
   gather(key = variable, value = value, -record_id, -fb_freq) %>% 
@@ -95,9 +95,6 @@ df %>%
   scale_color_brewer("Screened", palette = "Set1") + 
   scale_fill_brewer("Screened", palette = "Set1") + 
   facet_wrap(~ variable)
-```
-
-```{r plot2Groups}
 df %>% 
   select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
   gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
