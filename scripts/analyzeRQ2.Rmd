@@ -76,8 +76,8 @@ freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits
 
 ```{r plot2Groups}
 df %>% 
-  melt(id.vars = c("record_id", "fb_freq"),
-       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  select(record_id, fb_freq, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
+  gather(key = variable, value = value, -record_id, -fb_freq) %>% 
   filter(!is.na(value) & !is.na(fb_freq)) %>% 
   mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
                               variable == "indPHQ" ~ "PHQ-2",
@@ -99,8 +99,8 @@ df %>%
 
 ```{r plot2Groups}
 df %>% 
-  melt(id.vars = c("record_id", "comm_facebook"),
-       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
+  gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
   filter(!is.na(value) & !is.na(comm_facebook)) %>% 
   mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
                               variable == "indPHQ" ~ "PHQ-2",

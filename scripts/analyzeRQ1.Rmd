@@ -40,8 +40,8 @@ means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
 
 ```{r plot2Groups}
 df %>% 
-  melt(id.vars = c("record_id", "fmss"),
-       measure.vars = c("indPTSD", "indPHQ", "indAuditC", "indDSISS")) %>% 
+  select(record_id, fmss, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
+  gather(key = variable, value = value, -record_id, -fmss) %>% 
   filter(!is.na(value) & !is.na(fmss)) %>% 
   mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
                               variable == "indPHQ" ~ "PHQ-2",
