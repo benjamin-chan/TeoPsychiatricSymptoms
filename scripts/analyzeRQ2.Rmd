@@ -165,214 +165,142 @@ linfct2 <- c("comm_facebook2 = 0",
 ### PC-PTSD vs Frequency of Facebook use
 
 ```{r}
-y <- "indPTSD"
-x <- "fb_freq"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indPTSD", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### PC-PTSD vs Active use of Facebook
 
 ```{r}
-x <- "comm_facebook"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indPTSD", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### PHQ-2 vs Frequency of Facebook use
 
 ```{r}
-y <- "indPHQ"
-x <- "fb_freq"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indPHQ", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### PHQ-2 vs Active use of Facebook
 
 ```{r}
-x <- "comm_facebook"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indPHQ", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### AUDIT-C vs Frequency of Facebook use
 
 ```{r}
-y <- "indAuditC"
-x <- "fb_freq"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indAuditC", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### AUDIT-C vs Active use of Facebook
 
 ```{r}
-x <- "comm_facebook"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indAuditC", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### DSI-SS vs Frequency of Facebook use
 
 ```{r}
-y <- "indDSISS"
-x <- "fb_freq"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indDSISS", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct1) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
 ### DSI-SS vs Active use of Facebook
 
 ```{r}
-x <- "comm_facebook"
-M0 <- fitModel(y, x)
-table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
-table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
-bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+modelTables <- wrapperRQ2("indDSISS", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
 \newline
 
 ```{r}
-M0[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
-M[["modelObject"]] %>% glht(linfct = linfct2) %>% summary(test = Ftest())
+modelTables[["oddsratios"]] %>% kable(digits = 3)
 ```
 
-\newline
-
 ```{r}
-bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
-          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
-  kable(digits = 3)
+modelTables[["fit"]] %>% kable(digits = 3)
 ```
