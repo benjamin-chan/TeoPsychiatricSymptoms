@@ -17,14 +17,14 @@ Are certains features of social media use are associated with positive screens f
   
 ## Association between frequency of Facebook use and active use of Facebook
 
-Correlation between frequency of Facebook use and active use of Facebook is
-`r df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% .[1, 2] %>% sprintf("%.03f", .)`
+Correlation (Spearman) between frequency of Facebook use and active use of Facebook is
+`r df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor(method = "spearman") %>% .[1, 2] %>% sprintf("%.03f", .)`
 
 
 ## Unadjusted comparisons
 
 ```{r, eval = FALSE}
-align <- "lcccc"
+align <- "llccc"
 digits <- c(0, 0, 0, 0, 3)
 freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
 freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
@@ -58,6 +58,7 @@ df %>%
   scale_color_brewer("Screened", palette = "Set1") + 
   scale_fill_brewer("Screened", palette = "Set1") + 
   facet_wrap(~ variable) +
+  coord_flip() +
   theme(plot.title = element_text(hjust = 0.5))
 df %>% 
   select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
@@ -80,6 +81,7 @@ df %>%
   scale_color_brewer("Screened", palette = "Set1") + 
   scale_fill_brewer("Screened", palette = "Set1") + 
   facet_wrap(~ variable) +
+  coord_flip() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 

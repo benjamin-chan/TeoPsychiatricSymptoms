@@ -175,7 +175,7 @@ df %>%
 
 ## Dependent variables
 
-### Psychiatric symptoms
+### Psychiatric symptoms (RQ1)
 
 Code indicators for psychiatric disorder screening scales
 
