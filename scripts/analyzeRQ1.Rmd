@@ -15,31 +15,31 @@ Is perceived social support received from Facebook (FMSS) associated with lower 
 ```{r}
 align <- "llcccccc"
 digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
-means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
+df0 %>% means2Group("fmss", "indPTSD") %>% kable(align = align, digits = digits)
 ```
 
 \newline
 
 ```{r}
-means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
+df0 %>% means2Group("fmss", "indPHQ") %>% kable(align = align, digits = digits)
 ```
 
 \newline
 
 ```{r}
-means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)
+df0 %>% means2Group("fmss", "indAuditC") %>% kable(align = align, digits = digits)
 ```
 
 \newline
 
 ```{r}
-means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
+df0 %>% means2Group("fmss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
 \newline
 
 ```{r plot2GroupsRQ1}
-df %>% 
+df0 %>% 
   select(record_id, fmss, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
   gather(key = variable, value = value, -record_id, -fmss) %>% 
   filter(!is.na(value) & !is.na(fmss)) %>% 
@@ -74,12 +74,12 @@ covar <- c("countSocialMediaExclFB",
 Filter subjects with missing covariates.
 
 ```{r}
-df <-
-  df %>% 
+df1 <-
+  df0 %>% 
   select_(.dots = c("record_id", covar)) %>% 
   na.omit() %>% 
   select(record_id) %>% 
-  merge(., df, by = "record_id")
+  merge(., df0, by = "record_id")
 ```
 
 
@@ -87,9 +87,9 @@ df <-
 
 ```{r}
 y <- "indPTSD"
-M0 <- fitModel(y, x)
+M0 <- fitModel(df1, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
+M <- fitModel(df1, y, x, covar)
 table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
 bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
@@ -107,9 +107,9 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 y <- "indPHQ"
-M0 <- fitModel(y, x)
+M0 <- fitModel(df1, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
+M <- fitModel(df1, y, x, covar)
 table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
 bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
@@ -127,9 +127,9 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 y <- "indAuditC"
-M0 <- fitModel(y, x)
+M0 <- fitModel(df1, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
+M <- fitModel(df1, y, x, covar)
 table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
 bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```
@@ -147,9 +147,9 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 y <- "indDSISS"
-M0 <- fitModel(y, x)
+M0 <- fitModel(df1, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
-M <- fitModel(y, x, covar)
+M <- fitModel(df1, y, x, covar)
 table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
 bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
 ```

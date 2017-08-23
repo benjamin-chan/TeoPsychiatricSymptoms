@@ -18,7 +18,7 @@ Are certains features of social media use are associated with positive screens f
 ## Association between frequency of Facebook use and active use of Facebook
 
 Correlation (Spearman) between frequency of Facebook use and active use of Facebook is
-`r df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor(method = "spearman") %>% .[1, 2] %>% sprintf("%.03f", .)`
+`r df0 %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor(method = "spearman") %>% .[1, 2] %>% sprintf("%.03f", .)`
 
 
 ## Unadjusted comparisons
@@ -26,18 +26,18 @@ Correlation (Spearman) between frequency of Facebook use and active use of Faceb
 ```{r, eval = FALSE}
 align <- "llccc"
 digits <- c(0, 0, 0, 0, 3)
-freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
-freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
-freq2Group("fb_freq", "indPHQ") %>% kable(align = align, digits = digits)
-freq2Group("comm_facebook", "indPHQ") %>% kable(align = align, digits = digits)
-freq2Group("fb_freq", "indAuditC") %>% kable(align = align, digits = digits)
-freq2Group("comm_facebook", "indAuditC") %>% kable(align = align, digits = digits)
-freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digits)
-freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indPHQ") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indPHQ") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indAuditC") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indAuditC") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
 ```{r plot2GroupsRQ2}
-df %>% 
+df0 %>% 
   select(record_id, fb_freq, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
   gather(key = variable, value = value, -record_id, -fb_freq) %>% 
   filter(!is.na(value) & !is.na(fb_freq)) %>% 
@@ -60,7 +60,7 @@ df %>%
   facet_wrap(~ variable) +
   coord_flip() +
   theme(plot.title = element_text(hjust = 0.5))
-df %>% 
+df0 %>% 
   select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
   gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
   filter(!is.na(value) & !is.na(comm_facebook)) %>% 
@@ -98,35 +98,35 @@ covar <- c("countSocialMediaExclFB",
 Filter subjects with missing covariates.
 
 ```{r}
-df <-
-  df %>% 
+df2 <-
+  df0 %>% 
   select_(.dots = c("record_id", covar)) %>% 
   na.omit() %>% 
   select(record_id) %>% 
-  merge(., df, by = "record_id")
+  merge(., df0, by = "record_id")
 ```
 
 Relabel factors; replace spaces with underscores.
 
 ```{r}
-df <-
-  df %>% 
-  mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(df$fb_freq))),
-         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(df$comm_facebook))))
+df2 <-
+  df2 %>% 
+  mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(.$fb_freq))),
+         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))))
 ```
 
 Define linear function for general hypothesis testing.
 
 ```{r}
-linfct1 <- sprintf("fb_freq%s = 0", levels(df$fb_freq))[-1]
-linfct2 <- sprintf("comm_facebook%s = 0", levels(df$comm_facebook))[-1]
+linfct1 <- sprintf("fb_freq%s = 0", levels(df2$fb_freq))[-1]
+linfct2 <- sprintf("comm_facebook%s = 0", levels(df2$comm_facebook))[-1]
 ```
 
 
 ### PC-PTSD vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2("indPTSD", "fb_freq", covar, linfct1)
+modelTables <- wrapperRQ2(df2, "indPTSD", "fb_freq", covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -146,7 +146,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PC-PTSD vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2("indPTSD", "comm_facebook", covar, linfct2)
+modelTables <- wrapperRQ2(df2, "indPTSD", "comm_facebook", covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -166,7 +166,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2("indPHQ", "fb_freq", covar, linfct1)
+modelTables <- wrapperRQ2(df2, "indPHQ", "fb_freq", covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -186,7 +186,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2("indPHQ", "comm_facebook", covar, linfct2)
+modelTables <- wrapperRQ2(df2, "indPHQ", "comm_facebook", covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -206,7 +206,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2("indAuditC", "fb_freq", covar, linfct1)
+modelTables <- wrapperRQ2(df2, "indAuditC", "fb_freq", covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -226,7 +226,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2("indAuditC", "comm_facebook", covar, linfct2)
+modelTables <- wrapperRQ2(df2, "indAuditC", "comm_facebook", covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -246,7 +246,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2("indDSISS", "fb_freq", covar, linfct1)
+modelTables <- wrapperRQ2(df2, "indDSISS", "fb_freq", covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
@@ -266,7 +266,7 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2("indDSISS", "comm_facebook", covar, linfct2)
+modelTables <- wrapperRQ2(df2, "indDSISS", "comm_facebook", covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 ```
 
