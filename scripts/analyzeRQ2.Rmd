@@ -49,14 +49,16 @@ df %>%
   mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
   mutate(fb_freq = factor(fb_freq)) %>% 
   ggplot() +
+  ggtitle("Frequency of Facebook use") +
   aes(x = fb_freq, color = value, fill = value) +
   geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
   geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
-  scale_x_discrete("Frequency of Facebook use") +
+  scale_x_discrete("") +
   scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
   scale_color_brewer("Screened", palette = "Set1") + 
   scale_fill_brewer("Screened", palette = "Set1") + 
-  facet_wrap(~ variable)
+  facet_wrap(~ variable) +
+  theme(plot.title = element_text(hjust = 0.5))
 df %>% 
   select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
   gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
@@ -69,14 +71,16 @@ df %>%
   mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
   mutate(comm_facebook = factor(comm_facebook)) %>% 
   ggplot() +
+  ggtitle("Active use of Facebook") +
   aes(x = comm_facebook, color = value, fill = value) +
   geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
   geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
-  scale_x_discrete("Active use of Facebook") +
+  scale_x_discrete("") +
   scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
   scale_color_brewer("Screened", palette = "Set1") + 
   scale_fill_brewer("Screened", palette = "Set1") + 
-  facet_wrap(~ variable)
+  facet_wrap(~ variable) +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
