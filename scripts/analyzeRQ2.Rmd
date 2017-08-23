@@ -49,7 +49,7 @@ df0 %>%
   mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
   mutate(fb_freq = factor(fb_freq)) %>% 
   ggplot() +
-  ggtitle("Frequency of Facebook use") +
+  ggtitle("Psychiatric symptoms by\nFrequency of Facebook use") +
   aes(x = fb_freq, color = value, fill = value) +
   geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
   geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
@@ -59,7 +59,8 @@ df0 %>%
   scale_fill_brewer("Screened", palette = "Set1") + 
   facet_wrap(~ variable) +
   coord_flip() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "top",
+        plot.title = element_text(hjust = 0.5))
 df0 %>% 
   select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
   gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
@@ -72,7 +73,7 @@ df0 %>%
   mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
   mutate(comm_facebook = factor(comm_facebook)) %>% 
   ggplot() +
-  ggtitle("Active use of Facebook") +
+  ggtitle("Psychiatric symptoms by\nActive use of Facebook") +
   aes(x = comm_facebook, color = value, fill = value) +
   geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
   geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
@@ -82,7 +83,8 @@ df0 %>%
   scale_fill_brewer("Screened", palette = "Set1") + 
   facet_wrap(~ variable) +
   coord_flip() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "top",
+        plot.title = element_text(hjust = 0.5))
 ```
 
 

@@ -50,6 +50,7 @@ df0 %>%
   mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
   mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
   ggplot() +
+  ggtitle("Psychiatric symptoms by\nModified Facebook Measure of Social Support") +
   aes(x = value, y = fmss, color = value, fill = value) +
   geom_violin(alpha = 1/1) +
   scale_x_discrete("") +
@@ -57,7 +58,8 @@ df0 %>%
   scale_color_brewer(palette = "Set1") + 
   scale_fill_brewer(palette = "Set1") +
   facet_wrap(~ variable) +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5))
 ```
 
 
