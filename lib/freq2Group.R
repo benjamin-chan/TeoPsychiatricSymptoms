@@ -1,4 +1,4 @@
-freq2Group <- function (y, x) {
+freq2Group <- function (df, y, x) {
   colMargin <- 
     df %>% 
     select(c(y, x)) %>% 

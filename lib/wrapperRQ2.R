@@ -1,6 +1,6 @@
-wrapperRQ2 <- function (y, x, covar, linfct) {
-  M0 <- fitModel(y, x)
-  M <- fitModel(y, x, covar)
+wrapperRQ2 <- function (df, y, x, covar, linfct) {
+  M0 <- fitModel(df, y, x)
+  M <- fitModel(df, y, x, covar)
   tmp0 <- M0[["modelObject"]] %>% getGtest(linfct)
   tmp <- M[["modelObject"]] %>% getGtest(linfct)
   list(oddsratios = bind_rows(M0[["modelObject"]] %>% 
