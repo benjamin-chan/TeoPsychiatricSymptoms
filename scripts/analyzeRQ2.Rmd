@@ -24,55 +24,18 @@ df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% kable(digits = 3
 
 ## Unadjusted comparisons
 
-```{r}
+```{r, eval = FALSE}
 align <- "lcccc"
 digits <- c(0, 0, 0, 0, 3)
 freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("fb_freq", "indPHQ") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("comm_facebook", "indPHQ") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("fb_freq", "indAuditC") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("comm_facebook", "indAuditC") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digits)
-```
-
-\newline
-
-```{r}
 freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
 ```
-
-\newline
 
 ```{r plot2GroupsRQ2}
 df %>% 
