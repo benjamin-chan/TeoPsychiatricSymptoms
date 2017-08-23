@@ -104,27 +104,20 @@ df <-
   merge(., df, by = "record_id")
 ```
 
-Mutate independent variables to factors.
+Relabel factors; replace spaces with underscores.
 
 ```{r}
 df <-
   df %>% 
-  mutate(fb_freq = factor(fb_freq),
-         comm_facebook = factor(comm_facebook))
+  mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(df$fb_freq))),
+         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(df$comm_facebook))))
 ```
 
 Define linear function for general hypothesis testing.
 
 ```{r}
-linfct1 <- c("fb_freq1 = 0", 
-             "fb_freq2 = 0", 
-             "fb_freq3 = 0", 
-             "fb_freq4 = 0", 
-             "fb_freq5 = 0")
-linfct2 <- c("comm_facebook2 = 0", 
-             "comm_facebook3 = 0", 
-             "comm_facebook4 = 0", 
-             "comm_facebook5 = 0")
+linfct1 <- sprintf("fb_freq%s = 0", levels(df$fb_freq))[-1]
+linfct2 <- sprintf("comm_facebook%s = 0", levels(df$comm_facebook))[-1]
 ```
 
 
