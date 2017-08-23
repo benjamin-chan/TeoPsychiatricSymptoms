@@ -17,9 +17,8 @@ Are certains features of social media use are associated with positive screens f
   
 ## Association between frequency of Facebook use and active use of Facebook
 
-```{r}
-df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% kable(digits = 3)
-```
+Correlation between frequency of Facebook use and active use of Facebook is
+`r df %>% select(fb_freq, comm_facebook) %>% na.omit() %>% cor %>% .[1, 2] %>% sprintf("%.03f", .)`
 
 
 ## Unadjusted comparisons
