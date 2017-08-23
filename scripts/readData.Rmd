@@ -240,6 +240,40 @@ means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
 
+### Social media use (RQ2)
+
+* Spending more time on Facebook?
+  * Frequency of Facebook use: `fb_freq`
+  * Active use of Facebook: `comm_facebook`
+* Sharing more personal or health-related information on social media?
+  * `sm_emot_support`
+  * `sm_med_info`
+  * `sm_med_advice`
+  * `sm_med_questions`
+  * `sm_share_symptoms`
+  * `sm_share_health`
+  * `sm_share_suicide`
+  
+Mutate variables to factors.
+
+```{r}
+df <-
+  df %>% 
+  mutate(fb_freq = factor(fb_freq,
+                          levels = 0:5,
+                          labels = c("Never",
+                                     "Every few weeks",
+                                     "Once a week",
+                                     "A few times a week",
+                                     "Once a day",
+                                     "Several times a day")),
+         comm_facebook = factor(comm_facebook,
+                                levels = 1:5,
+                                labels = c("Every few weeks or less often", "Once a week", "A few times a week", "Once a day", "Several times a day")))
+```
+
+
+
 ## Covariates
 
 * Social media platforms used: `sm_used___1`, ..., `sm_used___7`, `sm_used___99`, `sm_used_other`
