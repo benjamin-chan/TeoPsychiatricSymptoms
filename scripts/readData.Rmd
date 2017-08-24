@@ -257,6 +257,7 @@ df0 %>% means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digit
 Mutate variables to factors.
 
 ```{r}
+labelsSM <- c("Never", "Rarely", "Sometimes", "Usually", "Always")
 df0 <-
   df0 %>% 
   mutate(fb_freq = factor(fb_freq,
@@ -269,7 +270,18 @@ df0 <-
                                      "Several times a day")),
          comm_facebook = factor(comm_facebook,
                                 levels = 1:5,
-                                labels = c("Every few weeks or less often", "Once a week", "A few times a week", "Once a day", "Several times a day")))
+                                labels = c("Every few weeks or less often",
+                                           "Once a week",
+                                           "A few times a week",
+                                           "Once a day",
+                                           "Several times a day")),
+         sm_emot_support = factor(sm_emot_support, levels = 0:4, labels = labelsSM),
+         sm_med_info = factor(sm_med_info, levels = 0:4, labels = labelsSM),
+         sm_med_advice = factor(sm_med_advice, levels = 0:4, labels = labelsSM),
+         sm_med_questions = factor(sm_med_questions, levels = 0:4, labels = labelsSM),
+         sm_share_symptoms = factor(sm_share_symptoms, levels = 0:4, labels = labelsSM),
+         sm_share_health = factor(sm_share_health, levels = 0:4, labels = labelsSM),
+         sm_share_suicide = factor(sm_share_suicide, levels = 0:4, labels = labelsSM))
 ```
 
 
