@@ -36,55 +36,16 @@ df0 %>% freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digi
 df0 %>% freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
-```{r plot2GroupsRQ2}
-df0 %>% 
-  select(record_id, fb_freq, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
-  gather(key = variable, value = value, -record_id, -fb_freq) %>% 
-  filter(!is.na(value) & !is.na(fb_freq)) %>% 
-  mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
-                              variable == "indPHQ" ~ "PHQ-2",
-                              variable == "indAuditC" ~ "AUDIT-C",
-                              variable == "indDSISS" ~ "DSI-SS")) %>% 
-  mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
-  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
-  mutate(fb_freq = factor(fb_freq)) %>% 
-  ggplot() +
-  ggtitle("Psychiatric symptoms by\nFrequency of Facebook use") +
-  aes(x = fb_freq, color = value, fill = value) +
-  geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
-  geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
-  scale_x_discrete("") +
-  scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
-  scale_color_brewer("Screened", palette = "Set1") + 
-  scale_fill_brewer("Screened", palette = "Set1") + 
-  facet_wrap(~ variable) +
-  coord_flip() +
-  theme(legend.position = "top",
-        plot.title = element_text(hjust = 0.5))
-df0 %>% 
-  select(record_id, comm_facebook, indPTSD, indPHQ, indAuditC, indDSISS) %>%
-  gather(key = variable, value = value, -record_id, -comm_facebook) %>% 
-  filter(!is.na(value) & !is.na(comm_facebook)) %>% 
-  mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
-                              variable == "indPHQ" ~ "PHQ-2",
-                              variable == "indAuditC" ~ "AUDIT-C",
-                              variable == "indDSISS" ~ "DSI-SS")) %>% 
-  mutate(variable = factor(variable, levels = c("PC-PTSD", "PHQ-2", "AUDIT-C", "DSI-SS"))) %>% 
-  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("Negative", "Positive"))) %>% 
-  mutate(comm_facebook = factor(comm_facebook)) %>% 
-  ggplot() +
-  ggtitle("Psychiatric symptoms by\nActive use of Facebook") +
-  aes(x = comm_facebook, color = value, fill = value) +
-  geom_bar(data = . %>% filter(value == "Negative"), aes(y = ..count.. * (-1)), alpha = 1/1) +
-  geom_bar(data = . %>% filter(value == "Positive"), alpha = 1/1) +
-  scale_x_discrete("") +
-  scale_y_continuous("Count", breaks = seq(-300, 300, 100), labels = abs(seq(-300, 300, 100))) +
-  scale_color_brewer("Screened", palette = "Set1") + 
-  scale_fill_brewer("Screened", palette = "Set1") + 
-  facet_wrap(~ variable) +
-  coord_flip() +
-  theme(legend.position = "top",
-        plot.title = element_text(hjust = 0.5))
+```{r plotRQ2}
+plotRQ2(df0, "fb_freq", "Frequency of Facebook use")
+plotRQ2(df0, "comm_facebook", "Active use of Facebook")
+plotRQ2(df0, "sm_emot_support", "sm_emot_support")
+plotRQ2(df0, "sm_med_info", "sm_med_info")
+plotRQ2(df0, "sm_med_advice", "sm_med_advice")
+plotRQ2(df0, "sm_med_questions", "sm_med_questions")
+plotRQ2(df0, "sm_share_symptoms", "sm_share_symptoms")
+plotRQ2(df0, "sm_share_health", "sm_share_health")
+plotRQ2(df0, "sm_share_suicide", "sm_share_suicide")
 ```
 
 
