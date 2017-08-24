@@ -250,7 +250,7 @@ df0 %>% means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digit
   * `sm_med_info`
   * `sm_med_advice`
   * `sm_med_questions`
-  * `sm_share_symptoms`
+  * `sm_share_sympt`
   * `sm_share_health`
   * `sm_share_suicide`
   
@@ -279,7 +279,7 @@ df0 <-
          sm_med_info = factor(sm_med_info, levels = 0:4, labels = labelsSM),
          sm_med_advice = factor(sm_med_advice, levels = 0:4, labels = labelsSM),
          sm_med_questions = factor(sm_med_questions, levels = 0:4, labels = labelsSM),
-         sm_share_symptoms = factor(sm_share_symptoms, levels = 0:4, labels = labelsSM),
+         sm_share_sympt = factor(sm_share_sympt, levels = 0:4, labels = labelsSM),
          sm_share_health = factor(sm_share_health, levels = 0:4, labels = labelsSM),
          sm_share_suicide = factor(sm_share_suicide, levels = 0:4, labels = labelsSM))
 ```

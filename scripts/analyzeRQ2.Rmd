@@ -10,7 +10,7 @@ Are certains features of social media use are associated with positive screens f
   * `sm_med_info`
   * `sm_med_advice`
   * `sm_med_questions`
-  * `sm_share_symptoms`
+  * `sm_share_sympt`
   * `sm_share_health`
   * `sm_share_suicide`
   
