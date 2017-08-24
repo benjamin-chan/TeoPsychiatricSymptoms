@@ -1,4 +1,4 @@
-means2Group <- function (y, x) {
+means2Group <- function (df, y, x) {
   df %>% 
     select(c(y, x)) %>% 
     filter(!is.na(eval(parse(text = y))) & !is.na(eval(parse(text = x)))) %>% 

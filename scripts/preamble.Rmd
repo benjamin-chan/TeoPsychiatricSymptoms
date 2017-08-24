@@ -2,8 +2,8 @@
 # Set working directory and load libraries.
 setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
 library(magrittr)
+library(multcomp)
 library(tidyverse)
-library(reshape2)
 theme_set(theme_bw())
 library(svglite)
 library(knitr)

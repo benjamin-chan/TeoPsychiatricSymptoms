@@ -1,7 +1,251 @@
 # Research Question 2
 
-**What features of social media use associated with more or fewer psychiatric symptoms?**
+**TO DO**
 
-* Spending more time on social media? 
-* Sharing more personal information on Facebook?
-* Using social media for health-related reasons?
+* Add models for `sm_` variables.
+
+
+Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?
+
+* Spending more time on Facebook?
+  * Frequency of Facebook use: `fb_freq`
+  * Active use of Facebook: `comm_facebook`
+* Sharing more personal or health-related information on social media?
+  * `sm_emot_support`
+  * `sm_med_info`
+  * `sm_med_advice`
+  * `sm_med_questions`
+  * `sm_share_sympt`
+  * `sm_share_health`
+  * `sm_share_suicide`
+  
+  
+## Association between frequency of Facebook use and active use of Facebook
+
+Correlation (Spearman) between frequency of Facebook use and active use of Facebook is
+`r df0 %>% select(fb_freq, comm_facebook) %>% mutate(fb_freq = unclass(fb_freq), comm_facebook = unclass(comm_facebook)) %>% na.omit() %>% cor(method = "spearman") %>% .[1, 2] %>% sprintf("%.03f", .)`
+
+
+## Unadjusted comparisons
+
+```{r, eval = FALSE}
+align <- "llccc"
+digits <- c(0, 0, 0, 0, 3)
+df0 %>% freq2Group("fb_freq", "indPTSD") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indPTSD") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indPHQ") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indPHQ") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indAuditC") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indAuditC") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("fb_freq", "indDSISS") %>% kable(align = align, digits = digits)
+df0 %>% freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits = digits)
+```
+
+```{r plotRQ2}
+plotRQ2(df0, "fb_freq", "Frequency of Facebook use")
+plotRQ2(df0, "comm_facebook", "Active use of Facebook")
+plotRQ2(df0, "sm_emot_support", "Get emotional support from others")
+plotRQ2(df0, "sm_med_info", "Get information about health or medical topics")
+plotRQ2(df0, "sm_med_advice", "Get advice about health or medical topics")
+plotRQ2(df0, "sm_med_questions", "Ask questions about health or medical issues")
+plotRQ2(df0, "sm_share_sympt", "Share symptoms such as mood swings, depression, anxiety, or sleep problems")
+plotRQ2(df0, "sm_share_health", "Share information related to your health")
+plotRQ2(df0, "sm_share_suicide", "Share thoughts about suicide or hurting yourself in some way")
+```
+
+
+## Adjusted comparisons
+
+```{r}
+covar <- c("countSocialMediaExclFB",
+           "comm_inperson",
+           "indSuicideConsideredEver",
+           "countSuicideAttempts")
+```
+
+Filter subjects with missing covariates.
+
+```{r}
+df2 <-
+  df0 %>% 
+  select_(.dots = c("record_id", covar)) %>% 
+  na.omit() %>% 
+  select(record_id) %>% 
+  merge(., df0, by = "record_id")
+```
+
+Relabel factors; replace spaces with underscores.
+
+```{r}
+df2 <-
+  df2 %>% 
+  mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(.$fb_freq))),
+         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))))
+```
+
+Define linear function for general hypothesis testing.
+
+```{r}
+linfct1 <- sprintf("fb_freq%s = 0", levels(df2$fb_freq))[-1]
+linfct2 <- sprintf("comm_facebook%s = 0", levels(df2$comm_facebook))[-1]
+```
+
+
+### PC-PTSD vs Frequency of Facebook use
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indPTSD", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Active use of Facebook
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indPTSD", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Frequency of Facebook use
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indPHQ", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Active use of Facebook
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indPHQ", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Frequency of Facebook use
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indAuditC", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Active use of Facebook
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indAuditC", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Frequency of Facebook use
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indDSISS", "fb_freq", covar, linfct1)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Active use of Facebook
+
+```{r}
+modelTables <- wrapperRQ2(df2, "indDSISS", "comm_facebook", covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
