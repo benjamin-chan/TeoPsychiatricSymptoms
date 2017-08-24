@@ -1,5 +1,10 @@
 # Research Question 2
 
+**TO DO**
+
+* Add models for `sm_` variables.
+
+
 Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?
 
 * Spending more time on Facebook?
