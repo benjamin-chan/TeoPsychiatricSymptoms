@@ -39,13 +39,13 @@ df0 %>% freq2Group("comm_facebook", "indDSISS") %>% kable(align = align, digits 
 ```{r plotRQ2}
 plotRQ2(df0, "fb_freq", "Frequency of Facebook use")
 plotRQ2(df0, "comm_facebook", "Active use of Facebook")
-plotRQ2(df0, "sm_emot_support", "sm_emot_support")
-plotRQ2(df0, "sm_med_info", "sm_med_info")
-plotRQ2(df0, "sm_med_advice", "sm_med_advice")
-plotRQ2(df0, "sm_med_questions", "sm_med_questions")
-plotRQ2(df0, "sm_share_symptoms", "sm_share_symptoms")
-plotRQ2(df0, "sm_share_health", "sm_share_health")
-plotRQ2(df0, "sm_share_suicide", "sm_share_suicide")
+plotRQ2(df0, "sm_emot_support", "Get emotional support from others")
+plotRQ2(df0, "sm_med_info", "Get information about health or medical topics")
+plotRQ2(df0, "sm_med_advice", "Get advice about health or medical topics")
+plotRQ2(df0, "sm_med_questions", "Ask questions about health or medical issues")
+plotRQ2(df0, "sm_share_sympt", "Share symptoms such as mood swings, depression, anxiety, or sleep problems")
+plotRQ2(df0, "sm_share_health", "Share information related to your health")
+plotRQ2(df0, "sm_share_suicide", "Share thoughts about suicide or hurting yourself in some way")
 ```
 
 
