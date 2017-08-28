@@ -96,21 +96,14 @@ df2 <-
          sm_emot_support = factor(sm_emot_support, labels = gsub(" ", "_", levels(.$sm_emot_support))))
 ```
 
-Define linear function for general hypothesis testing.
-
-```{r}
-linfct1 <- sprintf("fb_freq%s = 0", levels(df2$fb_freq))[-1]
-linfct2 <- sprintf("comm_facebook%s = 0", levels(df2$comm_facebook))[-1]
-linfct3 <- sprintf("sm_emot_support%s = 0", levels(df2$sm_emot_support))[-1]
-```
-
 
 ### PC-PTSD vs Frequency of Facebook use
 
 ```{r}
 y <- "indPTSD"
 x <- "fb_freq"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -135,7 +128,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPTSD"
 x <- "comm_facebook"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -160,7 +154,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPTSD"
 x <- "sm_emot_support"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -185,7 +180,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPTSD"
 x <- "sm_med_info"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -210,7 +206,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPTSD"
 x <- "sm_med_advice"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -235,7 +232,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "fb_freq"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -260,7 +258,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "comm_facebook"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -285,7 +284,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "sm_emot_support"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -310,7 +310,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "sm_med_info"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -335,7 +336,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "sm_med_advice"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -360,7 +362,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indAuditC"
 x <- "fb_freq"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -385,7 +388,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indAuditC"
 x <- "comm_facebook"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -410,7 +414,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indAuditC"
 x <- "sm_emot_support"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -435,7 +440,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indAuditC"
 x <- "sm_med_info"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -460,7 +466,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indAuditC"
 x <- "sm_med_advice"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -485,7 +492,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "fb_freq"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -510,7 +518,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "comm_facebook"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -535,7 +544,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "sm_emot_support"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -560,7 +570,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "sm_med_info"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -585,7 +596,8 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "sm_med_advice"
-modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
