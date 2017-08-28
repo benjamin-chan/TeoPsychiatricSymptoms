@@ -1036,5 +1036,10 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ## F-tests
 
 ```{r}
-Ftests %>% kable(digits = 3)
+Ftests %>% 
+  mutate(indSig = case_when(pValue < 0.001 ~ "***",
+                            pValue < 0.01 ~ "**",
+                            pValue < 0.05 ~ "*",
+                            TRUE ~ ".")) %>% 
+  kable(digits = 3)
 ```
