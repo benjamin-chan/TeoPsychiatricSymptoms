@@ -180,6 +180,56 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
+### PC-PTSD vs Get information about health or medical topics
+
+```{r}
+y <- "indPTSD"
+x <- "sm_med_info"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Get advice about health or medical topics
+
+```{r}
+y <- "indPTSD"
+x <- "sm_med_advice"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
 ### PHQ-2 vs Frequency of Facebook use
 
 ```{r}
@@ -235,6 +285,56 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indPHQ"
 x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Get information about health or medical topics
+
+```{r}
+y <- "indPHQ"
+x <- "sm_med_info"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Get advice about health or medical topics
+
+```{r}
+y <- "indPHQ"
+x <- "sm_med_advice"
 modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
@@ -330,6 +430,56 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
+### AUDIT-C vs Get information about health or medical topics
+
+```{r}
+y <- "indAuditC"
+x <- "sm_med_info"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Get advice about health or medical topics
+
+```{r}
+y <- "indAuditC"
+x <- "sm_med_advice"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
 ### DSI-SS vs Frequency of Facebook use
 
 ```{r}
@@ -385,6 +535,56 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```{r}
 y <- "indDSISS"
 x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get information about health or medical topics
+
+```{r}
+y <- "indDSISS"
+x <- "sm_med_info"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get advice about health or medical topics
+
+```{r}
+y <- "indDSISS"
+x <- "sm_med_advice"
 modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
