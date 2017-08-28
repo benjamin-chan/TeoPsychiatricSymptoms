@@ -11,13 +11,13 @@ Are certains features of social media use are associated with positive screens f
   * Frequency of Facebook use: `fb_freq`
   * Active use of Facebook: `comm_facebook`
 * Sharing more personal or health-related information on social media?
-  * `sm_emot_support`
-  * `sm_med_info`
-  * `sm_med_advice`
-  * `sm_med_questions`
-  * `sm_share_sympt`
-  * `sm_share_health`
-  * `sm_share_suicide`
+  * Get emotional support from others `sm_emot_support`
+  * Get information about health or medical topics `sm_med_info`
+  * Get advice about health or medical topics `sm_med_advice`
+  * Ask questions about health or medical issues `sm_med_questions`
+  * Share symptoms such as mood swings, depression, anxiety, or sleep problems `sm_share_sympt`
+  * Share information related to your health `sm_share_health`
+  * Share thoughts about suicide or hurting yourself in some way `sm_share_suicide`
   
   
 ## Association between frequency of Facebook use and active use of Facebook
@@ -57,6 +57,18 @@ plotRQ2(df0, "sm_share_suicide", "Share thoughts about suicide or hurting yourse
 ## Adjusted comparisons
 
 ```{r}
+Ftests <- data.frame(depvar = NULL,
+                     indepvar = NULL,
+                     model = NULL,
+                     F = NULL,
+                     df1 = NULL,
+                     df2 = NULL,
+                     pValue = NULL)
+```
+
+Show the covariates used in the adjusted models.
+
+```{r, echo = TRUE}
 covar <- c("countSocialMediaExclFB",
            "comm_inperson",
            "indSuicideConsideredEver",
@@ -80,22 +92,22 @@ Relabel factors; replace spaces with underscores.
 df2 <-
   df2 %>% 
   mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(.$fb_freq))),
-         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))))
-```
-
-Define linear function for general hypothesis testing.
-
-```{r}
-linfct1 <- sprintf("fb_freq%s = 0", levels(df2$fb_freq))[-1]
-linfct2 <- sprintf("comm_facebook%s = 0", levels(df2$comm_facebook))[-1]
+         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))),
+         sm_emot_support = factor(sm_emot_support, labels = gsub(" ", "_", levels(.$sm_emot_support))))
 ```
 
 
 ### PC-PTSD vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPTSD", "fb_freq", covar, linfct1)
+y <- "indPTSD"
+x <- "fb_freq"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -114,8 +126,196 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PC-PTSD vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPTSD", "comm_facebook", covar, linfct2)
+y <- "indPTSD"
+x <- "comm_facebook"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Get emotional support from others
+
+```{r}
+y <- "indPTSD"
+x <- "sm_emot_support"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Get information about health or medical topics
+
+```{r}
+y <- "indPTSD"
+x <- "sm_med_info"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Get advice about health or medical topics
+
+```{r}
+y <- "indPTSD"
+x <- "sm_med_advice"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Ask questions about health or medical issues
+
+```{r}
+y <- "indPTSD"
+x <- "sm_med_questions"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
+
+```{r}
+y <- "indPTSD"
+x <- "sm_share_sympt"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Share information related to your health
+
+```{r}
+y <- "indPTSD"
+x <- "sm_share_health"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Share thoughts about suicide or hurting yourself in some way
+
+```{r}
+y <- "indPTSD"
+x <- "sm_share_suicide"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -134,8 +334,14 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPHQ", "fb_freq", covar, linfct1)
+y <- "indPHQ"
+x <- "fb_freq"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -154,8 +360,196 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPHQ", "comm_facebook", covar, linfct2)
+y <- "indPHQ"
+x <- "comm_facebook"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Get emotional support from others
+
+```{r}
+y <- "indPHQ"
+x <- "sm_emot_support"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Get information about health or medical topics
+
+```{r}
+y <- "indPHQ"
+x <- "sm_med_info"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Get advice about health or medical topics
+
+```{r}
+y <- "indPHQ"
+x <- "sm_med_advice"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Ask questions about health or medical issues
+
+```{r}
+y <- "indPHQ"
+x <- "sm_med_questions"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
+
+```{r}
+y <- "indPHQ"
+x <- "sm_share_sympt"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Share information related to your health
+
+```{r}
+y <- "indPHQ"
+x <- "sm_share_health"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PHQ-2 vs Share thoughts about suicide or hurting yourself in some way
+
+```{r}
+y <- "indPHQ"
+x <- "sm_share_suicide"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -174,8 +568,14 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indAuditC", "fb_freq", covar, linfct1)
+y <- "indAuditC"
+x <- "fb_freq"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -194,8 +594,196 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indAuditC", "comm_facebook", covar, linfct2)
+y <- "indAuditC"
+x <- "comm_facebook"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Get emotional support from others
+
+```{r}
+y <- "indAuditC"
+x <- "sm_emot_support"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Get information about health or medical topics
+
+```{r}
+y <- "indAuditC"
+x <- "sm_med_info"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Get advice about health or medical topics
+
+```{r}
+y <- "indAuditC"
+x <- "sm_med_advice"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Ask questions about health or medical issues
+
+```{r}
+y <- "indAuditC"
+x <- "sm_med_questions"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
+
+```{r}
+y <- "indAuditC"
+x <- "sm_share_sympt"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Share information related to your health
+
+```{r}
+y <- "indAuditC"
+x <- "sm_share_health"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Share thoughts about suicide or hurting yourself in some way
+
+```{r}
+y <- "indAuditC"
+x <- "sm_share_suicide"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -214,8 +802,14 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indDSISS", "fb_freq", covar, linfct1)
+y <- "indDSISS"
+x <- "fb_freq"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -234,8 +828,14 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indDSISS", "comm_facebook", covar, linfct2)
+y <- "indDSISS"
+x <- "comm_facebook"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -248,4 +848,198 @@ modelTables[["oddsratios"]] %>% kable(digits = 3)
 
 ```{r}
 modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get emotional support from others
+
+```{r}
+y <- "indDSISS"
+x <- "sm_emot_support"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get information about health or medical topics
+
+```{r}
+y <- "indDSISS"
+x <- "sm_med_info"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get advice about health or medical topics
+
+```{r}
+y <- "indDSISS"
+x <- "sm_med_advice"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Ask questions about health or medical issues
+
+```{r}
+y <- "indDSISS"
+x <- "sm_med_questions"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
+
+```{r}
+y <- "indDSISS"
+x <- "sm_share_sympt"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Share information related to your health
+
+```{r}
+y <- "indDSISS"
+x <- "sm_share_health"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Share thoughts about suicide or hurting yourself in some way
+
+```{r}
+y <- "indDSISS"
+x <- "sm_share_suicide"
+linfct <- sprintf("%s%s = 0", x, levels(df2[, x]))[-1]
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+## F-tests
+
+```{r}
+Ftests %>% 
+  mutate(indSig = case_when(pValue < 0.001 ~ "***",
+                            pValue < 0.01 ~ "**",
+                            pValue < 0.05 ~ "*",
+                            TRUE ~ ".")) %>% 
+  kable(digits = 3)
 ```
