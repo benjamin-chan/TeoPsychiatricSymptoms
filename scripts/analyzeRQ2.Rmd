@@ -57,6 +57,15 @@ plotRQ2(df0, "sm_share_suicide", "Share thoughts about suicide or hurting yourse
 ## Adjusted comparisons
 
 ```{r}
+Ftests <- data.frame(depvar = NULL,
+                     indepvar = NULL,
+                     model = NULL,
+                     F = NULL,
+                     df1 = NULL,
+                     df2 = NULL,
+                     pValue = NULL)
+```
+
 Show the covariates used in the adjusted models.
 
 ```{r, echo = TRUE}
