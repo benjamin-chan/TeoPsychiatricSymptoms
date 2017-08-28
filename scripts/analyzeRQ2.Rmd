@@ -100,14 +100,20 @@ Define linear function for general hypothesis testing.
 ```{r}
 linfct1 <- sprintf("fb_freq%s = 0", levels(df2$fb_freq))[-1]
 linfct2 <- sprintf("comm_facebook%s = 0", levels(df2$comm_facebook))[-1]
+linfct3 <- sprintf("sm_emot_support%s = 0", levels(df2$sm_emot_support))[-1]
 ```
 
 
 ### PC-PTSD vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPTSD", "fb_freq", covar, linfct1)
+y <- "indPTSD"
+x <- "fb_freq"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -126,8 +132,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PC-PTSD vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPTSD", "comm_facebook", covar, linfct2)
+y <- "indPTSD"
+x <- "comm_facebook"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -146,8 +157,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPHQ", "fb_freq", covar, linfct1)
+y <- "indPHQ"
+x <- "fb_freq"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -166,8 +182,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### PHQ-2 vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indPHQ", "comm_facebook", covar, linfct2)
+y <- "indPHQ"
+x <- "comm_facebook"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -186,8 +207,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indAuditC", "fb_freq", covar, linfct1)
+y <- "indAuditC"
+x <- "fb_freq"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -206,8 +232,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### AUDIT-C vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indAuditC", "comm_facebook", covar, linfct2)
+y <- "indAuditC"
+x <- "comm_facebook"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -226,8 +257,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Frequency of Facebook use
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indDSISS", "fb_freq", covar, linfct1)
+y <- "indDSISS"
+x <- "fb_freq"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct1)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
@@ -246,8 +282,13 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ### DSI-SS vs Active use of Facebook
 
 ```{r}
-modelTables <- wrapperRQ2(df2, "indDSISS", "comm_facebook", covar, linfct2)
+y <- "indDSISS"
+x <- "comm_facebook"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
 modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
 ```
 
 \newline
