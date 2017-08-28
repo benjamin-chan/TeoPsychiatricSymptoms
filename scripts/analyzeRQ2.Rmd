@@ -92,7 +92,8 @@ Relabel factors; replace spaces with underscores.
 df2 <-
   df2 %>% 
   mutate(fb_freq = factor(fb_freq, labels = gsub(" ", "_", levels(.$fb_freq))),
-         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))))
+         comm_facebook = factor(comm_facebook, labels = gsub(" ", "_", levels(.$comm_facebook))),
+         sm_emot_support = factor(sm_emot_support, labels = gsub(" ", "_", levels(.$sm_emot_support))))
 ```
 
 Define linear function for general hypothesis testing.
@@ -135,6 +136,31 @@ modelTables[["fit"]] %>% kable(digits = 3)
 y <- "indPTSD"
 x <- "comm_facebook"
 modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### PC-PTSD vs Get emotional support from others
+
+```{r}
+y <- "indPTSD"
+x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -204,6 +230,31 @@ modelTables[["fit"]] %>% kable(digits = 3)
 ```
 
 
+### PHQ-2 vs Get emotional support from others
+
+```{r}
+y <- "indPHQ"
+x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
 ### AUDIT-C vs Frequency of Facebook use
 
 ```{r}
@@ -235,6 +286,31 @@ modelTables[["fit"]] %>% kable(digits = 3)
 y <- "indAuditC"
 x <- "comm_facebook"
 modelTables <- wrapperRQ2(df2, y, x, covar, linfct2)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### AUDIT-C vs Get emotional support from others
+
+```{r}
+y <- "indAuditC"
+x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
 modelTables[["Ftests"]] %>% kable(digits = 3)
 Ftests <- bind_rows(Ftests,
                     data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
@@ -301,4 +377,36 @@ modelTables[["oddsratios"]] %>% kable(digits = 3)
 
 ```{r}
 modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+### DSI-SS vs Get emotional support from others
+
+```{r}
+y <- "indDSISS"
+x <- "sm_emot_support"
+modelTables <- wrapperRQ2(df2, y, x, covar, linfct3)
+modelTables[["Ftests"]] %>% kable(digits = 3)
+Ftests <- bind_rows(Ftests,
+                    data.frame(depvar = y, indepvar = x, modelTables[["Ftests"]], 
+                               stringsAsFactors = FALSE))
+```
+
+\newline
+
+```{r}
+modelTables[["oddsratios"]] %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+modelTables[["fit"]] %>% kable(digits = 3)
+```
+
+
+## F-tests
+
+```{r}
+Ftests %>% kable(digits = 3)
 ```
