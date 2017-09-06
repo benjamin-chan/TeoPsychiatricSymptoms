@@ -239,6 +239,17 @@ df0 %>% means2Group("auditc", "indAuditC") %>% kable(align = align, digits = dig
 df0 %>% means2Group("dsiss", "indDSISS") %>% kable(align = align, digits = digits)
 ```
 
+Also create logical opposite for use in RQ3 modeling
+
+```{r}
+df0 <-
+  df0 %>%
+  mutate(indNotPTSD = !indPTSD,
+         indNotPHQ = !indPHQ,
+         indNotAuditC = !indAuditC,
+         indNotDSISS = !indDSISS)
+```
+
 
 ### Social media use (RQ2)
 
