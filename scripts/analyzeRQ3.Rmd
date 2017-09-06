@@ -4,3 +4,41 @@
 
 * Among participants with positive screens for psychiatric disorders or suicidal ideation?
 * Among all participants?
+## Unadjusted comparisons
+
+```{r}
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 0)
+df0 %>% means2Group("fmss", "indVANeverEnrolled") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r}
+df0 %>% means2Group("fmss", "indVANotUse12mo") %>% kable(align = align, digits = digits)
+```
+
+\newline
+
+```{r plot2GroupsRQ3}
+df0 %>% 
+  select(record_id, fmss, indVANeverEnrolled, indVANotUse12mo) %>% 
+  gather(key = variable, value = value, -record_id, -fmss) %>% 
+  filter(!is.na(value) & !is.na(fmss)) %>% 
+  mutate(variable = case_when(variable == "indVANeverEnrolled" ~ "Never enrolled in VA",
+                              variable == "indVANotUse12mo" ~ "Did not use VA health services\nin prior 12 months")) %>% 
+  mutate(variable = factor(variable, levels = c("Never enrolled in VA", "Did not use VA health services\nin prior 12 months"))) %>% 
+  mutate(value = factor(value, levels = c(FALSE, TRUE), labels = c("No", "Yes"))) %>% 
+  ggplot() +
+  ggtitle("Psychiatric symptoms by\nModified Facebook Measure of Social Support") +
+  aes(x = value, y = fmss, color = value, fill = value) +
+  geom_violin(alpha = 1/1) +
+  scale_x_discrete("") +
+  scale_y_continuous("FMSS") +
+  scale_color_brewer(palette = "Set1") + 
+  scale_fill_brewer(palette = "Set1") +
+  facet_wrap(~ variable) +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5))
+
+```
