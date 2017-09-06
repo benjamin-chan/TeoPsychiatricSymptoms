@@ -1,6 +1,6 @@
 # Research Question 3
 
-**Is perceived social support received from Facebook associated with health service utilization?**
+**Is perceived social support received from Facebook (FMSS) associated with health service utilization?**
 
 * Among participants with positive screens for psychiatric disorders or suicidal ideation?
 * Among all participants?

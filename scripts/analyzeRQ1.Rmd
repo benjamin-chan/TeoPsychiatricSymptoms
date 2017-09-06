@@ -1,6 +1,6 @@
 # Research Question 1
 
-Is perceived social support received from Facebook (FMSS) associated with lower rates of 
+**Is perceived social support received from Facebook (FMSS) associated with lower rates of**
 
 * Positive screens for psychiatric disorders
   * PC-PTSD
