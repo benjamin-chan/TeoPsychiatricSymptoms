@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-08-28 14:22:38"
+date: "2017-09-26 10:11:33"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -134,6 +134,10 @@ Check.
 |dsiss     |FALSE    | 0.1  | 0.3 |  0  |  1  | 482 | 78.2% |
 |dsiss     |TRUE     | 3.9  | 1.6 |  2  |  9  | 134 | 21.8% |
 
+Also create logical opposite for use in RQ3 modeling
+
+
+
 
 ### Social media use (RQ2)
 
@@ -256,7 +260,7 @@ Check.
 |TRUE                     |TRUE                     |TRUE              |                    5|   1|
 # Research Question 1
 
-Is perceived social support received from Facebook (FMSS) associated with lower rates of 
+**Is perceived social support received from Facebook (FMSS) associated with lower rates of**
 
 * Positive screens for psychiatric disorders
   * PC-PTSD
@@ -416,12 +420,7 @@ Filter subjects with missing covariates.
 |Adjusted   |       622.664|     595| -262.037| 542.074| 581.586|  524.074|         587|
 # Research Question 2
 
-**TO DO**
-
-* Add models for `sm_` variables.
-
-
-Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?
+**Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?**
 
 * Spending more time on Facebook?
   * Frequency of Facebook use: `fb_freq`
@@ -1997,3 +1996,299 @@ Relabel factors; replace spaces with underscores.
 |indDSISS  |sm_share_health  |Adjusted   |  0.902|   4| 600|  0.462|.      |
 |indDSISS  |sm_share_suicide |Unadjusted | 10.954|   4| 605|  0.000|***    |
 |indDSISS  |sm_share_suicide |Adjusted   |  6.267|   4| 598|  0.000|***    |
+# Research Question 3
+
+**Is perceived social support received from Facebook (FMSS) associated with health service utilization?**
+
+* Among participants with positive screens for psychiatric disorders or suicidal ideation?
+* Among all participants?
+
+Use interaction terms to examine.
+
+
+## Unadjusted comparisons
+
+
+|yvariable |indVANeverEnrolled | mean | sd  | min | max |  n  | freq  |
+|:---------|:------------------|:----:|:---:|:---:|:---:|:---:|:-----:|
+|fmss      |FALSE              | 29.1 | 6.9 | 16  | 51  | 413 | 67.8% |
+|fmss      |TRUE               | 29.1 | 6.2 | 14  | 45  | 196 | 32.2% |
+
+\newline
+
+
+|yvariable |indVANotUse12mo | mean | sd  | min | max |  n  | freq  |
+|:---------|:---------------|:----:|:---:|:---:|:---:|:---:|:-----:|
+|fmss      |FALSE           | 29.2 | 6.9 | 16  | 51  | 275 | 45.2% |
+|fmss      |TRUE            | 29.0 | 6.5 | 14  | 47  | 333 | 54.8% |
+
+\newline
+
+![plot of chunk plot2GroupsRQ3](../figures/plot2GroupsRQ3-1.png)
+
+
+## Adjusted comparisons
+
+
+
+Filter subjects with missing covariates.
+
+
+
+
+### Never enrolled in VA
+
+
+
+**PC-PTSD**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.313|     0.637|    -1.823|   0.068|
+|Unadjusted |fmss                                       |     0.996|     0.022|    -0.195|   0.845|
+|Unadjusted |indNotPTSDTRUE                             |     3.546|     0.876|     1.446|   0.148|
+|Unadjusted |fmss:indNotPTSDTRUE                        |     0.986|     0.030|    -0.459|   0.647|
+|Adjusted   |(Intercept)                                |     0.549|     0.705|    -0.850|   0.395|
+|Adjusted   |fmss                                       |     0.996|     0.023|    -0.164|   0.870|
+|Adjusted   |countSocialMediaExclFB                     |     0.843|     0.109|    -1.566|   0.117|
+|Adjusted   |comm_inpersonOnce a day                    |     0.937|     0.354|    -0.183|   0.855|
+|Adjusted   |comm_inpersonA few times a week            |     0.661|     0.288|    -1.436|   0.151|
+|Adjusted   |comm_inpersonOnce a week                   |     0.616|     0.366|    -1.321|   0.187|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.643|     0.265|    -1.665|   0.096|
+|Adjusted   |indSuicideConsideredEverTRUE               |     1.074|     0.226|     0.317|   0.752|
+|Adjusted   |countSuicideAttempts                       |     0.556|     0.225|    -2.602|   0.009|
+|Adjusted   |indNotPTSDTRUE                             |     2.626|     0.913|     1.057|   0.291|
+|Adjusted   |fmss:indNotPTSDTRUE                        |     0.990|     0.031|    -0.333|   0.739|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       624.047|     508| -301.862| 611.724| 628.654|  603.724|         505|
+|Adjusted   |       624.047|     508| -292.589| 607.179| 653.736|  585.179|         498|
+
+**PHQ-2**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.595|     0.794|    -0.655|   0.513|
+|Unadjusted |fmss                                       |     0.973|     0.028|    -0.969|   0.332|
+|Unadjusted |indNotPHQTRUE                              |     0.933|     0.922|    -0.076|   0.940|
+|Unadjusted |fmss:indNotPHQTRUE                         |     1.030|     0.032|     0.916|   0.360|
+|Adjusted   |(Intercept)                                |     1.147|     0.837|     0.164|   0.870|
+|Adjusted   |fmss                                       |     0.970|     0.029|    -1.049|   0.294|
+|Adjusted   |countSocialMediaExclFB                     |     0.811|     0.102|    -2.068|   0.039|
+|Adjusted   |comm_inpersonOnce a day                    |     1.212|     0.308|     0.624|   0.533|
+|Adjusted   |comm_inpersonA few times a week            |     0.692|     0.260|    -1.415|   0.157|
+|Adjusted   |comm_inpersonOnce a week                   |     0.664|     0.331|    -1.235|   0.217|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.646|     0.240|    -1.820|   0.069|
+|Adjusted   |indSuicideConsideredEverTRUE               |     1.147|     0.206|     0.666|   0.506|
+|Adjusted   |countSuicideAttempts                       |     0.509|     0.215|    -3.146|   0.002|
+|Adjusted   |indNotPHQTRUE                              |     0.635|     0.951|    -0.478|   0.633|
+|Adjusted   |fmss:indNotPHQTRUE                         |     1.037|     0.033|     1.083|   0.279|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       754.974|     595| -370.363| 748.725| 766.286|  740.725|         592|
+|Adjusted   |       754.974|     595| -356.096| 734.193| 782.485|  712.193|         585|
+
+**AUDIT-C**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.573|     0.617|    -0.904|   0.366|
+|Unadjusted |fmss                                       |     0.999|     0.021|    -0.046|   0.963|
+|Unadjusted |indNotAuditCTRUE                           |     0.664|     0.879|    -0.466|   0.641|
+|Unadjusted |fmss:indNotAuditCTRUE                      |     1.014|     0.029|     0.492|   0.623|
+|Adjusted   |(Intercept)                                |     0.848|     0.679|    -0.243|   0.808|
+|Adjusted   |fmss                                       |     1.001|     0.022|     0.028|   0.978|
+|Adjusted   |countSocialMediaExclFB                     |     0.800|     0.107|    -2.086|   0.037|
+|Adjusted   |comm_inpersonOnce a day                    |     1.372|     0.341|     0.927|   0.354|
+|Adjusted   |comm_inpersonA few times a week            |     0.786|     0.277|    -0.870|   0.384|
+|Adjusted   |comm_inpersonOnce a week                   |     0.787|     0.349|    -0.686|   0.493|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.694|     0.262|    -1.394|   0.163|
+|Adjusted   |indSuicideConsideredEverTRUE               |     1.008|     0.219|     0.038|   0.969|
+|Adjusted   |countSuicideAttempts                       |     0.509|     0.226|    -2.989|   0.003|
+|Adjusted   |indNotAuditCTRUE                           |     0.668|     0.925|    -0.436|   0.663|
+|Adjusted   |fmss:indNotAuditCTRUE                      |     1.013|     0.031|     0.414|   0.679|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       632.232|     483| -315.898| 639.797| 656.525|  631.797|         480|
+|Adjusted   |       632.232|     483| -302.148| 626.295| 672.298|  604.295|         473|
+
+**DSI-SS**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.170|     0.870|    -2.036|   0.042|
+|Unadjusted |fmss                                       |     1.034|     0.030|     1.112|   0.266|
+|Unadjusted |indNotDSISSTRUE                            |     3.823|     0.979|     1.370|   0.171|
+|Unadjusted |fmss:indNotDSISSTRUE                       |     0.959|     0.034|    -1.249|   0.211|
+|Adjusted   |(Intercept)                                |     0.419|     0.949|    -0.918|   0.359|
+|Adjusted   |fmss                                       |     1.032|     0.032|     0.977|   0.329|
+|Adjusted   |countSocialMediaExclFB                     |     0.817|     0.100|    -2.023|   0.043|
+|Adjusted   |comm_inpersonOnce a day                    |     1.195|     0.307|     0.581|   0.561|
+|Adjusted   |comm_inpersonA few times a week            |     0.676|     0.260|    -1.506|   0.132|
+|Adjusted   |comm_inpersonOnce a week                   |     0.628|     0.328|    -1.415|   0.157|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.566|     0.237|    -2.404|   0.016|
+|Adjusted   |indSuicideConsideredEverTRUE               |     0.950|     0.210|    -0.246|   0.806|
+|Adjusted   |countSuicideAttempts                       |     0.497|     0.215|    -3.258|   0.001|
+|Adjusted   |indNotDSISSTRUE                            |     2.395|     1.035|     0.844|   0.399|
+|Adjusted   |fmss:indNotDSISSTRUE                       |     0.962|     0.036|    -1.076|   0.282|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       754.974|     595| -376.438| 760.875| 778.436|  752.875|         592|
+|Adjusted   |       754.974|     595| -358.601| 739.202| 787.495|  717.202|         585|
+
+
+### Did not use VA health services in prior 12 months
+
+
+
+**PC-PTSD**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.725|     0.536|    -0.599|   0.549|
+|Unadjusted |fmss                                       |     0.997|     0.018|    -0.156|   0.876|
+|Unadjusted |indNotPTSDTRUE                             |     5.458|     0.832|     2.040|   0.041|
+|Unadjusted |fmss:indNotPTSDTRUE                        |     0.980|     0.028|    -0.720|   0.471|
+|Adjusted   |(Intercept)                                |     1.105|     0.600|     0.166|   0.868|
+|Adjusted   |fmss                                       |     0.995|     0.019|    -0.255|   0.799|
+|Adjusted   |countSocialMediaExclFB                     |     1.002|     0.096|     0.016|   0.987|
+|Adjusted   |comm_inpersonOnce a day                    |     1.029|     0.353|     0.080|   0.936|
+|Adjusted   |comm_inpersonA few times a week            |     0.861|     0.274|    -0.547|   0.584|
+|Adjusted   |comm_inpersonOnce a week                   |     0.776|     0.329|    -0.771|   0.441|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.719|     0.249|    -1.322|   0.186|
+|Adjusted   |indSuicideConsideredEverTRUE               |     0.970|     0.212|    -0.142|   0.887|
+|Adjusted   |countSuicideAttempts                       |     0.688|     0.147|    -2.549|   0.011|
+|Adjusted   |indNotPTSDTRUE                             |     4.121|     0.849|     1.668|   0.095|
+|Adjusted   |fmss:indNotPTSDTRUE                        |     0.983|     0.028|    -0.589|   0.556|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       702.693|     507| -332.327| 672.653| 689.575|  664.653|         504|
+|Adjusted   |       702.693|     507| -326.152| 674.303| 720.839|  652.303|         497|
+
+**PHQ-2**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     1.025|     0.685|     0.036|   0.971|
+|Unadjusted |fmss                                       |     0.979|     0.024|    -0.873|   0.383|
+|Unadjusted |indNotPHQTRUE                              |     2.165|     0.831|     0.930|   0.353|
+|Unadjusted |fmss:indNotPHQTRUE                         |     1.011|     0.029|     0.399|   0.690|
+|Adjusted   |(Intercept)                                |     1.658|     0.728|     0.694|   0.488|
+|Adjusted   |fmss                                       |     0.976|     0.025|    -0.977|   0.329|
+|Adjusted   |countSocialMediaExclFB                     |     0.940|     0.091|    -0.678|   0.498|
+|Adjusted   |comm_inpersonOnce a day                    |     1.227|     0.323|     0.635|   0.526|
+|Adjusted   |comm_inpersonA few times a week            |     0.825|     0.252|    -0.765|   0.444|
+|Adjusted   |comm_inpersonOnce a week                   |     0.704|     0.306|    -1.148|   0.251|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.702|     0.229|    -1.544|   0.123|
+|Adjusted   |indSuicideConsideredEverTRUE               |     1.112|     0.199|     0.535|   0.593|
+|Adjusted   |countSuicideAttempts                       |     0.649|     0.142|    -3.044|   0.002|
+|Adjusted   |indNotPHQTRUE                              |     1.645|     0.849|     0.586|   0.558|
+|Adjusted   |fmss:indNotPHQTRUE                         |     1.015|     0.029|     0.522|   0.602|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       818.162|     594| -391.922| 791.845| 809.399|  783.845|         591|
+|Adjusted   |       818.162|     594| -382.617| 787.234| 835.508|  765.234|         584|
+
+**AUDIT-C**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     1.491|     0.604|     0.662|   0.508|
+|Unadjusted |fmss                                       |     1.000|     0.020|    -0.019|   0.985|
+|Unadjusted |indNotAuditCTRUE                           |     1.031|     0.858|     0.036|   0.971|
+|Unadjusted |fmss:indNotAuditCTRUE                      |     0.999|     0.029|    -0.033|   0.974|
+|Adjusted   |(Intercept)                                |     2.257|     0.659|     1.234|   0.217|
+|Adjusted   |fmss                                       |     0.998|     0.021|    -0.113|   0.910|
+|Adjusted   |countSocialMediaExclFB                     |     0.915|     0.099|    -0.896|   0.370|
+|Adjusted   |comm_inpersonOnce a day                    |     1.496|     0.374|     1.078|   0.281|
+|Adjusted   |comm_inpersonA few times a week            |     0.924|     0.274|    -0.290|   0.772|
+|Adjusted   |comm_inpersonOnce a week                   |     0.809|     0.335|    -0.634|   0.526|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.701|     0.255|    -1.395|   0.163|
+|Adjusted   |indSuicideConsideredEverTRUE               |     0.946|     0.216|    -0.256|   0.798|
+|Adjusted   |countSuicideAttempts                       |     0.595|     0.155|    -3.354|   0.001|
+|Adjusted   |indNotAuditCTRUE                           |     0.997|     0.887|    -0.003|   0.998|
+|Adjusted   |fmss:indNotAuditCTRUE                      |     0.999|     0.029|    -0.047|   0.963|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       651.561|     482| -325.778| 659.556| 676.276|  651.556|         479|
+|Adjusted   |       651.561|     482| -312.467| 646.934| 692.915|  624.934|         472|
+
+**DSI-SS**
+
+
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.737|     0.789|    -0.387|   0.698|
+|Unadjusted |fmss                                       |     1.004|     0.028|     0.135|   0.893|
+|Unadjusted |indNotDSISSTRUE                            |     2.754|     0.900|     1.125|   0.260|
+|Unadjusted |fmss:indNotDSISSTRUE                       |     0.984|     0.031|    -0.519|   0.604|
+|Adjusted   |(Intercept)                                |     1.569|     0.860|     0.524|   0.600|
+|Adjusted   |fmss                                       |     0.998|     0.029|    -0.071|   0.943|
+|Adjusted   |countSocialMediaExclFB                     |     0.946|     0.090|    -0.615|   0.538|
+|Adjusted   |comm_inpersonOnce a day                    |     1.196|     0.319|     0.563|   0.574|
+|Adjusted   |comm_inpersonA few times a week            |     0.835|     0.249|    -0.723|   0.470|
+|Adjusted   |comm_inpersonOnce a week                   |     0.629|     0.300|    -1.542|   0.123|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     0.596|     0.223|    -2.320|   0.020|
+|Adjusted   |indSuicideConsideredEverTRUE               |     0.990|     0.199|    -0.048|   0.962|
+|Adjusted   |countSuicideAttempts                       |     0.641|     0.139|    -3.193|   0.001|
+|Adjusted   |indNotDSISSTRUE                            |     1.809|     0.940|     0.631|   0.528|
+|Adjusted   |fmss:indNotDSISSTRUE                       |     0.989|     0.033|    -0.326|   0.744|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |        817.73|     594| -404.816| 817.631| 835.185|  809.631|         591|
+|Adjusted   |        817.73|     594| -391.758| 805.516| 853.790|  783.516|         584|
