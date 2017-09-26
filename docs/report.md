@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-09-26 10:11:33"
+date: "2017-09-26 11:05:58"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -2003,8 +2003,9 @@ Relabel factors; replace spaces with underscores.
 * Among participants with positive screens for psychiatric disorders or suicidal ideation?
 * Among all participants?
 
-Use interaction terms to examine.
-
+Use interaction terms to examine effect modification by positive screens for
+psychiatric disorders or suicidal ideation.
+**Look at the unadjusted and adjusted odds ratio for the `fmss` term.**
 
 ## Unadjusted comparisons
 
