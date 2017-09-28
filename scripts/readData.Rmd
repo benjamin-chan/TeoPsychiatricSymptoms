@@ -374,6 +374,8 @@ df0 %>% group_by(smOther, sm_used_other) %>% summarize(n = n()) %>% kable()
 
 \newline
 
+Number of social media platforms used (excluding Facebook):
+
 ```{r}
 df0 %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
 ```
