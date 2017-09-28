@@ -20,7 +20,7 @@ Notes on the REDCap identifier variables:
   * if `== 1`, they completed survey and was not disqualified for data quality reasons;
   * if `== NA`, they didn't complete the survey.
 
-```{r, results = FALSE}
+```{r, results = TRUE}
 df0 <-
   "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
   read.csv(stringsAsFactors = FALSE)
@@ -36,10 +36,9 @@ df0 %>%
 
 Inclusion criteria
 
-* Respondents who consented
-* Eligible, ineligible, or missing eligibility indicator
+* Completed survey and was not disqualified for data quality reasons; `[analytic_sample] == 1`
 
-**`r sprintf("Number included: n = %d", df0 %>% filter(consent == 1) %>% nrow)`**
+**`r sprintf("Number included: n = %d", df0 %>% filter(analytic_sample == 1) %>% nrow)`**
 
 Cleaning
 
@@ -52,7 +51,7 @@ Cleaning
 ```{r, results = FALSE}
 df0 <-
   df0 %>% 
-  filter(consent == 1) %>% 
+  filter(analytic_sample == 1) %>% 
   mutate(image = 
            substr(fba, 1, 1) %>%
            factor(levels = c("c", "f", "v"),
@@ -374,6 +373,8 @@ df0 %>% group_by(smOther, sm_used_other) %>% summarize(n = n()) %>% kable()
 ```
 
 \newline
+
+Number of social media platforms used (excluding Facebook):
 
 ```{r}
 df0 %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
