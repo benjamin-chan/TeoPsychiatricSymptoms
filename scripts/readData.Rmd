@@ -36,10 +36,9 @@ df0 %>%
 
 Inclusion criteria
 
-* Respondents who consented
-* Eligible, ineligible, or missing eligibility indicator
+* Completed survey and was not disqualified for data quality reasons; `[analytic_sample] == 1`
 
-**`r sprintf("Number included: n = %d", df0 %>% filter(consent == 1) %>% nrow)`**
+**`r sprintf("Number included: n = %d", df0 %>% filter(analytic_sample == 1) %>% nrow)`**
 
 Cleaning
 
@@ -52,7 +51,7 @@ Cleaning
 ```{r, results = FALSE}
 df0 <-
   df0 %>% 
-  filter(consent == 1) %>% 
+  filter(analytic_sample == 1) %>% 
   mutate(image = 
            substr(fba, 1, 1) %>%
            factor(levels = c("c", "f", "v"),
