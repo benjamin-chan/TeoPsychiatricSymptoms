@@ -20,7 +20,7 @@ Notes on the REDCap identifier variables:
   * if `== 1`, they completed survey and was not disqualified for data quality reasons;
   * if `== NA`, they didn't complete the survey.
 
-```{r, results = FALSE}
+```{r, results = TRUE}
 df0 <-
   "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
   read.csv(stringsAsFactors = FALSE)
