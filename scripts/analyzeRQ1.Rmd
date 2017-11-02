@@ -163,3 +163,61 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
           M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
+
+
+## Additional questions
+
+> Some issues that additional analysis could clarify is whether people have a
+> tendency to substitute social contact on social media for in-person social
+> contact, and whether that substitution is bad for your emotional well-being.
+> It would be interesting to look at:
+> 
+> * Do people who spend a lot of time (or frequently use) Facebook spend less
+>   time meeting up in-person (i.e., possibly substitute one form of social
+>   contact for another)? Variables: `comm_facebook`, `fb_freq`, `comm_inperson`
+> * Do people who spend a lot of time (or frequently use) Facebook and spend
+>   less time in-person have higher risk for psychiatric disorders?
+
+```{r, warning = FALSE}
+df2 <- 
+    df0 %>% 
+    mutate(comm_facebook = factor(comm_facebook,
+                                  levels = c("Every few weeks or less often", 
+                                             "Once a week", 
+                                             "A few times a week", 
+                                             "Once a day", 
+                                             "Several times a day"),
+                                  labels = c(rep("Less than daily", 3), 
+                                             rep("Daily or more", 2))),
+           fb_freq = factor(fb_freq,
+                            levels = c("Never",
+                                       "Every few weeks", 
+                                       "Once a week", 
+                                       "A few times a week", 
+                                       "Once a day", 
+                                       "Several times a day"),
+                            labels = c(rep("Less than daily", 4), 
+                                       rep("Daily or more", 2))),
+           comm_inperson = factor(comm_inperson,
+                                  levels = c("Several times a day",
+                                             "Once a day",
+                                             "A few times a week",
+                                             "Once a week",
+                                             "Every few weeks or less often"),
+                                  labels = c(rep("Daily or more", 2),
+                                           rep("Less than daily", 3)))) %>% 
+  mutate(comm_facebook = droplevels(comm_facebook),
+         fb_freq = droplevels(fb_freq),
+         comm_inperson = droplevels(comm_inperson))
+varlabel <- data.frame(name = c("comm_inperson", "comm_facebook", "fb_freq"),
+                       label = c("Meet up in-person",
+                                 "Actively interact on Facebook, such as sharing, posting, commenting, or tagging",
+                                 "How often do you visit or use Facebook?"),
+                       stringsAsFactors = FALSE)
+chisqTable("comm_facebook", "fb_freq", data = df2, varlabel = varlabel)
+chisqTable("comm_facebook", "comm_inperson", data = df2, varlabel = varlabel)
+chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)
+```
+
+
+```

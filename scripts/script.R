@@ -23,7 +23,7 @@ library(rmarkdown)
 opts_chunk$set(echo = FALSE,
                fig.path = "../figures/",
                dpi = 300,
-               messages = FALSE)
+               message = FALSE)
 knit("master.Rmd", output = "../docs/report.md")
 pandoc("../docs/report.md", format = "docx")
 file.remove("master.Rmd")

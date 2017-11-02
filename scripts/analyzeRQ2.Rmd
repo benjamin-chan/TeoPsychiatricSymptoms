@@ -1038,3 +1038,19 @@ Ftests %>%
                             TRUE ~ ".")) %>% 
   kable(digits = 3)
 ```
+
+
+## Additional questions
+
+> An issue that additional data analysis could clarify is whether veterans who
+> are actively experiencing psychiatric problems are using social media for
+> health-related purposes. If so, this would suggest potential for an
+> intervention that aims to increase the likelihood of veterans using social
+> media to initiate help-seeking or take a screener for psychiatric problems
+> after developing psychiatric symptoms. It would be interest to see if:
+> 
+> * Of those who screen positive for PTSD, alcohol misuse, depression, and
+>   suicidal ideation, how often do they use a social media platform for health-
+>   related concerns?
+> * Anything else???
+  
