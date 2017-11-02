@@ -66,7 +66,8 @@ df0 %>%
 ## Adjusted comparisons
 
 ```{r}
-x <- "fmss"
+x <- "fmssZ"
+df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt() * diag(2)
 covar <- c("countSocialMediaExclFB",
            "comm_inperson",
            "indSuicideConsideredEver",

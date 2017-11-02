@@ -139,6 +139,7 @@ df0 %>%
 
 * Score the Modified Facebook Measure of Social Support (FMSS)
   * Reverse-scored items are `fmss_r7` through `fmss_r10`
+* Standardize FMSS
 * Prep FMSS items
   * Combine categories due to small cell sizes
 
@@ -159,6 +160,7 @@ df0 <-
                 fmss_r12 +
                 fmss_r13 +
                 fmss_r14) %>% 
+  mutate(fmssZ = scale(.$fmss) %>% as.numeric()) %>% 
   mutate(fmss_r1 = factor(fmss_r1, 
                           levels = 0:4, 
                           labels = c("Not at all", "A little", "Somewhat", "Very", "Extremely")),
@@ -180,6 +182,9 @@ df0 <-
   mutate(fmss_r1 = droplevels(fmss_r1),
          fmss_r3 = droplevels(fmss_r3),
          fmss_r11 = droplevels(fmss_r11))
+df0 %>% select(fmss, fmssZ) %>% summary()
+df0 %>% select(fmss, fmssZ) %>% cor(use = "pairwise.complete.obs")
+df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt()
 ```
 
 Check.
