@@ -181,31 +181,31 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r, warning = FALSE}
 df2 <- 
-    df0 %>% 
-    mutate(comm_facebook = factor(comm_facebook,
-                                  levels = c("Every few weeks or less often", 
-                                             "Once a week", 
-                                             "A few times a week", 
-                                             "Once a day", 
-                                             "Several times a day"),
-                                  labels = c(rep("Less than daily", 3), 
-                                             rep("Daily or more", 2))),
-           fb_freq = factor(fb_freq,
-                            levels = c("Never",
-                                       "Every few weeks", 
-                                       "Once a week", 
-                                       "A few times a week", 
-                                       "Once a day", 
-                                       "Several times a day"),
-                            labels = c(rep("Less than daily", 4), 
-                                       rep("Daily or more", 2))),
-           comm_inperson = factor(comm_inperson,
-                                  levels = c("Several times a day",
-                                             "Once a day",
-                                             "A few times a week",
-                                             "Once a week",
-                                             "Every few weeks or less often"),
-                                  labels = c(rep("Daily or more", 2),
+  df0 %>% 
+  mutate(comm_facebook = factor(comm_facebook,
+                                levels = c("Every few weeks or less often", 
+                                           "Once a week", 
+                                           "A few times a week", 
+                                           "Once a day", 
+                                           "Several times a day"),
+                                labels = c(rep("Less than daily", 3), 
+                                           rep("Daily or more", 2))),
+         fb_freq = factor(fb_freq,
+                          levels = c("Never",
+                                     "Every few weeks", 
+                                     "Once a week", 
+                                     "A few times a week", 
+                                     "Once a day", 
+                                     "Several times a day"),
+                          labels = c(rep("Less than daily", 4), 
+                                     rep("Daily or more", 2))),
+         comm_inperson = factor(comm_inperson,
+                                levels = c("Several times a day",
+                                           "Once a day",
+                                           "A few times a week",
+                                           "Once a week",
+                                           "Every few weeks or less often"),
+                                labels = c(rep("Daily or more", 2),
                                            rep("Less than daily", 3)))) %>% 
   mutate(comm_facebook = droplevels(comm_facebook),
          fb_freq = droplevels(fb_freq),
@@ -231,12 +231,12 @@ Closely exam FMSS items 1, 3, and 11
 
 ```{r}
 varlabel <- data.frame(name = c("fmss_r1", "fmss_r3", "fmss_r11", "indPHQ", "indDSISS"),
-                         label = c("For you, how good is Facebook for getting real help or support?",
-                                   "How much does the support you get on Facebook make you feel better?",
+                       label = c("For you, how good is Facebook for getting real help or support?",
+                                 "How much does the support you get on Facebook make you feel better?",
                                  "How close to people does Facebook make you feel?",
                                  "PHQ-2 score greater than or equal to 3",
                                  "DSI-SS score greater than or equal to 2"),
-                         stringsAsFactors = FALSE)
+                       stringsAsFactors = FALSE)
 chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)
 chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)
 chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)
@@ -245,5 +245,50 @@ chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)
 chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)
 ```
 
+```{r}
+```
 
+
+```{r}
+x <- "fmss_r11"
+```
+
+
+### PHQ-2
+
+```{r}
+y <- "indPHQ"
+M0 <- fitModel(df1, y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(df1, y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+  kable(digits = 3)
+```
+
+
+### DSI-SS
+
+```{r}
+y <- "indDSISS"
+M0 <- fitModel(df1, y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(df1, y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+  kable(digits = 3)
 ```
