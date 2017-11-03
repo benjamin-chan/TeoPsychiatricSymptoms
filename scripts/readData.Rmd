@@ -143,7 +143,7 @@ df0 %>%
 * Prep FMSS items
   * Combine categories due to small cell sizes
 
-```{r}
+```{r, warning = FALSE}
 df0 <- 
   df0 %>%
   mutate(fmss = fmss_r1 +
