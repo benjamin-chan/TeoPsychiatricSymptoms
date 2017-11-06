@@ -185,6 +185,12 @@ df0 <-
 df0 %>% select(fmss, fmssZ) %>% summary()
 df0 %>% select(fmss, fmssZ) %>% cor(use = "pairwise.complete.obs")
 df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt()
+breaks <- df0 %>% select(fmss) %>% quantile(., probs = seq(0, 1, 0.25), na.rm = TRUE)
+df0 <-
+  df0 %>% 
+  mutate(fmssQuartile = cut(fmss, breaks = breaks, include.lowest = TRUE)) %>% 
+  mutate(fmssQuartile = factor(fmssQuartile, labels = sprintf("Q%d: %s", 1:4, levels(fmssQuartile))))
+df0 %>% group_by(fmssQuartile) %>% summarize(n = n(), min = min(fmss), max = max(fmss)) %>% kable()
 ```
 
 Check.
@@ -193,10 +199,11 @@ Check.
 df0 %>% 
   filter(!is.na(fmss)) %>% 
   ggplot() + 
-    aes(x = fmss) + 
-    geom_histogram(binwidth = 1, alpha = 1/2) + 
+    aes(x = fmss, fill = fmssQuartile) + 
+    geom_histogram(binwidth = 1, alpha = 1) + 
     scale_x_continuous("FMSS") + 
-    scale_y_continuous("Count")
+    scale_y_continuous("Count") +
+    scale_fill_brewer("Quartile", palette = "RdBu")
 ```
 
 
