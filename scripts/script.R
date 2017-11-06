@@ -9,9 +9,10 @@ sink("script.log")
 files <- c("header.yaml",
            "preamble.Rmd",
            "readData.Rmd",
-           "analyzeRQ1.Rmd",
-           "analyzeRQ2.Rmd",
-           "analyzeRQ3.Rmd")
+           "analyzeRQ1.Rmd")
+           # "analyzeRQ1.Rmd",
+           # "analyzeRQ2.Rmd",
+           # "analyzeRQ3.Rmd")
 f <- file("master.Rmd", open = "w")
 for (i in 1:length(files)) {
     x <- readLines(files[i])
@@ -23,7 +24,7 @@ library(rmarkdown)
 opts_chunk$set(echo = FALSE,
                fig.path = "../figures/",
                dpi = 300,
-               messages = FALSE)
+               message = FALSE)
 knit("master.Rmd", output = "../docs/report.md")
 pandoc("../docs/report.md", format = "docx")
 file.remove("master.Rmd")

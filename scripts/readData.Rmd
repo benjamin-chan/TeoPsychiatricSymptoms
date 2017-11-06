@@ -139,8 +139,11 @@ df0 %>%
 
 * Score the Modified Facebook Measure of Social Support (FMSS)
   * Reverse-scored items are `fmss_r7` through `fmss_r10`
+* Standardize FMSS
+* Prep FMSS items
+  * Combine categories due to small cell sizes
 
-```{r}
+```{r, warning = FALSE}
 df0 <- 
   df0 %>%
   mutate(fmss = fmss_r1 +
@@ -156,7 +159,38 @@ df0 <-
                 fmss_r11 +
                 fmss_r12 +
                 fmss_r13 +
-                fmss_r14)
+                fmss_r14) %>% 
+  mutate(fmssZ = scale(.$fmss) %>% as.numeric()) %>% 
+  mutate(fmss_r1 = factor(fmss_r1, 
+                          levels = 0:4, 
+                          labels = c("Not at all", "A little", "Somewhat", "Very", "Extremely")),
+         fmss_r3 = factor(fmss_r3, 
+                          levels = 0:4, 
+                          labels = c("Not at all", "A little", "Somewhat", "Quite a bit", "A lot")),
+         fmss_r11 = factor(fmss_r11, 
+                           levels = 0:4, 
+                           labels = c("Not at all", "A little", "Somewhat", "Very", "Extremely"))) %>% 
+  mutate(fmss_r1 = factor(fmss_r1,
+                          levels = levels(.$fmss_r1),
+                          labels = c(levels(.$fmss_r1)[1:3], rep("Very or Extremely", 2))),
+         fmss_r3 = factor(fmss_r3,
+                          levels = levels(.$fmss_r3),
+                          labels = c(levels(.$fmss_r3)[1:3], rep("Quite a bit or A lot", 2))),
+         fmss_r11 = factor(fmss_r11,
+                           levels = levels(.$fmss_r11),
+                           labels = c(levels(.$fmss_r11)[1:3], rep("Very or Extremely", 2)))) %>% 
+  mutate(fmss_r1 = droplevels(fmss_r1),
+         fmss_r3 = droplevels(fmss_r3),
+         fmss_r11 = droplevels(fmss_r11))
+df0 %>% select(fmss, fmssZ) %>% summary()
+df0 %>% select(fmss, fmssZ) %>% cor(use = "pairwise.complete.obs")
+df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt()
+breaks <- df0 %>% select(fmss) %>% quantile(., probs = seq(0, 1, 0.25), na.rm = TRUE)
+df0 <-
+  df0 %>% 
+  mutate(fmssQuartile = cut(fmss, breaks = breaks, include.lowest = TRUE)) %>% 
+  mutate(fmssQuartile = factor(fmssQuartile, labels = sprintf("Q%d: %s", 1:4, levels(fmssQuartile))))
+df0 %>% group_by(fmssQuartile) %>% summarize(n = n(), min = min(fmss), max = max(fmss)) %>% kable()
 ```
 
 Check.
@@ -165,10 +199,11 @@ Check.
 df0 %>% 
   filter(!is.na(fmss)) %>% 
   ggplot() + 
-    aes(x = fmss) + 
-    geom_histogram(binwidth = 1, alpha = 1/2) + 
+    aes(x = fmss, fill = fmssQuartile) + 
+    geom_histogram(binwidth = 1, alpha = 1) + 
     scale_x_continuous("FMSS") + 
-    scale_y_continuous("Count")
+    scale_y_continuous("Count") +
+    scale_fill_brewer("Quartile", palette = "RdBu")
 ```
 
 
