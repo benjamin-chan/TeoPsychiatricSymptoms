@@ -246,11 +246,7 @@ chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)
 ```
 
 ```{r}
-```
-
-
-```{r}
-x <- "fmss_r11"
+x <- "fmss_r1 + fmss_r3 + fmss_r11"
 ```
 
 
