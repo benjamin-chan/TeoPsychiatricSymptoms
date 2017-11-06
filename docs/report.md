@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-11-03 15:09:09"
+date: "2017-11-06 11:47:12"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -104,6 +104,16 @@ Recoding logic
 ## fmss  6.565197 2.562264
 ## fmssZ 2.562264 1.000000
 ```
+
+
+
+|fmssQuartile |   n| min| max|
+|:------------|---:|---:|---:|
+|Q1: [14,25]  | 175|  14|  25|
+|Q2: (25,29]  | 135|  26|  29|
+|Q3: (29,34]  | 138|  30|  34|
+|Q4: (34,48]  | 124|  35|  48|
+|NA           |  15|  NA|  NA|
 
 Check.
 
@@ -952,6 +962,199 @@ Closely exam FMSS items 1, 3, and 11
 
 
 
+### PHQ-2
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.638|     0.201|    -2.236|   0.025|
+|Unadjusted |fmss_r1A little                            |     1.129|     0.303|     0.401|   0.688|
+|Unadjusted |fmss_r1Somewhat                            |     1.515|     0.368|     1.129|   0.259|
+|Unadjusted |fmss_r1Very or Extremely                   |     2.909|     0.510|     2.094|   0.036|
+|Unadjusted |fmss_r3A little                            |     0.878|     0.315|    -0.413|   0.680|
+|Unadjusted |fmss_r3Somewhat                            |     0.731|     0.375|    -0.835|   0.404|
+|Unadjusted |fmss_r3Quite a bit or A lot                |     0.481|     0.488|    -1.501|   0.133|
+|Unadjusted |fmss_r11A little                           |     0.438|     0.253|    -3.265|   0.001|
+|Unadjusted |fmss_r11Somewhat                           |     0.659|     0.279|    -1.496|   0.135|
+|Unadjusted |fmss_r11Very or Extremely                  |     0.332|     0.531|    -2.079|   0.038|
+|Adjusted   |(Intercept)                                |     0.237|     0.301|    -4.782|   0.000|
+|Adjusted   |fmss_r1A little                            |     0.919|     0.334|    -0.253|   0.800|
+|Adjusted   |fmss_r1Somewhat                            |     1.462|     0.401|     0.946|   0.344|
+|Adjusted   |fmss_r1Very or Extremely                   |     2.985|     0.557|     1.964|   0.049|
+|Adjusted   |fmss_r3A little                            |     0.948|     0.347|    -0.154|   0.877|
+|Adjusted   |fmss_r3Somewhat                            |     0.682|     0.411|    -0.930|   0.352|
+|Adjusted   |fmss_r3Quite a bit or A lot                |     0.417|     0.539|    -1.622|   0.105|
+|Adjusted   |fmss_r11A little                           |     0.493|     0.272|    -2.596|   0.009|
+|Adjusted   |fmss_r11Somewhat                           |     0.688|     0.304|    -1.230|   0.219|
+|Adjusted   |fmss_r11Very or Extremely                  |     0.302|     0.586|    -2.044|   0.041|
+|Adjusted   |countSocialMediaExclFB                     |     0.926|     0.104|    -0.739|   0.460|
+|Adjusted   |comm_inpersonOnce a day                    |     1.162|     0.409|     0.368|   0.713|
+|Adjusted   |comm_inpersonA few times a week            |     0.910|     0.325|    -0.291|   0.771|
+|Adjusted   |comm_inpersonOnce a week                   |     2.145|     0.336|     2.269|   0.023|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     2.511|     0.267|     3.454|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE               |     3.148|     0.224|     5.128|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.309|     0.131|     2.049|   0.040|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       688.956|     579| -334.892| 689.784| 733.414|  669.784|         570|
+|Adjusted   |       688.956|     579| -297.869| 629.738| 703.910|  595.738|         563|
+
+
+### DSI-SS
+
+
+|model      |term                                       | oddsratio| std.error| statistic| p.value|
+|:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                |     0.349|     0.221|    -4.767|   0.000|
+|Unadjusted |fmss_r1A little                            |     0.859|     0.309|    -0.490|   0.624|
+|Unadjusted |fmss_r1Somewhat                            |     0.774|     0.386|    -0.664|   0.507|
+|Unadjusted |fmss_r1Very or Extremely                   |     0.799|     0.582|    -0.385|   0.700|
+|Unadjusted |fmss_r3A little                            |     1.345|     0.325|     0.913|   0.361|
+|Unadjusted |fmss_r3Somewhat                            |     1.188|     0.389|     0.444|   0.657|
+|Unadjusted |fmss_r3Quite a bit or A lot                |     0.484|     0.556|    -1.304|   0.192|
+|Unadjusted |fmss_r11A little                           |     0.777|     0.269|    -0.937|   0.349|
+|Unadjusted |fmss_r11Somewhat                           |     0.755|     0.308|    -0.911|   0.362|
+|Unadjusted |fmss_r11Very or Extremely                  |     1.952|     0.490|     1.365|   0.172|
+|Adjusted   |(Intercept)                                |     0.089|     0.357|    -6.773|   0.000|
+|Adjusted   |fmss_r1A little                            |     0.658|     0.353|    -1.185|   0.236|
+|Adjusted   |fmss_r1Somewhat                            |     0.629|     0.440|    -1.054|   0.292|
+|Adjusted   |fmss_r1Very or Extremely                   |     0.665|     0.646|    -0.631|   0.528|
+|Adjusted   |fmss_r3A little                            |     1.382|     0.370|     0.874|   0.382|
+|Adjusted   |fmss_r3Somewhat                            |     1.117|     0.439|     0.252|   0.801|
+|Adjusted   |fmss_r3Quite a bit or A lot                |     0.342|     0.635|    -1.690|   0.091|
+|Adjusted   |fmss_r11A little                           |     0.957|     0.299|    -0.149|   0.882|
+|Adjusted   |fmss_r11Somewhat                           |     0.853|     0.340|    -0.467|   0.640|
+|Adjusted   |fmss_r11Very or Extremely                  |     2.815|     0.563|     1.840|   0.066|
+|Adjusted   |countSocialMediaExclFB                     |     1.031|     0.111|     0.272|   0.786|
+|Adjusted   |comm_inpersonOnce a day                    |     0.995|     0.467|    -0.011|   0.991|
+|Adjusted   |comm_inpersonA few times a week            |     1.134|     0.340|     0.370|   0.711|
+|Adjusted   |comm_inpersonOnce a week                   |     1.361|     0.364|     0.845|   0.398|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     1.897|     0.299|     2.141|   0.032|
+|Adjusted   |indSuicideConsideredEverTRUE               |     5.921|     0.257|     6.928|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.331|     0.129|     2.213|   0.027|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       617.231|     579| -303.033| 626.066| 669.696|  606.066|         570|
+|Adjusted   |       617.231|     579| -255.704| 545.408| 619.579|  511.408|         563|
+
+
+## FMSS quartiles
+
+Stratify by FMSS quartile and compare Q1 vs Q4.
+
+
+```
+## $rowvar
+## [1] "indPHQ: PHQ-2 score greater than or equal to 3"
+## 
+## $colvar
+## [1] "fmssQuartile: FMSS quartile"
+## 
+## $table
+##        fmssQuartile
+## indPHQ  Q1: [14,25] Q4: (34,48] Sum
+##   FALSE         111          94 205
+##   TRUE           63          30  93
+##   Sum           174         124 298
+## 
+## $expected
+##        fmssQuartile
+## indPHQ  Q1: [14,25] Q4: (34,48]
+##   FALSE   119.69799    85.30201
+##   TRUE     54.30201    38.69799
+## 
+## $residual
+##        fmssQuartile
+## indPHQ  Q1: [14,25] Q4: (34,48]
+##   FALSE  -0.7950150   0.9417575
+##   TRUE    1.1803499  -1.3982169
+## 
+## $propRow
+##        fmssQuartile
+## indPHQ  Q1: [14,25] Q4: (34,48]   Sum
+##   FALSE       0.541       0.459 1.000
+##   TRUE        0.677       0.323 1.000
+## 
+## $propCol
+##        fmssQuartile
+## indPHQ  Q1: [14,25] Q4: (34,48]
+##   FALSE       0.638       0.758
+##   TRUE        0.362       0.242
+##   Sum         1.000       1.000
+## 
+## $chisq.test
+## 
+## 	Pearson's Chi-squared test with Yates' continuity correction
+## 
+## data:  T
+## X-squared = 4.3237, df = 1, p-value = 0.03759
+## 
+## 
+## $plot
+```
+
+![plot of chunk unnamed-chunk-40](../figures/unnamed-chunk-40-1.png)
+
+```
+## $rowvar
+## [1] "indDSISS: DSI-SS score greater than or equal to 2"
+## 
+## $colvar
+## [1] "fmssQuartile: FMSS quartile"
+## 
+## $table
+##         fmssQuartile
+## indDSISS Q1: [14,25] Q4: (34,48] Sum
+##    FALSE         127         104 231
+##    TRUE           47          20  67
+##    Sum           174         124 298
+## 
+## $expected
+##         fmssQuartile
+## indDSISS Q1: [14,25] Q4: (34,48]
+##    FALSE   134.87919    96.12081
+##    TRUE     39.12081    27.87919
+## 
+## $residual
+##         fmssQuartile
+## indDSISS Q1: [14,25] Q4: (34,48]
+##    FALSE  -0.6784367   0.8036614
+##    TRUE    1.2597313  -1.4922504
+## 
+## $propRow
+##         fmssQuartile
+## indDSISS Q1: [14,25] Q4: (34,48]   Sum
+##    FALSE       0.550       0.450 1.000
+##    TRUE        0.701       0.299 1.000
+## 
+## $propCol
+##         fmssQuartile
+## indDSISS Q1: [14,25] Q4: (34,48]
+##    FALSE       0.730       0.839
+##    TRUE        0.270       0.161
+##    Sum         1.000       1.000
+## 
+## $chisq.test
+## 
+## 	Pearson's Chi-squared test with Yates' continuity correction
+## 
+## data:  T
+## X-squared = 4.3153, df = 1, p-value = 0.03777
+## 
+## 
+## $plot
+```
+
+![plot of chunk unnamed-chunk-40](../figures/unnamed-chunk-40-2.png)
+
 
 
 
@@ -960,29 +1163,25 @@ Closely exam FMSS items 1, 3, and 11
 
 |model      |term                                       | oddsratio| std.error| statistic| p.value|
 |:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |     0.636|     0.183|    -2.473|   0.013|
-|Unadjusted |fmss_r11A little                           |     0.436|     0.240|    -3.461|   0.001|
-|Unadjusted |fmss_r11Somewhat                           |     0.686|     0.244|    -1.545|   0.122|
-|Unadjusted |fmss_r11Very or Extremely                  |     0.363|     0.488|    -2.077|   0.038|
-|Adjusted   |(Intercept)                                |     0.232|     0.289|    -5.046|   0.000|
-|Adjusted   |fmss_r11A little                           |     0.473|     0.260|    -2.879|   0.004|
-|Adjusted   |fmss_r11Somewhat                           |     0.692|     0.265|    -1.393|   0.164|
-|Adjusted   |fmss_r11Very or Extremely                  |     0.308|     0.532|    -2.217|   0.027|
-|Adjusted   |countSocialMediaExclFB                     |     0.922|     0.104|    -0.778|   0.436|
-|Adjusted   |comm_inpersonOnce a day                    |     1.142|     0.405|     0.327|   0.744|
-|Adjusted   |comm_inpersonA few times a week            |     0.890|     0.321|    -0.364|   0.716|
-|Adjusted   |comm_inpersonOnce a week                   |     2.141|     0.331|     2.300|   0.021|
-|Adjusted   |comm_inpersonEvery few weeks or less often |     2.410|     0.262|     3.353|   0.001|
-|Adjusted   |indSuicideConsideredEverTRUE               |     3.124|     0.221|     5.158|   0.000|
-|Adjusted   |countSuicideAttempts                       |     1.281|     0.128|     1.933|   0.053|
+|Unadjusted |(Intercept)                                |     0.568|     0.158|    -3.591|   0.000|
+|Unadjusted |fmssQuartileQ4: (34,48]                    |     0.562|     0.262|    -2.194|   0.028|
+|Adjusted   |(Intercept)                                |     0.253|     0.328|    -4.200|   0.000|
+|Adjusted   |fmssQuartileQ4: (34,48]                    |     0.591|     0.287|    -1.836|   0.066|
+|Adjusted   |countSocialMediaExclFB                     |     0.946|     0.139|    -0.403|   0.687|
+|Adjusted   |comm_inpersonOnce a day                    |     0.954|     0.553|    -0.085|   0.932|
+|Adjusted   |comm_inpersonA few times a week            |     0.557|     0.441|    -1.328|   0.184|
+|Adjusted   |comm_inpersonOnce a week                   |     2.104|     0.442|     1.682|   0.093|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     1.658|     0.350|     1.446|   0.148|
+|Adjusted   |indSuicideConsideredEverTRUE               |     3.084|     0.301|     3.747|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.170|     0.157|     1.001|   0.317|
 
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |        690.93|     582| -338.494| 684.989| 702.461|  676.989|         579|
-|Adjusted   |        690.93|     582| -301.909| 625.817| 673.868|  603.817|         572|
+|model      | null.deviance| df.null|  logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|-------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       369.970|     297| -182.51| 369.019| 376.413|  365.019|         296|
+|Adjusted   |       366.891|     295| -162.91| 343.820| 377.033|  325.820|         287|
 
 
 ### DSI-SS
@@ -990,26 +1189,22 @@ Closely exam FMSS items 1, 3, and 11
 
 |model      |term                                       | oddsratio| std.error| statistic| p.value|
 |:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |     0.351|     0.202|    -5.173|   0.000|
-|Unadjusted |fmss_r11A little                           |     0.795|     0.255|    -0.901|   0.367|
-|Unadjusted |fmss_r11Somewhat                           |     0.683|     0.276|    -1.380|   0.167|
-|Unadjusted |fmss_r11Very or Extremely                  |     1.295|     0.432|     0.598|   0.550|
-|Adjusted   |(Intercept)                                |     0.092|     0.339|    -7.022|   0.000|
-|Adjusted   |fmss_r11A little                           |     0.932|     0.282|    -0.249|   0.804|
-|Adjusted   |fmss_r11Somewhat                           |     0.670|     0.302|    -1.326|   0.185|
-|Adjusted   |fmss_r11Very or Extremely                  |     1.344|     0.490|     0.604|   0.546|
-|Adjusted   |countSocialMediaExclFB                     |     0.987|     0.108|    -0.118|   0.906|
-|Adjusted   |comm_inpersonOnce a day                    |     1.134|     0.445|     0.282|   0.778|
-|Adjusted   |comm_inpersonA few times a week            |     1.049|     0.334|     0.143|   0.887|
-|Adjusted   |comm_inpersonOnce a week                   |     1.309|     0.358|     0.752|   0.452|
-|Adjusted   |comm_inpersonEvery few weeks or less often |     1.695|     0.290|     1.821|   0.069|
-|Adjusted   |indSuicideConsideredEverTRUE               |     5.638|     0.251|     6.896|   0.000|
-|Adjusted   |countSuicideAttempts                       |     1.271|     0.123|     1.948|   0.051|
+|Unadjusted |(Intercept)                                |     0.370|     0.171|    -5.822|   0.000|
+|Unadjusted |fmssQuartileQ4: (34,48]                    |     0.520|     0.298|    -2.197|   0.028|
+|Adjusted   |(Intercept)                                |     0.061|     0.455|    -6.157|   0.000|
+|Adjusted   |fmssQuartileQ4: (34,48]                    |     0.524|     0.337|    -1.918|   0.055|
+|Adjusted   |countSocialMediaExclFB                     |     0.976|     0.157|    -0.155|   0.877|
+|Adjusted   |comm_inpersonOnce a day                    |     1.910|     0.650|     0.995|   0.320|
+|Adjusted   |comm_inpersonA few times a week            |     1.356|     0.494|     0.617|   0.537|
+|Adjusted   |comm_inpersonOnce a week                   |     1.858|     0.517|     1.200|   0.230|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     2.594|     0.435|     2.191|   0.028|
+|Adjusted   |indSuicideConsideredEverTRUE               |     7.312|     0.378|     5.265|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.134|     0.156|     0.801|   0.423|
 
 \newline
 
 
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       621.236|     582| -308.970| 625.940| 643.413|  617.940|         579|
-|Adjusted   |       621.236|     582| -264.732| 551.463| 599.513|  529.463|         572|
+|Unadjusted |       317.642|     297| -156.291| 316.581| 323.975|  312.581|         296|
+|Adjusted   |       314.645|     296| -129.592| 277.183| 310.427|  259.183|         288|
