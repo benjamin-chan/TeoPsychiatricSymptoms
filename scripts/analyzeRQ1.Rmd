@@ -292,3 +292,66 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
           M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
+
+
+## FMSS quartiles
+
+Stratify by FMSS quartile and compare Q1 vs Q4.
+
+```{r}
+varlabel <- data.frame(name = c("fmssQuartile", "indPHQ", "indDSISS"),
+                       label = c("FMSS quartile",
+                                 "PHQ-2 score greater than or equal to 3",
+                                 "DSI-SS score greater than or equal to 2"),
+                       stringsAsFactors = FALSE)
+df3 <-
+  df0 %>% 
+  filter(grepl("Q[14]", fmssQuartile)) %>% 
+  mutate(fmssQuartile = droplevels(fmssQuartile))
+chisqTable("indPHQ", "fmssQuartile", data = df3, varlabel = varlabel)
+chisqTable("indDSISS", "fmssQuartile", data = df3, varlabel = varlabel)
+```
+
+```{r}
+x <- "fmssQuartile"
+```
+
+
+### PHQ-2
+
+```{r}
+y <- "indPHQ"
+M0 <- fitModel(df3, y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(df3, y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+  kable(digits = 3)
+```
+
+
+### DSI-SS
+
+```{r}
+y <- "indDSISS"
+M0 <- fitModel(df3, y, x)
+table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
+M <- fitModel(df3, y, x, covar)
+table1 <- M[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Adjusted") %>% select(model, everything())
+bind_rows(table0, table1) %>% rename(oddsratio = estimate) %>% kable(digits = 3)
+```
+
+\newline
+
+```{r}
+bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% select(model, everything()),
+          M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
+  kable(digits = 3)
+```
