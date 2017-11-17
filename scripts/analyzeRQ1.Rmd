@@ -215,9 +215,9 @@ varlabel <- data.frame(name = c("comm_inperson", "comm_facebook", "fb_freq"),
                                  "Actively interact on Facebook, such as sharing, posting, commenting, or tagging",
                                  "How often do you visit or use Facebook?"),
                        stringsAsFactors = FALSE)
-chisqTable("comm_facebook", "fb_freq", data = df2, varlabel = varlabel)
-chisqTable("comm_facebook", "comm_inperson", data = df2, varlabel = varlabel)
-chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)
+chisqTable("comm_facebook", "fb_freq", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("comm_facebook", "comm_inperson", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
 ```
 
 
@@ -237,12 +237,12 @@ varlabel <- data.frame(name = c("fmss_r1", "fmss_r3", "fmss_r11", "indPHQ", "ind
                                  "PHQ-2 score greater than or equal to 3",
                                  "DSI-SS score greater than or equal to 2"),
                        stringsAsFactors = FALSE)
-chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)
-chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)
-chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)
-chisqTable("indDSISS", "fmss_r1", varlabel = varlabel)
-chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)
-chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)
+chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indDSISS", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 ```
 
 ```{r}
