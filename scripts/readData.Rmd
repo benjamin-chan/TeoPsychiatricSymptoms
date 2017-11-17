@@ -186,6 +186,20 @@ df0 %>%
     scale_fill_brewer("Quartile", palette = "RdBu")
 ```
 
+Cronbach's alpha for FMSS items 1-3.
+
+```{r}
+cronbach <- 
+  df0 %>%
+  select(fmss_r1, fmss_r2, fmss_r3) %>% 
+  mutate(fmss_r1 = as.integer(fmss_r1),
+         fmss_r2 = as.integer(fmss_r2),
+         fmss_r3 = as.integer(fmss_r3)) %>% 
+  psych::alpha()
+message(sprintf("Cronbach's alpha = %.03f", cronbach$total$std.alpha))
+cronbach
+```
+
 ```{r}
 df0 <- 
   df0 %>% 

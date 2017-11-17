@@ -9,6 +9,7 @@ library(svglite)
 library(knitr)
 library(broom)
 library(ggmosaic)
+library(psych)
 # Reproducibility steps.
 set.seed(as.integer(as.Date("2017-08-15")))
 # Source user-defined functions.
