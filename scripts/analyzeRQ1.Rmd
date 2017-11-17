@@ -223,30 +223,34 @@ chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)[c("table
 
 ## FMSS items
 
-Closely exam FMSS items 1, 3, and 11
+Closely exam FMSS items 1, 2, 3, and 11
 
 * `fmss_r1` For you, how good is Facebook for getting real help or support?
+* `fmss_r2` For the support you get on Facebook, how much practical help is it?
 * `fmss_r3` How much does the support you get on Facebook make you feel better?
 * `fmss_r11` How close to people does Facebook make you feel?
 
 ```{r}
-varlabel <- data.frame(name = c("fmss_r1", "fmss_r3", "fmss_r11", "indPHQ", "indDSISS"),
+varlabel <- data.frame(name = c("fmss_r1", "fmss_r2", "fmss_r3", "fmss_r11", "indPHQ", "indDSISS"),
                        label = c("For you, how good is Facebook for getting real help or support?",
+                                 "For the support you get on Facebook, how much practical help is it?",
                                  "How much does the support you get on Facebook make you feel better?",
                                  "How close to people does Facebook make you feel?",
                                  "PHQ-2 score greater than or equal to 3",
                                  "DSI-SS score greater than or equal to 2"),
                        stringsAsFactors = FALSE)
 chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indPHQ", "fmss_r2", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 chisqTable("indDSISS", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indDSISS", "fmss_r2", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
 ```
 
 ```{r}
-x <- "fmss_r1 + fmss_r3 + fmss_r11"
+x <- "fmss_r1 + fmss_r2 + fmss_r3 + fmss_r11"
 ```
 
 
@@ -304,8 +308,8 @@ df3 <-
   df0 %>% 
   filter(grepl("Q[14]", fmssQuartile)) %>% 
   mutate(fmssQuartile = droplevels(fmssQuartile))
-chisqTable("indPHQ", "fmssQuartile", data = df3, varlabel = varlabel)
-chisqTable("indDSISS", "fmssQuartile", data = df3, varlabel = varlabel)
+chisqTable("indPHQ", "fmssQuartile", data = df3, varlabel = varlabel)[c("table", "expected", "chisq.test")]
+chisqTable("indDSISS", "fmssQuartile", data = df3, varlabel = varlabel)[c("table", "expected", "chisq.test")]
 ```
 
 ```{r}
