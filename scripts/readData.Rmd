@@ -196,11 +196,12 @@ cronbach <-
          fmss_r2 = as.integer(fmss_r2),
          fmss_r3 = as.integer(fmss_r3)) %>% 
   psych::alpha()
-message(sprintf("Cronbach's alpha = %.03f", cronbach$total$std.alpha))
 cronbach
 ```
 
-```{r}
+Cronbach's alpha for FMSS items 1-3 = `r sprintf("Cronbach's alpha = %.03f", cronbach$total$std.alpha)`
+
+```{r, warning = FALSE}
 df0 <- 
   df0 %>% 
   mutate(fmss_r1 = factor(fmss_r1, 

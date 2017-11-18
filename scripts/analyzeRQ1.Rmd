@@ -230,7 +230,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 * `fmss_r3` How much does the support you get on Facebook make you feel better?
 * `fmss_r11` How close to people does Facebook make you feel?
 
-```{r}
+```{r, warning = FALSE}
 varlabel <- data.frame(name = c("fmss_r1", "fmss_r2", "fmss_r3", "fmss_r11", "indPHQ", "indDSISS"),
                        label = c("For you, how good is Facebook for getting real help or support?",
                                  "For the support you get on Facebook, how much practical help is it?",
@@ -298,7 +298,7 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 Stratify by FMSS quartile and compare Q1 vs Q4.
 
-```{r}
+```{r, warning = FALSE}
 varlabel <- data.frame(name = c("fmssQuartile", "indPHQ", "indDSISS"),
                        label = c("FMSS quartile",
                                  "PHQ-2 score greater than or equal to 3",
