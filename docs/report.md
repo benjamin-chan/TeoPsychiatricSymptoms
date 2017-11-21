@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-11-17 16:13:36"
+date: "2017-11-21 07:57:07"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -152,22 +152,13 @@ Cronbach's alpha for FMSS items 1-3.
 ## fmss_r3 0.33 0.35 0.21 0.10 0.02 0.01
 ```
 
-Cronbach's alpha for FMSS items 1-3 = Cronbach's alpha = 0.910
+Cronbach's alpha for FMSS items 1-3 = Cronbach's alpha = 0.910.
+
+Create FMSS subscore for items 1-3.
 
 
-```
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
 
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
 
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-```
 
 
 ## Dependent variables
@@ -611,227 +602,177 @@ Closely exam FMSS items 1, 2, 3, and 11
 ```
 ## $table
 ##        fmss_r1
-## indPHQ  Not at all A little Somewhat Very or Extremely Very or Extremely
-##   FALSE        146      161       88                25                 0
-##   TRUE          61       55       33                15                 0
-##   Sum          207      216      121                40                 0
-##        fmss_r1
-## indPHQ  Sum
-##   FALSE 420
-##   TRUE  164
-##   Sum   584
+## indPHQ  Not at all A little Somewhat Very or Extremely Sum
+##   FALSE        146      161       88                25 420
+##   TRUE          61       55       33                15 164
+##   Sum          207      216      121                40 584
 ## 
 ## $expected
 ##        fmss_r1
-## indPHQ  Not at all  A little Somewhat Very or Extremely Very or Extremely
-##   FALSE  148.86986 155.34247 87.02055          28.76712                 0
-##   TRUE    58.13014  60.65753 33.97945          11.23288                 0
+## indPHQ  Not at all  A little Somewhat Very or Extremely
+##   FALSE  148.86986 155.34247 87.02055          28.76712
+##   TRUE    58.13014  60.65753 33.97945          11.23288
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 2.7267, df = 3, p-value = 0.4357
 ```
 
 ```
 ## $table
 ##        fmss_r2
-## indPHQ  None A little Some Quite a bit or A lot Quite a bit or A lot Sum
-##   FALSE  132      160   93                   34                    0 419
-##   TRUE    59       58   27                   20                    0 164
-##   Sum    191      218  120                   54                    0 583
+## indPHQ  None A little Some Quite a bit or A lot Sum
+##   FALSE  132      160   93                   34 419
+##   TRUE    59       58   27                   20 164
+##   Sum    191      218  120                   54 583
 ## 
 ## $expected
 ##        fmss_r2
 ## indPHQ       None  A little     Some Quite a bit or A lot
 ##   FALSE 137.27101 156.67581 86.24357             38.80961
 ##   TRUE   53.72899  61.32419 33.75643             15.19039
-##        fmss_r2
-## indPHQ  Quite a bit or A lot
-##   FALSE                    0
-##   TRUE                     0
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 4.9707, df = 3, p-value = 0.174
 ```
 
 ```
 ## $table
 ##        fmss_r3
-## indPHQ  Not at all A little Somewhat Quite a bit or A lot
-##   FALSE        132      149       87                   51
-##   TRUE          58       57       33                   16
-##   Sum          190      206      120                   67
-##        fmss_r3
-## indPHQ  Quite a bit or A lot Sum
-##   FALSE                    0 419
-##   TRUE                     0 164
-##   Sum                      0 583
+## indPHQ  Not at all A little Somewhat Quite a bit or A lot Sum
+##   FALSE        132      149       87                   51 419
+##   TRUE          58       57       33                   16 164
+##   Sum          190      206      120                   67 583
 ## 
 ## $expected
 ##        fmss_r3
 ## indPHQ  Not at all  A little Somewhat Quite a bit or A lot
 ##   FALSE  136.55232 148.05146 86.24357             48.15266
 ##   TRUE    53.44768  57.94854 33.75643             18.84734
-##        fmss_r3
-## indPHQ  Quite a bit or A lot
-##   FALSE                    0
-##   TRUE                     0
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 1.1832, df = 3, p-value = 0.757
 ```
 
 ```
 ## $table
 ##        fmss_r11
-## indPHQ  Not at all A little Somewhat Very or Extremely Very or Extremely
-##   FALSE         77      192      126                26                 0
-##   TRUE          49       53       56                 6                 0
-##   Sum          126      245      182                32                 0
-##        fmss_r11
-## indPHQ  Sum
-##   FALSE 421
-##   TRUE  164
-##   Sum   585
+## indPHQ  Not at all A little Somewhat Very or Extremely Sum
+##   FALSE         77      192      126                26 421
+##   TRUE          49       53       56                 6 164
+##   Sum          126      245      182                32 585
 ## 
 ## $expected
 ##        fmss_r11
-## indPHQ  Not at all  A little  Somewhat Very or Extremely Very or Extremely
-##   FALSE   90.67692 176.31624 130.97778          23.02906                 0
-##   TRUE    35.32308  68.68376  51.02222           8.97094                 0
+## indPHQ  Not at all  A little  Somewhat Very or Extremely
+##   FALSE   90.67692 176.31624 130.97778          23.02906
+##   TRUE    35.32308  68.68376  51.02222           8.97094
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 14.377, df = 3, p-value = 0.002434
 ```
 
 ```
 ## $table
 ##         fmss_r1
-## indDSISS Not at all A little Somewhat Very or Extremely Very or Extremely
-##    FALSE        157      164       98                33                 0
-##    TRUE          51       50       23                 7                 0
-##    Sum          208      214      121                40                 0
-##         fmss_r1
-## indDSISS Sum
-##    FALSE 452
-##    TRUE  131
-##    Sum   583
+## indDSISS Not at all A little Somewhat Very or Extremely Sum
+##    FALSE        157      164       98                33 452
+##    TRUE          51       50       23                 7 131
+##    Sum          208      214      121                40 583
 ## 
 ## $expected
 ##         fmss_r1
-## indDSISS Not at all  A little Somewhat Very or Extremely Very or Extremely
-##    FALSE  161.26244 165.91424 93.81132         31.012007                 0
-##    TRUE    46.73756  48.08576 27.18868          8.987993                 0
+## indDSISS Not at all  A little Somewhat Very or Extremely
+##    FALSE  161.26244 165.91424 93.81132         31.012007
+##    TRUE    46.73756  48.08576 27.18868          8.987993
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 1.9992, df = 3, p-value = 0.5726
 ```
 
 ```
 ## $table
 ##         fmss_r2
-## indDSISS None A little Some Quite a bit or A lot Quite a bit or A lot Sum
-##    FALSE  148      159  101                   43                    0 451
-##    TRUE    43       58   19                   11                    0 131
-##    Sum    191      217  120                   54                    0 582
+## indDSISS None A little Some Quite a bit or A lot Sum
+##    FALSE  148      159  101                   43 451
+##    TRUE    43       58   19                   11 131
+##    Sum    191      217  120                   54 582
 ## 
 ## $expected
 ##         fmss_r2
 ## indDSISS      None  A little     Some Quite a bit or A lot
 ##    FALSE 148.00859 168.15636 92.98969             41.84536
 ##    TRUE   42.99141  48.84364 27.01031             12.15464
-##         fmss_r2
-## indDSISS Quite a bit or A lot
-##    FALSE                    0
-##    TRUE                     0
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 5.4222, df = 3, p-value = 0.1434
 ```
 
 ```
 ## $table
 ##         fmss_r3
-## indDSISS Not at all A little Somewhat Quite a bit or A lot
-##    FALSE        146      153       92                   59
-##    TRUE          44       53       27                    8
-##    Sum          190      206      119                   67
-##         fmss_r3
-## indDSISS Quite a bit or A lot Sum
-##    FALSE                    0 450
-##    TRUE                     0 132
-##    Sum                      0 582
+## indDSISS Not at all A little Somewhat Quite a bit or A lot Sum
+##    FALSE        146      153       92                   59 450
+##    TRUE          44       53       27                    8 132
+##    Sum          190      206      119                   67 582
 ## 
 ## $expected
 ##         fmss_r3
 ## indDSISS Not at all  A little Somewhat Quite a bit or A lot
 ##    FALSE  146.90722 159.27835 92.01031             51.80412
 ##    TRUE    43.09278  46.72165 26.98969             15.19588
-##         fmss_r3
-## indDSISS Quite a bit or A lot
-##    FALSE                    0
-##    TRUE                     0
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 5.5229, df = 3, p-value = 0.1373
 ```
 
 ```
 ## $table
 ##         fmss_r11
-## indDSISS Not at all A little Somewhat Very or Extremely Very or Extremely
-##    FALSE         94      190      146                22                 0
-##    TRUE          33       53       36                10                 0
-##    Sum          127      243      182                32                 0
-##         fmss_r11
-## indDSISS Sum
-##    FALSE 452
-##    TRUE  132
-##    Sum   584
+## indDSISS Not at all A little Somewhat Very or Extremely Sum
+##    FALSE         94      190      146                22 452
+##    TRUE          33       53       36                10 132
+##    Sum          127      243      182                32 584
 ## 
 ## $expected
 ##         fmss_r11
 ## indDSISS Not at all  A little  Somewhat Very or Extremely
 ##    FALSE   98.29452 188.07534 140.86301         24.767123
 ##    TRUE    28.70548  54.92466  41.13699          7.232877
-##         fmss_r11
-## indDSISS Very or Extremely
-##    FALSE                 0
-##    TRUE                  0
 ## 
 ## $chisq.test
 ## 
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  T
-## X-squared = NaN, df = 4, p-value = NA
+## X-squared = 3.1139, df = 3, p-value = 0.3744
 ```
 
 
@@ -840,169 +781,53 @@ Closely exam FMSS items 1, 2, 3, and 11
 ### PHQ-2
 
 
-```
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-```
-
-
-
 |model      |term                                       | oddsratio| std.error| statistic| p.value|
 |:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |     0.655|     0.204|    -2.077|   0.038|
-|Unadjusted |fmss_r1A little                            |     1.280|     0.341|     0.724|   0.469|
-|Unadjusted |fmss_r1Somewhat                            |     1.819|     0.418|     1.431|   0.153|
-|Unadjusted |fmss_r1Very or Extremely                   |     2.602|     0.582|     1.642|   0.101|
-|Unadjusted |fmss_r1Very or Extremely                   |     4.545|     1.235|     1.226|   0.220|
-|Unadjusted |fmss_r2A little                            |     0.743|     0.381|    -0.780|   0.435|
-|Unadjusted |fmss_r2Some                                |     0.544|     0.478|    -1.273|   0.203|
-|Unadjusted |fmss_r2Quite a bit or A lot                |     1.736|     0.618|     0.893|   0.372|
-|Unadjusted |fmss_r2Quite a bit or A lot                |     0.439|     1.449|    -0.568|   0.570|
-|Unadjusted |fmss_r3A little                            |     1.048|     0.368|     0.129|   0.898|
-|Unadjusted |fmss_r3Somewhat                            |     0.894|     0.441|    -0.255|   0.799|
-|Unadjusted |fmss_r3Quite a bit or A lot                |     0.379|     0.623|    -1.557|   0.119|
-|Unadjusted |fmss_r3Quite a bit or A lot                |     0.274|     1.063|    -1.218|   0.223|
-|Unadjusted |fmss_r11A little                           |     0.425|     0.255|    -3.358|   0.001|
-|Unadjusted |fmss_r11Somewhat                           |     0.675|     0.283|    -1.389|   0.165|
-|Unadjusted |fmss_r11Very or Extremely                  |     0.329|     0.573|    -1.944|   0.052|
-|Unadjusted |fmss_r11Very or Extremely                  |     0.656|     1.347|    -0.313|   0.754|
-|Adjusted   |(Intercept)                                |     0.236|     0.307|    -4.702|   0.000|
-|Adjusted   |fmss_r1A little                            |     0.967|     0.370|    -0.090|   0.928|
-|Adjusted   |fmss_r1Somewhat                            |     1.740|     0.454|     1.221|   0.222|
-|Adjusted   |fmss_r1Very or Extremely                   |     2.638|     0.628|     1.545|   0.122|
-|Adjusted   |fmss_r1Very or Extremely                   |     8.011|     1.317|     1.580|   0.114|
-|Adjusted   |fmss_r2A little                            |     0.933|     0.413|    -0.167|   0.868|
-|Adjusted   |fmss_r2Some                                |     0.604|     0.522|    -0.965|   0.334|
-|Adjusted   |fmss_r2Quite a bit or A lot                |     1.607|     0.662|     0.717|   0.474|
-|Adjusted   |fmss_r2Quite a bit or A lot                |     0.307|     1.622|    -0.729|   0.466|
-|Adjusted   |fmss_r3A little                            |     1.013|     0.404|     0.031|   0.975|
-|Adjusted   |fmss_r3Somewhat                            |     0.774|     0.481|    -0.531|   0.595|
-|Adjusted   |fmss_r3Quite a bit or A lot                |     0.313|     0.685|    -1.694|   0.090|
-|Adjusted   |fmss_r3Quite a bit or A lot                |     0.293|     1.120|    -1.095|   0.274|
-|Adjusted   |fmss_r11A little                           |     0.481|     0.274|    -2.666|   0.008|
-|Adjusted   |fmss_r11Somewhat                           |     0.714|     0.310|    -1.086|   0.277|
-|Adjusted   |fmss_r11Very or Extremely                  |     0.295|     0.628|    -1.945|   0.052|
-|Adjusted   |fmss_r11Very or Extremely                  |     0.490|     1.617|    -0.441|   0.659|
-|Adjusted   |countSocialMediaExclFB                     |     0.935|     0.107|    -0.624|   0.533|
-|Adjusted   |comm_inpersonOnce a day                    |     1.108|     0.415|     0.248|   0.804|
-|Adjusted   |comm_inpersonA few times a week            |     0.951|     0.328|    -0.153|   0.878|
-|Adjusted   |comm_inpersonOnce a week                   |     2.207|     0.342|     2.317|   0.021|
-|Adjusted   |comm_inpersonEvery few weeks or less often |     2.609|     0.271|     3.542|   0.000|
-|Adjusted   |indSuicideConsideredEverTRUE               |     3.003|     0.227|     4.852|   0.000|
-|Adjusted   |countSuicideAttempts                       |     1.327|     0.135|     2.097|   0.036|
+|Unadjusted |(Intercept)                                |     0.406|     0.142|    -6.329|   0.000|
+|Unadjusted |fmssSubscore                               |     0.988|     0.034|    -0.355|   0.722|
+|Adjusted   |(Intercept)                                |     0.156|     0.255|    -7.303|   0.000|
+|Adjusted   |fmssSubscore                               |     0.972|     0.037|    -0.770|   0.441|
+|Adjusted   |countSocialMediaExclFB                     |     0.921|     0.104|    -0.794|   0.427|
+|Adjusted   |comm_inpersonOnce a day                    |     1.169|     0.401|     0.390|   0.696|
+|Adjusted   |comm_inpersonA few times a week            |     0.920|     0.317|    -0.265|   0.791|
+|Adjusted   |comm_inpersonOnce a week                   |     2.051|     0.327|     2.200|   0.028|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     2.579|     0.260|     3.647|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE               |     3.212|     0.219|     5.329|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.248|     0.125|     1.776|   0.076|
 
 \newline
 
 
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       688.956|     579| -331.003| 696.007| 770.178|  662.007|         563|
-|Adjusted   |       688.956|     579| -295.093| 638.186| 742.899|  590.186|         556|
+|Unadjusted |       688.956|     579| -344.415| 692.829| 701.555|  688.829|         578|
+|Adjusted   |       688.956|     579| -306.439| 630.877| 670.145|  612.877|         571|
 
 
 ### DSI-SS
 
 
-```
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-```
-
-
-
 |model      |term                                       | oddsratio| std.error| statistic| p.value|
 |:----------|:------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                |     0.333|     0.226|    -4.873|   0.000|
-|Unadjusted |fmss_r1A little                            |     0.759|     0.340|    -0.812|   0.417|
-|Unadjusted |fmss_r1Somewhat                            |     0.771|     0.432|    -0.600|   0.548|
-|Unadjusted |fmss_r1Very or Extremely                   |     0.615|     0.668|    -0.729|   0.466|
-|Unadjusted |fmss_r1Very or Extremely                   |     1.045|     1.525|     0.029|   0.977|
-|Unadjusted |fmss_r2A little                            |     1.473|     0.391|     0.992|   0.321|
-|Unadjusted |fmss_r2Some                                |     0.881|     0.503|    -0.252|   0.801|
-|Unadjusted |fmss_r2Quite a bit or A lot                |     2.242|     0.666|     1.212|   0.226|
-|Unadjusted |fmss_r2Quite a bit or A lot                |     1.110|     1.487|     0.070|   0.944|
-|Unadjusted |fmss_r3A little                            |     1.141|     0.380|     0.346|   0.729|
-|Unadjusted |fmss_r3Somewhat                            |     1.101|     0.454|     0.211|   0.833|
-|Unadjusted |fmss_r3Quite a bit or A lot                |     0.279|     0.703|    -1.818|   0.069|
-|Unadjusted |fmss_r3Quite a bit or A lot                |     0.684|     1.086|    -0.350|   0.726|
-|Unadjusted |fmss_r11A little                           |     0.780|     0.271|    -0.917|   0.359|
-|Unadjusted |fmss_r11Somewhat                           |     0.803|     0.311|    -0.706|   0.480|
-|Unadjusted |fmss_r11Very or Extremely                  |     2.199|     0.518|     1.522|   0.128|
-|Unadjusted |fmss_r11Very or Extremely                  |     1.195|     1.434|     0.124|   0.901|
-|Adjusted   |(Intercept)                                |     0.079|     0.367|    -6.924|   0.000|
-|Adjusted   |fmss_r1A little                            |     0.533|     0.396|    -1.591|   0.112|
-|Adjusted   |fmss_r1Somewhat                            |     0.625|     0.500|    -0.941|   0.347|
-|Adjusted   |fmss_r1Very or Extremely                   |     0.593|     0.724|    -0.721|   0.471|
-|Adjusted   |fmss_r1Very or Extremely                   |     1.508|     1.776|     0.231|   0.817|
-|Adjusted   |fmss_r2A little                            |     1.930|     0.441|     1.492|   0.136|
-|Adjusted   |fmss_r2Some                                |     0.976|     0.566|    -0.042|   0.966|
-|Adjusted   |fmss_r2Quite a bit or A lot                |     1.680|     0.718|     0.722|   0.470|
-|Adjusted   |fmss_r2Quite a bit or A lot                |     1.340|     1.746|     0.167|   0.867|
-|Adjusted   |fmss_r3A little                            |     1.016|     0.427|     0.037|   0.971|
-|Adjusted   |fmss_r3Somewhat                            |     0.964|     0.508|    -0.072|   0.942|
-|Adjusted   |fmss_r3Quite a bit or A lot                |     0.178|     0.795|    -2.174|   0.030|
-|Adjusted   |fmss_r3Quite a bit or A lot                |     0.643|     1.155|    -0.383|   0.702|
-|Adjusted   |fmss_r11A little                           |     0.980|     0.302|    -0.068|   0.945|
-|Adjusted   |fmss_r11Somewhat                           |     0.942|     0.347|    -0.174|   0.862|
-|Adjusted   |fmss_r11Very or Extremely                  |     3.398|     0.595|     2.054|   0.040|
-|Adjusted   |fmss_r11Very or Extremely                  |     0.754|     1.623|    -0.174|   0.862|
-|Adjusted   |countSocialMediaExclFB                     |     1.038|     0.114|     0.323|   0.747|
-|Adjusted   |comm_inpersonOnce a day                    |     0.958|     0.471|    -0.092|   0.927|
-|Adjusted   |comm_inpersonA few times a week            |     1.199|     0.348|     0.522|   0.602|
-|Adjusted   |comm_inpersonOnce a week                   |     1.499|     0.370|     1.094|   0.274|
-|Adjusted   |comm_inpersonEvery few weeks or less often |     2.015|     0.306|     2.292|   0.022|
-|Adjusted   |indSuicideConsideredEverTRUE               |     5.821|     0.260|     6.767|   0.000|
-|Adjusted   |countSuicideAttempts                       |     1.380|     0.134|     2.402|   0.016|
+|Unadjusted |(Intercept)                                |     0.340|     0.150|    -7.176|   0.000|
+|Unadjusted |fmssSubscore                               |     0.949|     0.038|    -1.391|   0.164|
+|Adjusted   |(Intercept)                                |     0.103|     0.291|    -7.824|   0.000|
+|Adjusted   |fmssSubscore                               |     0.909|     0.042|    -2.273|   0.023|
+|Adjusted   |countSocialMediaExclFB                     |     1.028|     0.109|     0.253|   0.800|
+|Adjusted   |comm_inpersonOnce a day                    |     0.942|     0.462|    -0.130|   0.897|
+|Adjusted   |comm_inpersonA few times a week            |     1.078|     0.332|     0.226|   0.821|
+|Adjusted   |comm_inpersonOnce a week                   |     1.335|     0.356|     0.811|   0.417|
+|Adjusted   |comm_inpersonEvery few weeks or less often |     1.661|     0.289|     1.755|   0.079|
+|Adjusted   |indSuicideConsideredEverTRUE               |     5.832|     0.253|     6.979|   0.000|
+|Adjusted   |countSuicideAttempts                       |     1.315|     0.123|     2.221|   0.026|
 
 \newline
 
 
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       617.231|     579| -299.953| 633.905| 708.077|  599.905|         563|
-|Adjusted   |       617.231|     579| -252.078| 552.156| 656.868|  504.156|         556|
+|Unadjusted |       617.231|     579| -307.628| 619.257| 627.983|  615.257|         578|
+|Adjusted   |       617.231|     579| -260.629| 539.259| 578.526|  521.259|         571|
 
 
 ## FMSS quartiles
