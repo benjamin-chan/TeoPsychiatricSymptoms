@@ -215,7 +215,11 @@ df0 <-
                           labels = c("Not at all", "A little", "Somewhat", rep("Quite a bit or A lot", 2))),
          fmss_r11 = factor(fmss_r11, 
                            levels = 0:4, 
-                           labels = c("Not at all", "A little", "Somewhat", rep("Very or Extremely", 2))))
+                           labels = c("Not at all", "A little", "Somewhat", rep("Very or Extremely", 2)))) %>% 
+  mutate(fmss_r1 = droplevels(fmss_r1),
+         fmss_r2 = droplevels(fmss_r2),
+         fmss_r3 = droplevels(fmss_r3),
+         fmss_r11 = droplevels(fmss_r11))
 ```
 
 
