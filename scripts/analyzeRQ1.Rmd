@@ -215,9 +215,13 @@ varlabel <- data.frame(name = c("comm_inperson", "comm_facebook", "fb_freq"),
                                  "Actively interact on Facebook, such as sharing, posting, commenting, or tagging",
                                  "How often do you visit or use Facebook?"),
                        stringsAsFactors = FALSE)
-chisqTable("comm_facebook", "fb_freq", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("comm_facebook", "comm_inperson", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)[c("table", "expected", "chisq.test")]
+tab <- chisqTable("comm_facebook", "fb_freq", data = df2, varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+# plotTable("comm_facebook", "fb_freq", data = tab[["data.frame"]], varlabel = varlabel)
+tab <- chisqTable("comm_facebook", "comm_inperson", data = df2, varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
 ```
 
 
@@ -239,18 +243,26 @@ varlabel <- data.frame(name = c("fmss_r1", "fmss_r2", "fmss_r3", "fmss_r11", "in
                                  "PHQ-2 score greater than or equal to 3",
                                  "DSI-SS score greater than or equal to 2"),
                        stringsAsFactors = FALSE)
-chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indPHQ", "fmss_r2", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indDSISS", "fmss_r1", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indDSISS", "fmss_r2", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)[c("table", "expected", "chisq.test")]
-chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indPHQ", "fmss_r1", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indPHQ", "fmss_r2", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indPHQ", "fmss_r3", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indPHQ", "fmss_r11", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indDSISS", "fmss_r1", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indDSISS", "fmss_r2", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indDSISS", "fmss_r3", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
+tab <- chisqTable("indDSISS", "fmss_r11", varlabel = varlabel)
+tab[c("table", "expected", "chisq.test")]
 ```
 
 ```{r}
-x <- "fmss_r1 + fmss_r2 + fmss_r3 + fmss_r11"
+x <- "fmssSubscore"
 ```
 
 
