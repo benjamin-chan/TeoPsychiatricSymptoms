@@ -160,28 +160,8 @@ df0 <-
                 fmss_r12 +
                 fmss_r13 +
                 fmss_r14) %>% 
-  mutate(fmssZ = scale(.$fmss) %>% as.numeric()) %>% 
-  mutate(fmss_r1 = factor(fmss_r1, 
-                          levels = 0:4, 
-                          labels = c("Not at all", "A little", "Somewhat", "Very", "Extremely")),
-         fmss_r3 = factor(fmss_r3, 
-                          levels = 0:4, 
-                          labels = c("Not at all", "A little", "Somewhat", "Quite a bit", "A lot")),
-         fmss_r11 = factor(fmss_r11, 
-                           levels = 0:4, 
-                           labels = c("Not at all", "A little", "Somewhat", "Very", "Extremely"))) %>% 
-  mutate(fmss_r1 = factor(fmss_r1,
-                          levels = levels(.$fmss_r1),
-                          labels = c(levels(.$fmss_r1)[1:3], rep("Very or Extremely", 2))),
-         fmss_r3 = factor(fmss_r3,
-                          levels = levels(.$fmss_r3),
-                          labels = c(levels(.$fmss_r3)[1:3], rep("Quite a bit or A lot", 2))),
-         fmss_r11 = factor(fmss_r11,
-                           levels = levels(.$fmss_r11),
-                           labels = c(levels(.$fmss_r11)[1:3], rep("Very or Extremely", 2)))) %>% 
-  mutate(fmss_r1 = droplevels(fmss_r1),
-         fmss_r3 = droplevels(fmss_r3),
-         fmss_r11 = droplevels(fmss_r11))
+  mutate(fmssPerceivedSS = fmss_r1 + fmss_r2 + fmss_r3) %>% 
+  mutate(fmssZ = scale(.$fmss) %>% as.numeric()) 
 df0 %>% select(fmss, fmssZ) %>% summary()
 df0 %>% select(fmss, fmssZ) %>% cor(use = "pairwise.complete.obs")
 df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt()
@@ -204,6 +184,50 @@ df0 %>%
     scale_x_continuous("FMSS") + 
     scale_y_continuous("Count") +
     scale_fill_brewer("Quartile", palette = "RdBu")
+```
+
+Cronbach's alpha for FMSS items 1-3.
+
+```{r}
+cronbach <- 
+  df0 %>%
+  select(fmss_r1, fmss_r2, fmss_r3) %>% 
+  mutate(fmss_r1 = as.integer(fmss_r1),
+         fmss_r2 = as.integer(fmss_r2),
+         fmss_r3 = as.integer(fmss_r3)) %>% 
+  psych::alpha()
+cronbach
+```
+
+Cronbach's alpha for FMSS items 1-3 = `r sprintf("Cronbach's alpha = %.03f", cronbach$total$std.alpha)`.
+
+Create FMSS subscore for items 1-3.
+
+```{r}
+df0 <- 
+  df0 %>% 
+  mutate(fmssSubscore = fmss_r1 + fmss_r2 + fmss_r3)
+```
+
+```{r, warning = FALSE}
+df0 <- 
+  df0 %>% 
+  mutate(fmss_r1 = factor(fmss_r1, 
+                          levels = 0:4, 
+                          labels = c("Not at all", "A little", "Somewhat", rep("Very or Extremely", 2))),
+         fmss_r2 = factor(fmss_r2, 
+                          levels = 0:4, 
+                          labels = c("None", "A little", "Some", rep("Quite a bit or A lot", 2))),
+         fmss_r3 = factor(fmss_r3, 
+                          levels = 0:4, 
+                          labels = c("Not at all", "A little", "Somewhat", rep("Quite a bit or A lot", 2))),
+         fmss_r11 = factor(fmss_r11, 
+                           levels = 0:4, 
+                           labels = c("Not at all", "A little", "Somewhat", rep("Very or Extremely", 2)))) %>% 
+  mutate(fmss_r1 = droplevels(fmss_r1),
+         fmss_r2 = droplevels(fmss_r2),
+         fmss_r3 = droplevels(fmss_r3),
+         fmss_r11 = droplevels(fmss_r11))
 ```
 
 
