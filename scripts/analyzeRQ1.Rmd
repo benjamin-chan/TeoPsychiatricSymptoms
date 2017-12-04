@@ -200,13 +200,13 @@ df2 <-
                           labels = c(rep("Less than daily", 4), 
                                      rep("Daily or more", 2))),
          comm_inperson = factor(comm_inperson,
-                                levels = c("Several times a day",
-                                           "Once a day",
-                                           "A few times a week",
+                                levels = c("Every few weeks or less often",
                                            "Once a week",
-                                           "Every few weeks or less often"),
-                                labels = c(rep("Daily or more", 2),
-                                           rep("Less than daily", 3)))) %>% 
+                                           "A few times a week",
+                                           "Once a day",
+                                           "Several times a day"),
+                                labels = c(rep("Less than daily", 3),
+                                           rep("Daily or more", 2)))) %>% 
   mutate(comm_facebook = droplevels(comm_facebook),
          fb_freq = droplevels(fb_freq),
          comm_inperson = droplevels(comm_inperson))
