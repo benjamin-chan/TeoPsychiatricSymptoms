@@ -404,12 +404,12 @@ df0 <-
                                   smYoutube +
                                   smOther) %>%
   mutate(comm_inperson = factor(comm_inperson,
-                                levels = seq(5, 1, -1),
-                                labels = c("Several times a day", 
-                                           "Once a day", 
-                                           "A few times a week", 
-                                           "Once a week", 
-                                           "Every few weeks or less often"))) %>%
+                                levels = 1:5,
+                                labels = c("Every few weeks or less often",
+                                           "Once a week",
+                                           "A few times a week",
+                                           "Once a day",
+                                           "Several times a day"))) %>%
   mutate(indSuicideConsideredEver = as.logical(suicide_considered_ever)) %>% 
   mutate(indSuicideConsidered12mo = case_when(
                                       !is.na(indSuicideConsideredEver) & indSuicideConsideredEver == FALSE ~ FALSE,
