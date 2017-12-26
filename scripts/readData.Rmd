@@ -22,7 +22,7 @@ Notes on the REDCap identifier variables:
 
 ```{r, results = TRUE}
 df0 <-
-  "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/REDCap dataset.csv" %>% 
+  "C:/Users/chanb/Box Sync/Facebook pilot - Statisticians/Data sets/REDCap dataset.csv" %>% 
   read.csv(stringsAsFactors = FALSE)
 df0 %>% 
   group_by(consent, 
