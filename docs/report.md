@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-12-04 11:34:15"
+date: "2017-12-27 09:22:48"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -341,6 +341,15 @@ Number of social media platforms used (excluding Facebook):
 |TRUE                     |FALSE                    |TRUE              |                    5|   2|
 |TRUE                     |TRUE                     |TRUE              |                    5|   1|
 |NA                       |NA                       |NA                |                  NaN|   1|
+
+
+
+Of the 358 who had social contact on Facebook at least daily, 167 (47%) also had at least daily in-person social contact while 191 (53%) had in-person social contact less than daily, a non-significant difference (p = 0.224). 
+
+
+
+Of the 233 who had in-person social contact at least daily, 167 (72%) also had at least daily social contact on Facebook while 66 (28%) had social contact on Facebook less than daily, a significant difference (p = 0.000).
+
 # Research Question 1
 
 **Is perceived social support received from Facebook (FMSS) associated with lower rates of**
