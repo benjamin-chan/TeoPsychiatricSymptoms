@@ -454,3 +454,38 @@ df0 %>%
   arrange(desc(n)) %>%
   kable()
 ```
+
+```{r, warning = FALSE}
+df1 <- 
+  df0 %>% 
+  filter(comm_facebook %in% c("Once a day", "Several times a day")) %>% 
+  mutate(comm_inperson = factor(comm_inperson,
+                                levels = levels(df0$comm_inperson),
+                                labels = c("Less than daily", "Less than daily", "Less than daily", 
+                                           "Daily or more", "Daily or more"))) %>% 
+  mutate(comm_inperson = droplevels(comm_inperson)) %>% 
+  group_by(comm_inperson) %>% 
+  summarize(n = n())
+x <- df1 %>% filter(comm_inperson == "Daily or more") %>% select(n) %>% as.numeric()
+n <- df1 %>% summarize(n = sum(n)) %>% as.numeric()
+```
+
+Of the 358 who had social contact on Facebook at least daily, `r x` (`r sprintf("%.0f%%", x / n * 100)`) also had at least daily in-person social contact while `r n - x` (`r sprintf("%.0f%%", (1 - x / n) * 100)`) had in-person social contact less than daily, a non-significant difference (p = `r sprintf("%.3f", prop.test(x, n) %>% .[["p.value"]])`). 
+
+```{r, warning = FALSE}
+df1 <- 
+  df0 %>% 
+  filter(comm_inperson %in% c("Once a day", "Several times a day")) %>% 
+  mutate(comm_facebook = factor(comm_facebook,
+                                levels = levels(df0$comm_facebook),
+                                labels = c("Less than daily", "Less than daily", "Less than daily", 
+                                           "Daily or more", "Daily or more"))) %>% 
+  mutate(comm_facebook = droplevels(comm_facebook)) %>% 
+  group_by(comm_facebook) %>% 
+  summarize(n = n())
+x <- df1 %>% filter(comm_facebook == "Daily or more") %>% select(n) %>% as.numeric()
+n <- df1 %>% summarize(n = sum(n)) %>% as.numeric()
+```
+
+Of the 233 who had in-person social contact at least daily, `r x` (`r sprintf("%.0f%%", x / n * 100)`) also had at least daily social contact on Facebook while `r n - x` (`r sprintf("%.0f%%", (1 - x / n) * 100)`) had social contact on Facebook less than daily, a significant difference (p = `r sprintf("%.3f", prop.test(x, n) %>% .[["p.value"]])`).
+
