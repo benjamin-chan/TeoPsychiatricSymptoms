@@ -224,6 +224,40 @@ tab <- chisqTable("fb_freq", "comm_inperson", data = df2, varlabel = varlabel)
 tab[c("table", "expected", "chisq.test")]
 ```
 
+```{r, warning = FALSE}
+df2 <- 
+  df0 %>% 
+  mutate(comm_facebook = factor(comm_facebook,
+                                levels = c("Several times a day",
+                                           "Once a day",
+                                           "A few times a week",
+                                           "Once a week",
+                                           "Every few weeks or less often"),
+                                labels = c(rep("Daily or more", 2),
+                                           rep("Less than daily", 3)))) %>%
+                                # labels = LETTERS[1:5])) %>% 
+  mutate(comm_inperson = factor(comm_inperson,
+                                levels = c("Several times a day",
+                                           "Once a day",
+                                           "A few times a week",
+                                           "Once a week",
+                                           "Every few weeks or less often"),
+                                # labels = c(rep("Daily or more", 2),
+                                #            rep("Less than daily", 3)))) %>%
+                                labels = LETTERS[1:5])) %>%
+  mutate(comm_facebook = droplevels(comm_facebook),
+         comm_inperson = droplevels(comm_inperson)) %>% 
+  select(comm_facebook, comm_inperson)
+varlabel <- data.frame(name = c("comm_inperson", "comm_facebook"),
+                       label = c("Meet up in-person",
+                                 "Actively interact on Facebook, such as sharing, posting, commenting, or tagging"),
+                       stringsAsFactors = FALSE)
+tab <- chisqTable("comm_inperson", "comm_facebook", data = df2, varlabel = varlabel)
+tab[c("table", "expected", "residual", "chisq.test")]
+mosaic(~ comm_inperson + comm_facebook, 
+       data = df2, 
+       shade = TRUE)
+```
 
 ## FMSS items
 

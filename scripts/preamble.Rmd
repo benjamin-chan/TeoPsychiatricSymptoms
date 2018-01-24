@@ -10,6 +10,8 @@ library(knitr)
 library(broom)
 library(ggmosaic)
 library(psych)
+library(vcd)
+
 # Reproducibility steps.
 set.seed(as.integer(as.Date("2017-08-15")))
 # Source user-defined functions.
