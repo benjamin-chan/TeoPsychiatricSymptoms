@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2017-12-27 09:22:48"
+date: "2018-01-24 14:40:35"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -597,6 +597,45 @@ Filter subjects with missing covariates.
 ## X-squared = 0.014885, df = 1, p-value = 0.9029
 ```
 
+
+```
+## $table
+##              comm_facebook
+## comm_inperson Daily or more Less than daily Sum
+##           A             132              43 175
+##           B              35              23  58
+##           C              67              47 114
+##           D              39              31  70
+##           E              85              84 169
+##           Sum           358             228 586
+## 
+## $expected
+##              comm_facebook
+## comm_inperson Daily or more Less than daily
+##             A     106.91126        68.08874
+##             B      35.43345        22.56655
+##             C      69.64505        44.35495
+##             D      42.76451        27.23549
+##             E     103.24573        65.75427
+## 
+## $residual
+##              comm_facebook
+## comm_inperson Daily or more Less than daily
+##             A    2.42642612     -3.04047308
+##             B   -0.07281643      0.09124383
+##             C   -0.31694868      0.39715775
+##             D   -0.57566015      0.72134040
+##             E   -1.79566483      2.25008729
+## 
+## $chisq.test
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  T
+## X-squared = 24.543, df = 4, p-value = 6.216e-05
+```
+
+![plot of chunk unnamed-chunk-39](../figures/unnamed-chunk-39-1.png)
 
 ## FMSS items
 
