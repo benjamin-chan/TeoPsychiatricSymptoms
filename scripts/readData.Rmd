@@ -258,11 +258,17 @@ This cut-off score was chosen based on recommendations for population-based samp
 ```{r}
 df0 <-
   df0 %>%
-  mutate(ptsd = ptsd_intrusive + ptsd_avoidant + ptsd_guarded + ptsd_numb + ptsd_guilty) %>%
+  mutate(ptsd = case_when(
+                  ptsd_event == 1 ~ ptsd_intrusive + ptsd_avoidant + ptsd_guarded + ptsd_numb + ptsd_guilty,
+                  ptsd_event == 0 ~ as.integer(0),
+                  TRUE ~ NA_integer_)) %>%
   mutate(indPTSD = ptsd >= 3) %>%
   mutate(phq = phq_interest + phq_mood) %>%
   mutate(indPHQ = phq >= 3) %>%
-  mutate(auditc = auditc_freq + auditc_amount + auditc_binge) %>%
+  mutate(auditc = case_when(
+                    auditc_freq > 0 ~ auditc_freq + auditc_amount + auditc_binge,
+                    auditc_freq == 0 ~ as.integer(0),
+                    TRUE ~ NA_integer_)) %>%
   mutate(indAuditC = case_when(
                        !is.na(gender) & gender == 1 ~ auditc >= 4,
                        !is.na(gender) & gender == 2 ~ auditc >= 3,
