@@ -1,0 +1,61 @@
+# Respond to peer review comments
+
+> On Jul 25, 2018, at 1:46 PM, Alan Teo <teoa@ohsu.edu> wrote:
+> 
+> Hi Ben, 
+> 
+> Hope summer is going great for you! Could you respond to two of the peer review
+> comments? I'd appreciate if you could provide information to include in the
+> response letter and any additional text to include in the paper.
+> 
+> For your convenience I've attached the paper and appended the two items below:
+> 
+> 3. Were demographic variables such as age, sex, marital status, etc. related to
+> the frequency of social contact (either in-person or Facebook)? These
+> demographic characteristics, in particular, may meaningfully relate to your
+> constructs of interest and provide a context for some of the findings. 
+
+```{r}
+dfTemp <-
+  df0 %>% 
+  mutate(fb_freq = factor(fb_freq, labels = c(rep("Less_than_several_times_a_day", 5), "Several_times_a_day"))) %>%
+  mutate(fb_freq = factor(fb_freq)) %>% 
+  mutate(marital = factor(marital,
+                          labels = c("Single, never been married",
+                                     "Married",
+                                     "Living as married",
+                                     "Divorced",
+                                     "Widowed",
+                                     "Separated"))) %>% 
+  mutate(marital = factor(marital,
+                          labels = c("Single/Divorce/Widowed/Separated",
+                                     "Married or living as married",
+                                     "Married or living as married",
+                                     "Single/Divorce/Widowed/Separated",
+                                     "Single/Divorce/Widowed/Separated",
+                                     "Single/Divorce/Widowed/Separated"))) %>% 
+  mutate(marital = factor(marital))
+align <- "llcccccc"
+digits <- c(0, 0, 1, 1, 0, 0, 0, 1)
+dfTemp %>% means2Group("age", "fb_freq") %>% kable(align = align, digits = digits)
+dfTemp %>% t.test(age ~ fb_freq, data = .)
+align <- "llccc"
+digits <- c(0, 0, 0, 0, 3)
+dfTemp %>% freq2Group("fb_freq", "gender") %>% kable(align = align, digits = digits)
+chisq.test(dfTemp$gender, dfTemp$fb_freq)
+dfTemp %>% freq2Group("fb_freq", "marital") %>% kable(align = align, digits = digits)
+chisq.test(dfTemp$marital, dfTemp$fb_freq)
+```
+
+Age was significantly associated with frequency of Facebook use `fb_freq`
+(collapsed groups).
+Several-times-a-day Facebook users were slightly younger on average.
+The difference was only `r sprintf("%.01f years", dfTemp %>% t.test(age ~ fb_freq, data = .) %>% .[["estimate"]] %>% as.vector() %>% diff() %>% abs())`.
+Gender and marital status (collapsed groups) are not significantly associated with frequency of Facebook use.
+ 
+> 4. How highly correlated are in-person contact with Facebook contact? Authors
+> should address the potential concerns of multicollinearity of IVs in the
+> logistic regression model.
+
+Rerun `analyzeRQ[123].Rmd` without `comm_inperson` as a covariate in `covar`.
+Compare with output from commit `632302` (6/11/2018).
