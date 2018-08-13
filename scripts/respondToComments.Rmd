@@ -15,7 +15,7 @@
 > demographic characteristics, in particular, may meaningfully relate to your
 > constructs of interest and provide a context for some of the findings. 
 
-```{r}
+```{r, warning = FALSE}
 dfTemp <-
   df0 %>% 
   mutate(fb_freq = factor(fb_freq, labels = c(rep("Less_than_several_times_a_day", 5), "Several_times_a_day"))) %>%
