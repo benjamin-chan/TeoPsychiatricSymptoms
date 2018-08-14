@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2018-08-13 13:14:00"
+date: "2018-08-13 15:42:30"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -2969,7 +2969,11 @@ Filter subjects with missing covariates.
 Age was significantly associated with frequency of Facebook use `fb_freq`
 (collapsed groups).
 Several-times-a-day Facebook users were slightly younger on average.
-The difference was only 3.7 years.
+The difference was only 
+3.7 years
+(42.8 years
+versus
+39.2 years).
 Gender and marital status (collapsed groups) are not significantly associated with frequency of Facebook use.
  
 > 4. How highly correlated are in-person contact with Facebook contact? Authors
@@ -2978,3 +2982,11 @@ Gender and marital status (collapsed groups) are not significantly associated wi
 
 Rerun `analyzeRQ[123].Rmd` without `comm_inperson` as a covariate in `covar`.
 Compare with output from commit `632302` (6/11/2018).
+
+* The models including `comm_inperson` had slightly attenuated coefficients for
+`comm_facebook`
+* The models not including `comm_inperson` had coefficients for `comm_facebook`
+that were slightly away from the null; but still not significantly different
+from the null
+* Conclusion: the correlation between `comm_inperson` and `comm_facebook` does
+not greatly bias the association between `comm_facebook` and any of the outcomes
