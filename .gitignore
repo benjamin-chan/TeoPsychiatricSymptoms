@@ -36,3 +36,6 @@ session.log
 
 # Business documents
 background/*.*
+
+# Data
+data/*.*
