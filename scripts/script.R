@@ -1,7 +1,7 @@
 setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
 
 library(checkpoint)
-checkpoint("2017-07-01", use.knitr = TRUE)
+checkpoint("2019-04-01", use.knitr = TRUE)
 
 Sys.time0 <- Sys.time()
 
