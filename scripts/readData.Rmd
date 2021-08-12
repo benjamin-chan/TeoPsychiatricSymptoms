@@ -67,6 +67,8 @@ df0 <-
                                               .$eligible == 1 ~ TRUE,
                                               TRUE ~ FALSE))
 df0 %>% 
+  mutate(image = fct_explicit_na(image),
+         text = fct_explicit_na(text)) %>%
   group_by(image, text) %>% 
   summarize(n = n()) %>% 
   kable
@@ -448,7 +450,7 @@ df0 %>% group_by(countSocialMediaExclFB) %>% summarize(n = n()) %>% kable()
 \newline
 
 ```{r}
-df0 %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
+df0 %>% mutate(comm_inperson = fct_explicit_na(comm_inperson)) %>% group_by(comm_inperson) %>% summarize(n = n()) %>% kable()
 ```
 
 \newline
