@@ -1,4 +1,4 @@
-setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
+setwd("scripts")
 
 library(checkpoint)
 checkpoint("2019-04-01", use.knitr = TRUE)

@@ -1,6 +1,6 @@
 ```{r, results = "hide", message = FALSE, warning = FALSE}
 # Set working directory and load libraries.
-setwd("~/Projects/TeoPsychiatricSymptoms/scripts")
+# setwd("scripts")
 library(magrittr)
 library(multcomp)
 library(tidyverse)
