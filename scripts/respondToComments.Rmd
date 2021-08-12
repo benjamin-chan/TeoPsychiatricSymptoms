@@ -19,22 +19,7 @@
 dfTemp <-
   df0 %>% 
   mutate(fb_freq = factor(fb_freq, labels = c(rep("Less_than_several_times_a_day", 5), "Several_times_a_day"))) %>%
-  mutate(fb_freq = factor(fb_freq)) %>% 
-  mutate(marital = factor(marital,
-                          labels = c("Single, never been married",
-                                     "Married",
-                                     "Living as married",
-                                     "Divorced",
-                                     "Widowed",
-                                     "Separated"))) %>% 
-  mutate(marital = factor(marital,
-                          labels = c("Single/Divorce/Widowed/Separated",
-                                     "Married or living as married",
-                                     "Married or living as married",
-                                     "Single/Divorce/Widowed/Separated",
-                                     "Single/Divorce/Widowed/Separated",
-                                     "Single/Divorce/Widowed/Separated"))) %>% 
-  mutate(marital = factor(marital))
+  mutate(fb_freq = factor(fb_freq))
 align <- "llcccccc"
 digits <- c(0, 0, 1, 1, 0, 0, 0, 1)
 dfTemp %>% means2Group("age", "fb_freq") %>% kable(align = align, digits = digits)
@@ -43,8 +28,8 @@ align <- "llccc"
 digits <- c(0, 0, 0, 0, 3)
 dfTemp %>% freq2Group("fb_freq", "gender") %>% kable(align = align, digits = digits)
 chisq.test(dfTemp$gender, dfTemp$fb_freq)
-dfTemp %>% freq2Group("fb_freq", "marital") %>% kable(align = align, digits = digits)
-chisq.test(dfTemp$marital, dfTemp$fb_freq)
+dfTemp %>% freq2Group("fb_freq", "marital2") %>% kable(align = align, digits = digits)
+chisq.test(dfTemp$marital2, dfTemp$fb_freq)
 ```
 
 Age was significantly associated with frequency of Facebook use `fb_freq`

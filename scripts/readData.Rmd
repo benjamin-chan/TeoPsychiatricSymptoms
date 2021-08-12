@@ -381,6 +381,12 @@ df0 <-
   * `suicide_considered_ever`
   * `suicide_considered_12mo`
   * `suicide_attempts` 
+* Demographics
+  * `age`
+  * `gender`
+  * `race`
+  * `hispanic`
+  * `marital`
 
 ```{r}
 notSocialMedia <- c("I use Wikipedia to read about illnesses I don't have; it's a curiosity/hobby thing.",
@@ -430,7 +436,48 @@ df0 <-
   mutate(countSuicideAttempts = case_when(
                                   !is.na(indSuicideAttempt) & indSuicideAttempt == FALSE ~ 0,
                                   !is.na(indSuicideAttempt) & indSuicideAttempt == TRUE ~ as.numeric(suicide_attempts),
-                                  TRUE ~ NaN))
+                                  TRUE ~ NaN)) %>%
+  mutate(gender = factor(gender,
+                         levels = c(1, 2, 99),
+                         labels = c("Male", "Female", "A gender not listed here"))) %>%
+  mutate(race = case_when(race___1 == 1 & race___2 == 0 & race___3 == 0 & race___4 == 0 & race___5 == 0 & race___99 == 0 ~ "American Indian/Alaska Native/Native Hawaiian",
+                          race___1 == 0 & race___2 == 1 & race___3 == 0 & race___4 == 0 & race___5 == 0 & race___99 == 0 ~ "Asian",
+                          race___1 == 0 & race___2 == 0 & race___3 == 1 & race___4 == 0 & race___5 == 0 & race___99 == 0 ~ "American Indian/Alaska Native/Native Hawaiian",
+                          race___1 == 0 & race___2 == 0 & race___3 == 0 & race___4 == 1 & race___5 == 0 & race___99 == 0 ~ "Black or African American",
+                          race___1 == 0 & race___2 == 0 & race___3 == 0 & race___4 == 0 & race___5 == 1 & race___99 == 0 ~ "White",
+                          race___1 == 0 & race___2 == 0 & race___3 == 0 & race___4 == 0 & race___5 == 0 & race___99 == 1 ~ "Other",
+                          race___1 == 0 & race___2 == 0 & race___3 == 0 & race___4 == 0 & race___5 == 0 & race___99 == 0 ~ NA_character_,
+                          TRUE ~ "Multiple races") %>%
+                factor(levels = c("White",
+                                  "American Indian/Alaska Native/Native Hawaiian",
+                                  "Asian",
+                                  "Black or African American",
+                                  "Multiple races",
+                                  "Other"))) %>%
+  mutate(hispanic = factor(hispanic,
+                           levels = c(1, 0),
+                           labels = c("Yes", "No"))) %>%
+  mutate(marital = factor(marital,
+                          levels = c(0, 3, 5, 1, 2, 4),
+                          labels = c("Single, never been married",
+                                     "Divorced",
+                                     "Separated",
+                                     "Married",
+                                     "Living as married",
+                                     "Widowed"))) %>%
+  mutate(marital2 = factor(marital,
+                           levels = c("Married",
+                                      "Living as married",
+                                      "Single, never been married",
+                                      "Divorced",
+                                      "Widowed",
+                                      "Separated"),
+                           labels = c("Married or living as married",
+                                      "Married or living as married",
+                                      "Single/Divorced/Widowed/Separated",
+                                      "Single/Divorced/Widowed/Separated",
+                                      "Single/Divorced/Widowed/Separated",
+                                      "Single/Divorced/Widowed/Separated")))
 ```
 
 Check.
@@ -497,3 +544,11 @@ n <- df1 %>% summarize(n = sum(n)) %>% as.numeric()
 
 Of the 233 who had in-person social contact at least daily, `r x` (`r sprintf("%.0f%%", x / n * 100)`) also had at least daily social contact on Facebook while `r n - x` (`r sprintf("%.0f%%", (1 - x / n) * 100)`) had social contact on Facebook less than daily, a significant difference (p = `r sprintf("%.3f", prop.test(x, n) %>% .[["p.value"]])`).
 
+```{r}
+df0 %>% pull(age) %>% summary()
+df0 %>% group_by(gender) %>% summarize(n = n()) %>% kable()
+df0 %>% group_by(fct_explicit_na(race)) %>% summarize(n = n()) %>% kable()
+df0 %>% group_by(fct_explicit_na(hispanic)) %>% summarize(n = n()) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital)) %>% summarize(n = n()) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital2)) %>% summarize(n = n()) %>% kable()
+```
