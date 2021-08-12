@@ -26,7 +26,7 @@ opts_chunk$set(echo = FALSE,
                dpi = 300,
                message = FALSE)
 knit("master.Rmd", output = "../docs/report.md")
-pandoc("../docs/report.md", format = "docx")
+# pandoc("../docs/report.md", format = "docx")
 file.remove("master.Rmd")
 sink()
 
