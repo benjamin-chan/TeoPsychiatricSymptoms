@@ -2,7 +2,7 @@ plotRQ2 <- function(df, x, title) {
   require(ggplot2)
   df %>% 
     select(record_id, x, indPTSD, indPHQ, indAuditC, indDSISS) %>% 
-    gather(key = variable, value = value, -record_id, -eval(parse(text = x))) %>% 
+    gather(key = variable, value = value, -record_id, -x) %>% 
     filter(!is.na(value) & !is.na(eval(parse(text = x)))) %>% 
     mutate(variable = case_when(variable == "indPTSD" ~ "PC-PTSD",
                                 variable == "indPHQ" ~ "PHQ-2",

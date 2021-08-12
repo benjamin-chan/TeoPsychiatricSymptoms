@@ -3,12 +3,12 @@ freq2Group <- function (df, y, x) {
     df %>% 
     select(c(y, x)) %>% 
     filter(!is.na(eval(parse(text = y))) & !is.na(eval(parse(text = x)))) %>% 
-    group_by_(x) %>% 
+    group_by_at(x) %>% 
     summarize(N = n())
   df %>% 
     select(c(y, x)) %>% 
     filter(!is.na(eval(parse(text = y))) & !is.na(eval(parse(text = x)))) %>% 
-    group_by_(y, x) %>% 
+    group_by_at(c(y, x)) %>% 
     summarize(n = n()) %>%
     merge(., colMargin, by = x) %>% 
     mutate(freq = n / N) %>% 

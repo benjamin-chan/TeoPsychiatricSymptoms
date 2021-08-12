@@ -2,7 +2,7 @@ means2Group <- function (df, y, x) {
   df %>% 
     select(c(y, x)) %>% 
     filter(!is.na(eval(parse(text = y))) & !is.na(eval(parse(text = x)))) %>% 
-    group_by_(x) %>% 
+    group_by_at(x) %>% 
     summarize(mean = mean(eval(parse(text = y))),
               sd = sd(eval(parse(text = y))),
               min = min(eval(parse(text = y))), 

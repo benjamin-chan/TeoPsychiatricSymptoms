@@ -63,7 +63,7 @@ Filter subjects with missing covariates.
 ```{r}
 df3 <-
   df0 %>% 
-  select_(.dots = c("record_id", covar)) %>% 
+  select_at(c("record_id", covar)) %>% 
   na.omit() %>% 
   select(record_id) %>% 
   merge(., df0, by = "record_id")
