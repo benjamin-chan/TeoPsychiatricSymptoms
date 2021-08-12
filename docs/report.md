@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2018-08-13 15:42:30"
+date: "2021-08-12 15:10:53"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -127,17 +127,17 @@ Cronbach's alpha for FMSS items 1-3.
 ## Reliability analysis   
 ## Call: psych::alpha(x = .)
 ## 
-##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean  sd
-##       0.91      0.91    0.87      0.77  10 0.0065  1.1 0.9
+##   raw_alpha std.alpha G6(smc) average_r S/N    ase mean  sd median_r
+##       0.91      0.91    0.87      0.77  10 0.0065  1.1 0.9     0.78
 ## 
 ##  lower alpha upper     95% confidence boundaries
 ## 0.9 0.91 0.92 
 ## 
 ##  Reliability if an item is dropped:
-##         raw_alpha std.alpha G6(smc) average_r S/N alpha se
-## fmss_r1      0.89      0.89    0.80      0.80 7.8   0.0094
-## fmss_r2      0.85      0.85    0.74      0.74 5.7   0.0124
-## fmss_r3      0.87      0.87    0.78      0.78 7.0   0.0104
+##         raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## fmss_r1      0.89      0.89    0.80      0.80 7.8   0.0094    NA  0.80
+## fmss_r2      0.85      0.85    0.74      0.74 5.7   0.0124    NA  0.74
+## fmss_r3      0.87      0.87    0.78      0.78 7.0   0.0104    NA  0.78
 ## 
 ##  Item statistics 
 ##           n raw.r std.r r.cor r.drop mean   sd
@@ -321,7 +321,7 @@ Number of social media platforms used (excluding Facebook):
 |A few times a week            | 114|
 |Once a day                    |  58|
 |Several times a day           | 175|
-|NA                            |   1|
+|(Missing)                     |   1|
 
 \newline
 
@@ -2887,22 +2887,6 @@ Filter subjects with missing covariates.
 > the frequency of social contact (either in-person or Facebook)? These
 > demographic characteristics, in particular, may meaningfully relate to your
 > constructs of interest and provide a context for some of the findings. 
-
-
-```
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-
-## Warning in `levels<-`(`*tmp*`, value = if (nl == nL) as.character(labels)
-## else paste0(labels, : duplicated levels in factors are deprecated
-```
-
 
 
 |yvariable |fb_freq                       | mean |  sd  | min | max |  n  | freq  |
