@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 09:33:41"
+date: "2021-08-13 10:47:13"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -83,14 +83,7 @@ Recoding logic
 
 
 ```
-##       fmss           fmssZ         
-##  Min.   :14.00   Min.   :-2.29729  
-##  1st Qu.:25.00   1st Qu.:-0.62179  
-##  Median :29.00   Median :-0.01252  
-##  Mean   :29.08   Mean   : 0.00000  
-##  3rd Qu.:34.00   3rd Qu.: 0.74908  
-##  Max.   :48.00   Max.   : 2.88153  
-##  NA's   :15      NA's   :15
+## Error in .f(.x[[i]], ...): object 'fmssSubscore' not found
 ```
 
 ```
