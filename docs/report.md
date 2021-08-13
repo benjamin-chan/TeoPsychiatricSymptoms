@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-12 16:59:48"
+date: "2021-08-13 09:33:41"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -358,57 +358,71 @@ Of the 233 who had in-person social contact at least daily, 167 (72%) also had a
 
 
 ```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   20.00   31.00   36.00   40.04   48.00   75.00
+## [1] "Mean (SD) age: 40.0 (12.0)"
 ```
 
 
 
-|gender                   |   n|
-|:------------------------|---:|
-|Male                     | 474|
-|Female                   | 111|
-|A gender not listed here |   2|
+|gender                   |   n|      prop|
+|:------------------------|---:|---------:|
+|Male                     | 474| 0.8074957|
+|Female                   | 111| 0.1890971|
+|A gender not listed here |   2| 0.0034072|
 
 
 
-|fct_explicit_na(race)                         |   n|
-|:---------------------------------------------|---:|
-|White                                         | 492|
-|American Indian/Alaska Native/Native Hawaiian |   7|
-|Asian                                         |   8|
-|Black or African American                     |   7|
-|Multiple races                                |  52|
-|Other                                         |  17|
-|(Missing)                                     |   4|
+|fct_explicit_na(race)                         |   n|      prop|
+|:---------------------------------------------|---:|---------:|
+|White                                         | 492| 0.8381601|
+|American Indian/Alaska Native/Native Hawaiian |   7| 0.0119250|
+|Asian                                         |   8| 0.0136286|
+|Black or African American                     |   7| 0.0119250|
+|Multiple races                                |  52| 0.0885860|
+|Other                                         |  17| 0.0289608|
+|(Missing)                                     |   4| 0.0068143|
 
 
 
-|fct_explicit_na(hispanic) |   n|
-|:-------------------------|---:|
-|Yes                       |  34|
-|No                        | 550|
-|(Missing)                 |   3|
+|fct_explicit_na(hispanic) |   n|      prop|
+|:-------------------------|---:|---------:|
+|Yes                       |  34| 0.0579216|
+|No                        | 550| 0.9369676|
+|(Missing)                 |   3| 0.0051107|
 
 
 
-|fct_explicit_na(marital)   |   n|
-|:--------------------------|---:|
-|Single, never been married | 112|
-|Divorced                   |  88|
-|Separated                  |  16|
-|Married                    | 339|
-|Living as married          |  24|
-|Widowed                    |   7|
-|(Missing)                  |   1|
+|fct_explicit_na(raceNonHispWhite) |   n|      prop|
+|:---------------------------------|---:|---------:|
+|Not non-Hispanic White            | 112| 0.1908007|
+|Non-Hispanic White                | 473| 0.8057922|
+|(Missing)                         |   2| 0.0034072|
 
 
 
-|fct_explicit_na(marital2)         |   n|
-|:---------------------------------|---:|
-|Married or living as married      | 363|
-|Single/Divorced/Widowed/Separated | 223|
-|(Missing)                         |   1|
+|fct_explicit_na(educCollege) |   n|     prop|
+|:----------------------------|---:|--------:|
+|Some college or less         | 284| 0.483816|
+|At least a college degree    | 303| 0.516184|
+
+
+
+|fct_explicit_na(marital)   |   n|      prop|
+|:--------------------------|---:|---------:|
+|Single, never been married | 112| 0.1908007|
+|Divorced                   |  88| 0.1499148|
+|Separated                  |  16| 0.0272572|
+|Married                    | 339| 0.5775128|
+|Living as married          |  24| 0.0408859|
+|Widowed                    |   7| 0.0119250|
+|(Missing)                  |   1| 0.0017036|
+
+
+
+|fct_explicit_na(marital2)         |   n|      prop|
+|:---------------------------------|---:|---------:|
+|Married or living as married      | 363| 0.6183986|
+|Single/Divorced/Widowed/Separated | 223| 0.3798978|
+|(Missing)                         |   1| 0.0017036|
 # Research Question 1
 
 **Is perceived social support received from Facebook (FMSS) associated with lower rates of**
