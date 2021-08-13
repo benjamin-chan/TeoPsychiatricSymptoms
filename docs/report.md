@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-12 17:05:00"
+date: "2021-08-12 17:08:47"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -475,7 +475,11 @@ Set modeling covariates.
 
 
 ```
-## [1] "age"      "gender"   "race"     "hispanic" "marital2"
+## [1] "age"                      "gender"                  
+## [3] "race"                     "hispanic"                
+## [5] "marital2"                 "countSocialMediaExclFB"  
+## [7] "comm_inperson"            "indSuicideConsideredEver"
+## [9] "countSuicideAttempts"
 ```
 
 ### PC-PTSD
@@ -485,18 +489,25 @@ Set modeling covariates.
 |:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |       0.826|     0.085|    -2.242|   0.025|
 |Unadjusted |fmssZ                                             |       0.794|     0.087|    -2.655|   0.008|
-|Adjusted   |(Intercept)                                       |       0.542|     0.483|    -1.269|   0.204|
-|Adjusted   |fmssZ                                             |       0.785|     0.090|    -2.701|   0.007|
-|Adjusted   |age                                               |       0.997|     0.007|    -0.461|   0.645|
-|Adjusted   |genderFemale                                      |       1.134|     0.223|     0.565|   0.572|
-|Adjusted   |genderA gender not listed here                    | 2666680.181|   613.740|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.849|     0.782|     0.786|   0.432|
-|Adjusted   |raceAsian                                         |       1.105|     0.725|     0.138|   0.890|
-|Adjusted   |raceBlack or African American                     |       1.626|     0.778|     0.625|   0.532|
-|Adjusted   |raceMultiple races                                |       1.581|     0.300|     1.528|   0.126|
-|Adjusted   |raceOther                                         |       1.797|     0.575|     1.019|   0.308|
-|Adjusted   |hispanicNo                                        |       1.407|     0.401|     0.851|   0.395|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.400|     0.181|     1.856|   0.063|
+|Adjusted   |(Intercept)                                       |       0.557|     0.522|    -1.120|   0.263|
+|Adjusted   |fmssZ                                             |       0.818|     0.096|    -2.092|   0.036|
+|Adjusted   |age                                               |       1.005|     0.008|     0.666|   0.505|
+|Adjusted   |genderFemale                                      |       0.908|     0.239|    -0.404|   0.687|
+|Adjusted   |genderA gender not listed here                    | 1712539.376|   607.365|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.262|     0.823|     0.283|   0.777|
+|Adjusted   |raceAsian                                         |       0.797|     0.761|    -0.298|   0.766|
+|Adjusted   |raceBlack or African American                     |       1.573|     0.820|     0.552|   0.581|
+|Adjusted   |raceMultiple races                                |       1.224|     0.325|     0.623|   0.533|
+|Adjusted   |raceOther                                         |       1.128|     0.613|     0.197|   0.844|
+|Adjusted   |hispanicNo                                        |       1.118|     0.418|     0.268|   0.789|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.120|     0.200|     0.568|   0.570|
+|Adjusted   |countSocialMediaExclFB                            |       1.066|     0.096|     0.664|   0.507|
+|Adjusted   |comm_inpersonOnce a week                          |       0.802|     0.321|    -0.688|   0.491|
+|Adjusted   |comm_inpersonA few times a week                   |       0.533|     0.268|    -2.349|   0.019|
+|Adjusted   |comm_inpersonOnce a day                           |       0.559|     0.340|    -1.709|   0.087|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.401|     0.248|    -3.682|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.064|     0.201|     3.610|   0.000|
+|Adjusted   |countSuicideAttempts                              |       1.668|     0.163|     3.136|   0.002|
 
 \newline
 
@@ -504,7 +515,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       775.487|     562| -384.156| 772.311| 780.978|  768.311|         561|
-|Adjusted   |       775.487|     562| -377.911| 779.822| 831.821|  755.822|         551|
+|Adjusted   |       775.487|     562| -347.336| 732.671| 815.003|  694.671|         544|
 
 
 ### PHQ-2
@@ -514,18 +525,25 @@ Set modeling covariates.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.378|     0.095|   -10.231|   0.000|
 |Unadjusted |fmssZ                                             |     0.788|     0.097|    -2.454|   0.014|
-|Adjusted   |(Intercept)                                       |     0.364|     0.569|    -1.778|   0.075|
-|Adjusted   |fmssZ                                             |     0.781|     0.100|    -2.461|   0.014|
-|Adjusted   |age                                               |     0.981|     0.009|    -2.236|   0.025|
-|Adjusted   |genderFemale                                      |     0.986|     0.252|    -0.055|   0.956|
-|Adjusted   |genderA gender not listed here                    |     2.272|     1.441|     0.569|   0.569|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.493|     1.099|    -0.644|   0.519|
-|Adjusted   |raceAsian                                         |     0.817|     0.838|    -0.241|   0.810|
-|Adjusted   |raceBlack or African American                     |     1.179|     0.855|     0.193|   0.847|
-|Adjusted   |raceMultiple races                                |     1.274|     0.320|     0.757|   0.449|
-|Adjusted   |raceOther                                         |     3.398|     0.582|     2.101|   0.036|
-|Adjusted   |hispanicNo                                        |     1.959|     0.479|     1.405|   0.160|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.307|     0.200|     1.340|   0.180|
+|Adjusted   |(Intercept)                                       |     0.402|     0.617|    -1.477|   0.140|
+|Adjusted   |fmssZ                                             |     0.847|     0.107|    -1.560|   0.119|
+|Adjusted   |age                                               |     0.986|     0.009|    -1.550|   0.121|
+|Adjusted   |genderFemale                                      |     0.800|     0.268|    -0.834|   0.404|
+|Adjusted   |genderA gender not listed here                    |     1.187|     1.505|     0.114|   0.909|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.338|     1.128|    -0.962|   0.336|
+|Adjusted   |raceAsian                                         |     0.599|     0.868|    -0.590|   0.555|
+|Adjusted   |raceBlack or African American                     |     1.147|     0.926|     0.148|   0.882|
+|Adjusted   |raceMultiple races                                |     0.968|     0.348|    -0.095|   0.924|
+|Adjusted   |raceOther                                         |     2.139|     0.617|     1.232|   0.218|
+|Adjusted   |hispanicNo                                        |     1.549|     0.503|     0.870|   0.384|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.124|     0.221|     0.528|   0.597|
+|Adjusted   |countSocialMediaExclFB                            |     0.943|     0.108|    -0.537|   0.591|
+|Adjusted   |comm_inpersonOnce a week                          |     0.725|     0.326|    -0.984|   0.325|
+|Adjusted   |comm_inpersonA few times a week                   |     0.346|     0.310|    -3.427|   0.001|
+|Adjusted   |comm_inpersonOnce a day                           |     0.447|     0.410|    -1.965|   0.049|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.436|     0.274|    -3.029|   0.002|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.201|     0.227|     5.131|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.210|     0.130|     1.468|   0.142|
 
 \newline
 
@@ -533,7 +551,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       665.192|     563| -329.524| 663.048| 671.718|  659.048|         562|
-|Adjusted   |       665.192|     563| -322.356| 668.711| 720.732|  644.711|         552|
+|Adjusted   |       665.192|     563| -291.661| 621.323| 703.689|  583.323|         545|
 
 
 ### AUDIT-C
@@ -543,17 +561,24 @@ Set modeling covariates.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.708|     0.086|    -4.031|   0.000|
 |Unadjusted |fmssZ                                             |     0.958|     0.086|    -0.499|   0.618|
-|Adjusted   |(Intercept)                                       |     2.288|     0.500|     1.653|   0.098|
-|Adjusted   |fmssZ                                             |     0.917|     0.092|    -0.949|   0.343|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.065|   0.000|
-|Adjusted   |genderFemale                                      |     0.750|     0.236|    -1.217|   0.224|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.549|     1.099|     2.052|   0.040|
-|Adjusted   |raceAsian                                         |     0.169|     1.094|    -1.627|   0.104|
-|Adjusted   |raceBlack or African American                     |     1.212|     0.801|     0.240|   0.810|
-|Adjusted   |raceMultiple races                                |     1.000|     0.306|     0.001|   0.999|
-|Adjusted   |raceOther                                         |     0.216|     0.798|    -1.919|   0.055|
-|Adjusted   |hispanicNo                                        |     0.992|     0.407|    -0.020|   0.984|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.723|     0.187|     2.915|   0.004|
+|Adjusted   |(Intercept)                                       |     2.192|     0.526|     1.493|   0.135|
+|Adjusted   |fmssZ                                             |     0.926|     0.094|    -0.820|   0.412|
+|Adjusted   |age                                               |     0.968|     0.008|    -3.946|   0.000|
+|Adjusted   |genderFemale                                      |     0.701|     0.242|    -1.469|   0.142|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.413|     1.102|     2.034|   0.042|
+|Adjusted   |raceAsian                                         |     0.150|     1.110|    -1.710|   0.087|
+|Adjusted   |raceBlack or African American                     |     1.225|     0.808|     0.251|   0.802|
+|Adjusted   |raceMultiple races                                |     0.956|     0.315|    -0.142|   0.887|
+|Adjusted   |raceOther                                         |     0.186|     0.815|    -2.067|   0.039|
+|Adjusted   |hispanicNo                                        |     0.980|     0.412|    -0.050|   0.960|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.712|     0.197|     2.732|   0.006|
+|Adjusted   |countSocialMediaExclFB                            |     1.112|     0.095|     1.117|   0.264|
+|Adjusted   |comm_inpersonOnce a week                          |     1.190|     0.313|     0.557|   0.577|
+|Adjusted   |comm_inpersonA few times a week                   |     0.777|     0.264|    -0.956|   0.339|
+|Adjusted   |comm_inpersonOnce a day                           |     0.870|     0.346|    -0.403|   0.687|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.847|     0.244|    -0.679|   0.497|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.387|     0.202|     1.616|   0.106|
+|Adjusted   |countSuicideAttempts                              |     0.813|     0.132|    -1.574|   0.115|
 
 \newline
 
@@ -561,7 +586,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       762.618|     561| -381.184| 766.369| 775.032|  762.369|         560|
-|Adjusted   |       762.618|     561| -357.417| 736.833| 784.480|  714.833|         551|
+|Adjusted   |       762.618|     561| -353.837| 743.675| 821.642|  707.675|         544|
 
 
 ### DSI-SS
@@ -571,18 +596,25 @@ Set modeling covariates.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.281|     0.103|   -12.305|   0.000|
 |Unadjusted |fmssZ                                             |     0.738|     0.106|    -2.875|   0.004|
-|Adjusted   |(Intercept)                                       |     0.572|     0.576|    -0.972|   0.331|
-|Adjusted   |fmssZ                                             |     0.728|     0.110|    -2.873|   0.004|
-|Adjusted   |age                                               |     0.972|     0.010|    -2.879|   0.004|
-|Adjusted   |genderFemale                                      |     0.923|     0.277|    -0.290|   0.772|
-|Adjusted   |genderA gender not listed here                    |     2.964|     1.468|     0.740|   0.459|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   532.102|    -0.027|   0.979|
-|Adjusted   |raceAsian                                         |     1.055|     0.843|     0.064|   0.949|
-|Adjusted   |raceBlack or African American                     |     1.592|     0.866|     0.537|   0.592|
-|Adjusted   |raceMultiple races                                |     1.819|     0.322|     1.859|   0.063|
-|Adjusted   |raceOther                                         |     1.534|     0.639|     0.669|   0.503|
-|Adjusted   |hispanicNo                                        |     1.159|     0.456|     0.324|   0.746|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.570|     0.215|     2.102|   0.036|
+|Adjusted   |(Intercept)                                       |     0.366|     0.659|    -1.526|   0.127|
+|Adjusted   |fmssZ                                             |     0.772|     0.121|    -2.140|   0.032|
+|Adjusted   |age                                               |     0.976|     0.011|    -2.261|   0.024|
+|Adjusted   |genderFemale                                      |     0.683|     0.303|    -1.255|   0.209|
+|Adjusted   |genderA gender not listed here                    |     1.381|     1.511|     0.214|   0.831|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   813.378|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.730|     0.896|    -0.351|   0.726|
+|Adjusted   |raceBlack or African American                     |     1.262|     0.975|     0.239|   0.811|
+|Adjusted   |raceMultiple races                                |     1.267|     0.360|     0.656|   0.512|
+|Adjusted   |raceOther                                         |     0.870|     0.697|    -0.200|   0.842|
+|Adjusted   |hispanicNo                                        |     0.761|     0.505|    -0.540|   0.589|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.353|     0.243|     1.243|   0.214|
+|Adjusted   |countSocialMediaExclFB                            |     1.010|     0.116|     0.082|   0.935|
+|Adjusted   |comm_inpersonOnce a week                          |     0.766|     0.362|    -0.737|   0.461|
+|Adjusted   |comm_inpersonA few times a week                   |     0.659|     0.331|    -1.260|   0.208|
+|Adjusted   |comm_inpersonOnce a day                           |     0.638|     0.468|    -0.960|   0.337|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.692|     0.313|    -1.177|   0.239|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.951|     0.265|     6.732|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.305|     0.132|     2.022|   0.043|
 
 \newline
 
@@ -590,7 +622,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       599.174|     563| -295.329| 594.658| 603.328|  590.658|         562|
-|Adjusted   |       599.174|     563| -283.228| 590.456| 642.476|  566.456|         552|
+|Adjusted   |       599.174|     563| -243.010| 524.019| 606.385|  486.019|         545|
 
 
 ## Additional questions
@@ -909,18 +941,25 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.391|     0.145|    -6.497|   0.000|
 |Unadjusted |fmssSubscore                                      |     0.996|     0.035|    -0.102|   0.919|
-|Adjusted   |(Intercept)                                       |     0.365|     0.570|    -1.769|   0.077|
-|Adjusted   |fmssSubscore                                      |     0.995|     0.036|    -0.150|   0.881|
-|Adjusted   |age                                               |     0.983|     0.008|    -2.006|   0.045|
-|Adjusted   |genderFemale                                      |     0.908|     0.249|    -0.390|   0.696|
-|Adjusted   |genderA gender not listed here                    |     2.209|     1.428|     0.555|   0.579|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.447|     1.089|    -0.738|   0.460|
-|Adjusted   |raceAsian                                         |     0.947|     0.832|    -0.065|   0.948|
-|Adjusted   |raceBlack or African American                     |     1.247|     0.855|     0.258|   0.797|
-|Adjusted   |raceMultiple races                                |     1.327|     0.318|     0.891|   0.373|
-|Adjusted   |raceOther                                         |     2.866|     0.555|     1.898|   0.058|
-|Adjusted   |hispanicNo                                        |     1.917|     0.469|     1.387|   0.166|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.244|     0.196|     1.112|   0.266|
+|Adjusted   |(Intercept)                                       |     0.408|     0.618|    -1.451|   0.147|
+|Adjusted   |fmssSubscore                                      |     0.991|     0.039|    -0.234|   0.815|
+|Adjusted   |age                                               |     0.988|     0.009|    -1.316|   0.188|
+|Adjusted   |genderFemale                                      |     0.744|     0.267|    -1.106|   0.269|
+|Adjusted   |genderA gender not listed here                    |     1.162|     1.487|     0.101|   0.919|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.290|     1.131|    -1.094|   0.274|
+|Adjusted   |raceAsian                                         |     0.653|     0.865|    -0.492|   0.623|
+|Adjusted   |raceBlack or African American                     |     1.188|     0.932|     0.185|   0.853|
+|Adjusted   |raceMultiple races                                |     0.996|     0.347|    -0.010|   0.992|
+|Adjusted   |raceOther                                         |     2.007|     0.594|     1.173|   0.241|
+|Adjusted   |hispanicNo                                        |     1.517|     0.498|     0.837|   0.402|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.069|     0.218|     0.304|   0.761|
+|Adjusted   |countSocialMediaExclFB                            |     0.913|     0.108|    -0.847|   0.397|
+|Adjusted   |comm_inpersonOnce a week                          |     0.791|     0.320|    -0.733|   0.464|
+|Adjusted   |comm_inpersonA few times a week                   |     0.339|     0.308|    -3.514|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.431|     0.408|    -2.064|   0.039|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.411|     0.270|    -3.295|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.367|     0.224|     5.427|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.210|     0.130|     1.471|   0.141|
 
 \newline
 
@@ -928,7 +967,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|
-|Adjusted   |       679.346|     573| -333.503| 691.006| 743.238|  667.006|         562|
+|Adjusted   |       679.346|     573| -297.961| 633.923| 716.623|  595.923|         555|
 
 
 ### DSI-SS
@@ -938,18 +977,25 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.340|     0.152|    -7.106|   0.000|
 |Unadjusted |fmssSubscore                                      |     0.950|     0.038|    -1.350|   0.177|
-|Adjusted   |(Intercept)                                       |     0.695|     0.581|    -0.626|   0.531|
-|Adjusted   |fmssSubscore                                      |     0.941|     0.040|    -1.518|   0.129|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.860|   0.004|
-|Adjusted   |genderFemale                                      |     0.871|     0.275|    -0.501|   0.616|
-|Adjusted   |genderA gender not listed here                    |     2.870|     1.444|     0.730|   0.465|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   538.057|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.171|     0.842|     0.188|   0.851|
-|Adjusted   |raceBlack or African American                     |     1.758|     0.864|     0.653|   0.514|
-|Adjusted   |raceMultiple races                                |     1.926|     0.320|     2.046|   0.041|
-|Adjusted   |raceOther                                         |     1.383|     0.623|     0.521|   0.602|
-|Adjusted   |hispanicNo                                        |     1.168|     0.449|     0.346|   0.730|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.574|     0.211|     2.147|   0.032|
+|Adjusted   |(Intercept)                                       |     0.476|     0.662|    -1.122|   0.262|
+|Adjusted   |fmssSubscore                                      |     0.916|     0.044|    -1.965|   0.049|
+|Adjusted   |age                                               |     0.976|     0.011|    -2.311|   0.021|
+|Adjusted   |genderFemale                                      |     0.666|     0.302|    -1.344|   0.179|
+|Adjusted   |genderA gender not listed here                    |     1.338|     1.490|     0.196|   0.845|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   815.917|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.761|     0.900|    -0.304|   0.761|
+|Adjusted   |raceBlack or African American                     |     1.364|     0.972|     0.319|   0.750|
+|Adjusted   |raceMultiple races                                |     1.335|     0.359|     0.806|   0.420|
+|Adjusted   |raceOther                                         |     0.871|     0.679|    -0.204|   0.838|
+|Adjusted   |hispanicNo                                        |     0.775|     0.501|    -0.509|   0.610|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.427|     0.241|     1.477|   0.140|
+|Adjusted   |countSocialMediaExclFB                            |     0.985|     0.115|    -0.131|   0.896|
+|Adjusted   |comm_inpersonOnce a week                          |     0.722|     0.360|    -0.907|   0.365|
+|Adjusted   |comm_inpersonA few times a week                   |     0.638|     0.329|    -1.369|   0.171|
+|Adjusted   |comm_inpersonOnce a day                           |     0.624|     0.465|    -1.013|   0.311|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.719|     0.307|    -1.077|   0.281|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     6.313|     0.262|     7.040|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.319|     0.132|     2.092|   0.036|
 
 \newline
 
@@ -957,7 +1003,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       611.701|     573| -304.922| 613.844| 622.549|  609.844|         572|
-|Adjusted   |       611.701|     573| -292.079| 608.158| 660.389|  584.158|         562|
+|Adjusted   |       611.701|     573| -248.169| 534.337| 617.037|  496.337|         555|
 
 
 ## FMSS quartiles
@@ -1019,17 +1065,24 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.568|     0.158|    -3.591|   0.000|
 |Unadjusted |fmssQuartileQ4: (34,48]                           |     0.562|     0.262|    -2.194|   0.028|
-|Adjusted   |(Intercept)                                       |     0.679|     0.745|    -0.519|   0.604|
-|Adjusted   |fmssQuartileQ4: (34,48]                           |     0.584|     0.275|    -1.955|   0.051|
-|Adjusted   |age                                               |     0.975|     0.011|    -2.170|   0.030|
-|Adjusted   |genderFemale                                      |     0.668|     0.359|    -1.123|   0.261|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.621|     1.280|     0.377|   0.706|
-|Adjusted   |raceAsian                                         |     0.482|     1.133|    -0.643|   0.520|
-|Adjusted   |raceBlack or African American                     |     0.000|   611.618|    -0.022|   0.983|
-|Adjusted   |raceMultiple races                                |     1.512|     0.410|     1.007|   0.314|
-|Adjusted   |raceOther                                         |     3.320|     0.770|     1.559|   0.119|
-|Adjusted   |hispanicNo                                        |     2.158|     0.618|     1.246|   0.213|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.227|     0.278|     0.734|   0.463|
+|Adjusted   |(Intercept)                                       |     0.542|     0.814|    -0.753|   0.452|
+|Adjusted   |fmssQuartileQ4: (34,48]                           |     0.650|     0.301|    -1.430|   0.153|
+|Adjusted   |age                                               |     0.980|     0.012|    -1.660|   0.097|
+|Adjusted   |genderFemale                                      |     0.541|     0.391|    -1.569|   0.117|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.795|     1.298|    -0.177|   0.860|
+|Adjusted   |raceAsian                                         |     0.337|     1.216|    -0.896|   0.370|
+|Adjusted   |raceBlack or African American                     |     0.000|   989.665|    -0.014|   0.989|
+|Adjusted   |raceMultiple races                                |     1.157|     0.446|     0.327|   0.744|
+|Adjusted   |raceOther                                         |     3.652|     0.896|     1.446|   0.148|
+|Adjusted   |hispanicNo                                        |     1.725|     0.649|     0.840|   0.401|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.213|     0.312|     0.619|   0.536|
+|Adjusted   |countSocialMediaExclFB                            |     0.945|     0.147|    -0.386|   0.699|
+|Adjusted   |comm_inpersonOnce a week                          |     1.260|     0.451|     0.513|   0.608|
+|Adjusted   |comm_inpersonA few times a week                   |     0.287|     0.446|    -2.799|   0.005|
+|Adjusted   |comm_inpersonOnce a day                           |     0.660|     0.563|    -0.737|   0.461|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.671|     0.363|    -1.097|   0.273|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.342|     0.311|     3.880|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.103|     0.167|     0.587|   0.557|
 
 \newline
 
@@ -1037,7 +1090,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       369.970|     297| -182.510| 369.019| 376.413|  365.019|         296|
-|Adjusted   |       363.807|     293| -173.396| 368.793| 409.312|  346.793|         283|
+|Adjusted   |       360.718|     291| -154.569| 345.139| 411.321|  309.139|         274|
 
 
 ### DSI-SS
@@ -1047,17 +1100,24 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.370|     0.171|    -5.822|   0.000|
 |Unadjusted |fmssQuartileQ4: (34,48]                           |     0.520|     0.298|    -2.197|   0.028|
-|Adjusted   |(Intercept)                                       |     0.719|     0.748|    -0.441|   0.659|
-|Adjusted   |fmssQuartileQ4: (34,48]                           |     0.535|     0.311|    -2.016|   0.044|
-|Adjusted   |age                                               |     0.982|     0.013|    -1.461|   0.144|
-|Adjusted   |genderFemale                                      |     0.684|     0.405|    -0.937|   0.349|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|  1353.333|    -0.011|   0.991|
-|Adjusted   |raceAsian                                         |     0.683|     1.125|    -0.339|   0.735|
-|Adjusted   |raceBlack or African American                     |     0.000|  1696.580|    -0.009|   0.993|
-|Adjusted   |raceMultiple races                                |     1.662|     0.429|     1.186|   0.236|
-|Adjusted   |raceOther                                         |     3.101|     0.828|     1.367|   0.172|
-|Adjusted   |hispanicNo                                        |     0.960|     0.586|    -0.069|   0.945|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.332|     0.304|     0.945|   0.345|
+|Adjusted   |(Intercept)                                       |     0.365|     0.881|    -1.145|   0.252|
+|Adjusted   |fmssQuartileQ4: (34,48]                           |     0.580|     0.355|    -1.534|   0.125|
+|Adjusted   |age                                               |     0.989|     0.014|    -0.800|   0.424|
+|Adjusted   |genderFemale                                      |     0.542|     0.455|    -1.349|   0.177|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|  1376.306|    -0.011|   0.991|
+|Adjusted   |raceAsian                                         |     0.599|     1.204|    -0.426|   0.670|
+|Adjusted   |raceBlack or African American                     |     0.000|  1563.062|    -0.010|   0.992|
+|Adjusted   |raceMultiple races                                |     1.228|     0.490|     0.420|   0.675|
+|Adjusted   |raceOther                                         |     1.813|     0.913|     0.652|   0.515|
+|Adjusted   |hispanicNo                                        |     0.574|     0.662|    -0.838|   0.402|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.155|     0.348|     0.415|   0.678|
+|Adjusted   |countSocialMediaExclFB                            |     0.972|     0.168|    -0.168|   0.866|
+|Adjusted   |comm_inpersonOnce a week                          |     0.669|     0.497|    -0.808|   0.419|
+|Adjusted   |comm_inpersonA few times a week                   |     0.530|     0.462|    -1.375|   0.169|
+|Adjusted   |comm_inpersonOnce a day                           |     0.797|     0.638|    -0.356|   0.722|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.433|     0.453|    -1.848|   0.065|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     8.577|     0.397|     5.416|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.182|     0.166|     1.007|   0.314|
 
 \newline
 
@@ -1065,7 +1125,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       317.642|     297| -156.291| 316.581| 323.975|  312.581|         296|
-|Adjusted   |       313.129|     293| -149.158| 320.315| 360.835|  298.315|         283|
+|Adjusted   |       310.129|     292| -121.940| 279.881| 346.124|  243.881|         275|
 # Research Question 2
 
 **Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?**
@@ -1119,7 +1179,11 @@ Set modeling covariates.
 
 
 ```
-## [1] "age"      "gender"   "race"     "hispanic" "marital2"
+## [1] "age"                      "gender"                  
+## [3] "race"                     "hispanic"                
+## [5] "marital2"                 "countSocialMediaExclFB"  
+## [7] "comm_inperson"            "indSuicideConsideredEver"
+## [9] "countSuicideAttempts"
 ```
 
 Relabel factors; replace spaces with underscores.
@@ -1133,7 +1197,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.373|   5| 570|  0.233|
-|Adjusted   | 1.302|   5| 560|  0.262|
+|Adjusted   | 1.433|   5| 553|  0.210|
 
 \newline
 
@@ -1146,22 +1210,29 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |       2.882|     0.763|     1.387|   0.165|
 |Unadjusted |fb_freqOnce_a_day                                 |       2.935|     0.731|     1.474|   0.141|
 |Unadjusted |fb_freqSeveral_times_a_day                        |       1.750|     0.697|     0.803|   0.422|
-|Adjusted   |(Intercept)                                       |       0.346|     0.842|    -1.262|   0.207|
-|Adjusted   |fb_freqEvery_few_weeks                            |       2.573|     1.218|     0.776|   0.438|
-|Adjusted   |fb_freqOnce_a_week                                |       0.905|     1.137|    -0.088|   0.930|
-|Adjusted   |fb_freqA_few_times_a_week                         |       2.684|     0.769|     1.284|   0.199|
-|Adjusted   |fb_freqOnce_a_day                                 |       2.642|     0.737|     1.319|   0.187|
-|Adjusted   |fb_freqSeveral_times_a_day                        |       1.599|     0.700|     0.671|   0.502|
-|Adjusted   |age                                               |       0.993|     0.007|    -0.907|   0.364|
-|Adjusted   |genderFemale                                      |       1.033|     0.219|     0.149|   0.882|
-|Adjusted   |genderA gender not listed here                    | 2782181.627|   620.266|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.997|     0.787|     0.879|   0.379|
-|Adjusted   |raceAsian                                         |       1.294|     0.718|     0.359|   0.720|
-|Adjusted   |raceBlack or African American                     |       1.525|     0.784|     0.538|   0.591|
-|Adjusted   |raceMultiple races                                |       1.600|     0.301|     1.563|   0.118|
-|Adjusted   |raceOther                                         |       2.131|     0.564|     1.341|   0.180|
-|Adjusted   |hispanicNo                                        |       1.496|     0.398|     1.012|   0.312|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.297|     0.180|     1.444|   0.149|
+|Adjusted   |(Intercept)                                       |       0.385|     0.879|    -1.086|   0.278|
+|Adjusted   |fb_freqEvery_few_weeks                            |       2.268|     1.296|     0.632|   0.527|
+|Adjusted   |fb_freqOnce_a_week                                |       0.785|     1.156|    -0.209|   0.834|
+|Adjusted   |fb_freqA_few_times_a_week                         |       2.993|     0.791|     1.386|   0.166|
+|Adjusted   |fb_freqOnce_a_day                                 |       2.485|     0.761|     1.196|   0.232|
+|Adjusted   |fb_freqSeveral_times_a_day                        |       1.506|     0.719|     0.570|   0.569|
+|Adjusted   |age                                               |       1.002|     0.008|     0.196|   0.844|
+|Adjusted   |genderFemale                                      |       0.826|     0.236|    -0.808|   0.419|
+|Adjusted   |genderA gender not listed here                    | 1828078.705|   610.081|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.445|     0.845|     0.435|   0.663|
+|Adjusted   |raceAsian                                         |       0.921|     0.747|    -0.111|   0.912|
+|Adjusted   |raceBlack or African American                     |       1.453|     0.824|     0.453|   0.650|
+|Adjusted   |raceMultiple races                                |       1.230|     0.326|     0.636|   0.525|
+|Adjusted   |raceOther                                         |       1.431|     0.590|     0.607|   0.544|
+|Adjusted   |hispanicNo                                        |       1.196|     0.411|     0.435|   0.664|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.053|     0.199|     0.261|   0.794|
+|Adjusted   |countSocialMediaExclFB                            |       1.074|     0.095|     0.747|   0.455|
+|Adjusted   |comm_inpersonOnce a week                          |       0.801|     0.320|    -0.694|   0.488|
+|Adjusted   |comm_inpersonA few times a week                   |       0.490|     0.269|    -2.651|   0.008|
+|Adjusted   |comm_inpersonOnce a day                           |       0.510|     0.338|    -1.995|   0.046|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.397|     0.245|    -3.773|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.053|     0.199|     3.607|   0.000|
+|Adjusted   |countSuicideAttempts                              |       1.701|     0.167|     3.190|   0.001|
 
 \newline
 
@@ -1169,7 +1240,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       792.655|     575| -392.834| 797.668| 823.805|  785.668|         570|
-|Adjusted   |       792.655|     575| -386.589| 805.178| 874.875|  773.178|         560|
+|Adjusted   |       792.655|     575| -353.897| 753.795| 853.985|  707.795|         553|
 
 
 ### PC-PTSD vs Active use of Facebook
@@ -1178,7 +1249,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.572|   4| 572|  0.180|
-|Adjusted   | 1.388|   4| 562|  0.237|
+|Adjusted   | 1.253|   4| 555|  0.287|
 
 \newline
 
@@ -1190,21 +1261,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |       0.944|     0.303|    -0.189|   0.850|
 |Unadjusted |comm_facebookOnce_a_day                           |       0.766|     0.315|    -0.845|   0.398|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |       0.626|     0.271|    -1.731|   0.084|
-|Adjusted   |(Intercept)                                       |       0.648|     0.514|    -0.846|   0.397|
-|Adjusted   |comm_facebookOnce_a_week                          |       1.051|     0.407|     0.122|   0.903|
-|Adjusted   |comm_facebookA_few_times_a_week                   |       0.925|     0.311|    -0.251|   0.802|
-|Adjusted   |comm_facebookOnce_a_day                           |       0.738|     0.329|    -0.923|   0.356|
-|Adjusted   |comm_facebookSeveral_times_a_day                  |       0.624|     0.281|    -1.681|   0.093|
-|Adjusted   |age                                               |       0.999|     0.008|    -0.094|   0.925|
-|Adjusted   |genderFemale                                      |       1.072|     0.220|     0.316|   0.752|
-|Adjusted   |genderA gender not listed here                    | 3055727.706|   623.741|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.565|     0.783|     0.572|   0.567|
-|Adjusted   |raceAsian                                         |       1.291|     0.722|     0.354|   0.723|
-|Adjusted   |raceBlack or African American                     |       1.710|     0.787|     0.682|   0.495|
-|Adjusted   |raceMultiple races                                |       1.740|     0.299|     1.852|   0.064|
-|Adjusted   |raceOther                                         |       2.013|     0.559|     1.253|   0.210|
-|Adjusted   |hispanicNo                                        |       1.407|     0.397|     0.859|   0.390|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.314|     0.180|     1.513|   0.130|
+|Adjusted   |(Intercept)                                       |       0.633|     0.548|    -0.833|   0.405|
+|Adjusted   |comm_facebookOnce_a_week                          |       1.094|     0.436|     0.207|   0.836|
+|Adjusted   |comm_facebookA_few_times_a_week                   |       0.942|     0.333|    -0.180|   0.857|
+|Adjusted   |comm_facebookOnce_a_day                           |       0.824|     0.353|    -0.547|   0.584|
+|Adjusted   |comm_facebookSeveral_times_a_day                  |       0.625|     0.307|    -1.534|   0.125|
+|Adjusted   |age                                               |       1.008|     0.008|     0.936|   0.350|
+|Adjusted   |genderFemale                                      |       0.854|     0.236|    -0.668|   0.504|
+|Adjusted   |genderA gender not listed here                    | 1960576.682|   620.344|     0.023|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.114|     0.828|     0.130|   0.897|
+|Adjusted   |raceAsian                                         |       0.903|     0.748|    -0.137|   0.891|
+|Adjusted   |raceBlack or African American                     |       1.626|     0.829|     0.586|   0.558|
+|Adjusted   |raceMultiple races                                |       1.320|     0.324|     0.857|   0.392|
+|Adjusted   |raceOther                                         |       1.381|     0.591|     0.546|   0.585|
+|Adjusted   |hispanicNo                                        |       1.116|     0.414|     0.266|   0.790|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.068|     0.199|     0.331|   0.741|
+|Adjusted   |countSocialMediaExclFB                            |       1.088|     0.096|     0.881|   0.378|
+|Adjusted   |comm_inpersonOnce a week                          |       0.820|     0.318|    -0.623|   0.533|
+|Adjusted   |comm_inpersonA few times a week                   |       0.527|     0.268|    -2.393|   0.017|
+|Adjusted   |comm_inpersonOnce a day                           |       0.525|     0.338|    -1.908|   0.056|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.439|     0.248|    -3.324|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.077|     0.200|     3.659|   0.000|
+|Adjusted   |countSuicideAttempts                              |       1.737|     0.168|     3.280|   0.001|
 
 \newline
 
@@ -1212,7 +1290,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       794.252|     576| -393.962| 797.924| 819.713|  787.924|         572|
-|Adjusted   |       794.252|     576| -387.906| 805.812| 871.179|  775.812|         562|
+|Adjusted   |       794.252|     576| -355.650| 755.300| 851.172|  711.300|         555|
 
 
 ### PC-PTSD vs Get emotional support from others
@@ -1221,7 +1299,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.460|   4| 572|  0.213|
-|Adjusted   | 1.692|   4| 562|  0.150|
+|Adjusted   | 1.694|   4| 555|  0.150|
 
 \newline
 
@@ -1233,21 +1311,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |       1.074|     0.227|     0.314|   0.754|
 |Unadjusted |sm_emot_supportUsually                            |       1.183|     0.326|     0.515|   0.606|
 |Unadjusted |sm_emot_supportAlways                             |       1.098|     0.777|     0.121|   0.904|
-|Adjusted   |(Intercept)                                       |       0.483|     0.485|    -1.499|   0.134|
-|Adjusted   |sm_emot_supportRarely                             |       1.662|     0.211|     2.414|   0.016|
-|Adjusted   |sm_emot_supportSometimes                          |       1.052|     0.233|     0.216|   0.829|
-|Adjusted   |sm_emot_supportUsually                            |       1.152|     0.339|     0.416|   0.677|
-|Adjusted   |sm_emot_supportAlways                             |       1.183|     0.788|     0.213|   0.832|
-|Adjusted   |age                                               |       0.996|     0.007|    -0.588|   0.556|
-|Adjusted   |genderFemale                                      |       0.993|     0.223|    -0.033|   0.973|
-|Adjusted   |genderA gender not listed here                    | 2870317.408|   617.846|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       2.015|     0.778|     0.901|   0.367|
-|Adjusted   |raceAsian                                         |       1.379|     0.726|     0.443|   0.658|
-|Adjusted   |raceBlack or African American                     |       2.120|     0.783|     0.959|   0.337|
-|Adjusted   |raceMultiple races                                |       1.647|     0.300|     1.663|   0.096|
-|Adjusted   |raceOther                                         |       2.329|     0.558|     1.514|   0.130|
-|Adjusted   |hispanicNo                                        |       1.374|     0.399|     0.796|   0.426|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.348|     0.179|     1.668|   0.095|
+|Adjusted   |(Intercept)                                       |       0.541|     0.522|    -1.177|   0.239|
+|Adjusted   |sm_emot_supportRarely                             |       1.601|     0.229|     2.059|   0.039|
+|Adjusted   |sm_emot_supportSometimes                          |       0.902|     0.257|    -0.401|   0.688|
+|Adjusted   |sm_emot_supportUsually                            |       0.999|     0.373|    -0.004|   0.997|
+|Adjusted   |sm_emot_supportAlways                             |       0.936|     0.873|    -0.076|   0.939|
+|Adjusted   |age                                               |       1.004|     0.008|     0.546|   0.585|
+|Adjusted   |genderFemale                                      |       0.814|     0.240|    -0.857|   0.391|
+|Adjusted   |genderA gender not listed here                    | 2042133.225|   608.629|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.348|     0.824|     0.363|   0.717|
+|Adjusted   |raceAsian                                         |       0.959|     0.760|    -0.055|   0.956|
+|Adjusted   |raceBlack or African American                     |       2.160|     0.834|     0.924|   0.356|
+|Adjusted   |raceMultiple races                                |       1.275|     0.324|     0.750|   0.453|
+|Adjusted   |raceOther                                         |       1.579|     0.589|     0.776|   0.438|
+|Adjusted   |hispanicNo                                        |       1.116|     0.415|     0.264|   0.792|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.085|     0.198|     0.414|   0.679|
+|Adjusted   |countSocialMediaExclFB                            |       1.056|     0.098|     0.554|   0.579|
+|Adjusted   |comm_inpersonOnce a week                          |       0.806|     0.320|    -0.674|   0.500|
+|Adjusted   |comm_inpersonA few times a week                   |       0.494|     0.269|    -2.617|   0.009|
+|Adjusted   |comm_inpersonOnce a day                           |       0.546|     0.338|    -1.788|   0.074|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.382|     0.245|    -3.926|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.979|     0.199|     3.425|   0.001|
+|Adjusted   |countSuicideAttempts                              |       1.750|     0.171|     3.263|   0.001|
 
 \newline
 
@@ -1255,7 +1340,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       794.252|     576| -394.195| 798.390| 820.179|  788.390|         572|
-|Adjusted   |       794.252|     576| -387.296| 804.592| 869.960|  774.592|         562|
+|Adjusted   |       794.252|     576| -354.761| 753.523| 849.395|  709.523|         555|
 
 
 ### PC-PTSD vs Get information about health or medical topics
@@ -1264,7 +1349,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.577|   4| 571|  0.179|
-|Adjusted   | 1.767|   4| 561|  0.134|
+|Adjusted   | 1.703|   4| 554|  0.148|
 
 \newline
 
@@ -1276,21 +1361,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |       1.082|     0.226|     0.349|   0.727|
 |Unadjusted |sm_med_infoUsually                                |       1.262|     0.302|     0.770|   0.441|
 |Unadjusted |sm_med_infoAlways                                 |       0.529|     0.521|    -1.221|   0.222|
-|Adjusted   |(Intercept)                                       |       0.593|     0.491|    -1.064|   0.288|
-|Adjusted   |sm_med_infoRarely                                 |       0.721|     0.231|    -1.412|   0.158|
-|Adjusted   |sm_med_infoSometimes                              |       1.094|     0.235|     0.385|   0.700|
-|Adjusted   |sm_med_infoUsually                                |       1.327|     0.313|     0.905|   0.365|
-|Adjusted   |sm_med_infoAlways                                 |       0.524|     0.535|    -1.208|   0.227|
-|Adjusted   |age                                               |       0.995|     0.008|    -0.599|   0.549|
-|Adjusted   |genderFemale                                      |       1.047|     0.222|     0.207|   0.836|
-|Adjusted   |genderA gender not listed here                    | 2818941.062|   605.880|     0.025|   0.980|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.662|     0.779|     0.652|   0.515|
-|Adjusted   |raceAsian                                         |       1.547|     0.725|     0.602|   0.547|
-|Adjusted   |raceBlack or African American                     |       1.851|     0.781|     0.788|   0.431|
-|Adjusted   |raceMultiple races                                |       1.783|     0.300|     1.927|   0.054|
-|Adjusted   |raceOther                                         |       2.044|     0.560|     1.276|   0.202|
-|Adjusted   |hispanicNo                                        |       1.437|     0.400|     0.906|   0.365|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.334|     0.180|     1.602|   0.109|
+|Adjusted   |(Intercept)                                       |       0.679|     0.530|    -0.730|   0.465|
+|Adjusted   |sm_med_infoRarely                                 |       0.605|     0.250|    -2.013|   0.044|
+|Adjusted   |sm_med_infoSometimes                              |       0.966|     0.258|    -0.133|   0.894|
+|Adjusted   |sm_med_infoUsually                                |       1.051|     0.342|     0.145|   0.885|
+|Adjusted   |sm_med_infoAlways                                 |       0.529|     0.585|    -1.088|   0.276|
+|Adjusted   |age                                               |       1.006|     0.008|     0.674|   0.500|
+|Adjusted   |genderFemale                                      |       0.860|     0.238|    -0.631|   0.528|
+|Adjusted   |genderA gender not listed here                    | 2006275.326|   593.556|     0.024|   0.980|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.134|     0.845|     0.148|   0.882|
+|Adjusted   |raceAsian                                         |       1.106|     0.769|     0.131|   0.895|
+|Adjusted   |raceBlack or African American                     |       1.674|     0.825|     0.624|   0.532|
+|Adjusted   |raceMultiple races                                |       1.395|     0.327|     1.018|   0.309|
+|Adjusted   |raceOther                                         |       1.405|     0.591|     0.575|   0.565|
+|Adjusted   |hispanicNo                                        |       1.137|     0.415|     0.309|   0.757|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.062|     0.198|     0.305|   0.760|
+|Adjusted   |countSocialMediaExclFB                            |       1.054|     0.099|     0.530|   0.596|
+|Adjusted   |comm_inpersonOnce a week                          |       0.821|     0.317|    -0.621|   0.534|
+|Adjusted   |comm_inpersonA few times a week                   |       0.516|     0.267|    -2.476|   0.013|
+|Adjusted   |comm_inpersonOnce a day                           |       0.529|     0.340|    -1.873|   0.061|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.382|     0.245|    -3.916|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.990|     0.199|     3.459|   0.001|
+|Adjusted   |countSuicideAttempts                              |       1.714|     0.166|     3.239|   0.001|
 
 \newline
 
@@ -1298,7 +1390,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       792.655|     575| -393.113| 796.226| 818.007|  786.226|         571|
-|Adjusted   |       792.655|     575| -386.333| 802.666| 868.008|  772.666|         561|
+|Adjusted   |       792.655|     575| -354.415| 752.829| 848.663|  708.829|         554|
 
 
 ### PC-PTSD vs Get advice about health or medical topics
@@ -1307,7 +1399,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 2.114|   4| 572|  0.078|
-|Adjusted   | 2.174|   4| 562|  0.071|
+|Adjusted   | 2.046|   4| 555|  0.087|
 
 \newline
 
@@ -1319,29 +1411,36 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |       1.280|     0.221|     1.115|   0.265|
 |Unadjusted |sm_med_adviceUsually                              |       2.074|     0.367|     1.985|   0.047|
 |Unadjusted |sm_med_adviceAlways                               |       0.264|     0.786|    -1.694|   0.090|
-|Adjusted   |(Intercept)                                       |       0.516|     0.484|    -1.365|   0.172|
-|Adjusted   |sm_med_adviceRarely                               |       1.032|     0.208|     0.150|   0.881|
-|Adjusted   |sm_med_adviceSometimes                            |       1.393|     0.230|     1.441|   0.150|
-|Adjusted   |sm_med_adviceUsually                              |       2.073|     0.374|     1.947|   0.051|
-|Adjusted   |sm_med_adviceAlways                               |       0.274|     0.802|    -1.614|   0.107|
-|Adjusted   |age                                               |       0.995|     0.008|    -0.686|   0.493|
-|Adjusted   |genderFemale                                      |       1.090|     0.221|     0.388|   0.698|
-|Adjusted   |genderA gender not listed here                    | 2484381.112|   608.617|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.601|     0.782|     0.602|   0.547|
-|Adjusted   |raceAsian                                         |       1.567|     0.737|     0.609|   0.542|
-|Adjusted   |raceBlack or African American                     |       1.918|     0.781|     0.833|   0.405|
-|Adjusted   |raceMultiple races                                |       1.663|     0.300|     1.696|   0.090|
-|Adjusted   |raceOther                                         |       1.995|     0.561|     1.232|   0.218|
-|Adjusted   |hispanicNo                                        |       1.424|     0.402|     0.879|   0.379|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.359|     0.180|     1.708|   0.088|
+|Adjusted   |(Intercept)                                       |       0.567|     0.523|    -1.085|   0.278|
+|Adjusted   |sm_med_adviceRarely                               |       0.918|     0.225|    -0.382|   0.703|
+|Adjusted   |sm_med_adviceSometimes                            |       1.279|     0.250|     0.982|   0.326|
+|Adjusted   |sm_med_adviceUsually                              |       1.747|     0.401|     1.392|   0.164|
+|Adjusted   |sm_med_adviceAlways                               |       0.147|     0.945|    -2.031|   0.042|
+|Adjusted   |age                                               |       1.005|     0.008|     0.554|   0.580|
+|Adjusted   |genderFemale                                      |       0.900|     0.238|    -0.444|   0.657|
+|Adjusted   |genderA gender not listed here                    | 1638855.832|   601.187|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.103|     0.844|     0.116|   0.908|
+|Adjusted   |raceAsian                                         |       1.126|     0.803|     0.148|   0.882|
+|Adjusted   |raceBlack or African American                     |       1.799|     0.831|     0.707|   0.480|
+|Adjusted   |raceMultiple races                                |       1.254|     0.324|     0.698|   0.485|
+|Adjusted   |raceOther                                         |       1.338|     0.601|     0.484|   0.628|
+|Adjusted   |hispanicNo                                        |       1.142|     0.419|     0.316|   0.752|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.111|     0.199|     0.529|   0.597|
+|Adjusted   |countSocialMediaExclFB                            |       1.039|     0.098|     0.389|   0.697|
+|Adjusted   |comm_inpersonOnce a week                          |       0.783|     0.318|    -0.769|   0.442|
+|Adjusted   |comm_inpersonA few times a week                   |       0.498|     0.268|    -2.596|   0.009|
+|Adjusted   |comm_inpersonOnce a day                           |       0.520|     0.341|    -1.920|   0.055|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.393|     0.245|    -3.804|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.010|     0.199|     3.506|   0.000|
+|Adjusted   |countSuicideAttempts                              |       1.746|     0.167|     3.346|   0.001|
 
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       794.252|     576| -392.320| 794.641| 816.430|  784.641|         572|
-|Adjusted   |       794.252|     576| -385.815| 801.629| 866.997|  771.629|         562|
+|model      | null.deviance| df.null|  logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|-------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       794.252|     576| -392.32| 794.641| 816.430|  784.641|         572|
+|Adjusted   |       794.252|     576| -353.19| 750.381| 846.253|  706.381|         555|
 
 
 ### PC-PTSD vs Ask questions about health or medical issues
@@ -1350,7 +1449,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 2.147|   4| 572|  0.074|
-|Adjusted   | 2.376|   4| 562|  0.051|
+|Adjusted   | 1.252|   4| 555|  0.288|
 
 \newline
 
@@ -1362,21 +1461,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |       1.311|     0.236|     1.146|   0.252|
 |Unadjusted |sm_med_questionsUsually                           |       3.064|     0.401|     2.793|   0.005|
 |Unadjusted |sm_med_questionsAlways                            |       1.393|     0.644|     0.514|   0.607|
-|Adjusted   |(Intercept)                                       |       0.526|     0.484|    -1.329|   0.184|
-|Adjusted   |sm_med_questionsRarely                            |       1.052|     0.204|     0.247|   0.805|
-|Adjusted   |sm_med_questionsSometimes                         |       1.399|     0.245|     1.369|   0.171|
-|Adjusted   |sm_med_questionsUsually                           |       3.236|     0.406|     2.890|   0.004|
-|Adjusted   |sm_med_questionsAlways                            |       1.172|     0.662|     0.240|   0.810|
-|Adjusted   |age                                               |       0.994|     0.008|    -0.848|   0.397|
-|Adjusted   |genderFemale                                      |       1.002|     0.221|     0.010|   0.992|
-|Adjusted   |genderA gender not listed here                    | 2872416.257|   618.604|     0.024|   0.981|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.604|     0.788|     0.600|   0.549|
-|Adjusted   |raceAsian                                         |       1.305|     0.734|     0.363|   0.717|
-|Adjusted   |raceBlack or African American                     |       1.927|     0.781|     0.840|   0.401|
-|Adjusted   |raceMultiple races                                |       1.743|     0.300|     1.852|   0.064|
-|Adjusted   |raceOther                                         |       2.270|     0.558|     1.469|   0.142|
-|Adjusted   |hispanicNo                                        |       1.449|     0.401|     0.924|   0.355|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.330|     0.180|     1.583|   0.113|
+|Adjusted   |(Intercept)                                       |       0.562|     0.520|    -1.107|   0.268|
+|Adjusted   |sm_med_questionsRarely                            |       1.015|     0.220|     0.067|   0.946|
+|Adjusted   |sm_med_questionsSometimes                         |       1.343|     0.260|     1.135|   0.257|
+|Adjusted   |sm_med_questionsUsually                           |       2.358|     0.432|     1.984|   0.047|
+|Adjusted   |sm_med_questionsAlways                            |       0.992|     0.740|    -0.010|   0.992|
+|Adjusted   |age                                               |       1.003|     0.008|     0.333|   0.739|
+|Adjusted   |genderFemale                                      |       0.837|     0.237|    -0.752|   0.452|
+|Adjusted   |genderA gender not listed here                    | 1988874.353|   608.239|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.162|     0.847|     0.177|   0.859|
+|Adjusted   |raceAsian                                         |       0.987|     0.769|    -0.017|   0.987|
+|Adjusted   |raceBlack or African American                     |       1.798|     0.823|     0.713|   0.476|
+|Adjusted   |raceMultiple races                                |       1.338|     0.324|     0.899|   0.369|
+|Adjusted   |raceOther                                         |       1.563|     0.587|     0.761|   0.447|
+|Adjusted   |hispanicNo                                        |       1.165|     0.415|     0.367|   0.714|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.080|     0.198|     0.391|   0.696|
+|Adjusted   |countSocialMediaExclFB                            |       1.029|     0.097|     0.295|   0.768|
+|Adjusted   |comm_inpersonOnce a week                          |       0.829|     0.319|    -0.588|   0.556|
+|Adjusted   |comm_inpersonA few times a week                   |       0.529|     0.267|    -2.387|   0.017|
+|Adjusted   |comm_inpersonOnce a day                           |       0.505|     0.338|    -2.026|   0.043|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.415|     0.244|    -3.615|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.986|     0.199|     3.457|   0.001|
+|Adjusted   |countSuicideAttempts                              |       1.690|     0.168|     3.128|   0.002|
 
 \newline
 
@@ -1384,7 +1490,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       794.252|     576| -392.522| 795.043| 816.832|  785.043|         572|
-|Adjusted   |       794.252|     576| -385.605| 801.210| 866.578|  771.210|         562|
+|Adjusted   |       794.252|     576| -355.582| 755.164| 851.036|  711.164|         555|
 
 
 ### PC-PTSD vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -1393,7 +1499,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 4.971|   4| 571|  0.001|
-|Adjusted   | 4.671|   4| 561|  0.001|
+|Adjusted   | 2.213|   4| 554|  0.066|
 
 \newline
 
@@ -1405,21 +1511,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |       2.085|     0.256|     2.869|   0.004|
 |Unadjusted |sm_share_symptUsually                             |       4.915|     0.447|     3.561|   0.000|
 |Unadjusted |sm_share_symptAlways                              |       1.870|     0.681|     0.919|   0.358|
-|Adjusted   |(Intercept)                                       |       0.434|     0.494|    -1.688|   0.091|
-|Adjusted   |sm_share_symptRarely                              |       1.033|     0.206|     0.156|   0.876|
-|Adjusted   |sm_share_symptSometimes                           |       2.007|     0.262|     2.655|   0.008|
-|Adjusted   |sm_share_symptUsually                             |       4.923|     0.453|     3.518|   0.000|
-|Adjusted   |sm_share_symptAlways                              |       1.690|     0.694|     0.756|   0.450|
-|Adjusted   |age                                               |       0.996|     0.007|    -0.532|   0.595|
-|Adjusted   |genderFemale                                      |       0.976|     0.224|    -0.107|   0.915|
-|Adjusted   |genderA gender not listed here                    | 1571557.914|   540.192|     0.026|   0.979|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.652|     0.782|     0.642|   0.521|
-|Adjusted   |raceAsian                                         |       1.014|     0.746|     0.019|   0.985|
-|Adjusted   |raceBlack or African American                     |       1.572|     0.818|     0.553|   0.580|
-|Adjusted   |raceMultiple races                                |       1.693|     0.302|     1.741|   0.082|
-|Adjusted   |raceOther                                         |       2.050|     0.563|     1.275|   0.202|
-|Adjusted   |hispanicNo                                        |       1.538|     0.411|     1.049|   0.294|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.353|     0.182|     1.666|   0.096|
+|Adjusted   |(Intercept)                                       |       0.492|     0.527|    -1.346|   0.178|
+|Adjusted   |sm_share_symptRarely                              |       0.875|     0.225|    -0.591|   0.555|
+|Adjusted   |sm_share_symptSometimes                           |       1.495|     0.283|     1.423|   0.155|
+|Adjusted   |sm_share_symptUsually                             |       3.104|     0.476|     2.380|   0.017|
+|Adjusted   |sm_share_symptAlways                              |       0.876|     0.758|    -0.175|   0.861|
+|Adjusted   |age                                               |       1.004|     0.008|     0.536|   0.592|
+|Adjusted   |genderFemale                                      |       0.823|     0.238|    -0.820|   0.412|
+|Adjusted   |genderA gender not listed here                    | 1255206.415|   558.827|     0.025|   0.980|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.135|     0.836|     0.151|   0.880|
+|Adjusted   |raceAsian                                         |       0.825|     0.776|    -0.247|   0.805|
+|Adjusted   |raceBlack or African American                     |       1.851|     0.841|     0.732|   0.464|
+|Adjusted   |raceMultiple races                                |       1.346|     0.325|     0.913|   0.361|
+|Adjusted   |raceOther                                         |       1.503|     0.591|     0.690|   0.490|
+|Adjusted   |hispanicNo                                        |       1.257|     0.420|     0.544|   0.586|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.110|     0.198|     0.525|   0.599|
+|Adjusted   |countSocialMediaExclFB                            |       1.057|     0.097|     0.572|   0.567|
+|Adjusted   |comm_inpersonOnce a week                          |       0.891|     0.323|    -0.358|   0.721|
+|Adjusted   |comm_inpersonA few times a week                   |       0.550|     0.270|    -2.219|   0.027|
+|Adjusted   |comm_inpersonOnce a day                           |       0.538|     0.339|    -1.829|   0.067|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.427|     0.246|    -3.465|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.916|     0.203|     3.201|   0.001|
+|Adjusted   |countSuicideAttempts                              |       1.665|     0.171|     2.976|   0.003|
 
 \newline
 
@@ -1427,7 +1540,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       793.052|     575| -385.446| 780.893| 802.674|  770.893|         571|
-|Adjusted   |       793.052|     575| -379.779| 789.558| 854.899|  759.558|         561|
+|Adjusted   |       793.052|     575| -353.085| 750.170| 846.004|  706.170|         554|
 
 
 ### PC-PTSD vs Share information related to your health
@@ -1436,7 +1549,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 3.748|   4| 571|  0.005|
-|Adjusted   | 3.345|   4| 561|  0.010|
+|Adjusted   | 2.397|   4| 554|  0.049|
 
 \newline
 
@@ -1448,21 +1561,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |       1.557|     0.266|     1.667|   0.095|
 |Unadjusted |sm_share_healthUsually                            |       9.330|     0.633|     3.527|   0.000|
 |Unadjusted |sm_share_healthAlways                             |       0.589|     0.846|    -0.625|   0.532|
-|Adjusted   |(Intercept)                                       |       0.458|     0.488|    -1.600|   0.110|
-|Adjusted   |sm_share_healthRarely                             |       1.182|     0.192|     0.871|   0.384|
-|Adjusted   |sm_share_healthSometimes                          |       1.466|     0.272|     1.406|   0.160|
-|Adjusted   |sm_share_healthUsually                            |       8.612|     0.640|     3.366|   0.001|
-|Adjusted   |sm_share_healthAlways                             |       0.554|     0.869|    -0.680|   0.497|
-|Adjusted   |age                                               |       0.997|     0.007|    -0.386|   0.699|
-|Adjusted   |genderFemale                                      |       1.038|     0.223|     0.168|   0.867|
-|Adjusted   |genderA gender not listed here                    | 1231115.557|   531.428|     0.026|   0.979|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.754|     0.779|     0.721|   0.471|
-|Adjusted   |raceAsian                                         |       1.074|     0.747|     0.096|   0.924|
-|Adjusted   |raceBlack or African American                     |       1.662|     0.829|     0.613|   0.540|
-|Adjusted   |raceMultiple races                                |       1.573|     0.305|     1.487|   0.137|
-|Adjusted   |raceOther                                         |       2.049|     0.559|     1.283|   0.200|
-|Adjusted   |hispanicNo                                        |       1.406|     0.405|     0.842|   0.400|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.347|     0.181|     1.652|   0.099|
+|Adjusted   |(Intercept)                                       |       0.507|     0.525|    -1.296|   0.195|
+|Adjusted   |sm_share_healthRarely                             |       0.946|     0.207|    -0.269|   0.788|
+|Adjusted   |sm_share_healthSometimes                          |       1.089|     0.300|     0.284|   0.776|
+|Adjusted   |sm_share_healthUsually                            |       5.308|     0.664|     2.515|   0.012|
+|Adjusted   |sm_share_healthAlways                             |       0.178|     1.054|    -1.639|   0.101|
+|Adjusted   |age                                               |       1.006|     0.008|     0.716|   0.474|
+|Adjusted   |genderFemale                                      |       0.884|     0.238|    -0.516|   0.606|
+|Adjusted   |genderA gender not listed here                    | 1113052.378|   541.716|     0.026|   0.979|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.129|     0.834|     0.145|   0.885|
+|Adjusted   |raceAsian                                         |       0.848|     0.783|    -0.211|   0.833|
+|Adjusted   |raceBlack or African American                     |       2.210|     0.874|     0.907|   0.364|
+|Adjusted   |raceMultiple races                                |       1.197|     0.330|     0.544|   0.587|
+|Adjusted   |raceOther                                         |       1.491|     0.594|     0.672|   0.502|
+|Adjusted   |hispanicNo                                        |       1.205|     0.417|     0.447|   0.655|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.087|     0.198|     0.422|   0.673|
+|Adjusted   |countSocialMediaExclFB                            |       1.049|     0.097|     0.489|   0.625|
+|Adjusted   |comm_inpersonOnce a week                          |       0.861|     0.321|    -0.468|   0.640|
+|Adjusted   |comm_inpersonA few times a week                   |       0.547|     0.270|    -2.240|   0.025|
+|Adjusted   |comm_inpersonOnce a day                           |       0.540|     0.340|    -1.812|   0.070|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.403|     0.247|    -3.676|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.941|     0.202|     3.275|   0.001|
+|Adjusted   |countSuicideAttempts                              |       1.786|     0.174|     3.329|   0.001|
 
 \newline
 
@@ -1470,7 +1590,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       792.655|     575| -385.961| 781.921| 803.702|  771.921|         571|
-|Adjusted   |       792.655|     575| -380.952| 791.904| 857.246|  761.904|         561|
+|Adjusted   |       792.655|     575| -350.926| 745.852| 841.687|  701.852|         554|
 
 
 ### PC-PTSD vs Share thoughts about suicide or hurting yourself in some way
@@ -1478,8 +1598,8 @@ Relabel factors; replace spaces with underscores.
 
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
-|Unadjusted | 6.082|   4| 570|      0|
-|Adjusted   | 5.796|   4| 560|      0|
+|Unadjusted | 6.082|   4| 570|  0.000|
+|Adjusted   | 4.041|   4| 553|  0.003|
 
 \newline
 
@@ -1491,21 +1611,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |       5.791|     0.652|     2.694|   0.007|
 |Unadjusted |sm_share_suicideUsually                           |      11.582|     1.065|     2.301|   0.021|
 |Unadjusted |sm_share_suicideAlways                            |       1.448|     1.004|     0.368|   0.713|
-|Adjusted   |(Intercept)                                       |       0.418|     0.504|    -1.731|   0.083|
-|Adjusted   |sm_share_suicideRarely                            |       2.968|     0.306|     3.559|   0.000|
-|Adjusted   |sm_share_suicideSometimes                         |       5.250|     0.665|     2.493|   0.013|
-|Adjusted   |sm_share_suicideUsually                           |      12.279|     1.078|     2.326|   0.020|
-|Adjusted   |sm_share_suicideAlways                            |       1.463|     1.012|     0.376|   0.707|
-|Adjusted   |age                                               |       0.998|     0.007|    -0.289|   0.772|
-|Adjusted   |genderFemale                                      |       1.059|     0.224|     0.255|   0.799|
-|Adjusted   |genderA gender not listed here                    | 1589887.100|   547.398|     0.026|   0.979|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.485|     0.792|     0.499|   0.618|
-|Adjusted   |raceAsian                                         |       1.004|     0.778|     0.006|   0.995|
-|Adjusted   |raceBlack or African American                     |       1.566|     0.821|     0.546|   0.585|
-|Adjusted   |raceMultiple races                                |       1.699|     0.304|     1.743|   0.081|
-|Adjusted   |raceOther                                         |       2.527|     0.558|     1.660|   0.097|
-|Adjusted   |hispanicNo                                        |       1.523|     0.429|     0.980|   0.327|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.263|     0.183|     1.275|   0.202|
+|Adjusted   |(Intercept)                                       |       0.460|     0.539|    -1.442|   0.149|
+|Adjusted   |sm_share_suicideRarely                            |       2.527|     0.327|     2.834|   0.005|
+|Adjusted   |sm_share_suicideSometimes                         |       3.533|     0.701|     1.801|   0.072|
+|Adjusted   |sm_share_suicideUsually                           |      12.989|     1.123|     2.284|   0.022|
+|Adjusted   |sm_share_suicideAlways                            |       0.450|     1.242|    -0.643|   0.520|
+|Adjusted   |age                                               |       1.006|     0.008|     0.773|   0.440|
+|Adjusted   |genderFemale                                      |       0.877|     0.240|    -0.546|   0.585|
+|Adjusted   |genderA gender not listed here                    | 1317796.489|   560.117|     0.025|   0.980|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.065|     0.854|     0.074|   0.941|
+|Adjusted   |raceAsian                                         |       0.677|     0.778|    -0.502|   0.616|
+|Adjusted   |raceBlack or African American                     |       1.689|     0.869|     0.603|   0.546|
+|Adjusted   |raceMultiple races                                |       1.308|     0.330|     0.813|   0.416|
+|Adjusted   |raceOther                                         |       1.717|     0.594|     0.910|   0.363|
+|Adjusted   |hispanicNo                                        |       1.304|     0.443|     0.600|   0.548|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.030|     0.201|     0.148|   0.882|
+|Adjusted   |countSocialMediaExclFB                            |       1.049|     0.097|     0.493|   0.622|
+|Adjusted   |comm_inpersonOnce a week                          |       0.817|     0.321|    -0.630|   0.529|
+|Adjusted   |comm_inpersonA few times a week                   |       0.493|     0.272|    -2.600|   0.009|
+|Adjusted   |comm_inpersonOnce a day                           |       0.528|     0.340|    -1.877|   0.061|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.380|     0.249|    -3.897|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       1.794|     0.202|     2.889|   0.004|
+|Adjusted   |countSuicideAttempts                              |       1.755|     0.173|     3.255|   0.001|
 
 \newline
 
@@ -1513,7 +1640,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |        791.85|     574| -380.941| 771.882| 793.654|  761.882|         570|
-|Adjusted   |        791.85|     574| -375.569| 781.138| 846.453|  751.138|         560|
+|Adjusted   |        791.85|     574| -347.290| 738.580| 834.377|  694.580|         553|
 
 
 ### PHQ-2 vs Frequency of Facebook use
@@ -1522,7 +1649,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.496|   5| 571|  0.779|
-|Adjusted   | 0.531|   5| 561|  0.753|
+|Adjusted   | 0.409|   5| 554|  0.843|
 
 \newline
 
@@ -1535,22 +1662,29 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     3.667|     1.113|     1.167|   0.243|
 |Unadjusted |fb_freqOnce_a_day                                 |     4.404|     1.084|     1.367|   0.172|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     3.358|     1.059|     1.143|   0.253|
-|Adjusted   |(Intercept)                                       |     0.121|     1.194|    -1.765|   0.078|
-|Adjusted   |fb_freqEvery_few_weeks                            |     0.000|   437.784|    -0.028|   0.978|
-|Adjusted   |fb_freqOnce_a_week                                |     4.389|     1.393|     1.062|   0.288|
-|Adjusted   |fb_freqA_few_times_a_week                         |     3.793|     1.119|     1.191|   0.234|
-|Adjusted   |fb_freqOnce_a_day                                 |     4.427|     1.091|     1.364|   0.173|
-|Adjusted   |fb_freqSeveral_times_a_day                        |     3.251|     1.062|     1.110|   0.267|
-|Adjusted   |age                                               |     0.980|     0.009|    -2.351|   0.019|
-|Adjusted   |genderFemale                                      |     0.919|     0.248|    -0.339|   0.734|
-|Adjusted   |genderA gender not listed here                    |     2.252|     1.427|     0.569|   0.570|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.451|     1.101|    -0.723|   0.470|
-|Adjusted   |raceAsian                                         |     0.940|     0.830|    -0.074|   0.941|
-|Adjusted   |raceBlack or African American                     |     1.158|     0.862|     0.171|   0.865|
-|Adjusted   |raceMultiple races                                |     1.275|     0.320|     0.758|   0.449|
-|Adjusted   |raceOther                                         |     2.788|     0.559|     1.834|   0.067|
-|Adjusted   |hispanicNo                                        |     1.971|     0.470|     1.443|   0.149|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.153|     0.199|     0.718|   0.473|
+|Adjusted   |(Intercept)                                       |     0.153|     1.241|    -1.511|   0.131|
+|Adjusted   |fb_freqEvery_few_weeks                            |     0.000|   629.421|    -0.022|   0.983|
+|Adjusted   |fb_freqOnce_a_week                                |     3.419|     1.423|     0.864|   0.387|
+|Adjusted   |fb_freqA_few_times_a_week                         |     3.813|     1.140|     1.174|   0.240|
+|Adjusted   |fb_freqOnce_a_day                                 |     3.936|     1.112|     1.232|   0.218|
+|Adjusted   |fb_freqSeveral_times_a_day                        |     3.049|     1.079|     1.033|   0.302|
+|Adjusted   |age                                               |     0.985|     0.009|    -1.642|   0.101|
+|Adjusted   |genderFemale                                      |     0.742|     0.267|    -1.117|   0.264|
+|Adjusted   |genderA gender not listed here                    |     1.175|     1.488|     0.108|   0.914|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.300|     1.136|    -1.059|   0.290|
+|Adjusted   |raceAsian                                         |     0.657|     0.864|    -0.486|   0.627|
+|Adjusted   |raceBlack or African American                     |     1.131|     0.947|     0.130|   0.896|
+|Adjusted   |raceMultiple races                                |     0.956|     0.352|    -0.128|   0.898|
+|Adjusted   |raceOther                                         |     1.960|     0.596|     1.129|   0.259|
+|Adjusted   |hispanicNo                                        |     1.545|     0.498|     0.874|   0.382|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.985|     0.221|    -0.067|   0.947|
+|Adjusted   |countSocialMediaExclFB                            |     0.905|     0.109|    -0.923|   0.356|
+|Adjusted   |comm_inpersonOnce a week                          |     0.773|     0.325|    -0.791|   0.429|
+|Adjusted   |comm_inpersonA few times a week                   |     0.307|     0.314|    -3.765|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.417|     0.408|    -2.142|   0.032|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.393|     0.271|    -3.441|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.282|     0.225|     5.279|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.218|     0.131|     1.511|   0.131|
 
 \newline
 
@@ -1558,7 +1692,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       679.376|     576| -336.901| 685.802| 711.949|  673.802|         571|
-|Adjusted   |       679.376|     576| -330.439| 692.878| 762.604|  660.878|         561|
+|Adjusted   |       679.376|     576| -294.643| 635.286| 735.517|  589.286|         554|
 
 
 ### PHQ-2 vs Active use of Facebook
@@ -1567,7 +1701,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.487|   4| 573|  0.745|
-|Adjusted   | 0.293|   4| 563|  0.882|
+|Adjusted   | 0.331|   4| 556|  0.857|
 
 \newline
 
@@ -1579,29 +1713,36 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.713|     0.331|    -1.022|   0.307|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.759|     0.343|    -0.804|   0.421|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.735|     0.291|    -1.057|   0.291|
-|Adjusted   |(Intercept)                                       |     0.419|     0.592|    -1.469|   0.142|
-|Adjusted   |comm_facebookOnce_a_week                          |     1.051|     0.434|     0.114|   0.909|
-|Adjusted   |comm_facebookA_few_times_a_week                   |     0.745|     0.341|    -0.863|   0.388|
-|Adjusted   |comm_facebookOnce_a_day                           |     0.839|     0.358|    -0.490|   0.624|
-|Adjusted   |comm_facebookSeveral_times_a_day                  |     0.822|     0.302|    -0.650|   0.516|
-|Adjusted   |age                                               |     0.984|     0.009|    -1.894|   0.058|
-|Adjusted   |genderFemale                                      |     0.919|     0.248|    -0.339|   0.735|
-|Adjusted   |genderA gender not listed here                    |     2.280|     1.431|     0.576|   0.565|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.422|     1.094|    -0.788|   0.431|
-|Adjusted   |raceAsian                                         |     0.991|     0.834|    -0.011|   0.991|
-|Adjusted   |raceBlack or African American                     |     1.151|     0.864|     0.163|   0.871|
-|Adjusted   |raceMultiple races                                |     1.340|     0.318|     0.919|   0.358|
-|Adjusted   |raceOther                                         |     2.827|     0.558|     1.863|   0.063|
-|Adjusted   |hispanicNo                                        |     1.878|     0.470|     1.342|   0.180|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.242|     0.198|     1.093|   0.275|
+|Adjusted   |(Intercept)                                       |     0.447|     0.638|    -1.263|   0.207|
+|Adjusted   |comm_facebookOnce_a_week                          |     1.138|     0.476|     0.272|   0.785|
+|Adjusted   |comm_facebookA_few_times_a_week                   |     0.731|     0.371|    -0.845|   0.398|
+|Adjusted   |comm_facebookOnce_a_day                           |     0.928|     0.392|    -0.191|   0.849|
+|Adjusted   |comm_facebookSeveral_times_a_day                  |     0.890|     0.335|    -0.348|   0.728|
+|Adjusted   |age                                               |     0.988|     0.009|    -1.277|   0.201|
+|Adjusted   |genderFemale                                      |     0.757|     0.267|    -1.046|   0.296|
+|Adjusted   |genderA gender not listed here                    |     1.176|     1.494|     0.109|   0.913|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.276|     1.136|    -1.135|   0.257|
+|Adjusted   |raceAsian                                         |     0.704|     0.870|    -0.404|   0.686|
+|Adjusted   |raceBlack or African American                     |     1.082|     0.940|     0.084|   0.933|
+|Adjusted   |raceMultiple races                                |     0.995|     0.349|    -0.014|   0.989|
+|Adjusted   |raceOther                                         |     1.999|     0.596|     1.163|   0.245|
+|Adjusted   |hispanicNo                                        |     1.480|     0.497|     0.790|   0.429|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.065|     0.221|     0.284|   0.777|
+|Adjusted   |countSocialMediaExclFB                            |     0.914|     0.108|    -0.834|   0.404|
+|Adjusted   |comm_inpersonOnce a week                          |     0.798|     0.322|    -0.703|   0.482|
+|Adjusted   |comm_inpersonA few times a week                   |     0.339|     0.310|    -3.487|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.404|     0.407|    -2.229|   0.026|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.417|     0.276|    -3.169|   0.002|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.416|     0.226|     5.445|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.203|     0.130|     1.417|   0.156|
 
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       681.949|     577| -340.020| 690.040| 711.838|  680.040|         573|
-|Adjusted   |       681.949|     577| -334.118| 698.236| 763.629|  668.236|         563|
+|model      | null.deviance| df.null|  logLik|    AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|-------:|------:|-------:|--------:|-----------:|
+|Unadjusted |       681.949|     577| -340.02| 690.04| 711.838|   680.04|         573|
+|Adjusted   |       681.949|     577| -298.33| 640.66| 736.571|   596.66|         556|
 
 
 ### PHQ-2 vs Get emotional support from others
@@ -1610,7 +1751,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.083|   4| 573|  0.364|
-|Adjusted   | 1.285|   4| 563|  0.274|
+|Adjusted   | 1.099|   4| 556|  0.356|
 
 \newline
 
@@ -1622,21 +1763,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.319|     0.250|     1.108|   0.268|
 |Unadjusted |sm_emot_supportUsually                            |     1.055|     0.371|     0.145|   0.884|
 |Unadjusted |sm_emot_supportAlways                             |     4.105|     0.781|     1.809|   0.070|
-|Adjusted   |(Intercept)                                       |     0.304|     0.576|    -2.070|   0.038|
-|Adjusted   |sm_emot_supportRarely                             |     1.328|     0.236|     1.203|   0.229|
-|Adjusted   |sm_emot_supportSometimes                          |     1.371|     0.257|     1.225|   0.221|
-|Adjusted   |sm_emot_supportUsually                            |     1.081|     0.385|     0.202|   0.840|
-|Adjusted   |sm_emot_supportAlways                             |     4.744|     0.799|     1.948|   0.051|
-|Adjusted   |age                                               |     0.982|     0.009|    -2.081|   0.037|
-|Adjusted   |genderFemale                                      |     0.824|     0.254|    -0.763|   0.445|
-|Adjusted   |genderA gender not listed here                    |     2.172|     1.433|     0.541|   0.588|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.509|     1.092|    -0.619|   0.536|
-|Adjusted   |raceAsian                                         |     1.063|     0.839|     0.073|   0.942|
-|Adjusted   |raceBlack or African American                     |     1.321|     0.869|     0.321|   0.749|
-|Adjusted   |raceMultiple races                                |     1.296|     0.320|     0.810|   0.418|
-|Adjusted   |raceOther                                         |     3.129|     0.561|     2.035|   0.042|
-|Adjusted   |hispanicNo                                        |     1.934|     0.479|     1.376|   0.169|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.254|     0.197|     1.146|   0.252|
+|Adjusted   |(Intercept)                                       |     0.352|     0.625|    -1.671|   0.095|
+|Adjusted   |sm_emot_supportRarely                             |     1.288|     0.260|     0.973|   0.331|
+|Adjusted   |sm_emot_supportSometimes                          |     1.361|     0.286|     1.076|   0.282|
+|Adjusted   |sm_emot_supportUsually                            |     1.092|     0.425|     0.207|   0.836|
+|Adjusted   |sm_emot_supportAlways                             |     5.040|     0.865|     1.869|   0.062|
+|Adjusted   |age                                               |     0.987|     0.009|    -1.369|   0.171|
+|Adjusted   |genderFemale                                      |     0.684|     0.272|    -1.400|   0.162|
+|Adjusted   |genderA gender not listed here                    |     1.172|     1.492|     0.107|   0.915|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.309|     1.140|    -1.031|   0.302|
+|Adjusted   |raceAsian                                         |     0.747|     0.869|    -0.335|   0.737|
+|Adjusted   |raceBlack or African American                     |     1.277|     0.956|     0.256|   0.798|
+|Adjusted   |raceMultiple races                                |     0.976|     0.351|    -0.070|   0.944|
+|Adjusted   |raceOther                                         |     2.166|     0.594|     1.301|   0.193|
+|Adjusted   |hispanicNo                                        |     1.565|     0.509|     0.879|   0.379|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.077|     0.219|     0.339|   0.735|
+|Adjusted   |countSocialMediaExclFB                            |     0.901|     0.111|    -0.945|   0.345|
+|Adjusted   |comm_inpersonOnce a week                          |     0.767|     0.325|    -0.815|   0.415|
+|Adjusted   |comm_inpersonA few times a week                   |     0.314|     0.312|    -3.722|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.386|     0.412|    -2.306|   0.021|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.392|     0.273|    -3.434|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.242|     0.225|     5.230|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.200|     0.133|     1.367|   0.172|
 
 \newline
 
@@ -1644,7 +1792,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       681.949|     577| -338.802| 687.603| 709.401|  677.603|         573|
-|Adjusted   |       681.949|     577| -332.113| 694.227| 759.620|  664.227|         563|
+|Adjusted   |       681.949|     577| -296.793| 637.585| 733.496|  593.585|         556|
 
 
 ### PHQ-2 vs Get information about health or medical topics
@@ -1653,7 +1801,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 2.327|   4| 572|  0.055|
-|Adjusted   | 2.843|   4| 562|  0.024|
+|Adjusted   | 2.898|   4| 555|  0.022|
 
 \newline
 
@@ -1665,21 +1813,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     1.235|     0.248|     0.850|   0.395|
 |Unadjusted |sm_med_infoUsually                                |     1.646|     0.319|     1.563|   0.118|
 |Unadjusted |sm_med_infoAlways                                 |     0.502|     0.656|    -1.052|   0.293|
-|Adjusted   |(Intercept)                                       |     0.399|     0.577|    -1.594|   0.111|
-|Adjusted   |sm_med_infoRarely                                 |     0.780|     0.266|    -0.931|   0.352|
-|Adjusted   |sm_med_infoSometimes                              |     1.383|     0.259|     1.251|   0.211|
-|Adjusted   |sm_med_infoUsually                                |     2.020|     0.334|     2.107|   0.035|
-|Adjusted   |sm_med_infoAlways                                 |     0.591|     0.673|    -0.782|   0.434|
-|Adjusted   |age                                               |     0.978|     0.009|    -2.452|   0.014|
-|Adjusted   |genderFemale                                      |     0.881|     0.254|    -0.501|   0.616|
-|Adjusted   |genderA gender not listed here                    |     2.304|     1.470|     0.568|   0.570|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.472|     1.094|    -0.686|   0.492|
-|Adjusted   |raceAsian                                         |     1.105|     0.855|     0.117|   0.907|
-|Adjusted   |raceBlack or African American                     |     1.342|     0.863|     0.341|   0.733|
-|Adjusted   |raceMultiple races                                |     1.402|     0.322|     1.047|   0.295|
-|Adjusted   |raceOther                                         |     2.855|     0.563|     1.862|   0.063|
-|Adjusted   |hispanicNo                                        |     1.877|     0.476|     1.324|   0.186|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.211|     0.200|     0.957|   0.339|
+|Adjusted   |(Intercept)                                       |     0.472|     0.633|    -1.188|   0.235|
+|Adjusted   |sm_med_infoRarely                                 |     0.730|     0.290|    -1.085|   0.278|
+|Adjusted   |sm_med_infoSometimes                              |     1.577|     0.290|     1.567|   0.117|
+|Adjusted   |sm_med_infoUsually                                |     1.980|     0.372|     1.833|   0.067|
+|Adjusted   |sm_med_infoAlways                                 |     0.813|     0.742|    -0.280|   0.780|
+|Adjusted   |age                                               |     0.982|     0.010|    -1.854|   0.064|
+|Adjusted   |genderFemale                                      |     0.730|     0.273|    -1.152|   0.249|
+|Adjusted   |genderA gender not listed here                    |     1.207|     1.601|     0.118|   0.906|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.268|     1.152|    -1.141|   0.254|
+|Adjusted   |raceAsian                                         |     0.733|     0.920|    -0.338|   0.735|
+|Adjusted   |raceBlack or African American                     |     1.309|     0.918|     0.293|   0.770|
+|Adjusted   |raceMultiple races                                |     1.086|     0.354|     0.233|   0.816|
+|Adjusted   |raceOther                                         |     2.068|     0.599|     1.214|   0.225|
+|Adjusted   |hispanicNo                                        |     1.531|     0.508|     0.838|   0.402|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.031|     0.222|     0.137|   0.891|
+|Adjusted   |countSocialMediaExclFB                            |     0.852|     0.113|    -1.422|   0.155|
+|Adjusted   |comm_inpersonOnce a week                          |     0.765|     0.326|    -0.821|   0.412|
+|Adjusted   |comm_inpersonA few times a week                   |     0.325|     0.313|    -3.593|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.419|     0.414|    -2.098|   0.036|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.384|     0.274|    -3.488|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.354|     0.228|     5.314|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.198|     0.130|     1.389|   0.165|
 
 \newline
 
@@ -1687,7 +1842,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       679.376|     576| -334.901| 679.803| 701.592|  669.803|         572|
-|Adjusted   |       679.376|     576| -327.664| 685.329| 750.696|  655.329|         562|
+|Adjusted   |       679.376|     576| -292.522| 629.045| 724.917|  585.045|         555|
 
 
 ### PHQ-2 vs Get advice about health or medical topics
@@ -1696,7 +1851,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 2.087|   4| 573|  0.081|
-|Adjusted   | 2.461|   4| 563|  0.044|
+|Adjusted   | 2.491|   4| 556|  0.042|
 
 \newline
 
@@ -1708,21 +1863,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     1.415|     0.242|     1.434|   0.152|
 |Unadjusted |sm_med_adviceUsually                              |     2.372|     0.369|     2.342|   0.019|
 |Unadjusted |sm_med_adviceAlways                               |     0.593|     0.790|    -0.662|   0.508|
-|Adjusted   |(Intercept)                                       |     0.359|     0.566|    -1.808|   0.071|
-|Adjusted   |sm_med_adviceRarely                               |     1.046|     0.239|     0.188|   0.851|
-|Adjusted   |sm_med_adviceSometimes                            |     1.672|     0.253|     2.033|   0.042|
-|Adjusted   |sm_med_adviceUsually                              |     2.560|     0.380|     2.472|   0.013|
-|Adjusted   |sm_med_adviceAlways                               |     0.738|     0.811|    -0.375|   0.707|
-|Adjusted   |age                                               |     0.979|     0.009|    -2.463|   0.014|
-|Adjusted   |genderFemale                                      |     0.943|     0.250|    -0.234|   0.815|
-|Adjusted   |genderA gender not listed here                    |     2.037|     1.465|     0.486|   0.627|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.439|     1.097|    -0.751|   0.452|
-|Adjusted   |raceAsian                                         |     1.048|     0.851|     0.055|   0.956|
-|Adjusted   |raceBlack or African American                     |     1.403|     0.859|     0.395|   0.693|
-|Adjusted   |raceMultiple races                                |     1.318|     0.322|     0.858|   0.391|
-|Adjusted   |raceOther                                         |     2.859|     0.566|     1.857|   0.063|
-|Adjusted   |hispanicNo                                        |     1.863|     0.475|     1.310|   0.190|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.230|     0.198|     1.044|   0.297|
+|Adjusted   |(Intercept)                                       |     0.429|     0.617|    -1.372|   0.170|
+|Adjusted   |sm_med_adviceRarely                               |     0.982|     0.261|    -0.070|   0.944|
+|Adjusted   |sm_med_adviceSometimes                            |     1.797|     0.281|     2.082|   0.037|
+|Adjusted   |sm_med_adviceUsually                              |     2.522|     0.419|     2.205|   0.027|
+|Adjusted   |sm_med_adviceAlways                               |     0.594|     0.897|    -0.580|   0.562|
+|Adjusted   |age                                               |     0.983|     0.010|    -1.803|   0.071|
+|Adjusted   |genderFemale                                      |     0.801|     0.268|    -0.828|   0.408|
+|Adjusted   |genderA gender not listed here                    |     1.081|     1.588|     0.049|   0.961|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.243|     1.161|    -1.218|   0.223|
+|Adjusted   |raceAsian                                         |     0.737|     0.910|    -0.335|   0.738|
+|Adjusted   |raceBlack or African American                     |     1.341|     0.932|     0.315|   0.753|
+|Adjusted   |raceMultiple races                                |     1.029|     0.349|     0.081|   0.935|
+|Adjusted   |raceOther                                         |     2.016|     0.614|     1.142|   0.253|
+|Adjusted   |hispanicNo                                        |     1.501|     0.502|     0.809|   0.419|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.071|     0.222|     0.310|   0.756|
+|Adjusted   |countSocialMediaExclFB                            |     0.862|     0.112|    -1.334|   0.182|
+|Adjusted   |comm_inpersonOnce a week                          |     0.753|     0.325|    -0.870|   0.384|
+|Adjusted   |comm_inpersonA few times a week                   |     0.318|     0.313|    -3.656|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.387|     0.412|    -2.305|   0.021|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.401|     0.272|    -3.354|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.313|     0.226|     5.292|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.212|     0.130|     1.473|   0.141|
 
 \newline
 
@@ -1730,7 +1892,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       681.949|     577| -336.856| 683.713| 705.511|  673.713|         573|
-|Adjusted   |       681.949|     577| -329.835| 689.669| 755.063|  659.669|         563|
+|Adjusted   |       681.949|     577| -293.981| 631.962| 727.873|  587.962|         556|
 
 
 ### PHQ-2 vs Ask questions about health or medical issues
@@ -1739,7 +1901,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 2.793|   4| 573|  0.026|
-|Adjusted   | 3.712|   4| 563|  0.005|
+|Adjusted   | 2.823|   4| 556|  0.024|
 
 \newline
 
@@ -1751,21 +1913,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     1.602|     0.257|     1.834|   0.067|
 |Unadjusted |sm_med_questionsUsually                           |     3.203|     0.381|     3.052|   0.002|
 |Unadjusted |sm_med_questionsAlways                            |     1.373|     0.705|     0.450|   0.653|
-|Adjusted   |(Intercept)                                       |     0.359|     0.570|    -1.794|   0.073|
-|Adjusted   |sm_med_questionsRarely                            |     1.144|     0.232|     0.578|   0.563|
-|Adjusted   |sm_med_questionsSometimes                         |     1.886|     0.269|     2.355|   0.019|
-|Adjusted   |sm_med_questionsUsually                           |     3.805|     0.393|     3.399|   0.001|
-|Adjusted   |sm_med_questionsAlways                            |     1.246|     0.727|     0.303|   0.762|
-|Adjusted   |age                                               |     0.977|     0.009|    -2.598|   0.009|
-|Adjusted   |genderFemale                                      |     0.854|     0.252|    -0.626|   0.531|
-|Adjusted   |genderA gender not listed here                    |     2.533|     1.437|     0.647|   0.518|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.430|     1.105|    -0.764|   0.445|
-|Adjusted   |raceAsian                                         |     0.942|     0.866|    -0.068|   0.945|
-|Adjusted   |raceBlack or African American                     |     1.311|     0.860|     0.315|   0.753|
-|Adjusted   |raceMultiple races                                |     1.380|     0.324|     0.996|   0.319|
-|Adjusted   |raceOther                                         |     3.277|     0.563|     2.108|   0.035|
-|Adjusted   |hispanicNo                                        |     1.897|     0.478|     1.339|   0.181|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.206|     0.200|     0.936|   0.349|
+|Adjusted   |(Intercept)                                       |     0.416|     0.622|    -1.410|   0.158|
+|Adjusted   |sm_med_questionsRarely                            |     1.232|     0.255|     0.820|   0.412|
+|Adjusted   |sm_med_questionsSometimes                         |     1.946|     0.290|     2.293|   0.022|
+|Adjusted   |sm_med_questionsUsually                           |     3.361|     0.428|     2.833|   0.005|
+|Adjusted   |sm_med_questionsAlways                            |     0.922|     0.815|    -0.099|   0.921|
+|Adjusted   |age                                               |     0.982|     0.010|    -1.936|   0.053|
+|Adjusted   |genderFemale                                      |     0.722|     0.271|    -1.205|   0.228|
+|Adjusted   |genderA gender not listed here                    |     1.390|     1.528|     0.216|   0.829|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.250|     1.168|    -1.186|   0.235|
+|Adjusted   |raceAsian                                         |     0.707|     0.916|    -0.379|   0.705|
+|Adjusted   |raceBlack or African American                     |     1.280|     0.929|     0.266|   0.791|
+|Adjusted   |raceMultiple races                                |     1.076|     0.350|     0.209|   0.835|
+|Adjusted   |raceOther                                         |     2.353|     0.590|     1.451|   0.147|
+|Adjusted   |hispanicNo                                        |     1.514|     0.509|     0.815|   0.415|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.049|     0.223|     0.214|   0.830|
+|Adjusted   |countSocialMediaExclFB                            |     0.860|     0.111|    -1.353|   0.176|
+|Adjusted   |comm_inpersonOnce a week                          |     0.768|     0.327|    -0.805|   0.421|
+|Adjusted   |comm_inpersonA few times a week                   |     0.331|     0.313|    -3.534|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.397|     0.414|    -2.230|   0.026|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.418|     0.273|    -3.196|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.284|     0.226|     5.254|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.193|     0.131|     1.353|   0.176|
 
 \newline
 
@@ -1773,7 +1942,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       681.949|     577| -335.503| 681.005| 702.803|  671.005|         573|
-|Adjusted   |       681.949|     577| -327.356| 684.712| 750.106|  654.712|         563|
+|Adjusted   |       681.949|     577| -293.348| 630.696| 726.607|  586.696|         556|
 
 
 ### PHQ-2 vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -1781,8 +1950,8 @@ Relabel factors; replace spaces with underscores.
 
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
-|Unadjusted | 6.011|   4| 572|      0|
-|Adjusted   | 6.139|   4| 562|      0|
+|Unadjusted | 6.011|   4| 572|  0.000|
+|Adjusted   | 2.885|   4| 555|  0.022|
 
 \newline
 
@@ -1794,21 +1963,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     2.323|     0.269|     3.138|   0.002|
 |Unadjusted |sm_share_symptUsually                             |     5.396|     0.397|     4.241|   0.000|
 |Unadjusted |sm_share_symptAlways                              |     1.799|     0.720|     0.815|   0.415|
-|Adjusted   |(Intercept)                                       |     0.266|     0.587|    -2.253|   0.024|
-|Adjusted   |sm_share_symptRarely                              |     1.306|     0.234|     1.140|   0.254|
-|Adjusted   |sm_share_symptSometimes                           |     2.370|     0.278|     3.101|   0.002|
-|Adjusted   |sm_share_symptUsually                             |     5.798|     0.407|     4.322|   0.000|
-|Adjusted   |sm_share_symptAlways                              |     1.776|     0.740|     0.776|   0.438|
-|Adjusted   |age                                               |     0.981|     0.009|    -2.151|   0.031|
-|Adjusted   |genderFemale                                      |     0.821|     0.255|    -0.776|   0.438|
-|Adjusted   |genderA gender not listed here                    |     1.214|     1.647|     0.118|   0.906|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.476|     1.096|    -0.678|   0.498|
-|Adjusted   |raceAsian                                         |     0.656|     0.870|    -0.485|   0.627|
-|Adjusted   |raceBlack or African American                     |     0.940|     0.930|    -0.067|   0.947|
-|Adjusted   |raceMultiple races                                |     1.298|     0.326|     0.800|   0.424|
-|Adjusted   |raceOther                                         |     2.877|     0.573|     1.845|   0.065|
-|Adjusted   |hispanicNo                                        |     2.066|     0.492|     1.474|   0.140|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.232|     0.202|     1.034|   0.301|
+|Adjusted   |(Intercept)                                       |     0.348|     0.626|    -1.687|   0.092|
+|Adjusted   |sm_share_symptRarely                              |     1.116|     0.258|     0.426|   0.670|
+|Adjusted   |sm_share_symptSometimes                           |     1.927|     0.303|     2.163|   0.031|
+|Adjusted   |sm_share_symptUsually                             |     3.436|     0.433|     2.849|   0.004|
+|Adjusted   |sm_share_symptAlways                              |     1.000|     0.798|     0.000|   1.000|
+|Adjusted   |age                                               |     0.986|     0.009|    -1.524|   0.127|
+|Adjusted   |genderFemale                                      |     0.710|     0.271|    -1.267|   0.205|
+|Adjusted   |genderA gender not listed here                    |     0.800|     1.699|    -0.132|   0.895|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.277|     1.146|    -1.119|   0.263|
+|Adjusted   |raceAsian                                         |     0.533|     0.901|    -0.698|   0.485|
+|Adjusted   |raceBlack or African American                     |     1.154|     1.007|     0.142|   0.887|
+|Adjusted   |raceMultiple races                                |     1.029|     0.350|     0.083|   0.934|
+|Adjusted   |raceOther                                         |     2.060|     0.602|     1.201|   0.230|
+|Adjusted   |hispanicNo                                        |     1.644|     0.514|     0.967|   0.333|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.081|     0.221|     0.350|   0.726|
+|Adjusted   |countSocialMediaExclFB                            |     0.897|     0.110|    -0.986|   0.324|
+|Adjusted   |comm_inpersonOnce a week                          |     0.797|     0.331|    -0.685|   0.494|
+|Adjusted   |comm_inpersonA few times a week                   |     0.345|     0.314|    -3.396|   0.001|
+|Adjusted   |comm_inpersonOnce a day                           |     0.418|     0.413|    -2.116|   0.034|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.420|     0.274|    -3.164|   0.002|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.045|     0.229|     4.858|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.160|     0.133|     1.122|   0.262|
 
 \newline
 
@@ -1816,7 +1992,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |         681.3|     576| -328.454| 666.909| 688.698|  656.909|         572|
-|Adjusted   |         681.3|     576| -321.912| 673.825| 739.193|  643.825|         562|
+|Adjusted   |         681.3|     576| -293.084| 630.168| 726.041|  586.168|         555|
 
 
 ### PHQ-2 vs Share information related to your health
@@ -1825,7 +2001,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 3.728|   4| 572|  0.005|
-|Adjusted   | 3.378|   4| 562|  0.010|
+|Adjusted   | 1.549|   4| 555|  0.186|
 
 \newline
 
@@ -1837,29 +2013,36 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     1.413|     0.292|     1.184|   0.236|
 |Unadjusted |sm_share_healthUsually                            |     5.621|     0.465|     3.712|   0.000|
 |Unadjusted |sm_share_healthAlways                             |     0.535|     1.089|    -0.574|   0.566|
-|Adjusted   |(Intercept)                                       |     0.296|     0.573|    -2.121|   0.034|
-|Adjusted   |sm_share_healthRarely                             |     1.319|     0.215|     1.287|   0.198|
-|Adjusted   |sm_share_healthSometimes                          |     1.405|     0.302|     1.127|   0.260|
-|Adjusted   |sm_share_healthUsually                            |     5.337|     0.476|     3.516|   0.000|
-|Adjusted   |sm_share_healthAlways                             |     0.562|     1.111|    -0.518|   0.604|
-|Adjusted   |age                                               |     0.984|     0.009|    -1.918|   0.055|
-|Adjusted   |genderFemale                                      |     0.885|     0.252|    -0.485|   0.628|
-|Adjusted   |genderA gender not listed here                    |     1.030|     1.579|     0.019|   0.985|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.505|     1.092|    -0.625|   0.532|
-|Adjusted   |raceAsian                                         |     0.770|     0.866|    -0.302|   0.762|
-|Adjusted   |raceBlack or African American                     |     1.082|     0.930|     0.084|   0.933|
-|Adjusted   |raceMultiple races                                |     1.303|     0.326|     0.812|   0.417|
-|Adjusted   |raceOther                                         |     2.943|     0.560|     1.928|   0.054|
-|Adjusted   |hispanicNo                                        |     1.869|     0.481|     1.301|   0.193|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.210|     0.199|     0.960|   0.337|
+|Adjusted   |(Intercept)                                       |     0.376|     0.616|    -1.589|   0.112|
+|Adjusted   |sm_share_healthRarely                             |     1.033|     0.235|     0.137|   0.891|
+|Adjusted   |sm_share_healthSometimes                          |     1.108|     0.335|     0.306|   0.759|
+|Adjusted   |sm_share_healthUsually                            |     2.934|     0.510|     2.112|   0.035|
+|Adjusted   |sm_share_healthAlways                             |     0.242|     1.215|    -1.169|   0.242|
+|Adjusted   |age                                               |     0.988|     0.009|    -1.290|   0.197|
+|Adjusted   |genderFemale                                      |     0.784|     0.270|    -0.902|   0.367|
+|Adjusted   |genderA gender not listed here                    |     0.766|     1.651|    -0.161|   0.872|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.290|     1.137|    -1.089|   0.276|
+|Adjusted   |raceAsian                                         |     0.570|     0.898|    -0.625|   0.532|
+|Adjusted   |raceBlack or African American                     |     1.258|     1.034|     0.222|   0.824|
+|Adjusted   |raceMultiple races                                |     0.981|     0.354|    -0.055|   0.956|
+|Adjusted   |raceOther                                         |     2.071|     0.598|     1.217|   0.223|
+|Adjusted   |hispanicNo                                        |     1.530|     0.500|     0.851|   0.395|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.053|     0.219|     0.237|   0.813|
+|Adjusted   |countSocialMediaExclFB                            |     0.898|     0.109|    -0.983|   0.326|
+|Adjusted   |comm_inpersonOnce a week                          |     0.808|     0.325|    -0.656|   0.512|
+|Adjusted   |comm_inpersonA few times a week                   |     0.350|     0.312|    -3.362|   0.001|
+|Adjusted   |comm_inpersonOnce a day                           |     0.423|     0.410|    -2.095|   0.036|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.419|     0.273|    -3.186|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     3.154|     0.228|     5.047|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.237|     0.134|     1.586|   0.113|
 
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |         681.3|     576| -332.820| 675.641| 697.430|  665.641|         572|
-|Adjusted   |         681.3|     576| -327.314| 684.628| 749.996|  654.628|         562|
+|model      | null.deviance| df.null|   logLik|     AIC|    BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|------:|--------:|-----------:|
+|Unadjusted |         681.3|     576| -332.820| 675.641| 697.43|  665.641|         572|
+|Adjusted   |         681.3|     576| -295.489| 634.978| 730.85|  590.978|         555|
 
 
 ### PHQ-2 vs Share thoughts about suicide or hurting yourself in some way
@@ -1868,7 +2051,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 7.572|   4| 571|      0|
-|Adjusted   | 7.714|   4| 561|      0|
+|Adjusted   | 5.354|   4| 554|      0|
 
 \newline
 
@@ -1880,21 +2063,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     4.875|     0.538|     2.946|   0.003|
 |Unadjusted |sm_share_suicideUsually                           |    11.375|     0.809|     3.006|   0.003|
 |Unadjusted |sm_share_suicideAlways                            |     1.083|     1.160|     0.069|   0.945|
-|Adjusted   |(Intercept)                                       |     0.244|     0.616|    -2.293|   0.022|
-|Adjusted   |sm_share_suicideRarely                            |     3.246|     0.298|     3.953|   0.000|
-|Adjusted   |sm_share_suicideSometimes                         |     4.786|     0.558|     2.807|   0.005|
-|Adjusted   |sm_share_suicideUsually                           |    15.317|     0.857|     3.185|   0.001|
-|Adjusted   |sm_share_suicideAlways                            |     1.021|     1.167|     0.018|   0.985|
-|Adjusted   |age                                               |     0.983|     0.009|    -1.969|   0.049|
-|Adjusted   |genderFemale                                      |     0.927|     0.256|    -0.296|   0.767|
-|Adjusted   |genderA gender not listed here                    |     1.278|     1.601|     0.153|   0.878|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.382|     1.106|    -0.870|   0.384|
-|Adjusted   |raceAsian                                         |     0.619|     0.929|    -0.517|   0.605|
-|Adjusted   |raceBlack or African American                     |     0.955|     0.937|    -0.049|   0.961|
-|Adjusted   |raceMultiple races                                |     1.320|     0.330|     0.841|   0.401|
-|Adjusted   |raceOther                                         |     3.910|     0.566|     2.410|   0.016|
-|Adjusted   |hispanicNo                                        |     2.371|     0.531|     1.624|   0.104|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.117|     0.205|     0.538|   0.590|
+|Adjusted   |(Intercept)                                       |     0.310|     0.656|    -1.784|   0.074|
+|Adjusted   |sm_share_suicideRarely                            |     2.740|     0.323|     3.117|   0.002|
+|Adjusted   |sm_share_suicideSometimes                         |     3.492|     0.585|     2.137|   0.033|
+|Adjusted   |sm_share_suicideUsually                           |    15.068|     0.957|     2.834|   0.005|
+|Adjusted   |sm_share_suicideAlways                            |     0.334|     1.254|    -0.876|   0.381|
+|Adjusted   |age                                               |     0.987|     0.009|    -1.349|   0.177|
+|Adjusted   |genderFemale                                      |     0.782|     0.276|    -0.892|   0.373|
+|Adjusted   |genderA gender not listed here                    |     0.805|     1.686|    -0.129|   0.898|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.217|     1.169|    -1.308|   0.191|
+|Adjusted   |raceAsian                                         |     0.518|     0.905|    -0.727|   0.467|
+|Adjusted   |raceBlack or African American                     |     0.976|     1.034|    -0.023|   0.981|
+|Adjusted   |raceMultiple races                                |     0.989|     0.362|    -0.032|   0.975|
+|Adjusted   |raceOther                                         |     2.673|     0.603|     1.629|   0.103|
+|Adjusted   |hispanicNo                                        |     1.901|     0.546|     1.177|   0.239|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.975|     0.225|    -0.114|   0.909|
+|Adjusted   |countSocialMediaExclFB                            |     0.882|     0.112|    -1.117|   0.264|
+|Adjusted   |comm_inpersonOnce a week                          |     0.802|     0.328|    -0.672|   0.502|
+|Adjusted   |comm_inpersonA few times a week                   |     0.314|     0.319|    -3.635|   0.000|
+|Adjusted   |comm_inpersonOnce a day                           |     0.424|     0.415|    -2.070|   0.038|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.388|     0.278|    -3.402|   0.001|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     2.953|     0.229|     4.721|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.227|     0.137|     1.491|   0.136|
 
 \newline
 
@@ -1902,7 +2092,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |        680.65|     575| -324.204| 658.408| 680.189|  648.408|         571|
-|Adjusted   |        680.65|     575| -317.538| 665.075| 730.417|  635.075|         561|
+|Adjusted   |        680.65|     575| -286.604| 617.208| 713.042|  573.208|         554|
 
 
 ### AUDIT-C vs Frequency of Facebook use
@@ -1911,7 +2101,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.246|   5| 569|  0.286|
-|Adjusted   | 1.490|   5| 560|  0.191|
+|Adjusted   | 1.571|   5| 553|  0.166|
 
 \newline
 
@@ -1924,21 +2114,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     5.040|     1.106|     1.463|   0.143|
 |Unadjusted |fb_freqOnce_a_day                                 |     7.579|     1.081|     1.874|   0.061|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     6.866|     1.058|     1.820|   0.069|
-|Adjusted   |(Intercept)                                       |     0.335|     1.170|    -0.934|   0.350|
-|Adjusted   |fb_freqEvery_few_weeks                            |     4.179|     1.587|     0.901|   0.367|
-|Adjusted   |fb_freqOnce_a_week                                |     0.760|     1.733|    -0.159|   0.874|
-|Adjusted   |fb_freqA_few_times_a_week                         |     5.972|     1.118|     1.598|   0.110|
-|Adjusted   |fb_freqOnce_a_day                                 |     9.125|     1.093|     2.023|   0.043|
-|Adjusted   |fb_freqSeveral_times_a_day                        |     7.040|     1.066|     1.831|   0.067|
-|Adjusted   |age                                               |     0.966|     0.008|    -4.200|   0.000|
-|Adjusted   |genderFemale                                      |     0.701|     0.234|    -1.522|   0.128|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |    13.968|     1.228|     2.147|   0.032|
-|Adjusted   |raceAsian                                         |     0.158|     1.097|    -1.682|   0.093|
-|Adjusted   |raceBlack or African American                     |     1.181|     0.820|     0.203|   0.839|
-|Adjusted   |raceMultiple races                                |     0.945|     0.308|    -0.185|   0.853|
-|Adjusted   |raceOther                                         |     0.333|     0.681|    -1.615|   0.106|
-|Adjusted   |hispanicNo                                        |     1.086|     0.403|     0.204|   0.839|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.716|     0.187|     2.896|   0.004|
+|Adjusted   |(Intercept)                                       |     0.314|     1.184|    -0.978|   0.328|
+|Adjusted   |fb_freqEvery_few_weeks                            |     4.859|     1.598|     0.989|   0.323|
+|Adjusted   |fb_freqOnce_a_week                                |     0.742|     1.731|    -0.172|   0.863|
+|Adjusted   |fb_freqA_few_times_a_week                         |     6.325|     1.121|     1.646|   0.100|
+|Adjusted   |fb_freqOnce_a_day                                 |     9.881|     1.098|     2.087|   0.037|
+|Adjusted   |fb_freqSeveral_times_a_day                        |     7.414|     1.069|     1.874|   0.061|
+|Adjusted   |age                                               |     0.966|     0.008|    -4.076|   0.000|
+|Adjusted   |genderFemale                                      |     0.659|     0.239|    -1.745|   0.081|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |    14.527|     1.238|     2.162|   0.031|
+|Adjusted   |raceAsian                                         |     0.141|     1.108|    -1.765|   0.078|
+|Adjusted   |raceBlack or African American                     |     1.192|     0.829|     0.212|   0.832|
+|Adjusted   |raceMultiple races                                |     0.903|     0.317|    -0.322|   0.748|
+|Adjusted   |raceOther                                         |     0.294|     0.692|    -1.768|   0.077|
+|Adjusted   |hispanicNo                                        |     1.082|     0.408|     0.192|   0.847|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.724|     0.196|     2.774|   0.006|
+|Adjusted   |countSocialMediaExclFB                            |     1.098|     0.095|     0.991|   0.322|
+|Adjusted   |comm_inpersonOnce a week                          |     1.139|     0.315|     0.414|   0.679|
+|Adjusted   |comm_inpersonA few times a week                   |     0.732|     0.265|    -1.177|   0.239|
+|Adjusted   |comm_inpersonOnce a day                           |     0.862|     0.343|    -0.433|   0.665|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.820|     0.242|    -0.818|   0.413|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.403|     0.201|     1.681|   0.093|
+|Adjusted   |countSuicideAttempts                              |     0.785|     0.132|    -1.824|   0.068|
 
 \newline
 
@@ -1946,7 +2143,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       782.657|     574| -387.022| 786.044| 812.170|  774.044|         569|
-|Adjusted   |       782.657|     574| -362.241| 754.482| 819.797|  724.482|         560|
+|Adjusted   |       782.657|     574| -358.336| 760.672| 856.468|  716.672|         553|
 
 
 ### AUDIT-C vs Active use of Facebook
@@ -1955,7 +2152,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.110|   4| 571|  0.351|
-|Adjusted   | 1.457|   4| 562|  0.214|
+|Adjusted   | 1.455|   4| 555|  0.214|
 
 \newline
 
@@ -1967,20 +2164,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.808|     0.304|    -0.701|   0.483|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.607|     0.323|    -1.550|   0.121|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.900|     0.270|    -0.389|   0.697|
-|Adjusted   |(Intercept)                                       |     2.265|     0.536|     1.525|   0.127|
-|Adjusted   |comm_facebookOnce_a_week                          |     0.523|     0.438|    -1.481|   0.139|
-|Adjusted   |comm_facebookA_few_times_a_week                   |     0.882|     0.323|    -0.389|   0.697|
-|Adjusted   |comm_facebookOnce_a_day                           |     0.753|     0.344|    -0.826|   0.409|
-|Adjusted   |comm_facebookSeveral_times_a_day                  |     1.139|     0.288|     0.452|   0.651|
-|Adjusted   |age                                               |     0.966|     0.008|    -4.152|   0.000|
-|Adjusted   |genderFemale                                      |     0.717|     0.234|    -1.420|   0.156|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.639|     1.095|     1.970|   0.049|
-|Adjusted   |raceAsian                                         |     0.171|     1.093|    -1.617|   0.106|
-|Adjusted   |raceBlack or African American                     |     1.360|     0.805|     0.382|   0.702|
-|Adjusted   |raceMultiple races                                |     0.993|     0.307|    -0.022|   0.983|
-|Adjusted   |raceOther                                         |     0.314|     0.685|    -1.691|   0.091|
-|Adjusted   |hispanicNo                                        |     1.117|     0.409|     0.271|   0.786|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.835|     0.187|     3.239|   0.001|
+|Adjusted   |(Intercept)                                       |     2.200|     0.552|     1.429|   0.153|
+|Adjusted   |comm_facebookOnce_a_week                          |     0.542|     0.439|    -1.394|   0.163|
+|Adjusted   |comm_facebookA_few_times_a_week                   |     0.869|     0.328|    -0.427|   0.669|
+|Adjusted   |comm_facebookOnce_a_day                           |     0.742|     0.351|    -0.850|   0.395|
+|Adjusted   |comm_facebookSeveral_times_a_day                  |     1.159|     0.298|     0.496|   0.620|
+|Adjusted   |age                                               |     0.967|     0.008|    -4.052|   0.000|
+|Adjusted   |genderFemale                                      |     0.680|     0.239|    -1.610|   0.107|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.505|     1.099|     1.948|   0.051|
+|Adjusted   |raceAsian                                         |     0.152|     1.113|    -1.691|   0.091|
+|Adjusted   |raceBlack or African American                     |     1.376|     0.815|     0.391|   0.696|
+|Adjusted   |raceMultiple races                                |     0.965|     0.315|    -0.114|   0.909|
+|Adjusted   |raceOther                                         |     0.282|     0.699|    -1.812|   0.070|
+|Adjusted   |hispanicNo                                        |     1.117|     0.412|     0.268|   0.789|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.819|     0.197|     3.043|   0.002|
+|Adjusted   |countSocialMediaExclFB                            |     1.070|     0.095|     0.711|   0.477|
+|Adjusted   |comm_inpersonOnce a week                          |     1.247|     0.312|     0.708|   0.479|
+|Adjusted   |comm_inpersonA few times a week                   |     0.776|     0.264|    -0.960|   0.337|
+|Adjusted   |comm_inpersonOnce a day                           |     0.883|     0.343|    -0.363|   0.717|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.827|     0.246|    -0.773|   0.439|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.374|     0.201|     1.577|   0.115|
+|Adjusted   |countSuicideAttempts                              |     0.807|     0.132|    -1.624|   0.104|
 
 \newline
 
@@ -1988,7 +2192,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       783.748|     575| -389.612| 789.223| 811.004|  779.223|         571|
-|Adjusted   |       783.748|     575| -364.885| 757.770| 818.755|  729.770|         562|
+|Adjusted   |       783.748|     575| -361.394| 764.789| 856.267|  722.789|         555|
 
 
 ### AUDIT-C vs Get emotional support from others
@@ -1997,7 +2201,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.930|   4| 571|  0.446|
-|Adjusted   | 1.461|   4| 562|  0.213|
+|Adjusted   | 1.315|   4| 555|  0.263|
 
 \newline
 
@@ -2009,20 +2213,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.119|     0.227|     0.496|   0.620|
 |Unadjusted |sm_emot_supportUsually                            |     0.729|     0.345|    -0.917|   0.359|
 |Unadjusted |sm_emot_supportAlways                             |     2.008|     0.777|     0.897|   0.369|
-|Adjusted   |(Intercept)                                       |     2.071|     0.503|     1.448|   0.148|
-|Adjusted   |sm_emot_supportRarely                             |     1.512|     0.219|     1.888|   0.059|
-|Adjusted   |sm_emot_supportSometimes                          |     1.288|     0.242|     1.047|   0.295|
-|Adjusted   |sm_emot_supportUsually                            |     0.815|     0.364|    -0.562|   0.574|
-|Adjusted   |sm_emot_supportAlways                             |     2.363|     0.807|     1.066|   0.286|
-|Adjusted   |age                                               |     0.965|     0.008|    -4.358|   0.000|
-|Adjusted   |genderFemale                                      |     0.692|     0.239|    -1.544|   0.123|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.876|     1.096|     2.089|   0.037|
-|Adjusted   |raceAsian                                         |     0.187|     1.105|    -1.520|   0.129|
-|Adjusted   |raceBlack or African American                     |     1.451|     0.813|     0.458|   0.647|
-|Adjusted   |raceMultiple races                                |     0.951|     0.308|    -0.165|   0.869|
-|Adjusted   |raceOther                                         |     0.332|     0.685|    -1.609|   0.108|
-|Adjusted   |hispanicNo                                        |     1.034|     0.408|     0.081|   0.935|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.742|     0.185|     3.000|   0.003|
+|Adjusted   |(Intercept)                                       |     2.049|     0.525|     1.366|   0.172|
+|Adjusted   |sm_emot_supportRarely                             |     1.480|     0.226|     1.736|   0.083|
+|Adjusted   |sm_emot_supportSometimes                          |     1.206|     0.253|     0.741|   0.459|
+|Adjusted   |sm_emot_supportUsually                            |     0.836|     0.372|    -0.483|   0.629|
+|Adjusted   |sm_emot_supportAlways                             |     2.723|     0.820|     1.221|   0.222|
+|Adjusted   |age                                               |     0.965|     0.008|    -4.230|   0.000|
+|Adjusted   |genderFemale                                      |     0.651|     0.243|    -1.761|   0.078|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |    10.030|     1.104|     2.089|   0.037|
+|Adjusted   |raceAsian                                         |     0.167|     1.120|    -1.600|   0.110|
+|Adjusted   |raceBlack or African American                     |     1.499|     0.825|     0.491|   0.623|
+|Adjusted   |raceMultiple races                                |     0.922|     0.316|    -0.258|   0.796|
+|Adjusted   |raceOther                                         |     0.294|     0.700|    -1.749|   0.080|
+|Adjusted   |hispanicNo                                        |     1.046|     0.412|     0.109|   0.913|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.755|     0.195|     2.893|   0.004|
+|Adjusted   |countSocialMediaExclFB                            |     1.086|     0.096|     0.856|   0.392|
+|Adjusted   |comm_inpersonOnce a week                          |     1.175|     0.313|     0.516|   0.606|
+|Adjusted   |comm_inpersonA few times a week                   |     0.729|     0.265|    -1.191|   0.234|
+|Adjusted   |comm_inpersonOnce a day                           |     0.899|     0.344|    -0.309|   0.757|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.843|     0.240|    -0.709|   0.479|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.329|     0.200|     1.420|   0.156|
+|Adjusted   |countSuicideAttempts                              |     0.816|     0.131|    -1.557|   0.119|
 
 \newline
 
@@ -2030,7 +2241,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       783.748|     575| -389.976| 789.953| 811.733|  779.953|         571|
-|Adjusted   |       783.748|     575| -364.919| 757.839| 818.824|  729.839|         562|
+|Adjusted   |       783.748|     575| -361.718| 765.436| 856.915|  723.436|         555|
 
 
 ### AUDIT-C vs Get information about health or medical topics
@@ -2039,7 +2250,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.737|   4| 570|  0.567|
-|Adjusted   | 0.147|   4| 561|  0.964|
+|Adjusted   | 0.122|   4| 554|  0.975|
 
 \newline
 
@@ -2051,28 +2262,35 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     0.810|     0.227|    -0.931|   0.352|
 |Unadjusted |sm_med_infoUsually                                |     0.658|     0.309|    -1.352|   0.176|
 |Unadjusted |sm_med_infoAlways                                 |     0.528|     0.520|    -1.226|   0.220|
-|Adjusted   |(Intercept)                                       |     2.271|     0.504|     1.626|   0.104|
-|Adjusted   |sm_med_infoRarely                                 |     0.971|     0.237|    -0.123|   0.902|
-|Adjusted   |sm_med_infoSometimes                              |     1.080|     0.243|     0.316|   0.752|
-|Adjusted   |sm_med_infoUsually                                |     0.920|     0.330|    -0.252|   0.801|
-|Adjusted   |sm_med_infoAlways                                 |     0.771|     0.550|    -0.472|   0.637|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.116|   0.000|
-|Adjusted   |genderFemale                                      |     0.753|     0.236|    -1.205|   0.228|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.884|     1.096|     1.994|   0.046|
-|Adjusted   |raceAsian                                         |     0.184|     1.097|    -1.545|   0.122|
-|Adjusted   |raceBlack or African American                     |     1.206|     0.803|     0.233|   0.816|
-|Adjusted   |raceMultiple races                                |     1.012|     0.305|     0.041|   0.968|
-|Adjusted   |raceOther                                         |     0.311|     0.680|    -1.716|   0.086|
-|Adjusted   |hispanicNo                                        |     1.069|     0.403|     0.165|   0.869|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.705|     0.185|     2.888|   0.004|
+|Adjusted   |(Intercept)                                       |     2.182|     0.528|     1.477|   0.140|
+|Adjusted   |sm_med_infoRarely                                 |     0.941|     0.241|    -0.254|   0.799|
+|Adjusted   |sm_med_infoSometimes                              |     1.022|     0.254|     0.085|   0.932|
+|Adjusted   |sm_med_infoUsually                                |     0.845|     0.342|    -0.494|   0.622|
+|Adjusted   |sm_med_infoAlways                                 |     0.824|     0.556|    -0.348|   0.728|
+|Adjusted   |age                                               |     0.967|     0.009|    -3.936|   0.000|
+|Adjusted   |genderFemale                                      |     0.712|     0.240|    -1.418|   0.156|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.887|     1.101|     1.985|   0.047|
+|Adjusted   |raceAsian                                         |     0.160|     1.114|    -1.643|   0.100|
+|Adjusted   |raceBlack or African American                     |     1.213|     0.812|     0.238|   0.812|
+|Adjusted   |raceMultiple races                                |     0.970|     0.314|    -0.097|   0.922|
+|Adjusted   |raceOther                                         |     0.275|     0.695|    -1.856|   0.063|
+|Adjusted   |hispanicNo                                        |     1.062|     0.407|     0.147|   0.883|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.703|     0.194|     2.744|   0.006|
+|Adjusted   |countSocialMediaExclFB                            |     1.104|     0.097|     1.023|   0.306|
+|Adjusted   |comm_inpersonOnce a week                          |     1.213|     0.309|     0.625|   0.532|
+|Adjusted   |comm_inpersonA few times a week                   |     0.773|     0.263|    -0.978|   0.328|
+|Adjusted   |comm_inpersonOnce a day                           |     0.903|     0.342|    -0.297|   0.766|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.878|     0.240|    -0.540|   0.589|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.375|     0.200|     1.592|   0.111|
+|Adjusted   |countSuicideAttempts                              |     0.817|     0.131|    -1.545|   0.122|
 
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|    BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|------:|--------:|-----------:|
-|Unadjusted |       782.011|     574| -389.509| 789.018| 810.79|  779.018|         570|
-|Adjusted   |       782.011|     574| -366.864| 761.729| 822.69|  733.729|         561|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       782.011|     574| -389.509| 789.018| 810.790|  779.018|         570|
+|Adjusted   |       782.011|     574| -363.448| 768.895| 860.337|  726.895|         554|
 
 
 ### AUDIT-C vs Get advice about health or medical topics
@@ -2081,7 +2299,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.307|   4| 571|  0.266|
-|Adjusted   | 0.885|   4| 562|  0.472|
+|Adjusted   | 0.997|   4| 555|  0.409|
 
 \newline
 
@@ -2093,20 +2311,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     0.788|     0.224|    -1.061|   0.289|
 |Unadjusted |sm_med_adviceUsually                              |     1.031|     0.360|     0.085|   0.932|
 |Unadjusted |sm_med_adviceAlways                               |     0.384|     0.680|    -1.407|   0.159|
-|Adjusted   |(Intercept)                                       |     2.386|     0.500|     1.741|   0.082|
-|Adjusted   |sm_med_adviceRarely                               |     0.732|     0.216|    -1.443|   0.149|
-|Adjusted   |sm_med_adviceSometimes                            |     0.958|     0.238|    -0.181|   0.856|
-|Adjusted   |sm_med_adviceUsually                              |     1.227|     0.383|     0.535|   0.592|
-|Adjusted   |sm_med_adviceAlways                               |     0.540|     0.710|    -0.867|   0.386|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.046|   0.000|
-|Adjusted   |genderFemale                                      |     0.769|     0.234|    -1.123|   0.261|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     7.999|     1.096|     1.897|   0.058|
-|Adjusted   |raceAsian                                         |     0.181|     1.096|    -1.561|   0.119|
-|Adjusted   |raceBlack or African American                     |     1.255|     0.806|     0.282|   0.778|
-|Adjusted   |raceMultiple races                                |     0.975|     0.307|    -0.083|   0.934|
-|Adjusted   |raceOther                                         |     0.291|     0.681|    -1.813|   0.070|
-|Adjusted   |hispanicNo                                        |     1.077|     0.408|     0.182|   0.856|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.761|     0.185|     3.059|   0.002|
+|Adjusted   |(Intercept)                                       |     2.289|     0.522|     1.585|   0.113|
+|Adjusted   |sm_med_adviceRarely                               |     0.681|     0.221|    -1.737|   0.082|
+|Adjusted   |sm_med_adviceSometimes                            |     0.915|     0.244|    -0.364|   0.716|
+|Adjusted   |sm_med_adviceUsually                              |     1.084|     0.395|     0.204|   0.838|
+|Adjusted   |sm_med_adviceAlways                               |     0.552|     0.715|    -0.833|   0.405|
+|Adjusted   |age                                               |     0.968|     0.008|    -3.844|   0.000|
+|Adjusted   |genderFemale                                      |     0.723|     0.239|    -1.358|   0.175|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     7.911|     1.100|     1.881|   0.060|
+|Adjusted   |raceAsian                                         |     0.159|     1.115|    -1.651|   0.099|
+|Adjusted   |raceBlack or African American                     |     1.241|     0.819|     0.264|   0.792|
+|Adjusted   |raceMultiple races                                |     0.926|     0.316|    -0.242|   0.809|
+|Adjusted   |raceOther                                         |     0.252|     0.696|    -1.980|   0.048|
+|Adjusted   |hispanicNo                                        |     1.072|     0.410|     0.169|   0.866|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.752|     0.194|     2.884|   0.004|
+|Adjusted   |countSocialMediaExclFB                            |     1.116|     0.096|     1.143|   0.253|
+|Adjusted   |comm_inpersonOnce a week                          |     1.211|     0.311|     0.617|   0.537|
+|Adjusted   |comm_inpersonA few times a week                   |     0.772|     0.264|    -0.979|   0.327|
+|Adjusted   |comm_inpersonOnce a day                           |     0.867|     0.341|    -0.417|   0.677|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.857|     0.240|    -0.643|   0.520|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.402|     0.200|     1.691|   0.091|
+|Adjusted   |countSuicideAttempts                              |     0.815|     0.132|    -1.551|   0.121|
 
 \newline
 
@@ -2114,7 +2339,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       783.748|     575| -389.173| 788.346| 810.127|  778.346|         571|
-|Adjusted   |       783.748|     575| -366.092| 760.184| 821.170|  732.184|         562|
+|Adjusted   |       783.748|     575| -362.364| 766.728| 858.206|  724.728|         555|
 
 
 ### AUDIT-C vs Ask questions about health or medical issues
@@ -2123,7 +2348,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.894|   4| 571|  0.467|
-|Adjusted   | 0.510|   4| 562|  0.729|
+|Adjusted   | 0.432|   4| 555|  0.786|
 
 \newline
 
@@ -2135,20 +2360,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     0.700|     0.244|    -1.460|   0.144|
 |Unadjusted |sm_med_questionsUsually                           |     1.261|     0.374|     0.619|   0.536|
 |Unadjusted |sm_med_questionsAlways                            |     0.540|     0.701|    -0.879|   0.380|
-|Adjusted   |(Intercept)                                       |     2.202|     0.497|     1.589|   0.112|
-|Adjusted   |sm_med_questionsRarely                            |     0.966|     0.209|    -0.165|   0.869|
-|Adjusted   |sm_med_questionsSometimes                         |     0.849|     0.259|    -0.630|   0.529|
-|Adjusted   |sm_med_questionsUsually                           |     1.485|     0.397|     0.997|   0.319|
-|Adjusted   |sm_med_questionsAlways                            |     0.640|     0.737|    -0.606|   0.544|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.107|   0.000|
-|Adjusted   |genderFemale                                      |     0.747|     0.235|    -1.239|   0.215|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.369|     1.101|     1.930|   0.054|
-|Adjusted   |raceAsian                                         |     0.175|     1.096|    -1.592|   0.111|
-|Adjusted   |raceBlack or African American                     |     1.278|     0.807|     0.304|   0.761|
-|Adjusted   |raceMultiple races                                |     0.992|     0.306|    -0.025|   0.980|
-|Adjusted   |raceOther                                         |     0.331|     0.680|    -1.626|   0.104|
-|Adjusted   |hispanicNo                                        |     1.092|     0.405|     0.218|   0.828|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.750|     0.185|     3.028|   0.002|
+|Adjusted   |(Intercept)                                       |     2.117|     0.521|     1.440|   0.150|
+|Adjusted   |sm_med_questionsRarely                            |     0.937|     0.215|    -0.305|   0.760|
+|Adjusted   |sm_med_questionsSometimes                         |     0.816|     0.263|    -0.776|   0.438|
+|Adjusted   |sm_med_questionsUsually                           |     1.358|     0.409|     0.748|   0.455|
+|Adjusted   |sm_med_questionsAlways                            |     0.667|     0.741|    -0.547|   0.585|
+|Adjusted   |age                                               |     0.968|     0.008|    -3.964|   0.000|
+|Adjusted   |genderFemale                                      |     0.709|     0.240|    -1.437|   0.151|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.334|     1.101|     1.925|   0.054|
+|Adjusted   |raceAsian                                         |     0.158|     1.110|    -1.664|   0.096|
+|Adjusted   |raceBlack or African American                     |     1.289|     0.815|     0.311|   0.756|
+|Adjusted   |raceMultiple races                                |     0.948|     0.315|    -0.169|   0.866|
+|Adjusted   |raceOther                                         |     0.290|     0.696|    -1.781|   0.075|
+|Adjusted   |hispanicNo                                        |     1.084|     0.409|     0.198|   0.843|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.761|     0.194|     2.915|   0.004|
+|Adjusted   |countSocialMediaExclFB                            |     1.093|     0.095|     0.933|   0.351|
+|Adjusted   |comm_inpersonOnce a week                          |     1.182|     0.310|     0.540|   0.589|
+|Adjusted   |comm_inpersonA few times a week                   |     0.770|     0.263|    -0.994|   0.320|
+|Adjusted   |comm_inpersonOnce a day                           |     0.869|     0.340|    -0.414|   0.679|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.886|     0.240|    -0.504|   0.614|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.387|     0.200|     1.641|   0.101|
+|Adjusted   |countSuicideAttempts                              |     0.814|     0.130|    -1.580|   0.114|
 
 \newline
 
@@ -2156,7 +2388,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       783.748|     575| -390.053| 790.105| 811.886|  780.105|         571|
-|Adjusted   |       783.748|     575| -366.864| 761.727| 822.713|  733.727|         562|
+|Adjusted   |       783.748|     575| -363.518| 769.035| 860.514|  727.035|         555|
 
 
 ### AUDIT-C vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -2165,7 +2397,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 1.594|   4| 570|  0.174|
-|Adjusted   | 1.720|   4| 561|  0.144|
+|Adjusted   | 1.660|   4| 554|  0.158|
 
 \newline
 
@@ -2177,20 +2409,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     0.915|     0.258|    -0.343|   0.732|
 |Unadjusted |sm_share_symptUsually                             |     0.451|     0.449|    -1.773|   0.076|
 |Unadjusted |sm_share_symptAlways                              |     1.134|     0.681|     0.185|   0.854|
-|Adjusted   |(Intercept)                                       |     2.279|     0.501|     1.645|   0.100|
-|Adjusted   |sm_share_symptRarely                              |     1.462|     0.212|     1.794|   0.073|
-|Adjusted   |sm_share_symptSometimes                           |     1.021|     0.276|     0.074|   0.941|
-|Adjusted   |sm_share_symptUsually                             |     0.483|     0.463|    -1.573|   0.116|
-|Adjusted   |sm_share_symptAlways                              |     0.911|     0.724|    -0.129|   0.898|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.233|   0.000|
-|Adjusted   |genderFemale                                      |     0.706|     0.235|    -1.481|   0.139|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.377|     1.098|     2.039|   0.041|
-|Adjusted   |raceAsian                                         |     0.168|     1.111|    -1.604|   0.109|
-|Adjusted   |raceBlack or African American                     |     1.335|     0.796|     0.363|   0.717|
-|Adjusted   |raceMultiple races                                |     0.953|     0.308|    -0.157|   0.875|
-|Adjusted   |raceOther                                         |     0.292|     0.689|    -1.785|   0.074|
-|Adjusted   |hispanicNo                                        |     1.009|     0.407|     0.021|   0.983|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.717|     0.186|     2.912|   0.004|
+|Adjusted   |(Intercept)                                       |     2.323|     0.525|     1.607|   0.108|
+|Adjusted   |sm_share_symptRarely                              |     1.356|     0.219|     1.387|   0.166|
+|Adjusted   |sm_share_symptSometimes                           |     0.969|     0.284|    -0.111|   0.912|
+|Adjusted   |sm_share_symptUsually                             |     0.417|     0.474|    -1.847|   0.065|
+|Adjusted   |sm_share_symptAlways                              |     0.795|     0.752|    -0.306|   0.760|
+|Adjusted   |age                                               |     0.967|     0.008|    -4.060|   0.000|
+|Adjusted   |genderFemale                                      |     0.672|     0.239|    -1.659|   0.097|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.150|     1.103|     2.008|   0.045|
+|Adjusted   |raceAsian                                         |     0.150|     1.123|    -1.689|   0.091|
+|Adjusted   |raceBlack or African American                     |     1.396|     0.807|     0.413|   0.679|
+|Adjusted   |raceMultiple races                                |     0.914|     0.317|    -0.284|   0.777|
+|Adjusted   |raceOther                                         |     0.249|     0.706|    -1.970|   0.049|
+|Adjusted   |hispanicNo                                        |     0.999|     0.410|    -0.003|   0.997|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.712|     0.195|     2.761|   0.006|
+|Adjusted   |countSocialMediaExclFB                            |     1.087|     0.095|     0.874|   0.382|
+|Adjusted   |comm_inpersonOnce a week                          |     1.121|     0.314|     0.365|   0.715|
+|Adjusted   |comm_inpersonA few times a week                   |     0.720|     0.267|    -1.230|   0.219|
+|Adjusted   |comm_inpersonOnce a day                           |     0.817|     0.343|    -0.591|   0.554|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.804|     0.243|    -0.901|   0.367|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.395|     0.204|     1.632|   0.103|
+|Adjusted   |countSuicideAttempts                              |     0.833|     0.134|    -1.367|   0.172|
 
 \newline
 
@@ -2198,7 +2437,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       782.657|     574| -387.906| 785.811| 807.583|  775.811|         570|
-|Adjusted   |       782.657|     574| -363.728| 755.455| 816.417|  727.455|         561|
+|Adjusted   |       782.657|     574| -360.401| 762.802| 854.244|  720.802|         554|
 
 
 ### AUDIT-C vs Share information related to your health
@@ -2207,7 +2446,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.882|   4| 570|  0.474|
-|Adjusted   | 0.857|   4| 561|  0.490|
+|Adjusted   | 0.705|   4| 554|  0.589|
 
 \newline
 
@@ -2219,20 +2458,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     0.766|     0.274|    -0.972|   0.331|
 |Unadjusted |sm_share_healthUsually                            |     1.233|     0.453|     0.461|   0.645|
 |Unadjusted |sm_share_healthAlways                             |     0.226|     1.087|    -1.368|   0.171|
-|Adjusted   |(Intercept)                                       |     2.100|     0.497|     1.492|   0.136|
-|Adjusted   |sm_share_healthRarely                             |     1.192|     0.198|     0.885|   0.376|
-|Adjusted   |sm_share_healthSometimes                          |     0.864|     0.292|    -0.501|   0.616|
-|Adjusted   |sm_share_healthUsually                            |     1.145|     0.475|     0.285|   0.775|
-|Adjusted   |sm_share_healthAlways                             |     0.210|     1.144|    -1.363|   0.173|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.187|   0.000|
-|Adjusted   |genderFemale                                      |     0.742|     0.235|    -1.271|   0.204|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.621|     1.102|     2.055|   0.040|
-|Adjusted   |raceAsian                                         |     0.173|     1.098|    -1.600|   0.110|
-|Adjusted   |raceBlack or African American                     |     1.615|     0.819|     0.585|   0.559|
-|Adjusted   |raceMultiple races                                |     0.998|     0.309|    -0.005|   0.996|
-|Adjusted   |raceOther                                         |     0.339|     0.680|    -1.592|   0.111|
-|Adjusted   |hispanicNo                                        |     1.104|     0.405|     0.245|   0.807|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.734|     0.184|     2.986|   0.003|
+|Adjusted   |(Intercept)                                       |     2.055|     0.522|     1.379|   0.168|
+|Adjusted   |sm_share_healthRarely                             |     1.128|     0.203|     0.596|   0.551|
+|Adjusted   |sm_share_healthSometimes                          |     0.817|     0.302|    -0.668|   0.504|
+|Adjusted   |sm_share_healthUsually                            |     0.985|     0.488|    -0.031|   0.975|
+|Adjusted   |sm_share_healthAlways                             |     0.223|     1.167|    -1.285|   0.199|
+|Adjusted   |age                                               |     0.967|     0.008|    -4.063|   0.000|
+|Adjusted   |genderFemale                                      |     0.701|     0.239|    -1.487|   0.137|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.427|     1.104|     2.032|   0.042|
+|Adjusted   |raceAsian                                         |     0.156|     1.112|    -1.673|   0.094|
+|Adjusted   |raceBlack or African American                     |     1.641|     0.825|     0.600|   0.548|
+|Adjusted   |raceMultiple races                                |     0.949|     0.317|    -0.164|   0.869|
+|Adjusted   |raceOther                                         |     0.293|     0.696|    -1.762|   0.078|
+|Adjusted   |hispanicNo                                        |     1.095|     0.408|     0.223|   0.824|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.736|     0.193|     2.853|   0.004|
+|Adjusted   |countSocialMediaExclFB                            |     1.106|     0.095|     1.065|   0.287|
+|Adjusted   |comm_inpersonOnce a week                          |     1.169|     0.311|     0.502|   0.615|
+|Adjusted   |comm_inpersonA few times a week                   |     0.753|     0.265|    -1.067|   0.286|
+|Adjusted   |comm_inpersonOnce a day                           |     0.870|     0.341|    -0.407|   0.684|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.876|     0.241|    -0.551|   0.582|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.357|     0.202|     1.511|   0.131|
+|Adjusted   |countSuicideAttempts                              |     0.844|     0.134|    -1.265|   0.206|
 
 \newline
 
@@ -2240,7 +2486,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       782.657|     574| -389.209| 788.419| 810.191|  778.419|         570|
-|Adjusted   |       782.657|     574| -365.513| 759.026| 819.987|  731.026|         561|
+|Adjusted   |       782.657|     574| -362.452| 766.905| 858.346|  724.905|         554|
 
 
 ### AUDIT-C vs Share thoughts about suicide or hurting yourself in some way
@@ -2249,7 +2495,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.769|   4| 569|  0.546|
-|Adjusted   | 0.342|   4| 560|  0.850|
+|Adjusted   | 0.266|   4| 553|  0.900|
 
 \newline
 
@@ -2261,20 +2507,27 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     1.436|     0.542|     0.667|   0.505|
 |Unadjusted |sm_share_suicideUsually                           |     1.149|     0.677|     0.205|   0.838|
 |Unadjusted |sm_share_suicideAlways                            |     0.000|   441.372|    -0.032|   0.974|
-|Adjusted   |(Intercept)                                       |     2.255|     0.502|     1.621|   0.105|
-|Adjusted   |sm_share_suicideRarely                            |     1.315|     0.301|     0.909|   0.364|
-|Adjusted   |sm_share_suicideSometimes                         |     1.554|     0.573|     0.768|   0.442|
-|Adjusted   |sm_share_suicideUsually                           |     1.144|     0.728|     0.185|   0.853|
-|Adjusted   |sm_share_suicideAlways                            |     0.000|   433.811|    -0.033|   0.974|
-|Adjusted   |age                                               |     0.967|     0.008|    -4.174|   0.000|
-|Adjusted   |genderFemale                                      |     0.757|     0.234|    -1.192|   0.233|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.126|     1.095|     1.914|   0.056|
-|Adjusted   |raceAsian                                         |     0.156|     1.116|    -1.665|   0.096|
-|Adjusted   |raceBlack or African American                     |     1.120|     0.824|     0.138|   0.890|
-|Adjusted   |raceMultiple races                                |     0.974|     0.307|    -0.087|   0.931|
-|Adjusted   |raceOther                                         |     0.319|     0.680|    -1.680|   0.093|
-|Adjusted   |hispanicNo                                        |     1.031|     0.414|     0.074|   0.941|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.727|     0.186|     2.939|   0.003|
+|Adjusted   |(Intercept)                                       |     2.264|     0.525|     1.555|   0.120|
+|Adjusted   |sm_share_suicideRarely                            |     1.283|     0.308|     0.808|   0.419|
+|Adjusted   |sm_share_suicideSometimes                         |     1.512|     0.586|     0.705|   0.481|
+|Adjusted   |sm_share_suicideUsually                           |     1.005|     0.736|     0.007|   0.994|
+|Adjusted   |sm_share_suicideAlways                            |     0.000|   434.041|    -0.033|   0.974|
+|Adjusted   |age                                               |     0.967|     0.008|    -4.054|   0.000|
+|Adjusted   |genderFemale                                      |     0.710|     0.238|    -1.438|   0.150|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     8.292|     1.101|     1.921|   0.055|
+|Adjusted   |raceAsian                                         |     0.141|     1.135|    -1.726|   0.084|
+|Adjusted   |raceBlack or African American                     |     1.146|     0.833|     0.164|   0.870|
+|Adjusted   |raceMultiple races                                |     0.936|     0.316|    -0.209|   0.835|
+|Adjusted   |raceOther                                         |     0.275|     0.697|    -1.848|   0.065|
+|Adjusted   |hispanicNo                                        |     1.010|     0.417|     0.024|   0.981|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.727|     0.195|     2.805|   0.005|
+|Adjusted   |countSocialMediaExclFB                            |     1.090|     0.094|     0.915|   0.360|
+|Adjusted   |comm_inpersonOnce a week                          |     1.159|     0.313|     0.471|   0.638|
+|Adjusted   |comm_inpersonA few times a week                   |     0.738|     0.264|    -1.151|   0.250|
+|Adjusted   |comm_inpersonOnce a day                           |     0.859|     0.342|    -0.445|   0.656|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.843|     0.241|    -0.708|   0.479|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.345|     0.202|     1.470|   0.142|
+|Adjusted   |countSuicideAttempts                              |     0.826|     0.138|    -1.390|   0.165|
 
 \newline
 
@@ -2282,7 +2535,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       781.563|     573| -387.044| 784.088| 805.851|  774.088|         569|
-|Adjusted   |       781.563|     573| -363.805| 755.610| 816.547|  727.610|         560|
+|Adjusted   |       781.563|     573| -360.668| 763.335| 854.740|  721.335|         553|
 
 
 ### DSI-SS vs Frequency of Facebook use
@@ -2291,7 +2544,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.640|   5| 571|  0.669|
-|Adjusted   | 0.758|   5| 561|  0.581|
+|Adjusted   | 0.848|   5| 554|  0.516|
 
 \newline
 
@@ -2304,22 +2557,29 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     0.727|     0.907|    -0.351|   0.725|
 |Unadjusted |fb_freqOnce_a_day                                 |     1.385|     0.837|     0.389|   0.697|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     1.164|     0.799|     0.190|   0.849|
-|Adjusted   |(Intercept)                                       |     0.538|     0.980|    -0.634|   0.526|
-|Adjusted   |fb_freqEvery_few_weeks                            |     5.190|     1.292|     1.275|   0.202|
-|Adjusted   |fb_freqOnce_a_week                                |     0.797|     1.403|    -0.162|   0.871|
-|Adjusted   |fb_freqA_few_times_a_week                         |     0.671|     0.920|    -0.435|   0.664|
-|Adjusted   |fb_freqOnce_a_day                                 |     1.213|     0.850|     0.227|   0.820|
-|Adjusted   |fb_freqSeveral_times_a_day                        |     1.037|     0.807|     0.045|   0.964|
-|Adjusted   |age                                               |     0.974|     0.010|    -2.698|   0.007|
-|Adjusted   |genderFemale                                      |     0.861|     0.269|    -0.556|   0.578|
-|Adjusted   |genderA gender not listed here                    |     2.833|     1.445|     0.720|   0.471|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   543.963|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.204|     0.841|     0.220|   0.826|
-|Adjusted   |raceBlack or African American                     |     1.807|     0.883|     0.670|   0.503|
-|Adjusted   |raceMultiple races                                |     1.934|     0.323|     2.044|   0.041|
-|Adjusted   |raceOther                                         |     1.387|     0.625|     0.523|   0.601|
-|Adjusted   |hispanicNo                                        |     1.166|     0.449|     0.341|   0.733|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.516|     0.212|     1.965|   0.049|
+|Adjusted   |(Intercept)                                       |     0.499|     1.073|    -0.647|   0.518|
+|Adjusted   |fb_freqEvery_few_weeks                            |     6.675|     1.438|     1.320|   0.187|
+|Adjusted   |fb_freqOnce_a_week                                |     0.405|     1.492|    -0.606|   0.545|
+|Adjusted   |fb_freqA_few_times_a_week                         |     0.553|     0.971|    -0.611|   0.541|
+|Adjusted   |fb_freqOnce_a_day                                 |     0.753|     0.907|    -0.313|   0.755|
+|Adjusted   |fb_freqSeveral_times_a_day                        |     0.721|     0.857|    -0.381|   0.703|
+|Adjusted   |age                                               |     0.977|     0.011|    -2.146|   0.032|
+|Adjusted   |genderFemale                                      |     0.663|     0.295|    -1.394|   0.163|
+|Adjusted   |genderA gender not listed here                    |     1.305|     1.491|     0.178|   0.858|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   807.035|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.844|     0.893|    -0.190|   0.849|
+|Adjusted   |raceBlack or African American                     |     1.365|     0.974|     0.320|   0.749|
+|Adjusted   |raceMultiple races                                |     1.346|     0.360|     0.825|   0.409|
+|Adjusted   |raceOther                                         |     0.922|     0.678|    -0.120|   0.905|
+|Adjusted   |hispanicNo                                        |     0.777|     0.498|    -0.507|   0.612|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.400|     0.239|     1.410|   0.158|
+|Adjusted   |countSocialMediaExclFB                            |     0.962|     0.114|    -0.339|   0.734|
+|Adjusted   |comm_inpersonOnce a week                          |     0.737|     0.360|    -0.848|   0.396|
+|Adjusted   |comm_inpersonA few times a week                   |     0.621|     0.327|    -1.460|   0.144|
+|Adjusted   |comm_inpersonOnce a day                           |     0.642|     0.451|    -0.981|   0.327|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.721|     0.305|    -1.072|   0.284|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     6.098|     0.260|     6.957|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.279|     0.131|     1.873|   0.061|
 
 \newline
 
@@ -2327,7 +2587,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       615.704|     576| -306.231| 624.463| 650.610|  612.463|         571|
-|Adjusted   |       615.704|     576| -294.193| 620.387| 690.112|  588.387|         561|
+|Adjusted   |       615.704|     576| -252.473| 550.946| 651.176|  504.946|         554|
 
 
 ### DSI-SS vs Active use of Facebook
@@ -2336,7 +2596,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.596|   4| 573|  0.666|
-|Adjusted   | 0.307|   4| 563|  0.874|
+|Adjusted   | 0.502|   4| 556|  0.734|
 
 \newline
 
@@ -2348,21 +2608,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.926|     0.342|    -0.226|   0.821|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.671|     0.372|    -1.074|   0.283|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.697|     0.310|    -1.163|   0.245|
-|Adjusted   |(Intercept)                                       |     0.638|     0.604|    -0.745|   0.456|
-|Adjusted   |comm_facebookOnce_a_week                          |     0.794|     0.478|    -0.483|   0.629|
-|Adjusted   |comm_facebookA_few_times_a_week                   |     0.947|     0.356|    -0.154|   0.877|
-|Adjusted   |comm_facebookOnce_a_day                           |     0.729|     0.389|    -0.811|   0.417|
-|Adjusted   |comm_facebookSeveral_times_a_day                  |     0.775|     0.324|    -0.786|   0.432|
-|Adjusted   |age                                               |     0.976|     0.010|    -2.529|   0.011|
-|Adjusted   |genderFemale                                      |     0.890|     0.269|    -0.433|   0.665|
-|Adjusted   |genderA gender not listed here                    |     3.165|     1.453|     0.793|   0.428|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   540.332|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.190|     0.844|     0.206|   0.837|
-|Adjusted   |raceBlack or African American                     |     1.695|     0.873|     0.604|   0.546|
-|Adjusted   |raceMultiple races                                |     1.918|     0.320|     2.038|   0.042|
-|Adjusted   |raceOther                                         |     1.333|     0.623|     0.462|   0.644|
-|Adjusted   |hispanicNo                                        |     1.158|     0.449|     0.327|   0.743|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.505|     0.212|     1.931|   0.053|
+|Adjusted   |(Intercept)                                       |     0.476|     0.676|    -1.098|   0.272|
+|Adjusted   |comm_facebookOnce_a_week                          |     0.731|     0.533|    -0.586|   0.558|
+|Adjusted   |comm_facebookA_few_times_a_week                   |     0.752|     0.403|    -0.709|   0.479|
+|Adjusted   |comm_facebookOnce_a_day                           |     0.612|     0.437|    -1.124|   0.261|
+|Adjusted   |comm_facebookSeveral_times_a_day                  |     0.613|     0.374|    -1.308|   0.191|
+|Adjusted   |age                                               |     0.979|     0.011|    -1.969|   0.049|
+|Adjusted   |genderFemale                                      |     0.699|     0.296|    -1.208|   0.227|
+|Adjusted   |genderA gender not listed here                    |     1.480|     1.486|     0.264|   0.792|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   808.550|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.789|     0.903|    -0.262|   0.793|
+|Adjusted   |raceBlack or African American                     |     1.293|     0.984|     0.261|   0.794|
+|Adjusted   |raceMultiple races                                |     1.351|     0.358|     0.841|   0.400|
+|Adjusted   |raceOther                                         |     0.844|     0.669|    -0.254|   0.799|
+|Adjusted   |hispanicNo                                        |     0.771|     0.496|    -0.524|   0.601|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.371|     0.240|     1.317|   0.188|
+|Adjusted   |countSocialMediaExclFB                            |     0.968|     0.115|    -0.287|   0.774|
+|Adjusted   |comm_inpersonOnce a week                          |     0.734|     0.359|    -0.859|   0.390|
+|Adjusted   |comm_inpersonA few times a week                   |     0.631|     0.328|    -1.402|   0.161|
+|Adjusted   |comm_inpersonOnce a day                           |     0.692|     0.447|    -0.826|   0.409|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.759|     0.309|    -0.893|   0.372|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     6.083|     0.261|     6.923|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.295|     0.132|     1.957|   0.050|
 
 \newline
 
@@ -2370,7 +2637,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       616.214|     577| -306.928| 623.857| 645.655|  613.857|         573|
-|Adjusted   |       616.214|     577| -295.582| 621.165| 686.558|  591.165|         563|
+|Adjusted   |       616.214|     577| -253.649| 551.298| 647.209|  507.298|         556|
 
 
 ### DSI-SS vs Get emotional support from others
@@ -2379,7 +2646,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.552|   4| 573|  0.698|
-|Adjusted   | 0.653|   4| 563|  0.625|
+|Adjusted   | 0.555|   4| 556|  0.695|
 
 \newline
 
@@ -2391,21 +2658,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.012|     0.276|     0.043|   0.966|
 |Unadjusted |sm_emot_supportUsually                            |     1.180|     0.385|     0.429|   0.668|
 |Unadjusted |sm_emot_supportAlways                             |     0.643|     1.094|    -0.403|   0.687|
-|Adjusted   |(Intercept)                                       |     0.552|     0.573|    -1.035|   0.301|
-|Adjusted   |sm_emot_supportRarely                             |     1.420|     0.250|     1.405|   0.160|
-|Adjusted   |sm_emot_supportSometimes                          |     1.034|     0.286|     0.118|   0.906|
-|Adjusted   |sm_emot_supportUsually                            |     1.127|     0.405|     0.295|   0.768|
-|Adjusted   |sm_emot_supportAlways                             |     0.629|     1.111|    -0.417|   0.676|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.855|   0.004|
-|Adjusted   |genderFemale                                      |     0.858|     0.273|    -0.563|   0.573|
-|Adjusted   |genderA gender not listed here                    |     2.954|     1.463|     0.740|   0.459|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   544.159|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.232|     0.850|     0.246|   0.806|
-|Adjusted   |raceBlack or African American                     |     1.866|     0.874|     0.714|   0.475|
-|Adjusted   |raceMultiple races                                |     1.849|     0.321|     1.916|   0.055|
-|Adjusted   |raceOther                                         |     1.467|     0.624|     0.615|   0.539|
-|Adjusted   |hispanicNo                                        |     1.101|     0.450|     0.214|   0.831|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.490|     0.210|     1.900|   0.057|
+|Adjusted   |(Intercept)                                       |     0.405|     0.643|    -1.403|   0.161|
+|Adjusted   |sm_emot_supportRarely                             |     1.165|     0.282|     0.542|   0.588|
+|Adjusted   |sm_emot_supportSometimes                          |     0.810|     0.325|    -0.651|   0.515|
+|Adjusted   |sm_emot_supportUsually                            |     0.994|     0.454|    -0.013|   0.990|
+|Adjusted   |sm_emot_supportAlways                             |     0.329|     1.211|    -0.917|   0.359|
+|Adjusted   |age                                               |     0.976|     0.011|    -2.265|   0.023|
+|Adjusted   |genderFemale                                      |     0.681|     0.299|    -1.283|   0.199|
+|Adjusted   |genderA gender not listed here                    |     1.385|     1.508|     0.216|   0.829|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   817.602|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.793|     0.903|    -0.257|   0.797|
+|Adjusted   |raceBlack or African American                     |     1.482|     0.961|     0.410|   0.682|
+|Adjusted   |raceMultiple races                                |     1.347|     0.358|     0.834|   0.405|
+|Adjusted   |raceOther                                         |     0.896|     0.679|    -0.162|   0.871|
+|Adjusted   |hispanicNo                                        |     0.747|     0.493|    -0.591|   0.554|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.323|     0.238|     1.175|   0.240|
+|Adjusted   |countSocialMediaExclFB                            |     0.958|     0.118|    -0.362|   0.717|
+|Adjusted   |comm_inpersonOnce a week                          |     0.734|     0.363|    -0.853|   0.394|
+|Adjusted   |comm_inpersonA few times a week                   |     0.607|     0.330|    -1.515|   0.130|
+|Adjusted   |comm_inpersonOnce a day                           |     0.730|     0.446|    -0.705|   0.481|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.703|     0.304|    -1.157|   0.247|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.910|     0.259|     6.861|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.317|     0.134|     2.053|   0.040|
 
 \newline
 
@@ -2413,7 +2687,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       616.214|     577| -306.996| 623.992| 645.790|  613.992|         573|
-|Adjusted   |       616.214|     577| -294.876| 619.752| 685.146|  589.752|         563|
+|Adjusted   |       616.214|     577| -253.444| 550.888| 646.798|  506.888|         556|
 
 
 ### DSI-SS vs Get information about health or medical topics
@@ -2422,7 +2696,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.562|   4| 572|  0.690|
-|Adjusted   | 0.630|   4| 562|  0.642|
+|Adjusted   | 0.314|   4| 555|  0.869|
 
 \newline
 
@@ -2434,21 +2708,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     0.936|     0.272|    -0.242|   0.809|
 |Unadjusted |sm_med_infoUsually                                |     1.089|     0.356|     0.240|   0.811|
 |Unadjusted |sm_med_infoAlways                                 |     0.410|     0.773|    -1.153|   0.249|
-|Adjusted   |(Intercept)                                       |     0.492|     0.581|    -1.222|   0.222|
-|Adjusted   |sm_med_infoRarely                                 |     1.237|     0.272|     0.782|   0.434|
-|Adjusted   |sm_med_infoSometimes                              |     1.072|     0.286|     0.244|   0.808|
-|Adjusted   |sm_med_infoUsually                                |     1.378|     0.373|     0.860|   0.390|
-|Adjusted   |sm_med_infoAlways                                 |     0.455|     0.797|    -0.989|   0.323|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.710|   0.007|
-|Adjusted   |genderFemale                                      |     0.865|     0.272|    -0.535|   0.593|
-|Adjusted   |genderA gender not listed here                    |     2.684|     1.441|     0.685|   0.493|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   543.646|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.306|     0.844|     0.316|   0.752|
-|Adjusted   |raceBlack or African American                     |     1.730|     0.870|     0.629|   0.529|
-|Adjusted   |raceMultiple races                                |     1.873|     0.321|     1.953|   0.051|
-|Adjusted   |raceOther                                         |     1.373|     0.622|     0.510|   0.610|
-|Adjusted   |hispanicNo                                        |     1.219|     0.452|     0.438|   0.661|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.545|     0.211|     2.066|   0.039|
+|Adjusted   |(Intercept)                                       |     0.333|     0.657|    -1.676|   0.094|
+|Adjusted   |sm_med_infoRarely                                 |     1.235|     0.304|     0.696|   0.486|
+|Adjusted   |sm_med_infoSometimes                              |     1.080|     0.324|     0.239|   0.811|
+|Adjusted   |sm_med_infoUsually                                |     1.087|     0.421|     0.199|   0.843|
+|Adjusted   |sm_med_infoAlways                                 |     0.530|     0.896|    -0.708|   0.479|
+|Adjusted   |age                                               |     0.977|     0.011|    -2.107|   0.035|
+|Adjusted   |genderFemale                                      |     0.674|     0.298|    -1.325|   0.185|
+|Adjusted   |genderA gender not listed here                    |     1.205|     1.481|     0.126|   0.900|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   820.659|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.900|     0.896|    -0.118|   0.906|
+|Adjusted   |raceBlack or African American                     |     1.364|     0.971|     0.320|   0.749|
+|Adjusted   |raceMultiple races                                |     1.286|     0.359|     0.700|   0.484|
+|Adjusted   |raceOther                                         |     0.842|     0.677|    -0.254|   0.800|
+|Adjusted   |hispanicNo                                        |     0.817|     0.495|    -0.408|   0.683|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.418|     0.239|     1.461|   0.144|
+|Adjusted   |countSocialMediaExclFB                            |     0.945|     0.118|    -0.475|   0.635|
+|Adjusted   |comm_inpersonOnce a week                          |     0.712|     0.358|    -0.950|   0.342|
+|Adjusted   |comm_inpersonA few times a week                   |     0.600|     0.328|    -1.557|   0.119|
+|Adjusted   |comm_inpersonOnce a day                           |     0.668|     0.449|    -0.900|   0.368|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.713|     0.305|    -1.107|   0.268|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.872|     0.258|     6.852|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.313|     0.132|     2.054|   0.040|
 
 \newline
 
@@ -2456,7 +2737,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       615.704|     576| -306.534| 623.068| 644.858|  613.068|         572|
-|Adjusted   |       615.704|     576| -294.504| 619.008| 684.375|  589.008|         562|
+|Adjusted   |       615.704|     576| -253.210| 550.421| 646.293|  506.421|         555|
 
 
 ### DSI-SS vs Get advice about health or medical topics
@@ -2465,7 +2746,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.524|   4| 573|  0.718|
-|Adjusted   | 0.510|   4| 563|  0.728|
+|Adjusted   | 0.518|   4| 556|  0.722|
 
 \newline
 
@@ -2477,21 +2758,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     0.913|     0.269|    -0.337|   0.736|
 |Unadjusted |sm_med_adviceUsually                              |     1.327|     0.405|     0.700|   0.484|
 |Unadjusted |sm_med_adviceAlways                               |     0.314|     1.056|    -1.098|   0.272|
-|Adjusted   |(Intercept)                                       |     0.546|     0.570|    -1.062|   0.288|
-|Adjusted   |sm_med_adviceRarely                               |     1.150|     0.247|     0.567|   0.571|
-|Adjusted   |sm_med_adviceSometimes                            |     1.088|     0.280|     0.301|   0.764|
-|Adjusted   |sm_med_adviceUsually                              |     1.503|     0.420|     0.971|   0.331|
-|Adjusted   |sm_med_adviceAlways                               |     0.380|     1.082|    -0.894|   0.371|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.762|   0.006|
-|Adjusted   |genderFemale                                      |     0.898|     0.270|    -0.398|   0.691|
-|Adjusted   |genderA gender not listed here                    |     2.913|     1.453|     0.736|   0.462|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   543.737|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.378|     0.850|     0.377|   0.706|
-|Adjusted   |raceBlack or African American                     |     1.709|     0.865|     0.620|   0.535|
-|Adjusted   |raceMultiple races                                |     1.855|     0.320|     1.930|   0.054|
-|Adjusted   |raceOther                                         |     1.335|     0.624|     0.463|   0.643|
-|Adjusted   |hispanicNo                                        |     1.145|     0.452|     0.301|   0.764|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.501|     0.210|     1.938|   0.053|
+|Adjusted   |(Intercept)                                       |     0.369|     0.648|    -1.539|   0.124|
+|Adjusted   |sm_med_adviceRarely                               |     1.022|     0.275|     0.078|   0.938|
+|Adjusted   |sm_med_adviceSometimes                            |     0.948|     0.317|    -0.170|   0.865|
+|Adjusted   |sm_med_adviceUsually                              |     1.278|     0.467|     0.526|   0.599|
+|Adjusted   |sm_med_adviceAlways                               |     0.222|     1.183|    -1.274|   0.203|
+|Adjusted   |age                                               |     0.978|     0.011|    -2.079|   0.038|
+|Adjusted   |genderFemale                                      |     0.710|     0.297|    -1.152|   0.249|
+|Adjusted   |genderA gender not listed here                    |     1.340|     1.485|     0.197|   0.844|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   811.836|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.981|     0.920|    -0.020|   0.984|
+|Adjusted   |raceBlack or African American                     |     1.329|     0.966|     0.295|   0.768|
+|Adjusted   |raceMultiple races                                |     1.286|     0.357|     0.704|   0.481|
+|Adjusted   |raceOther                                         |     0.818|     0.676|    -0.298|   0.766|
+|Adjusted   |hispanicNo                                        |     0.785|     0.497|    -0.487|   0.626|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.396|     0.239|     1.400|   0.162|
+|Adjusted   |countSocialMediaExclFB                            |     0.948|     0.117|    -0.456|   0.648|
+|Adjusted   |comm_inpersonOnce a week                          |     0.715|     0.360|    -0.930|   0.352|
+|Adjusted   |comm_inpersonA few times a week                   |     0.608|     0.327|    -1.523|   0.128|
+|Adjusted   |comm_inpersonOnce a day                           |     0.674|     0.449|    -0.876|   0.381|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.713|     0.304|    -1.112|   0.266|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.812|     0.258|     6.834|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.329|     0.133|     2.135|   0.033|
 
 \newline
 
@@ -2499,7 +2787,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       616.214|     577| -306.831| 623.663| 645.461|  613.663|         573|
-|Adjusted   |       616.214|     577| -295.036| 620.072| 685.466|  590.072|         563|
+|Adjusted   |       616.214|     577| -253.358| 550.715| 646.626|  506.715|         556|
 
 
 ### DSI-SS vs Ask questions about health or medical issues
@@ -2508,7 +2796,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 0.677|   4| 573|  0.608|
-|Adjusted   | 1.267|   4| 563|  0.282|
+|Adjusted   | 0.980|   4| 556|  0.418|
 
 \newline
 
@@ -2520,21 +2808,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     1.135|     0.277|     0.458|   0.647|
 |Unadjusted |sm_med_questionsUsually                           |     1.591|     0.409|     1.137|   0.256|
 |Unadjusted |sm_med_questionsAlways                            |     0.389|     1.064|    -0.888|   0.375|
-|Adjusted   |(Intercept)                                       |     0.559|     0.570|    -1.018|   0.309|
-|Adjusted   |sm_med_questionsRarely                            |     0.903|     0.247|    -0.412|   0.680|
-|Adjusted   |sm_med_questionsSometimes                         |     1.368|     0.291|     1.076|   0.282|
-|Adjusted   |sm_med_questionsUsually                           |     1.876|     0.426|     1.476|   0.140|
-|Adjusted   |sm_med_questionsAlways                            |     0.335|     1.085|    -1.008|   0.313|
-|Adjusted   |age                                               |     0.971|     0.010|    -2.950|   0.003|
-|Adjusted   |genderFemale                                      |     0.890|     0.271|    -0.429|   0.668|
-|Adjusted   |genderA gender not listed here                    |     3.081|     1.442|     0.781|   0.435|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   543.519|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     1.417|     0.854|     0.408|   0.683|
-|Adjusted   |raceBlack or African American                     |     1.760|     0.862|     0.656|   0.512|
-|Adjusted   |raceMultiple races                                |     1.926|     0.323|     2.029|   0.042|
-|Adjusted   |raceOther                                         |     1.519|     0.627|     0.667|   0.505|
-|Adjusted   |hispanicNo                                        |     1.214|     0.452|     0.428|   0.668|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.522|     0.211|     1.988|   0.047|
+|Adjusted   |(Intercept)                                       |     0.373|     0.649|    -1.522|   0.128|
+|Adjusted   |sm_med_questionsRarely                            |     0.874|     0.279|    -0.483|   0.629|
+|Adjusted   |sm_med_questionsSometimes                         |     1.248|     0.321|     0.690|   0.490|
+|Adjusted   |sm_med_questionsUsually                           |     1.413|     0.473|     0.731|   0.464|
+|Adjusted   |sm_med_questionsAlways                            |     0.181|     1.160|    -1.475|   0.140|
+|Adjusted   |age                                               |     0.975|     0.011|    -2.367|   0.018|
+|Adjusted   |genderFemale                                      |     0.719|     0.297|    -1.112|   0.266|
+|Adjusted   |genderA gender not listed here                    |     1.396|     1.482|     0.225|   0.822|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   807.969|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     1.048|     0.932|     0.050|   0.960|
+|Adjusted   |raceBlack or African American                     |     1.377|     0.957|     0.335|   0.738|
+|Adjusted   |raceMultiple races                                |     1.335|     0.361|     0.801|   0.423|
+|Adjusted   |raceOther                                         |     1.039|     0.682|     0.056|   0.955|
+|Adjusted   |hispanicNo                                        |     0.847|     0.497|    -0.335|   0.738|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.427|     0.240|     1.481|   0.139|
+|Adjusted   |countSocialMediaExclFB                            |     0.938|     0.118|    -0.538|   0.591|
+|Adjusted   |comm_inpersonOnce a week                          |     0.733|     0.360|    -0.863|   0.388|
+|Adjusted   |comm_inpersonA few times a week                   |     0.612|     0.329|    -1.495|   0.135|
+|Adjusted   |comm_inpersonOnce a day                           |     0.667|     0.450|    -0.902|   0.367|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.708|     0.305|    -1.133|   0.257|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.838|     0.258|     6.844|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.312|     0.133|     2.042|   0.041|
 
 \newline
 
@@ -2542,7 +2837,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       616.214|     577| -306.671| 623.343| 645.140|  613.343|         573|
-|Adjusted   |       616.214|     577| -293.538| 617.075| 682.469|  587.075|         563|
+|Adjusted   |       616.214|     577| -252.293| 548.587| 644.498|  504.587|         556|
 
 
 ### DSI-SS vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -2551,7 +2846,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 3.905|   4| 572|  0.004|
-|Adjusted   | 3.713|   4| 562|  0.005|
+|Adjusted   | 1.349|   4| 555|  0.251|
 
 \newline
 
@@ -2563,21 +2858,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     2.030|     0.291|     2.436|   0.015|
 |Unadjusted |sm_share_symptUsually                             |     3.295|     0.403|     2.962|   0.003|
 |Unadjusted |sm_share_symptAlways                              |     0.618|     1.071|    -0.449|   0.653|
-|Adjusted   |(Intercept)                                       |     0.447|     0.587|    -1.373|   0.170|
-|Adjusted   |sm_share_symptRarely                              |     1.841|     0.244|     2.496|   0.013|
-|Adjusted   |sm_share_symptSometimes                           |     2.110|     0.304|     2.458|   0.014|
-|Adjusted   |sm_share_symptUsually                             |     3.286|     0.420|     2.834|   0.005|
-|Adjusted   |sm_share_symptAlways                              |     0.449|     1.104|    -0.724|   0.469|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.840|   0.005|
-|Adjusted   |genderFemale                                      |     0.798|     0.274|    -0.823|   0.411|
-|Adjusted   |genderA gender not listed here                    |     2.113|     1.599|     0.468|   0.640|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   544.919|    -0.026|   0.979|
-|Adjusted   |raceAsian                                         |     0.878|     0.864|    -0.151|   0.880|
-|Adjusted   |raceBlack or African American                     |     1.680|     0.910|     0.570|   0.569|
-|Adjusted   |raceMultiple races                                |     1.755|     0.326|     1.725|   0.085|
-|Adjusted   |raceOther                                         |     1.204|     0.639|     0.290|   0.771|
-|Adjusted   |hispanicNo                                        |     1.128|     0.463|     0.260|   0.795|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.507|     0.213|     1.924|   0.054|
+|Adjusted   |(Intercept)                                       |     0.387|     0.649|    -1.464|   0.143|
+|Adjusted   |sm_share_symptRarely                              |     1.459|     0.274|     1.381|   0.167|
+|Adjusted   |sm_share_symptSometimes                           |     1.422|     0.341|     1.034|   0.301|
+|Adjusted   |sm_share_symptUsually                             |     1.650|     0.455|     1.100|   0.271|
+|Adjusted   |sm_share_symptAlways                              |     0.204|     1.151|    -1.381|   0.167|
+|Adjusted   |age                                               |     0.975|     0.011|    -2.356|   0.018|
+|Adjusted   |genderFemale                                      |     0.665|     0.298|    -1.367|   0.172|
+|Adjusted   |genderA gender not listed here                    |     1.192|     1.566|     0.112|   0.911|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   814.523|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.728|     0.913|    -0.347|   0.728|
+|Adjusted   |raceBlack or African American                     |     1.464|     1.021|     0.373|   0.709|
+|Adjusted   |raceMultiple races                                |     1.263|     0.360|     0.649|   0.516|
+|Adjusted   |raceOther                                         |     0.751|     0.693|    -0.413|   0.680|
+|Adjusted   |hispanicNo                                        |     0.747|     0.499|    -0.583|   0.560|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.395|     0.239|     1.393|   0.164|
+|Adjusted   |countSocialMediaExclFB                            |     0.956|     0.115|    -0.387|   0.699|
+|Adjusted   |comm_inpersonOnce a week                          |     0.660|     0.368|    -1.127|   0.260|
+|Adjusted   |comm_inpersonA few times a week                   |     0.568|     0.332|    -1.702|   0.089|
+|Adjusted   |comm_inpersonOnce a day                           |     0.630|     0.452|    -1.022|   0.307|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.683|     0.306|    -1.244|   0.214|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.459|     0.261|     6.500|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.319|     0.136|     2.037|   0.042|
 
 \newline
 
@@ -2585,7 +2887,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       615.704|     576| -299.948| 609.897| 631.686|  599.897|         572|
-|Adjusted   |       615.704|     576| -288.363| 606.727| 672.094|  576.727|         562|
+|Adjusted   |       615.704|     576| -251.415| 546.831| 642.703|  502.831|         555|
 
 
 ### DSI-SS vs Share information related to your health
@@ -2594,7 +2896,7 @@ Relabel factors; replace spaces with underscores.
 |model      |     F| df1| df2| pValue|
 |:----------|-----:|---:|---:|------:|
 |Unadjusted | 3.202|   4| 572|  0.013|
-|Adjusted   | 2.540|   4| 562|  0.039|
+|Adjusted   | 0.664|   4| 555|  0.617|
 
 \newline
 
@@ -2606,21 +2908,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     1.277|     0.323|     0.758|   0.449|
 |Unadjusted |sm_share_healthUsually                            |     4.471|     0.454|     3.301|   0.001|
 |Unadjusted |sm_share_healthAlways                             |     0.000|   550.089|    -0.026|   0.980|
-|Adjusted   |(Intercept)                                       |     0.445|     0.581|    -1.394|   0.163|
-|Adjusted   |sm_share_healthRarely                             |     1.633|     0.230|     2.129|   0.033|
-|Adjusted   |sm_share_healthSometimes                          |     1.336|     0.335|     0.863|   0.388|
-|Adjusted   |sm_share_healthUsually                            |     3.785|     0.475|     2.802|   0.005|
-|Adjusted   |sm_share_healthAlways                             |     0.000|   868.645|    -0.017|   0.986|
-|Adjusted   |age                                               |     0.974|     0.010|    -2.732|   0.006|
-|Adjusted   |genderFemale                                      |     0.848|     0.274|    -0.602|   0.547|
-|Adjusted   |genderA gender not listed here                    |     1.460|     1.543|     0.245|   0.806|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   900.539|    -0.017|   0.987|
-|Adjusted   |raceAsian                                         |     1.052|     0.860|     0.058|   0.953|
-|Adjusted   |raceBlack or African American                     |     2.041|     0.955|     0.747|   0.455|
-|Adjusted   |raceMultiple races                                |     1.821|     0.327|     1.834|   0.067|
-|Adjusted   |raceOther                                         |     1.442|     0.625|     0.586|   0.558|
-|Adjusted   |hispanicNo                                        |     1.164|     0.461|     0.329|   0.743|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.479|     0.212|     1.850|   0.064|
+|Adjusted   |(Intercept)                                       |     0.337|     0.653|    -1.665|   0.096|
+|Adjusted   |sm_share_healthRarely                             |     1.192|     0.257|     0.685|   0.494|
+|Adjusted   |sm_share_healthSometimes                          |     0.815|     0.379|    -0.540|   0.589|
+|Adjusted   |sm_share_healthUsually                            |     1.946|     0.526|     1.266|   0.205|
+|Adjusted   |sm_share_healthAlways                             |     0.000|   751.592|    -0.021|   0.983|
+|Adjusted   |age                                               |     0.977|     0.011|    -2.201|   0.028|
+|Adjusted   |genderFemale                                      |     0.737|     0.299|    -1.019|   0.308|
+|Adjusted   |genderA gender not listed here                    |     0.939|     1.554|    -0.041|   0.968|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   818.412|    -0.019|   0.985|
+|Adjusted   |raceAsian                                         |     0.760|     0.936|    -0.294|   0.769|
+|Adjusted   |raceBlack or African American                     |     1.558|     1.081|     0.410|   0.681|
+|Adjusted   |raceMultiple races                                |     1.240|     0.364|     0.591|   0.555|
+|Adjusted   |raceOther                                         |     0.957|     0.678|    -0.065|   0.949|
+|Adjusted   |hispanicNo                                        |     0.835|     0.500|    -0.360|   0.719|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.378|     0.239|     1.343|   0.179|
+|Adjusted   |countSocialMediaExclFB                            |     0.955|     0.116|    -0.400|   0.689|
+|Adjusted   |comm_inpersonOnce a week                          |     0.722|     0.365|    -0.893|   0.372|
+|Adjusted   |comm_inpersonA few times a week                   |     0.620|     0.332|    -1.440|   0.150|
+|Adjusted   |comm_inpersonOnce a day                           |     0.680|     0.450|    -0.856|   0.392|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.723|     0.308|    -1.052|   0.293|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.532|     0.260|     6.567|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.393|     0.140|     2.361|   0.018|
 
 \newline
 
@@ -2628,7 +2937,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       615.704|     576| -299.782| 609.565| 631.354|  599.565|         572|
-|Adjusted   |       615.704|     576| -288.978| 607.957| 673.324|  577.957|         562|
+|Adjusted   |       615.704|     576| -250.137| 544.273| 640.146|  500.273|         555|
 
 
 ### DSI-SS vs Share thoughts about suicide or hurting yourself in some way
@@ -2637,7 +2946,7 @@ Relabel factors; replace spaces with underscores.
 |model      |      F| df1| df2| pValue|
 |:----------|------:|---:|---:|------:|
 |Unadjusted | 10.570|   4| 571|      0|
-|Adjusted   | 10.024|   4| 561|      0|
+|Adjusted   |  6.173|   4| 554|      0|
 
 \newline
 
@@ -2649,21 +2958,28 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     5.260|     0.531|     3.128|   0.002|
 |Unadjusted |sm_share_suicideUsually                           |     5.753|     0.681|     2.569|   0.010|
 |Unadjusted |sm_share_suicideAlways                            |     0.000|   727.699|    -0.019|   0.985|
-|Adjusted   |(Intercept)                                       |     0.438|     0.609|    -1.358|   0.174|
-|Adjusted   |sm_share_suicideRarely                            |     5.608|     0.310|     5.555|   0.000|
-|Adjusted   |sm_share_suicideSometimes                         |     4.856|     0.566|     2.793|   0.005|
-|Adjusted   |sm_share_suicideUsually                           |     5.348|     0.723|     2.319|   0.020|
-|Adjusted   |sm_share_suicideAlways                            |     0.000|  1192.309|    -0.013|   0.990|
-|Adjusted   |age                                               |     0.973|     0.010|    -2.703|   0.007|
-|Adjusted   |genderFemale                                      |     0.947|     0.280|    -0.196|   0.845|
-|Adjusted   |genderA gender not listed here                    |     1.753|     1.657|     0.339|   0.735|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   846.912|    -0.018|   0.985|
-|Adjusted   |raceAsian                                         |     0.961|     0.930|    -0.043|   0.966|
-|Adjusted   |raceBlack or African American                     |     1.201|     0.984|     0.186|   0.852|
-|Adjusted   |raceMultiple races                                |     1.991|     0.333|     2.068|   0.039|
-|Adjusted   |raceOther                                         |     1.889|     0.626|     1.017|   0.309|
-|Adjusted   |hispanicNo                                        |     1.198|     0.492|     0.366|   0.714|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.312|     0.222|     1.224|   0.221|
+|Adjusted   |(Intercept)                                       |     0.344|     0.678|    -1.574|   0.116|
+|Adjusted   |sm_share_suicideRarely                            |     4.664|     0.345|     4.466|   0.000|
+|Adjusted   |sm_share_suicideSometimes                         |     2.959|     0.607|     1.786|   0.074|
+|Adjusted   |sm_share_suicideUsually                           |     4.320|     0.768|     1.906|   0.057|
+|Adjusted   |sm_share_suicideAlways                            |     0.000|  1050.607|    -0.015|   0.988|
+|Adjusted   |age                                               |     0.975|     0.011|    -2.333|   0.020|
+|Adjusted   |genderFemale                                      |     0.746|     0.309|    -0.949|   0.343|
+|Adjusted   |genderA gender not listed here                    |     0.996|     1.642|    -0.003|   0.998|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.000|   770.969|    -0.021|   0.983|
+|Adjusted   |raceAsian                                         |     0.774|     0.920|    -0.279|   0.780|
+|Adjusted   |raceBlack or African American                     |     1.173|     1.060|     0.151|   0.880|
+|Adjusted   |raceMultiple races                                |     1.379|     0.373|     0.861|   0.389|
+|Adjusted   |raceOther                                         |     1.166|     0.681|     0.225|   0.822|
+|Adjusted   |hispanicNo                                        |     0.836|     0.529|    -0.340|   0.734|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.234|     0.247|     0.853|   0.393|
+|Adjusted   |countSocialMediaExclFB                            |     0.912|     0.121|    -0.760|   0.447|
+|Adjusted   |comm_inpersonOnce a week                          |     0.735|     0.375|    -0.820|   0.412|
+|Adjusted   |comm_inpersonA few times a week                   |     0.563|     0.341|    -1.688|   0.091|
+|Adjusted   |comm_inpersonOnce a day                           |     0.684|     0.461|    -0.823|   0.410|
+|Adjusted   |comm_inpersonSeveral times a day                  |     0.664|     0.313|    -1.305|   0.192|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     5.295|     0.265|     6.298|   0.000|
+|Adjusted   |countSuicideAttempts                              |     1.342|     0.145|     2.030|   0.042|
 
 \newline
 
@@ -2671,7 +2987,7 @@ Relabel factors; replace spaces with underscores.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       615.193|     575| -285.859| 581.718| 603.498|  571.718|         571|
-|Adjusted   |       615.193|     575| -274.864| 579.728| 645.070|  549.728|         561|
+|Adjusted   |       615.193|     575| -239.300| 522.601| 618.435|  478.601|         554|
 
 
 ## F-tests
@@ -2680,77 +2996,77 @@ Relabel factors; replace spaces with underscores.
 |depvar    |indepvar         |model      |      F| df1| df2| pValue|indSig |
 |:---------|:----------------|:----------|------:|---:|---:|------:|:------|
 |indPTSD   |fb_freq          |Unadjusted |  1.373|   5| 570|  0.233|.      |
-|indPTSD   |fb_freq          |Adjusted   |  1.302|   5| 560|  0.262|.      |
+|indPTSD   |fb_freq          |Adjusted   |  1.433|   5| 553|  0.210|.      |
 |indPTSD   |comm_facebook    |Unadjusted |  1.572|   4| 572|  0.180|.      |
-|indPTSD   |comm_facebook    |Adjusted   |  1.388|   4| 562|  0.237|.      |
+|indPTSD   |comm_facebook    |Adjusted   |  1.253|   4| 555|  0.287|.      |
 |indPTSD   |sm_emot_support  |Unadjusted |  1.460|   4| 572|  0.213|.      |
-|indPTSD   |sm_emot_support  |Adjusted   |  1.692|   4| 562|  0.150|.      |
+|indPTSD   |sm_emot_support  |Adjusted   |  1.694|   4| 555|  0.150|.      |
 |indPTSD   |sm_med_info      |Unadjusted |  1.577|   4| 571|  0.179|.      |
-|indPTSD   |sm_med_info      |Adjusted   |  1.767|   4| 561|  0.134|.      |
+|indPTSD   |sm_med_info      |Adjusted   |  1.703|   4| 554|  0.148|.      |
 |indPTSD   |sm_med_advice    |Unadjusted |  2.114|   4| 572|  0.078|.      |
-|indPTSD   |sm_med_advice    |Adjusted   |  2.174|   4| 562|  0.071|.      |
+|indPTSD   |sm_med_advice    |Adjusted   |  2.046|   4| 555|  0.087|.      |
 |indPTSD   |sm_med_questions |Unadjusted |  2.147|   4| 572|  0.074|.      |
-|indPTSD   |sm_med_questions |Adjusted   |  2.376|   4| 562|  0.051|.      |
+|indPTSD   |sm_med_questions |Adjusted   |  1.252|   4| 555|  0.288|.      |
 |indPTSD   |sm_share_sympt   |Unadjusted |  4.971|   4| 571|  0.001|***    |
-|indPTSD   |sm_share_sympt   |Adjusted   |  4.671|   4| 561|  0.001|**     |
+|indPTSD   |sm_share_sympt   |Adjusted   |  2.213|   4| 554|  0.066|.      |
 |indPTSD   |sm_share_health  |Unadjusted |  3.748|   4| 571|  0.005|**     |
-|indPTSD   |sm_share_health  |Adjusted   |  3.345|   4| 561|  0.010|*      |
+|indPTSD   |sm_share_health  |Adjusted   |  2.397|   4| 554|  0.049|*      |
 |indPTSD   |sm_share_suicide |Unadjusted |  6.082|   4| 570|  0.000|***    |
-|indPTSD   |sm_share_suicide |Adjusted   |  5.796|   4| 560|  0.000|***    |
+|indPTSD   |sm_share_suicide |Adjusted   |  4.041|   4| 553|  0.003|**     |
 |indPHQ    |fb_freq          |Unadjusted |  0.496|   5| 571|  0.779|.      |
-|indPHQ    |fb_freq          |Adjusted   |  0.531|   5| 561|  0.753|.      |
+|indPHQ    |fb_freq          |Adjusted   |  0.409|   5| 554|  0.843|.      |
 |indPHQ    |comm_facebook    |Unadjusted |  0.487|   4| 573|  0.745|.      |
-|indPHQ    |comm_facebook    |Adjusted   |  0.293|   4| 563|  0.882|.      |
+|indPHQ    |comm_facebook    |Adjusted   |  0.331|   4| 556|  0.857|.      |
 |indPHQ    |sm_emot_support  |Unadjusted |  1.083|   4| 573|  0.364|.      |
-|indPHQ    |sm_emot_support  |Adjusted   |  1.285|   4| 563|  0.274|.      |
+|indPHQ    |sm_emot_support  |Adjusted   |  1.099|   4| 556|  0.356|.      |
 |indPHQ    |sm_med_info      |Unadjusted |  2.327|   4| 572|  0.055|.      |
-|indPHQ    |sm_med_info      |Adjusted   |  2.843|   4| 562|  0.024|*      |
+|indPHQ    |sm_med_info      |Adjusted   |  2.898|   4| 555|  0.022|*      |
 |indPHQ    |sm_med_advice    |Unadjusted |  2.087|   4| 573|  0.081|.      |
-|indPHQ    |sm_med_advice    |Adjusted   |  2.461|   4| 563|  0.044|*      |
+|indPHQ    |sm_med_advice    |Adjusted   |  2.491|   4| 556|  0.042|*      |
 |indPHQ    |sm_med_questions |Unadjusted |  2.793|   4| 573|  0.026|*      |
-|indPHQ    |sm_med_questions |Adjusted   |  3.712|   4| 563|  0.005|**     |
+|indPHQ    |sm_med_questions |Adjusted   |  2.823|   4| 556|  0.024|*      |
 |indPHQ    |sm_share_sympt   |Unadjusted |  6.011|   4| 572|  0.000|***    |
-|indPHQ    |sm_share_sympt   |Adjusted   |  6.139|   4| 562|  0.000|***    |
+|indPHQ    |sm_share_sympt   |Adjusted   |  2.885|   4| 555|  0.022|*      |
 |indPHQ    |sm_share_health  |Unadjusted |  3.728|   4| 572|  0.005|**     |
-|indPHQ    |sm_share_health  |Adjusted   |  3.378|   4| 562|  0.010|**     |
+|indPHQ    |sm_share_health  |Adjusted   |  1.549|   4| 555|  0.186|.      |
 |indPHQ    |sm_share_suicide |Unadjusted |  7.572|   4| 571|  0.000|***    |
-|indPHQ    |sm_share_suicide |Adjusted   |  7.714|   4| 561|  0.000|***    |
+|indPHQ    |sm_share_suicide |Adjusted   |  5.354|   4| 554|  0.000|***    |
 |indAuditC |fb_freq          |Unadjusted |  1.246|   5| 569|  0.286|.      |
-|indAuditC |fb_freq          |Adjusted   |  1.490|   5| 560|  0.191|.      |
+|indAuditC |fb_freq          |Adjusted   |  1.571|   5| 553|  0.166|.      |
 |indAuditC |comm_facebook    |Unadjusted |  1.110|   4| 571|  0.351|.      |
-|indAuditC |comm_facebook    |Adjusted   |  1.457|   4| 562|  0.214|.      |
+|indAuditC |comm_facebook    |Adjusted   |  1.455|   4| 555|  0.214|.      |
 |indAuditC |sm_emot_support  |Unadjusted |  0.930|   4| 571|  0.446|.      |
-|indAuditC |sm_emot_support  |Adjusted   |  1.461|   4| 562|  0.213|.      |
+|indAuditC |sm_emot_support  |Adjusted   |  1.315|   4| 555|  0.263|.      |
 |indAuditC |sm_med_info      |Unadjusted |  0.737|   4| 570|  0.567|.      |
-|indAuditC |sm_med_info      |Adjusted   |  0.147|   4| 561|  0.964|.      |
+|indAuditC |sm_med_info      |Adjusted   |  0.122|   4| 554|  0.975|.      |
 |indAuditC |sm_med_advice    |Unadjusted |  1.307|   4| 571|  0.266|.      |
-|indAuditC |sm_med_advice    |Adjusted   |  0.885|   4| 562|  0.472|.      |
+|indAuditC |sm_med_advice    |Adjusted   |  0.997|   4| 555|  0.409|.      |
 |indAuditC |sm_med_questions |Unadjusted |  0.894|   4| 571|  0.467|.      |
-|indAuditC |sm_med_questions |Adjusted   |  0.510|   4| 562|  0.729|.      |
+|indAuditC |sm_med_questions |Adjusted   |  0.432|   4| 555|  0.786|.      |
 |indAuditC |sm_share_sympt   |Unadjusted |  1.594|   4| 570|  0.174|.      |
-|indAuditC |sm_share_sympt   |Adjusted   |  1.720|   4| 561|  0.144|.      |
+|indAuditC |sm_share_sympt   |Adjusted   |  1.660|   4| 554|  0.158|.      |
 |indAuditC |sm_share_health  |Unadjusted |  0.882|   4| 570|  0.474|.      |
-|indAuditC |sm_share_health  |Adjusted   |  0.857|   4| 561|  0.490|.      |
+|indAuditC |sm_share_health  |Adjusted   |  0.705|   4| 554|  0.589|.      |
 |indAuditC |sm_share_suicide |Unadjusted |  0.769|   4| 569|  0.546|.      |
-|indAuditC |sm_share_suicide |Adjusted   |  0.342|   4| 560|  0.850|.      |
+|indAuditC |sm_share_suicide |Adjusted   |  0.266|   4| 553|  0.900|.      |
 |indDSISS  |fb_freq          |Unadjusted |  0.640|   5| 571|  0.669|.      |
-|indDSISS  |fb_freq          |Adjusted   |  0.758|   5| 561|  0.581|.      |
+|indDSISS  |fb_freq          |Adjusted   |  0.848|   5| 554|  0.516|.      |
 |indDSISS  |comm_facebook    |Unadjusted |  0.596|   4| 573|  0.666|.      |
-|indDSISS  |comm_facebook    |Adjusted   |  0.307|   4| 563|  0.874|.      |
+|indDSISS  |comm_facebook    |Adjusted   |  0.502|   4| 556|  0.734|.      |
 |indDSISS  |sm_emot_support  |Unadjusted |  0.552|   4| 573|  0.698|.      |
-|indDSISS  |sm_emot_support  |Adjusted   |  0.653|   4| 563|  0.625|.      |
+|indDSISS  |sm_emot_support  |Adjusted   |  0.555|   4| 556|  0.695|.      |
 |indDSISS  |sm_med_info      |Unadjusted |  0.562|   4| 572|  0.690|.      |
-|indDSISS  |sm_med_info      |Adjusted   |  0.630|   4| 562|  0.642|.      |
+|indDSISS  |sm_med_info      |Adjusted   |  0.314|   4| 555|  0.869|.      |
 |indDSISS  |sm_med_advice    |Unadjusted |  0.524|   4| 573|  0.718|.      |
-|indDSISS  |sm_med_advice    |Adjusted   |  0.510|   4| 563|  0.728|.      |
+|indDSISS  |sm_med_advice    |Adjusted   |  0.518|   4| 556|  0.722|.      |
 |indDSISS  |sm_med_questions |Unadjusted |  0.677|   4| 573|  0.608|.      |
-|indDSISS  |sm_med_questions |Adjusted   |  1.267|   4| 563|  0.282|.      |
+|indDSISS  |sm_med_questions |Adjusted   |  0.980|   4| 556|  0.418|.      |
 |indDSISS  |sm_share_sympt   |Unadjusted |  3.905|   4| 572|  0.004|**     |
-|indDSISS  |sm_share_sympt   |Adjusted   |  3.713|   4| 562|  0.005|**     |
+|indDSISS  |sm_share_sympt   |Adjusted   |  1.349|   4| 555|  0.251|.      |
 |indDSISS  |sm_share_health  |Unadjusted |  3.202|   4| 572|  0.013|*      |
-|indDSISS  |sm_share_health  |Adjusted   |  2.540|   4| 562|  0.039|*      |
+|indDSISS  |sm_share_health  |Adjusted   |  0.664|   4| 555|  0.617|.      |
 |indDSISS  |sm_share_suicide |Unadjusted | 10.570|   4| 571|  0.000|***    |
-|indDSISS  |sm_share_suicide |Adjusted   | 10.024|   4| 561|  0.000|***    |
+|indDSISS  |sm_share_suicide |Adjusted   |  6.173|   4| 554|  0.000|***    |
 
 
 ## Additional questions
@@ -2811,7 +3127,11 @@ Set modeling covariates.
 
 
 ```
-## [1] "age"      "gender"   "race"     "hispanic" "marital2"
+## [1] "age"                      "gender"                  
+## [3] "race"                     "hispanic"                
+## [5] "marital2"                 "countSocialMediaExclFB"  
+## [7] "comm_inperson"            "indSuicideConsideredEver"
+## [9] "countSuicideAttempts"
 ```
 
 ### Never enrolled in VA
@@ -2829,20 +3149,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.927|     0.058|    -1.290|   0.197|
 |Unadjusted |indNotPTSDTRUE                                    |     2.625|     0.288|     3.355|   0.001|
 |Unadjusted |fmssSubscore:indNotPTSDTRUE                       |     1.011|     0.073|     0.155|   0.877|
-|Adjusted   |(Intercept)                                       |     1.187|     0.540|     0.317|   0.751|
-|Adjusted   |fmssSubscore                                      |     0.933|     0.059|    -1.170|   0.242|
-|Adjusted   |age                                               |     0.986|     0.008|    -1.813|   0.070|
-|Adjusted   |genderFemale                                      |     0.743|     0.251|    -1.181|   0.238|
-|Adjusted   |genderA gender not listed here                    |     3.181|     1.426|     0.812|   0.417|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.035|     0.873|     0.039|   0.969|
-|Adjusted   |raceAsian                                         |     1.132|     0.780|     0.159|   0.874|
-|Adjusted   |raceBlack or African American                     |     0.394|     1.101|    -0.846|   0.398|
-|Adjusted   |raceMultiple races                                |     0.666|     0.349|    -1.166|   0.244|
-|Adjusted   |raceOther                                         |     1.028|     0.617|     0.044|   0.965|
-|Adjusted   |hispanicNo                                        |     0.552|     0.411|    -1.445|   0.148|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.921|     0.197|    -0.417|   0.677|
-|Adjusted   |indNotPTSDTRUE                                    |     2.674|     0.293|     3.356|   0.001|
-|Adjusted   |fmssSubscore:indNotPTSDTRUE                       |     1.007|     0.074|     0.090|   0.928|
+|Adjusted   |(Intercept)                                       |     1.267|     0.568|     0.417|   0.677|
+|Adjusted   |fmssSubscore                                      |     0.955|     0.060|    -0.774|   0.439|
+|Adjusted   |age                                               |     0.980|     0.008|    -2.439|   0.015|
+|Adjusted   |genderFemale                                      |     0.797|     0.258|    -0.879|   0.379|
+|Adjusted   |genderA gender not listed here                    |     2.138|     1.444|     0.526|   0.599|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.166|     0.908|     0.170|   0.865|
+|Adjusted   |raceAsian                                         |     1.300|     0.806|     0.325|   0.745|
+|Adjusted   |raceBlack or African American                     |     0.419|     1.130|    -0.769|   0.442|
+|Adjusted   |raceMultiple races                                |     0.732|     0.364|    -0.856|   0.392|
+|Adjusted   |raceOther                                         |     1.214|     0.635|     0.305|   0.761|
+|Adjusted   |hispanicNo                                        |     0.606|     0.420|    -1.192|   0.233|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.082|     0.209|     0.377|   0.706|
+|Adjusted   |countSocialMediaExclFB                            |     0.810|     0.108|    -1.952|   0.051|
+|Adjusted   |comm_inpersonOnce a week                          |     1.051|     0.347|     0.143|   0.887|
+|Adjusted   |comm_inpersonA few times a week                   |     0.923|     0.292|    -0.275|   0.784|
+|Adjusted   |comm_inpersonOnce a day                           |     1.692|     0.349|     1.508|   0.132|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.487|     0.258|     1.538|   0.124|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.218|     0.214|     0.922|   0.356|
+|Adjusted   |countSuicideAttempts                              |     0.512|     0.234|    -2.857|   0.004|
+|Adjusted   |indNotPTSDTRUE                                    |     2.459|     0.304|     2.958|   0.003|
+|Adjusted   |fmssSubscore:indNotPTSDTRUE                       |     0.984|     0.075|    -0.214|   0.831|
 
 \newline
 
@@ -2850,7 +3177,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       726.641|     572| -346.909| 701.819| 719.222|  693.819|         569|
-|Adjusted   |       726.641|     572| -341.584| 711.168| 772.081|  683.168|         559|
+|Adjusted   |       726.641|     572| -331.281| 704.561| 795.930|  662.561|         552|
 
 **PHQ-2**
 
@@ -2863,20 +3190,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.856|     0.074|    -2.109|   0.035|
 |Unadjusted |indNotPHQTRUE                                     |     1.353|     0.310|     0.976|   0.329|
 |Unadjusted |fmssSubscore:indNotPHQTRUE                        |     1.123|     0.083|     1.394|   0.163|
-|Adjusted   |(Intercept)                                       |     1.777|     0.555|     1.036|   0.300|
-|Adjusted   |fmssSubscore                                      |     0.864|     0.075|    -1.950|   0.051|
-|Adjusted   |age                                               |     0.984|     0.008|    -2.043|   0.041|
-|Adjusted   |genderFemale                                      |     0.732|     0.248|    -1.256|   0.209|
-|Adjusted   |genderA gender not listed here                    |     2.125|     1.449|     0.520|   0.603|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.845|     0.864|    -0.195|   0.846|
-|Adjusted   |raceAsian                                         |     1.083|     0.751|     0.106|   0.916|
-|Adjusted   |raceBlack or African American                     |     0.340|     1.105|    -0.975|   0.329|
-|Adjusted   |raceMultiple races                                |     0.632|     0.342|    -1.340|   0.180|
-|Adjusted   |raceOther                                         |     0.992|     0.597|    -0.013|   0.989|
-|Adjusted   |hispanicNo                                        |     0.563|     0.401|    -1.434|   0.152|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.859|     0.194|    -0.787|   0.431|
-|Adjusted   |indNotPHQTRUE                                     |     1.434|     0.316|     1.140|   0.254|
-|Adjusted   |fmssSubscore:indNotPHQTRUE                        |     1.115|     0.085|     1.290|   0.197|
+|Adjusted   |(Intercept)                                       |     2.049|     0.581|     1.235|   0.217|
+|Adjusted   |fmssSubscore                                      |     0.872|     0.074|    -1.860|   0.063|
+|Adjusted   |age                                               |     0.978|     0.008|    -2.730|   0.006|
+|Adjusted   |genderFemale                                      |     0.799|     0.256|    -0.877|   0.381|
+|Adjusted   |genderA gender not listed here                    |     1.533|     1.472|     0.290|   0.772|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.012|     0.895|     0.013|   0.989|
+|Adjusted   |raceAsian                                         |     1.276|     0.784|     0.311|   0.756|
+|Adjusted   |raceBlack or African American                     |     0.355|     1.149|    -0.901|   0.368|
+|Adjusted   |raceMultiple races                                |     0.728|     0.356|    -0.893|   0.372|
+|Adjusted   |raceOther                                         |     1.173|     0.618|     0.258|   0.796|
+|Adjusted   |hispanicNo                                        |     0.626|     0.408|    -1.146|   0.252|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.044|     0.206|     0.209|   0.834|
+|Adjusted   |countSocialMediaExclFB                            |     0.800|     0.106|    -2.100|   0.036|
+|Adjusted   |comm_inpersonOnce a week                          |     0.980|     0.344|    -0.060|   0.952|
+|Adjusted   |comm_inpersonA few times a week                   |     0.900|     0.288|    -0.367|   0.714|
+|Adjusted   |comm_inpersonOnce a day                           |     1.686|     0.343|     1.521|   0.128|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.534|     0.252|     1.697|   0.090|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.184|     0.214|     0.789|   0.430|
+|Adjusted   |countSuicideAttempts                              |     0.495|     0.227|    -3.090|   0.002|
+|Adjusted   |indNotPHQTRUE                                     |     1.234|     0.327|     0.644|   0.520|
+|Adjusted   |fmssSubscore:indNotPHQTRUE                        |     1.120|     0.084|     1.342|   0.180|
 
 \newline
 
@@ -2884,7 +3218,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       728.856|     573| -356.950| 721.900| 739.311|  713.900|         570|
-|Adjusted   |       728.856|     573| -350.762| 729.524| 790.460|  701.524|         560|
+|Adjusted   |       728.856|     573| -338.029| 718.058| 809.463|  676.058|         553|
 
 **AUDIT-C**
 
@@ -2897,19 +3231,26 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.894|     0.056|    -2.008|   0.045|
 |Unadjusted |indNotAuditCTRUE                                  |     0.613|     0.277|    -1.765|   0.078|
 |Unadjusted |fmssSubscore:indNotAuditCTRUE                     |     1.083|     0.071|     1.124|   0.261|
-|Adjusted   |(Intercept)                                       |     2.753|     0.519|     1.953|   0.051|
-|Adjusted   |fmssSubscore                                      |     0.909|     0.056|    -1.684|   0.092|
-|Adjusted   |age                                               |     0.987|     0.008|    -1.629|   0.103|
-|Adjusted   |genderFemale                                      |     0.779|     0.247|    -1.010|   0.312|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.856|     0.859|    -0.182|   0.856|
-|Adjusted   |raceAsian                                         |     1.189|     0.752|     0.231|   0.818|
-|Adjusted   |raceBlack or African American                     |     0.347|     1.099|    -0.962|   0.336|
-|Adjusted   |raceMultiple races                                |     0.612|     0.341|    -1.440|   0.150|
-|Adjusted   |raceOther                                         |     0.940|     0.589|    -0.105|   0.917|
-|Adjusted   |hispanicNo                                        |     0.530|     0.398|    -1.594|   0.111|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.784|     0.196|    -1.241|   0.215|
-|Adjusted   |indNotAuditCTRUE                                  |     0.662|     0.288|    -1.432|   0.152|
-|Adjusted   |fmssSubscore:indNotAuditCTRUE                     |     1.063|     0.071|     0.862|   0.389|
+|Adjusted   |(Intercept)                                       |     2.838|     0.549|     1.900|   0.057|
+|Adjusted   |fmssSubscore                                      |     0.914|     0.059|    -1.525|   0.127|
+|Adjusted   |age                                               |     0.980|     0.008|    -2.450|   0.014|
+|Adjusted   |genderFemale                                      |     0.863|     0.256|    -0.576|   0.565|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.057|     0.893|     0.062|   0.951|
+|Adjusted   |raceAsian                                         |     1.514|     0.785|     0.529|   0.597|
+|Adjusted   |raceBlack or African American                     |     0.395|     1.136|    -0.818|   0.413|
+|Adjusted   |raceMultiple races                                |     0.735|     0.355|    -0.865|   0.387|
+|Adjusted   |raceOther                                         |     1.256|     0.612|     0.372|   0.710|
+|Adjusted   |hispanicNo                                        |     0.619|     0.409|    -1.174|   0.240|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.951|     0.209|    -0.242|   0.809|
+|Adjusted   |countSocialMediaExclFB                            |     0.802|     0.106|    -2.077|   0.038|
+|Adjusted   |comm_inpersonOnce a week                          |     1.036|     0.343|     0.103|   0.918|
+|Adjusted   |comm_inpersonA few times a week                   |     1.058|     0.285|     0.198|   0.843|
+|Adjusted   |comm_inpersonOnce a day                           |     1.996|     0.343|     2.016|   0.044|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.693|     0.249|     2.110|   0.035|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.001|     0.208|     0.003|   0.998|
+|Adjusted   |countSuicideAttempts                              |     0.496|     0.226|    -3.100|   0.002|
+|Adjusted   |indNotAuditCTRUE                                  |     0.644|     0.298|    -1.480|   0.139|
+|Adjusted   |fmssSubscore:indNotAuditCTRUE                     |     1.068|     0.074|     0.890|   0.373|
 
 \newline
 
@@ -2917,7 +3258,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       724.419|     571| -358.757| 725.514| 742.910|  717.514|         568|
-|Adjusted   |       724.419|     571| -353.257| 732.515| 789.054|  706.515|         559|
+|Adjusted   |       724.419|     571| -338.018| 716.035| 803.018|  676.035|         552|
 
 **DSI-SS**
 
@@ -2930,20 +3271,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     1.068|     0.075|     0.881|   0.378|
 |Unadjusted |indNotDSISSTRUE                                   |     1.871|     0.335|     1.872|   0.061|
 |Unadjusted |fmssSubscore:indNotDSISSTRUE                      |     0.849|     0.084|    -1.948|   0.051|
-|Adjusted   |(Intercept)                                       |     1.368|     0.567|     0.553|   0.580|
-|Adjusted   |fmssSubscore                                      |     1.072|     0.076|     0.913|   0.361|
-|Adjusted   |age                                               |     0.986|     0.008|    -1.808|   0.071|
-|Adjusted   |genderFemale                                      |     0.742|     0.247|    -1.208|   0.227|
-|Adjusted   |genderA gender not listed here                    |     1.688|     1.421|     0.368|   0.713|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.903|     0.856|    -0.120|   0.905|
-|Adjusted   |raceAsian                                         |     1.107|     0.748|     0.135|   0.892|
-|Adjusted   |raceBlack or African American                     |     0.332|     1.106|    -0.998|   0.318|
-|Adjusted   |raceMultiple races                                |     0.603|     0.342|    -1.477|   0.140|
-|Adjusted   |raceOther                                         |     0.873|     0.592|    -0.229|   0.819|
-|Adjusted   |hispanicNo                                        |     0.513|     0.398|    -1.675|   0.094|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.907|     0.195|    -0.501|   0.617|
-|Adjusted   |indNotDSISSTRUE                                   |     1.929|     0.344|     1.908|   0.056|
-|Adjusted   |fmssSubscore:indNotDSISSTRUE                      |     0.850|     0.085|    -1.896|   0.058|
+|Adjusted   |(Intercept)                                       |     1.671|     0.603|     0.851|   0.395|
+|Adjusted   |fmssSubscore                                      |     1.089|     0.078|     1.086|   0.278|
+|Adjusted   |age                                               |     0.979|     0.008|    -2.545|   0.011|
+|Adjusted   |genderFemale                                      |     0.808|     0.256|    -0.834|   0.404|
+|Adjusted   |genderA gender not listed here                    |     1.266|     1.437|     0.164|   0.870|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.218|     0.892|     0.221|   0.825|
+|Adjusted   |raceAsian                                         |     1.394|     0.777|     0.427|   0.669|
+|Adjusted   |raceBlack or African American                     |     0.381|     1.151|    -0.837|   0.402|
+|Adjusted   |raceMultiple races                                |     0.693|     0.356|    -1.030|   0.303|
+|Adjusted   |raceOther                                         |     1.133|     0.612|     0.203|   0.839|
+|Adjusted   |hispanicNo                                        |     0.596|     0.409|    -1.266|   0.206|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.099|     0.208|     0.453|   0.651|
+|Adjusted   |countSocialMediaExclFB                            |     0.812|     0.105|    -1.981|   0.048|
+|Adjusted   |comm_inpersonOnce a week                          |     1.039|     0.343|     0.112|   0.910|
+|Adjusted   |comm_inpersonA few times a week                   |     1.005|     0.285|     0.016|   0.987|
+|Adjusted   |comm_inpersonOnce a day                           |     1.847|     0.341|     1.798|   0.072|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.723|     0.249|     2.181|   0.029|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.037|     0.219|     0.167|   0.867|
+|Adjusted   |countSuicideAttempts                              |     0.472|     0.227|    -3.308|   0.001|
+|Adjusted   |indNotDSISSTRUE                                   |     1.470|     0.369|     1.044|   0.297|
+|Adjusted   |fmssSubscore:indNotDSISSTRUE                      |     0.845|     0.088|    -1.913|   0.056|
 
 \newline
 
@@ -2951,7 +3299,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       728.856|     573| -360.533| 729.065| 746.476|  721.065|         570|
-|Adjusted   |       728.856|     573| -354.571| 737.142| 798.079|  709.142|         560|
+|Adjusted   |       728.856|     573| -339.481| 720.961| 812.367|  678.961|         553|
 
 
 ### Did not use VA health services in prior 12 months
@@ -2969,20 +3317,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.963|     0.047|    -0.789|   0.430|
 |Unadjusted |indNotPTSDTRUE                                    |     3.674|     0.276|     4.712|   0.000|
 |Unadjusted |fmssSubscore:indNotPTSDTRUE                       |     0.954|     0.065|    -0.712|   0.476|
-|Adjusted   |(Intercept)                                       |     3.465|     0.543|     2.289|   0.022|
-|Adjusted   |fmssSubscore                                      |     0.977|     0.048|    -0.492|   0.623|
-|Adjusted   |age                                               |     0.985|     0.008|    -2.003|   0.045|
-|Adjusted   |genderFemale                                      |     0.538|     0.233|    -2.665|   0.008|
-|Adjusted   |genderA gender not listed here                    |     1.203|     1.423|     0.130|   0.897|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.530|     0.823|     0.517|   0.605|
-|Adjusted   |raceAsian                                         |     1.466|     0.820|     0.467|   0.641|
-|Adjusted   |raceBlack or African American                     |     0.777|     0.802|    -0.315|   0.753|
-|Adjusted   |raceMultiple races                                |     0.581|     0.317|    -1.711|   0.087|
-|Adjusted   |raceOther                                         |     1.105|     0.597|     0.168|   0.867|
-|Adjusted   |hispanicNo                                        |     0.477|     0.439|    -1.684|   0.092|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.775|     0.189|    -1.350|   0.177|
-|Adjusted   |indNotPTSDTRUE                                    |     3.730|     0.285|     4.626|   0.000|
-|Adjusted   |fmssSubscore:indNotPTSDTRUE                       |     0.951|     0.067|    -0.742|   0.458|
+|Adjusted   |(Intercept)                                       |     3.188|     0.570|     2.035|   0.042|
+|Adjusted   |fmssSubscore                                      |     0.990|     0.050|    -0.198|   0.843|
+|Adjusted   |age                                               |     0.981|     0.008|    -2.493|   0.013|
+|Adjusted   |genderFemale                                      |     0.559|     0.238|    -2.447|   0.014|
+|Adjusted   |genderA gender not listed here                    |     0.770|     1.457|    -0.179|   0.858|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.679|     0.860|     0.603|   0.546|
+|Adjusted   |raceAsian                                         |     1.630|     0.828|     0.590|   0.555|
+|Adjusted   |raceBlack or African American                     |     0.854|     0.824|    -0.191|   0.849|
+|Adjusted   |raceMultiple races                                |     0.629|     0.329|    -1.408|   0.159|
+|Adjusted   |raceOther                                         |     1.211|     0.604|     0.317|   0.751|
+|Adjusted   |hispanicNo                                        |     0.534|     0.446|    -1.404|   0.160|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.853|     0.200|    -0.795|   0.426|
+|Adjusted   |countSocialMediaExclFB                            |     0.991|     0.098|    -0.095|   0.924|
+|Adjusted   |comm_inpersonOnce a week                          |     1.136|     0.318|     0.401|   0.689|
+|Adjusted   |comm_inpersonA few times a week                   |     1.140|     0.272|     0.481|   0.631|
+|Adjusted   |comm_inpersonOnce a day                           |     2.047|     0.360|     1.991|   0.046|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.342|     0.247|     1.193|   0.233|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.108|     0.208|     0.492|   0.622|
+|Adjusted   |countSuicideAttempts                              |     0.651|     0.156|    -2.763|   0.006|
+|Adjusted   |indNotPTSDTRUE                                    |     3.426|     0.294|     4.184|   0.000|
+|Adjusted   |fmssSubscore:indNotPTSDTRUE                       |     0.934|     0.069|    -0.995|   0.320|
 
 \newline
 
@@ -2990,7 +3345,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       787.069|     571| -369.382| 746.763| 764.160|  738.763|         568|
-|Adjusted   |       787.069|     571| -359.473| 746.946| 807.834|  718.946|         558|
+|Adjusted   |       787.069|     571| -352.144| 746.287| 837.619|  704.287|         551|
 
 **PHQ-2**
 
@@ -3003,20 +3358,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.896|     0.061|    -1.801|   0.072|
 |Unadjusted |indNotPHQTRUE                                     |     2.216|     0.292|     2.729|   0.006|
 |Unadjusted |fmssSubscore:indNotPHQTRUE                        |     1.071|     0.072|     0.959|   0.338|
-|Adjusted   |(Intercept)                                       |     3.947|     0.561|     2.449|   0.014|
-|Adjusted   |fmssSubscore                                      |     0.913|     0.062|    -1.455|   0.146|
-|Adjusted   |age                                               |     0.982|     0.008|    -2.406|   0.016|
-|Adjusted   |genderFemale                                      |     0.529|     0.230|    -2.775|   0.006|
-|Adjusted   |genderA gender not listed here                    |     0.811|     1.490|    -0.141|   0.888|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.126|     0.831|     0.143|   0.886|
-|Adjusted   |raceAsian                                         |     1.280|     0.765|     0.323|   0.747|
-|Adjusted   |raceBlack or African American                     |     0.663|     0.815|    -0.503|   0.615|
-|Adjusted   |raceMultiple races                                |     0.548|     0.310|    -1.941|   0.052|
-|Adjusted   |raceOther                                         |     1.097|     0.590|     0.158|   0.875|
-|Adjusted   |hispanicNo                                        |     0.523|     0.432|    -1.500|   0.134|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.729|     0.187|    -1.693|   0.091|
-|Adjusted   |indNotPHQTRUE                                     |     2.419|     0.301|     2.932|   0.003|
-|Adjusted   |fmssSubscore:indNotPHQTRUE                        |     1.061|     0.074|     0.804|   0.422|
+|Adjusted   |(Intercept)                                       |     3.914|     0.583|     2.340|   0.019|
+|Adjusted   |fmssSubscore                                      |     0.918|     0.062|    -1.365|   0.172|
+|Adjusted   |age                                               |     0.977|     0.008|    -2.960|   0.003|
+|Adjusted   |genderFemale                                      |     0.556|     0.235|    -2.496|   0.013|
+|Adjusted   |genderA gender not listed here                    |     0.533|     1.553|    -0.405|   0.686|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.304|     0.872|     0.304|   0.761|
+|Adjusted   |raceAsian                                         |     1.436|     0.788|     0.459|   0.646|
+|Adjusted   |raceBlack or African American                     |     0.738|     0.848|    -0.358|   0.720|
+|Adjusted   |raceMultiple races                                |     0.601|     0.323|    -1.577|   0.115|
+|Adjusted   |raceOther                                         |     1.209|     0.603|     0.314|   0.753|
+|Adjusted   |hispanicNo                                        |     0.599|     0.434|    -1.182|   0.237|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.822|     0.198|    -0.994|   0.320|
+|Adjusted   |countSocialMediaExclFB                            |     0.961|     0.097|    -0.409|   0.683|
+|Adjusted   |comm_inpersonOnce a week                          |     1.081|     0.316|     0.247|   0.805|
+|Adjusted   |comm_inpersonA few times a week                   |     1.048|     0.269|     0.173|   0.863|
+|Adjusted   |comm_inpersonOnce a day                           |     1.985|     0.358|     1.916|   0.055|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.359|     0.243|     1.263|   0.207|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.132|     0.208|     0.595|   0.552|
+|Adjusted   |countSuicideAttempts                              |     0.622|     0.156|    -3.051|   0.002|
+|Adjusted   |indNotPHQTRUE                                     |     2.119|     0.311|     2.413|   0.016|
+|Adjusted   |fmssSubscore:indNotPHQTRUE                        |     1.062|     0.075|     0.812|   0.417|
 
 \newline
 
@@ -3024,7 +3386,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       788.261|     572| -377.901| 763.803| 781.206|  755.803|         569|
-|Adjusted   |       788.261|     572| -366.261| 760.521| 821.434|  732.521|         559|
+|Adjusted   |       788.261|     572| -357.593| 757.186| 848.555|  715.186|         552|
 
 **AUDIT-C**
 
@@ -3037,19 +3399,26 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.918|     0.053|    -1.620|   0.105|
 |Unadjusted |indNotAuditCTRUE                                  |     0.692|     0.271|    -1.360|   0.174|
 |Unadjusted |fmssSubscore:indNotAuditCTRUE                     |     1.046|     0.066|     0.681|   0.496|
-|Adjusted   |(Intercept)                                       |     7.930|     0.530|     3.908|   0.000|
-|Adjusted   |fmssSubscore                                      |     0.941|     0.054|    -1.109|   0.268|
-|Adjusted   |age                                               |     0.987|     0.008|    -1.735|   0.083|
-|Adjusted   |genderFemale                                      |     0.572|     0.225|    -2.490|   0.013|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.200|     0.794|     0.230|   0.818|
-|Adjusted   |raceAsian                                         |     1.371|     0.761|     0.414|   0.679|
-|Adjusted   |raceBlack or African American                     |     0.650|     0.793|    -0.543|   0.587|
-|Adjusted   |raceMultiple races                                |     0.528|     0.303|    -2.105|   0.035|
-|Adjusted   |raceOther                                         |     0.928|     0.567|    -0.131|   0.896|
-|Adjusted   |hispanicNo                                        |     0.476|     0.421|    -1.762|   0.078|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.670|     0.185|    -2.167|   0.030|
-|Adjusted   |indNotAuditCTRUE                                  |     0.746|     0.285|    -1.028|   0.304|
-|Adjusted   |fmssSubscore:indNotAuditCTRUE                     |     1.027|     0.068|     0.390|   0.697|
+|Adjusted   |(Intercept)                                       |     7.283|     0.556|     3.573|   0.000|
+|Adjusted   |fmssSubscore                                      |     0.935|     0.057|    -1.197|   0.231|
+|Adjusted   |age                                               |     0.981|     0.008|    -2.502|   0.012|
+|Adjusted   |genderFemale                                      |     0.614|     0.232|    -2.102|   0.036|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.492|     0.849|     0.471|   0.638|
+|Adjusted   |raceAsian                                         |     1.680|     0.778|     0.667|   0.505|
+|Adjusted   |raceBlack or African American                     |     0.750|     0.819|    -0.352|   0.725|
+|Adjusted   |raceMultiple races                                |     0.615|     0.318|    -1.528|   0.126|
+|Adjusted   |raceOther                                         |     1.177|     0.580|     0.281|   0.779|
+|Adjusted   |hispanicNo                                        |     0.575|     0.431|    -1.286|   0.198|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.762|     0.197|    -1.381|   0.167|
+|Adjusted   |countSocialMediaExclFB                            |     0.970|     0.095|    -0.317|   0.751|
+|Adjusted   |comm_inpersonOnce a week                          |     1.145|     0.311|     0.433|   0.665|
+|Adjusted   |comm_inpersonA few times a week                   |     1.361|     0.262|     1.176|   0.240|
+|Adjusted   |comm_inpersonOnce a day                           |     2.455|     0.356|     2.524|   0.012|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.603|     0.237|     1.991|   0.047|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     0.898|     0.199|    -0.542|   0.587|
+|Adjusted   |countSuicideAttempts                              |     0.609|     0.153|    -3.235|   0.001|
+|Adjusted   |indNotAuditCTRUE                                  |     0.698|     0.294|    -1.223|   0.221|
+|Adjusted   |fmssSubscore:indNotAuditCTRUE                     |     1.045|     0.070|     0.634|   0.526|
 
 \newline
 
@@ -3057,7 +3426,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       785.467|     570| -389.900| 787.799| 805.189|  779.799|         567|
-|Adjusted   |       785.467|     570| -378.768| 783.536| 840.052|  757.536|         558|
+|Adjusted   |       785.467|     570| -364.576| 769.153| 856.101|  729.153|         551|
 
 **DSI-SS**
 
@@ -3070,20 +3439,27 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.934|     0.072|    -0.959|   0.337|
 |Unadjusted |indNotDSISSTRUE                                   |     1.801|     0.311|     1.895|   0.058|
 |Unadjusted |fmssSubscore:indNotDSISSTRUE                      |     1.006|     0.080|     0.075|   0.940|
-|Adjusted   |(Intercept)                                       |     5.107|     0.569|     2.865|   0.004|
-|Adjusted   |fmssSubscore                                      |     0.932|     0.074|    -0.960|   0.337|
-|Adjusted   |age                                               |     0.983|     0.008|    -2.311|   0.021|
-|Adjusted   |genderFemale                                      |     0.538|     0.226|    -2.742|   0.006|
-|Adjusted   |genderA gender not listed here                    |     0.762|     1.450|    -0.188|   0.851|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.125|     0.790|     0.149|   0.881|
-|Adjusted   |raceAsian                                         |     1.296|     0.760|     0.341|   0.733|
-|Adjusted   |raceBlack or African American                     |     0.681|     0.803|    -0.479|   0.632|
-|Adjusted   |raceMultiple races                                |     0.560|     0.307|    -1.888|   0.059|
-|Adjusted   |raceOther                                         |     0.920|     0.571|    -0.147|   0.883|
-|Adjusted   |hispanicNo                                        |     0.478|     0.424|    -1.745|   0.081|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.735|     0.185|    -1.663|   0.096|
-|Adjusted   |indNotDSISSTRUE                                   |     1.769|     0.324|     1.763|   0.078|
-|Adjusted   |fmssSubscore:indNotDSISSTRUE                      |     1.025|     0.083|     0.296|   0.768|
+|Adjusted   |(Intercept)                                       |     5.124|     0.602|     2.714|   0.007|
+|Adjusted   |fmssSubscore                                      |     0.935|     0.075|    -0.889|   0.374|
+|Adjusted   |age                                               |     0.978|     0.008|    -2.897|   0.004|
+|Adjusted   |genderFemale                                      |     0.578|     0.232|    -2.366|   0.018|
+|Adjusted   |genderA gender not listed here                    |     0.538|     1.498|    -0.414|   0.679|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     1.447|     0.837|     0.442|   0.659|
+|Adjusted   |raceAsian                                         |     1.514|     0.779|     0.533|   0.594|
+|Adjusted   |raceBlack or African American                     |     0.748|     0.827|    -0.352|   0.725|
+|Adjusted   |raceMultiple races                                |     0.615|     0.319|    -1.526|   0.127|
+|Adjusted   |raceOther                                         |     1.086|     0.581|     0.142|   0.887|
+|Adjusted   |hispanicNo                                        |     0.562|     0.430|    -1.342|   0.179|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.823|     0.196|    -0.993|   0.321|
+|Adjusted   |countSocialMediaExclFB                            |     0.977|     0.095|    -0.248|   0.804|
+|Adjusted   |comm_inpersonOnce a week                          |     1.115|     0.312|     0.348|   0.728|
+|Adjusted   |comm_inpersonA few times a week                   |     1.267|     0.261|     0.907|   0.364|
+|Adjusted   |comm_inpersonOnce a day                           |     2.181|     0.350|     2.225|   0.026|
+|Adjusted   |comm_inpersonSeveral times a day                  |     1.596|     0.237|     1.969|   0.049|
+|Adjusted   |indSuicideConsideredEverTRUE                      |     1.021|     0.209|     0.102|   0.919|
+|Adjusted   |countSuicideAttempts                              |     0.617|     0.154|    -3.142|   0.002|
+|Adjusted   |indNotDSISSTRUE                                   |     1.384|     0.347|     0.937|   0.349|
+|Adjusted   |fmssSubscore:indNotDSISSTRUE                      |     1.028|     0.084|     0.326|   0.744|
 
 \newline
 
@@ -3091,7 +3467,7 @@ Set modeling covariates.
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |        787.84|     572| -387.732| 783.464| 800.868|  775.464|         569|
-|Adjusted   |        787.84|     572| -376.098| 780.195| 841.107|  752.195|         559|
+|Adjusted   |        787.84|     572| -365.252| 772.505| 863.873|  730.505|         552|
 # Respond to peer review comments
 
 > On Jul 25, 2018, at 1:46 PM, Alan Teo <teoa@ohsu.edu> wrote:
