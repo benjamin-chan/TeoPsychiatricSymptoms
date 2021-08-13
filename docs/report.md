@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-12 17:21:42"
+date: "2021-08-13 12:03:47"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -157,6 +157,16 @@ Cronbach's alpha for FMSS items 1-3 = Cronbach's alpha = 0.910.
 Create FMSS subscore for items 1-3.
 
 
+```
+##   fmssSubscore   
+##  Min.   : 0.000  
+##  1st Qu.: 0.000  
+##  Median : 3.000  
+##  Mean   : 3.197  
+##  3rd Qu.: 5.000  
+##  Max.   :12.000  
+##  NA's   :4
+```
 
 
 
@@ -356,59 +366,69 @@ Of the 358 who had social contact on Facebook at least daily, 167 (47%) also had
 
 Of the 233 who had in-person social contact at least daily, 167 (72%) also had at least daily social contact on Facebook while 66 (28%) had social contact on Facebook less than daily, a significant difference (p = 0.000).
 
-
-```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   20.00   31.00   36.00   40.04   48.00   75.00
-```
+Mean (SD) age: 40.0 (12.0)
 
 
-
-|gender                   |   n|
-|:------------------------|---:|
-|Male                     | 474|
-|Female                   | 111|
-|A gender not listed here |   2|
+|gender                   |   n|      prop|
+|:------------------------|---:|---------:|
+|Male                     | 474| 0.8074957|
+|Female                   | 111| 0.1890971|
+|A gender not listed here |   2| 0.0034072|
 
 
 
-|fct_explicit_na(race)                         |   n|
-|:---------------------------------------------|---:|
-|White                                         | 492|
-|American Indian/Alaska Native/Native Hawaiian |   7|
-|Asian                                         |   8|
-|Black or African American                     |   7|
-|Multiple races                                |  52|
-|Other                                         |  17|
-|(Missing)                                     |   4|
+|fct_explicit_na(race)                         |   n|      prop|
+|:---------------------------------------------|---:|---------:|
+|White                                         | 492| 0.8381601|
+|American Indian/Alaska Native/Native Hawaiian |   7| 0.0119250|
+|Asian                                         |   8| 0.0136286|
+|Black or African American                     |   7| 0.0119250|
+|Multiple races                                |  52| 0.0885860|
+|Other                                         |  17| 0.0289608|
+|(Missing)                                     |   4| 0.0068143|
 
 
 
-|fct_explicit_na(hispanic) |   n|
-|:-------------------------|---:|
-|Yes                       |  34|
-|No                        | 550|
-|(Missing)                 |   3|
+|fct_explicit_na(hispanic) |   n|      prop|
+|:-------------------------|---:|---------:|
+|Yes                       |  34| 0.0579216|
+|No                        | 550| 0.9369676|
+|(Missing)                 |   3| 0.0051107|
 
 
 
-|fct_explicit_na(marital)   |   n|
-|:--------------------------|---:|
-|Single, never been married | 112|
-|Divorced                   |  88|
-|Separated                  |  16|
-|Married                    | 339|
-|Living as married          |  24|
-|Widowed                    |   7|
-|(Missing)                  |   1|
+|fct_explicit_na(raceNonHispWhite) |   n|      prop|
+|:---------------------------------|---:|---------:|
+|Not non-Hispanic White            | 112| 0.1908007|
+|Non-Hispanic White                | 473| 0.8057922|
+|(Missing)                         |   2| 0.0034072|
 
 
 
-|fct_explicit_na(marital2)         |   n|
-|:---------------------------------|---:|
-|Married or living as married      | 363|
-|Single/Divorced/Widowed/Separated | 223|
-|(Missing)                         |   1|
+|fct_explicit_na(educCollege) |   n|     prop|
+|:----------------------------|---:|--------:|
+|Some college or less         | 284| 0.483816|
+|At least a college degree    | 303| 0.516184|
+
+
+
+|fct_explicit_na(marital)   |   n|      prop|
+|:--------------------------|---:|---------:|
+|Single, never been married | 112| 0.1908007|
+|Divorced                   |  88| 0.1499148|
+|Separated                  |  16| 0.0272572|
+|Married                    | 339| 0.5775128|
+|Living as married          |  24| 0.0408859|
+|Widowed                    |   7| 0.0119250|
+|(Missing)                  |   1| 0.0017036|
+
+
+
+|fct_explicit_na(marital2)         |   n|      prop|
+|:---------------------------------|---:|---------:|
+|Married or living as married      | 363| 0.6183986|
+|Single/Divorced/Widowed/Separated | 223| 0.3798978|
+|(Missing)                         |   1| 0.0017036|
 # Research Question 1
 
 **Is perceived social support received from Facebook (FMSS) associated with lower rates of**
@@ -461,11 +481,6 @@ Of the 233 who had in-person social contact at least daily, 167 (72%) also had a
 ## Adjusted comparisons
 
 
-```
-##           fmss fmssZ
-## fmss  6.565197     0
-## fmssZ 0.000000     1
-```
 
 Filter subjects with missing covariates.
 
@@ -487,10 +502,10 @@ Set modeling covariates.
 
 |model      |term                                              |   oddsratio| std.error| statistic| p.value|
 |:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |       0.826|     0.085|    -2.242|   0.025|
-|Unadjusted |fmssZ                                             |       0.794|     0.087|    -2.655|   0.008|
-|Adjusted   |(Intercept)                                       |       0.557|     0.522|    -1.120|   0.263|
-|Adjusted   |fmssZ                                             |       0.818|     0.096|    -2.092|   0.036|
+|Unadjusted |(Intercept)                                       |       2.299|     0.393|     2.119|   0.034|
+|Unadjusted |fmss                                              |       0.965|     0.013|    -2.655|   0.008|
+|Adjusted   |(Intercept)                                       |       1.360|     0.675|     0.455|   0.649|
+|Adjusted   |fmss                                              |       0.970|     0.015|    -2.092|   0.036|
 |Adjusted   |age                                               |       1.005|     0.008|     0.666|   0.505|
 |Adjusted   |genderFemale                                      |       0.908|     0.239|    -0.404|   0.687|
 |Adjusted   |genderA gender not listed here                    | 1712539.376|   607.365|     0.024|   0.981|
@@ -518,15 +533,19 @@ Set modeling covariates.
 |Adjusted   |       775.487|     562| -347.336| 732.671| 815.003|  694.671|         544|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
+
+
 ### PHQ-2
 
 
 |model      |term                                              | oddsratio| std.error| statistic| p.value|
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |     0.378|     0.095|   -10.231|   0.000|
-|Unadjusted |fmssZ                                             |     0.788|     0.097|    -2.454|   0.014|
-|Adjusted   |(Intercept)                                       |     0.402|     0.617|    -1.477|   0.140|
-|Adjusted   |fmssZ                                             |     0.847|     0.107|    -1.560|   0.119|
+|Unadjusted |(Intercept)                                       |     1.087|     0.431|     0.194|   0.846|
+|Unadjusted |fmss                                              |     0.964|     0.015|    -2.454|   0.014|
+|Adjusted   |(Intercept)                                       |     0.839|     0.768|    -0.229|   0.819|
+|Adjusted   |fmss                                              |     0.975|     0.016|    -1.560|   0.119|
 |Adjusted   |age                                               |     0.986|     0.009|    -1.550|   0.121|
 |Adjusted   |genderFemale                                      |     0.800|     0.268|    -0.834|   0.404|
 |Adjusted   |genderA gender not listed here                    |     1.187|     1.505|     0.114|   0.909|
@@ -554,15 +573,18 @@ Set modeling covariates.
 |Adjusted   |       665.192|     563| -291.661| 621.323| 703.689|  583.323|         545|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
+
 ### AUDIT-C
 
 
 |model      |term                                              | oddsratio| std.error| statistic| p.value|
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |     0.708|     0.086|    -4.031|   0.000|
-|Unadjusted |fmssZ                                             |     0.958|     0.086|    -0.499|   0.618|
-|Adjusted   |(Intercept)                                       |     2.192|     0.526|     1.493|   0.135|
-|Adjusted   |fmssZ                                             |     0.926|     0.094|    -0.820|   0.412|
+|Unadjusted |(Intercept)                                       |     0.857|     0.391|    -0.394|   0.694|
+|Unadjusted |fmss                                              |     0.993|     0.013|    -0.499|   0.618|
+|Adjusted   |(Intercept)                                       |     3.084|     0.672|     1.675|   0.094|
+|Adjusted   |fmss                                              |     0.988|     0.014|    -0.820|   0.412|
 |Adjusted   |age                                               |     0.968|     0.008|    -3.946|   0.000|
 |Adjusted   |genderFemale                                      |     0.701|     0.242|    -1.469|   0.142|
 |Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.413|     1.102|     2.034|   0.042|
@@ -589,15 +611,19 @@ Set modeling covariates.
 |Adjusted   |       762.618|     561| -353.837| 743.675| 821.642|  707.675|         544|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
+
+
 ### DSI-SS
 
 
 |model      |term                                              | oddsratio| std.error| statistic| p.value|
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |     0.281|     0.103|   -12.305|   0.000|
-|Unadjusted |fmssZ                                             |     0.738|     0.106|    -2.875|   0.004|
-|Adjusted   |(Intercept)                                       |     0.366|     0.659|    -1.526|   0.127|
-|Adjusted   |fmssZ                                             |     0.772|     0.121|    -2.140|   0.032|
+|Unadjusted |(Intercept)                                       |     1.076|     0.462|     0.158|   0.874|
+|Unadjusted |fmss                                              |     0.955|     0.016|    -2.875|   0.004|
+|Adjusted   |(Intercept)                                       |     1.149|     0.835|     0.167|   0.868|
+|Adjusted   |fmss                                              |     0.961|     0.018|    -2.140|   0.032|
 |Adjusted   |age                                               |     0.976|     0.011|    -2.261|   0.024|
 |Adjusted   |genderFemale                                      |     0.683|     0.303|    -1.255|   0.209|
 |Adjusted   |genderA gender not listed here                    |     1.381|     1.511|     0.214|   0.831|
@@ -623,6 +649,10 @@ Set modeling covariates.
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       599.174|     563| -295.329| 594.658| 603.328|  590.658|         562|
 |Adjusted   |       599.174|     563| -243.010| 524.019| 606.385|  486.019|         545|
+
+
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.675.
 
 
 ## Additional questions
@@ -743,7 +773,7 @@ Set modeling covariates.
 ## X-squared = 24.543, df = 4, p-value = 6.216e-05
 ```
 
-![plot of chunk unnamed-chunk-41](../figures/unnamed-chunk-41-1.png)
+![plot of chunk unnamed-chunk-45](../figures/unnamed-chunk-45-1.png)
 
 ## FMSS items
 
