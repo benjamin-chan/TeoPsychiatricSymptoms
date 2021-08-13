@@ -553,10 +553,12 @@ n <- df1 %>% summarize(n = sum(n)) %>% as.numeric()
 Of the 233 who had in-person social contact at least daily, `r x` (`r sprintf("%.0f%%", x / n * 100)`) also had at least daily social contact on Facebook while `r n - x` (`r sprintf("%.0f%%", (1 - x / n) * 100)`) had social contact on Facebook less than daily, a significant difference (p = `r sprintf("%.3f", prop.test(x, n) %>% .[["p.value"]])`).
 
 ```{r}
-df0 %>% pull(age) %>% summary()
-df0 %>% group_by(gender) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(race)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(hispanic)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(marital)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(marital2)) %>% summarize(n = n()) %>% kable()
+sprintf("Mean (SD) age: %.01f (%.01f)", df0 %>% pull(age) %>% mean(), df0 %>% pull(age) %>% sd())
+df0 %>% group_by(gender) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(race)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(hispanic)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(raceNonHispWhite)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(educCollege)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital2)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
 ```
