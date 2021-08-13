@@ -67,10 +67,11 @@ df0 %>%
 
 ```{r}
 x <- "fmss"
-covar <- c("countSocialMediaExclFB",
-           "comm_inperson",
-           "indSuicideConsideredEver",
-           "countSuicideAttempts")
+covarDemog <- c("age", "gender", "race", "hispanic", "marital2")
+covarPsySoc <- c("countSocialMediaExclFB",
+                 "comm_inperson",
+                 "indSuicideConsideredEver",
+                 "countSuicideAttempts")
 ```
 
 Filter subjects with missing covariates.
@@ -78,12 +79,18 @@ Filter subjects with missing covariates.
 ```{r}
 df1 <-
   df0 %>% 
-  select_at(c("record_id", covar)) %>% 
+  select_at(c("record_id", covarDemog, covarPsySoc)) %>% 
   na.omit() %>% 
   select(record_id) %>% 
   merge(., df0, by = "record_id")
 ```
 
+Set modeling covariates.
+
+```{r}
+covar <- c(covarDemog, covarPsySoc)
+covar
+```
 
 ### PC-PTSD
 
@@ -326,10 +333,10 @@ x <- "fmssSubscore"
 ```
 
 
-### PHQ-2
+### PC-PTSD
 
 ```{r}
-y <- "indPHQ"
+y <- "indPTSD"
 M0 <- fitModel(df1, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
 M <- fitModel(df1, y, x, covar)
@@ -389,10 +396,10 @@ x <- "fmssQuartile"
 ```
 
 
-### PHQ-2
+### PC-PTSD
 
 ```{r}
-y <- "indPHQ"
+y <- "indPTSD"
 M0 <- fitModel(df3, y, x)
 table0 <- M0[["modelObject"]] %>% tidy(exponentiate = TRUE) %>% mutate(model = "Unadjusted") %>% select(model, everything())
 M <- fitModel(df3, y, x, covar)
