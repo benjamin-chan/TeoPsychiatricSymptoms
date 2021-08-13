@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 10:56:58"
+date: "2021-08-13 11:49:23"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -366,11 +366,7 @@ Of the 358 who had social contact on Facebook at least daily, 167 (47%) also had
 
 Of the 233 who had in-person social contact at least daily, 167 (72%) also had at least daily social contact on Facebook while 66 (28%) had social contact on Facebook less than daily, a significant difference (p = 0.000).
 
-
-```
-## [1] "Mean (SD) age: 40.0 (12.0)"
-```
-
+Mean (SD) age: 40.0 (12.0)
 
 
 |gender                   |   n|      prop|
@@ -485,11 +481,6 @@ Of the 233 who had in-person social contact at least daily, 167 (72%) also had a
 ## Adjusted comparisons
 
 
-```
-##           fmss fmssZ
-## fmss  6.565197     0
-## fmssZ 0.000000     1
-```
 
 Filter subjects with missing covariates.
 
@@ -501,10 +492,10 @@ Filter subjects with missing covariates.
 
 |model      |term                             | oddsratio| std.error| statistic| p.value|
 |:----------|:--------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                      |     0.837|     0.085|    -2.101|   0.036|
-|Unadjusted |fmssZ                            |     0.805|     0.086|    -2.535|   0.011|
-|Adjusted   |(Intercept)                      |     0.816|     0.185|    -1.098|   0.272|
-|Adjusted   |fmssZ                            |     0.827|     0.093|    -2.050|   0.040|
+|Unadjusted |(Intercept)                      |     2.190|     0.387|     2.024|   0.043|
+|Unadjusted |fmss                             |     0.967|     0.013|    -2.535|   0.011|
+|Adjusted   |(Intercept)                      |     1.895|     0.440|     1.454|   0.146|
+|Adjusted   |fmss                             |     0.971|     0.014|    -2.050|   0.040|
 |Adjusted   |countSocialMediaExclFB           |     1.074|     0.094|     0.755|   0.450|
 |Adjusted   |comm_inpersonOnce a week         |     0.792|     0.312|    -0.746|   0.456|
 |Adjusted   |comm_inpersonA few times a week  |     0.530|     0.261|    -2.428|   0.015|
@@ -522,15 +513,19 @@ Filter subjects with missing covariates.
 |Adjusted   |       783.008|     567| -352.488| 722.976| 762.055|  704.976|         559|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.748.
+
+
 ### PHQ-2
 
 
 |model      |term                             | oddsratio| std.error| statistic| p.value|
 |:----------|:--------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                      |     0.379|     0.095|   -10.232|   0.000|
-|Unadjusted |fmssZ                            |     0.770|     0.096|    -2.713|   0.007|
-|Adjusted   |(Intercept)                      |     0.354|     0.205|    -5.080|   0.000|
-|Adjusted   |fmssZ                            |     0.814|     0.102|    -2.008|   0.045|
+|Unadjusted |(Intercept)                      |     1.207|     0.427|     0.440|   0.660|
+|Unadjusted |fmss                             |     0.961|     0.015|    -2.713|   0.007|
+|Adjusted   |(Intercept)                      |     0.878|     0.475|    -0.274|   0.784|
+|Adjusted   |fmss                             |     0.969|     0.016|    -2.008|   0.045|
 |Adjusted   |countSocialMediaExclFB           |     0.958|     0.105|    -0.405|   0.686|
 |Adjusted   |comm_inpersonOnce a week         |     0.738|     0.314|    -0.967|   0.333|
 |Adjusted   |comm_inpersonA few times a week  |     0.362|     0.301|    -3.380|   0.001|
@@ -548,15 +543,18 @@ Filter subjects with missing covariates.
 |Adjusted   |       672.272|     568| -297.957| 613.914| 653.009|  595.914|         560|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.732.
+
 ### AUDIT-C
 
 
 |model      |term                             | oddsratio| std.error| statistic| p.value|
 |:----------|:--------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                      |     0.703|     0.085|    -4.137|   0.000|
-|Unadjusted |fmssZ                            |     0.967|     0.085|    -0.400|   0.689|
-|Adjusted   |(Intercept)                      |     0.691|     0.182|    -2.037|   0.042|
-|Adjusted   |fmssZ                            |     0.981|     0.087|    -0.217|   0.828|
+|Unadjusted |(Intercept)                      |     0.817|     0.387|    -0.522|   0.601|
+|Unadjusted |fmss                             |     0.995|     0.013|    -0.400|   0.689|
+|Adjusted   |(Intercept)                      |     0.751|     0.416|    -0.687|   0.492|
+|Adjusted   |fmss                             |     0.997|     0.013|    -0.217|   0.828|
 |Adjusted   |countSocialMediaExclFB           |     1.071|     0.089|     0.772|   0.440|
 |Adjusted   |comm_inpersonOnce a week         |     1.323|     0.292|     0.956|   0.339|
 |Adjusted   |comm_inpersonA few times a week  |     0.931|     0.248|    -0.288|   0.773|
@@ -574,15 +572,19 @@ Filter subjects with missing covariates.
 |Adjusted   |       768.654|     566| -379.540| 777.081| 816.144|  759.081|         558|
 
 
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.972.
+
+
 ### DSI-SS
 
 
 |model      |term                             | oddsratio| std.error| statistic| p.value|
 |:----------|:--------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                      |     0.280|     0.103|   -12.364|   0.000|
-|Unadjusted |fmssZ                            |     0.732|     0.105|    -2.981|   0.003|
-|Adjusted   |(Intercept)                      |     0.124|     0.256|    -8.161|   0.000|
-|Adjusted   |fmssZ                            |     0.751|     0.114|    -2.514|   0.012|
+|Unadjusted |(Intercept)                      |     1.114|     0.457|     0.236|   0.814|
+|Unadjusted |fmss                             |     0.954|     0.016|    -2.981|   0.003|
+|Adjusted   |(Intercept)                      |     0.438|     0.529|    -1.558|   0.119|
+|Adjusted   |fmss                             |     0.957|     0.017|    -2.514|   0.012|
 |Adjusted   |countSocialMediaExclFB           |     1.047|     0.110|     0.414|   0.679|
 |Adjusted   |comm_inpersonOnce a week         |     0.850|     0.342|    -0.476|   0.634|
 |Adjusted   |comm_inpersonA few times a week  |     0.668|     0.319|    -1.266|   0.205|
@@ -598,6 +600,10 @@ Filter subjects with missing covariates.
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       604.194|     568| -297.503| 599.006| 607.694|  595.006|         567|
 |Adjusted   |       604.194|     568| -254.388| 526.776| 565.871|  508.776|         560|
+
+
+
+For a 10-point increase in FMSS, the adjusted odds ratio is 0.647.
 
 
 ## Additional questions
@@ -718,7 +724,7 @@ Filter subjects with missing covariates.
 ## X-squared = 24.543, df = 4, p-value = 6.216e-05
 ```
 
-![plot of chunk unnamed-chunk-40](../figures/unnamed-chunk-40-1.png)
+![plot of chunk unnamed-chunk-44](../figures/unnamed-chunk-44-1.png)
 
 ## FMSS items
 
