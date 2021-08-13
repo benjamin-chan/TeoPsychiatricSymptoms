@@ -209,6 +209,7 @@ Create FMSS subscore for items 1-3.
 df0 <- 
   df0 %>% 
   mutate(fmssSubscore = fmss_r1 + fmss_r2 + fmss_r3)
+df0 %>% select(fmssSubscore) %>% summary()
 ```
 
 ```{r, warning = FALSE}
@@ -457,6 +458,14 @@ df0 <-
   mutate(hispanic = factor(hispanic,
                            levels = c(1, 0),
                            labels = c("Yes", "No"))) %>%
+  mutate(raceNonHispWhite = case_when(race == "White" & hispanic == "No" ~ "Non-Hispanic White",
+                                      race != "White" | hispanic != "No" ~ "Not non-Hispanic White") %>%
+                            factor(levels = c("Not non-Hispanic White",
+                                              "Non-Hispanic White"))) %>%
+  mutate(educCollege = case_when(education %in% c(0, 1, 2, 3, 4) ~ "Some college or less",
+                                 education %in% c(5, 6) ~ "At least a college degree") %>%
+                       factor(levels = c("Some college or less",
+                                         "At least a college degree"))) %>%
   mutate(marital = factor(marital,
                           levels = c(0, 3, 5, 1, 2, 4),
                           labels = c("Single, never been married",
@@ -544,11 +553,14 @@ n <- df1 %>% summarize(n = sum(n)) %>% as.numeric()
 
 Of the 233 who had in-person social contact at least daily, `r x` (`r sprintf("%.0f%%", x / n * 100)`) also had at least daily social contact on Facebook while `r n - x` (`r sprintf("%.0f%%", (1 - x / n) * 100)`) had social contact on Facebook less than daily, a significant difference (p = `r sprintf("%.3f", prop.test(x, n) %>% .[["p.value"]])`).
 
+Mean (SD) age: `r sprintf("%.01f", mean(df0$age))` (`r sprintf("%.01f", sd(df0$age))`)
+
 ```{r}
-df0 %>% pull(age) %>% summary()
-df0 %>% group_by(gender) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(race)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(hispanic)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(marital)) %>% summarize(n = n()) %>% kable()
-df0 %>% group_by(fct_explicit_na(marital2)) %>% summarize(n = n()) %>% kable()
+df0 %>% group_by(gender) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(race)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(hispanic)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(raceNonHispWhite)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(educCollege)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
+df0 %>% group_by(fct_explicit_na(marital2)) %>% summarize(n = n()) %>% mutate(prop = n / sum(n)) %>% kable()
 ```

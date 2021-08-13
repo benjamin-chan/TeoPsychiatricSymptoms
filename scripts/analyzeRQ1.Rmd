@@ -66,8 +66,7 @@ df0 %>%
 ## Adjusted comparisons
 
 ```{r}
-x <- "fmssZ"
-df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt() * diag(2)
+x <- "fmss"
 covarDemog <- c("age", "gender", "race", "hispanic", "marital2")
 covarPsySoc <- c("countSocialMediaExclFB",
                  "comm_inperson",
@@ -112,6 +111,13 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
+```{r}
+beta <- M[["modelObject"]][["coefficients"]][[x]]
+delta <- 10
+```
+
+For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+
 
 ### PHQ-2
 
@@ -132,6 +138,12 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
+```{r}
+beta <- M[["modelObject"]][["coefficients"]][[x]]
+delta <- 10
+```
+
+For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 ### AUDIT-C
 
@@ -152,6 +164,13 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
+```{r}
+beta <- M[["modelObject"]][["coefficients"]][[x]]
+delta <- 10
+```
+
+For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+
 
 ### DSI-SS
 
@@ -171,6 +190,13 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
           M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
+
+```{r}
+beta <- M[["modelObject"]][["coefficients"]][[x]]
+delta <- 10
+```
+
+For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 
 ## Additional questions
