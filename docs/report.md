@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-12 15:10:53"
+date: "2021-08-12 16:59:48"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -262,6 +262,12 @@ Mutate variables to factors.
   * `suicide_considered_ever`
   * `suicide_considered_12mo`
   * `suicide_attempts` 
+* Demographics
+  * `age`
+  * `gender`
+  * `race`
+  * `hispanic`
+  * `marital`
 
 
 
@@ -350,6 +356,59 @@ Of the 358 who had social contact on Facebook at least daily, 167 (47%) also had
 
 Of the 233 who had in-person social contact at least daily, 167 (72%) also had at least daily social contact on Facebook while 66 (28%) had social contact on Facebook less than daily, a significant difference (p = 0.000).
 
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   20.00   31.00   36.00   40.04   48.00   75.00
+```
+
+
+
+|gender                   |   n|
+|:------------------------|---:|
+|Male                     | 474|
+|Female                   | 111|
+|A gender not listed here |   2|
+
+
+
+|fct_explicit_na(race)                         |   n|
+|:---------------------------------------------|---:|
+|White                                         | 492|
+|American Indian/Alaska Native/Native Hawaiian |   7|
+|Asian                                         |   8|
+|Black or African American                     |   7|
+|Multiple races                                |  52|
+|Other                                         |  17|
+|(Missing)                                     |   4|
+
+
+
+|fct_explicit_na(hispanic) |   n|
+|:-------------------------|---:|
+|Yes                       |  34|
+|No                        | 550|
+|(Missing)                 |   3|
+
+
+
+|fct_explicit_na(marital)   |   n|
+|:--------------------------|---:|
+|Single, never been married | 112|
+|Divorced                   |  88|
+|Separated                  |  16|
+|Married                    | 339|
+|Living as married          |  24|
+|Widowed                    |   7|
+|(Missing)                  |   1|
+
+
+
+|fct_explicit_na(marital2)         |   n|
+|:---------------------------------|---:|
+|Married or living as married      | 363|
+|Single/Divorced/Widowed/Separated | 223|
+|(Missing)                         |   1|
 # Research Question 1
 
 **Is perceived social support received from Facebook (FMSS) associated with lower rates of**
@@ -635,7 +694,7 @@ Filter subjects with missing covariates.
 ## X-squared = 24.543, df = 4, p-value = 6.216e-05
 ```
 
-![plot of chunk unnamed-chunk-39](../figures/unnamed-chunk-39-1.png)
+![plot of chunk unnamed-chunk-40](../figures/unnamed-chunk-40-1.png)
 
 ## FMSS items
 
@@ -2912,13 +2971,13 @@ Filter subjects with missing covariates.
 
 
 
-|gender |fb_freq                       |  n  |  N  | freq  |
-|:------|:-----------------------------|:---:|:---:|:-----:|
-|1      |Less_than_several_times_a_day | 108 | 472 | 0.229 |
-|1      |Several_times_a_day           | 364 | 472 | 0.771 |
-|2      |Less_than_several_times_a_day | 25  | 111 | 0.225 |
-|2      |Several_times_a_day           | 86  | 111 | 0.775 |
-|99     |Several_times_a_day           |  2  |  2  | 1.000 |
+|gender                   |fb_freq                       |  n  |  N  | freq  |
+|:------------------------|:-----------------------------|:---:|:---:|:-----:|
+|Male                     |Less_than_several_times_a_day | 108 | 472 | 0.229 |
+|Male                     |Several_times_a_day           | 364 | 472 | 0.771 |
+|Female                   |Less_than_several_times_a_day | 25  | 111 | 0.225 |
+|Female                   |Several_times_a_day           | 86  | 111 | 0.775 |
+|A gender not listed here |Several_times_a_day           |  2  |  2  | 1.000 |
 
 ```
 ## Warning in chisq.test(dfTemp$gender, dfTemp$fb_freq): Chi-squared
@@ -2935,18 +2994,18 @@ Filter subjects with missing covariates.
 
 
 
-|marital                          |fb_freq                       |  n  |  N  | freq  |
-|:--------------------------------|:-----------------------------|:---:|:---:|:-----:|
-|Single/Divorce/Widowed/Separated |Less_than_several_times_a_day | 53  | 222 | 0.239 |
-|Single/Divorce/Widowed/Separated |Several_times_a_day           | 169 | 222 | 0.761 |
-|Married or living as married     |Less_than_several_times_a_day | 79  | 362 | 0.218 |
-|Married or living as married     |Several_times_a_day           | 283 | 362 | 0.782 |
+|marital2                          |fb_freq                       |  n  |  N  | freq  |
+|:---------------------------------|:-----------------------------|:---:|:---:|:-----:|
+|Married or living as married      |Less_than_several_times_a_day | 79  | 362 | 0.218 |
+|Married or living as married      |Several_times_a_day           | 283 | 362 | 0.782 |
+|Single/Divorced/Widowed/Separated |Less_than_several_times_a_day | 53  | 222 | 0.239 |
+|Single/Divorced/Widowed/Separated |Several_times_a_day           | 169 | 222 | 0.761 |
 
 ```
 ## 
 ## 	Pearson's Chi-squared test with Yates' continuity correction
 ## 
-## data:  dfTemp$marital and dfTemp$fb_freq
+## data:  dfTemp$marital2 and dfTemp$fb_freq
 ## X-squared = 0.22395, df = 1, p-value = 0.636
 ```
 
