@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 10:47:13"
+date: "2021-08-13 10:56:58"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -83,7 +83,14 @@ Recoding logic
 
 
 ```
-## Error in .f(.x[[i]], ...): object 'fmssSubscore' not found
+##       fmss           fmssZ         
+##  Min.   :14.00   Min.   :-2.29729  
+##  1st Qu.:25.00   1st Qu.:-0.62179  
+##  Median :29.00   Median :-0.01252  
+##  Mean   :29.08   Mean   : 0.00000  
+##  3rd Qu.:34.00   3rd Qu.: 0.74908  
+##  Max.   :48.00   Max.   : 2.88153  
+##  NA's   :15      NA's   :15
 ```
 
 ```
@@ -150,6 +157,16 @@ Cronbach's alpha for FMSS items 1-3 = Cronbach's alpha = 0.910.
 Create FMSS subscore for items 1-3.
 
 
+```
+##   fmssSubscore   
+##  Min.   : 0.000  
+##  1st Qu.: 0.000  
+##  Median : 3.000  
+##  Mean   : 3.197  
+##  3rd Qu.: 5.000  
+##  Max.   :12.000  
+##  NA's   :4
+```
 
 
 
