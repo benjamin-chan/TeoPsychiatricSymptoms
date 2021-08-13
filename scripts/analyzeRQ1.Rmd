@@ -68,10 +68,11 @@ df0 %>%
 ```{r}
 x <- "fmssZ"
 df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt() * diag(2)
-covar <- c("countSocialMediaExclFB",
-           "comm_inperson",
-           "indSuicideConsideredEver",
-           "countSuicideAttempts")
+covarDemog <- c("age", "gender", "race", "hispanic", "marital2")
+covarPsySoc <- c("countSocialMediaExclFB",
+                 "comm_inperson",
+                 "indSuicideConsideredEver",
+                 "countSuicideAttempts")
 ```
 
 Filter subjects with missing covariates.
@@ -79,12 +80,18 @@ Filter subjects with missing covariates.
 ```{r}
 df1 <-
   df0 %>% 
-  select_at(c("record_id", covar)) %>% 
+  select_at(c("record_id", covarDemog, covarPsySoc)) %>% 
   na.omit() %>% 
   select(record_id) %>% 
   merge(., df0, by = "record_id")
 ```
 
+Set modeling covariates.
+
+```{r}
+covar <- covarDemog
+covar
+```
 
 ### PC-PTSD
 
