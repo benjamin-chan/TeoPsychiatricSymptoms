@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 14:20:06"
+date: "2021-08-13 15:06:40"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -964,40 +964,40 @@ Closely exam FMSS items 1, 2, 3, and 11
 
 
 
-### PHQ-2
+### PC-PTSD
 
 
-|model      |term                                              | oddsratio| std.error| statistic| p.value|
-|:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |     0.391|     0.145|    -6.497|   0.000|
-|Unadjusted |fmssSubscore                                      |     0.996|     0.035|    -0.102|   0.919|
-|Adjusted   |(Intercept)                                       |     0.619|     0.437|    -1.099|   0.272|
-|Adjusted   |fmssSubscore                                      |     0.991|     0.039|    -0.234|   0.815|
-|Adjusted   |age                                               |     0.988|     0.009|    -1.316|   0.188|
-|Adjusted   |genderFemale                                      |     0.744|     0.267|    -1.106|   0.269|
-|Adjusted   |genderA gender not listed here                    |     1.162|     1.487|     0.101|   0.919|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.290|     1.131|    -1.094|   0.274|
-|Adjusted   |raceAsian                                         |     0.653|     0.865|    -0.492|   0.623|
-|Adjusted   |raceBlack or African American                     |     1.188|     0.932|     0.185|   0.853|
-|Adjusted   |raceMultiple races                                |     0.996|     0.347|    -0.010|   0.992|
-|Adjusted   |raceOther                                         |     2.007|     0.594|     1.173|   0.241|
-|Adjusted   |hispanicYes                                       |     0.659|     0.498|    -0.837|   0.402|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.069|     0.218|     0.304|   0.761|
-|Adjusted   |countSocialMediaExclFB                            |     0.913|     0.108|    -0.847|   0.397|
-|Adjusted   |comm_inpersonOnce a week                          |     0.791|     0.320|    -0.733|   0.464|
-|Adjusted   |comm_inpersonA few times a week                   |     0.339|     0.308|    -3.514|   0.000|
-|Adjusted   |comm_inpersonOnce a day                           |     0.431|     0.408|    -2.064|   0.039|
-|Adjusted   |comm_inpersonSeveral times a day                  |     0.411|     0.270|    -3.295|   0.001|
-|Adjusted   |indSuicideConsideredEverTRUE                      |     3.367|     0.224|     5.427|   0.000|
-|Adjusted   |countSuicideAttempts                              |     1.210|     0.130|     1.471|   0.141|
+|model      |term                                              |   oddsratio| std.error| statistic| p.value|
+|:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                       |       0.841|     0.130|    -1.330|   0.183|
+|Unadjusted |fmssSubscore                                      |       0.996|     0.031|    -0.120|   0.905|
+|Adjusted   |(Intercept)                                       |       0.673|     0.388|    -1.021|   0.307|
+|Adjusted   |fmssSubscore                                      |       0.976|     0.035|    -0.698|   0.485|
+|Adjusted   |age                                               |       1.006|     0.008|     0.714|   0.475|
+|Adjusted   |genderFemale                                      |       0.855|     0.237|    -0.660|   0.509|
+|Adjusted   |genderA gender not listed here                    | 1703155.678|   613.544|     0.023|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.159|     0.822|     0.180|   0.857|
+|Adjusted   |raceAsian                                         |       0.890|     0.754|    -0.154|   0.877|
+|Adjusted   |raceBlack or African American                     |       1.723|     0.822|     0.662|   0.508|
+|Adjusted   |raceMultiple races                                |       1.288|     0.323|     0.785|   0.433|
+|Adjusted   |raceOther                                         |       1.436|     0.589|     0.614|   0.539|
+|Adjusted   |hispanicYes                                       |       0.844|     0.413|    -0.410|   0.682|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.106|     0.197|     0.511|   0.610|
+|Adjusted   |countSocialMediaExclFB                            |       1.057|     0.095|     0.585|   0.559|
+|Adjusted   |comm_inpersonOnce a week                          |       0.821|     0.315|    -0.626|   0.532|
+|Adjusted   |comm_inpersonA few times a week                   |       0.531|     0.265|    -2.386|   0.017|
+|Adjusted   |comm_inpersonOnce a day                           |       0.551|     0.338|    -1.766|   0.077|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.408|     0.243|    -3.695|   0.000|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.072|     0.198|     3.674|   0.000|
+|Adjusted   |countSuicideAttempts                              |       1.704|     0.166|     3.212|   0.001|
 
 \newline
 
 
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|
-|Adjusted   |       679.346|     573| -297.961| 633.923| 716.623|  595.923|         555|
+|Unadjusted |       789.437|     572| -394.712| 793.423| 802.125|  789.423|         571|
+|Adjusted   |       789.437|     572| -355.970| 749.939| 832.606|  711.939|         554|
 
 
 ### DSI-SS
@@ -1088,39 +1088,39 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 
 
 
-### PHQ-2
+### PC-PTSD
 
 
-|model      |term                                              | oddsratio| std.error| statistic| p.value|
-|:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
-|Unadjusted |(Intercept)                                       |     0.568|     0.158|    -3.591|   0.000|
-|Unadjusted |fmssQuartileQ4: (34,48]                           |     0.562|     0.262|    -2.194|   0.028|
-|Adjusted   |(Intercept)                                       |     0.935|     0.594|    -0.114|   0.910|
-|Adjusted   |fmssQuartileQ4: (34,48]                           |     0.650|     0.301|    -1.430|   0.153|
-|Adjusted   |age                                               |     0.980|     0.012|    -1.660|   0.097|
-|Adjusted   |genderFemale                                      |     0.541|     0.391|    -1.569|   0.117|
-|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     0.795|     1.298|    -0.177|   0.860|
-|Adjusted   |raceAsian                                         |     0.337|     1.216|    -0.896|   0.370|
-|Adjusted   |raceBlack or African American                     |     0.000|   989.665|    -0.014|   0.989|
-|Adjusted   |raceMultiple races                                |     1.157|     0.446|     0.327|   0.744|
-|Adjusted   |raceOther                                         |     3.652|     0.896|     1.446|   0.148|
-|Adjusted   |hispanicYes                                       |     0.580|     0.649|    -0.840|   0.401|
-|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.213|     0.312|     0.619|   0.536|
-|Adjusted   |countSocialMediaExclFB                            |     0.945|     0.147|    -0.386|   0.699|
-|Adjusted   |comm_inpersonOnce a week                          |     1.260|     0.451|     0.513|   0.608|
-|Adjusted   |comm_inpersonA few times a week                   |     0.287|     0.446|    -2.799|   0.005|
-|Adjusted   |comm_inpersonOnce a day                           |     0.660|     0.563|    -0.737|   0.461|
-|Adjusted   |comm_inpersonSeveral times a day                  |     0.671|     0.363|    -1.097|   0.273|
-|Adjusted   |indSuicideConsideredEverTRUE                      |     3.342|     0.311|     3.880|   0.000|
-|Adjusted   |countSuicideAttempts                              |     1.103|     0.167|     0.587|   0.557|
+|model      |term                                              |   oddsratio| std.error| statistic| p.value|
+|:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                       |       1.320|     0.153|     1.814|   0.070|
+|Unadjusted |fmssQuartileQ4: (34,48]                           |       0.584|     0.237|    -2.265|   0.024|
+|Adjusted   |(Intercept)                                       |       0.573|     0.539|    -1.032|   0.302|
+|Adjusted   |fmssQuartileQ4: (34,48]                           |       0.615|     0.271|    -1.799|   0.072|
+|Adjusted   |age                                               |       1.014|     0.011|     1.306|   0.192|
+|Adjusted   |genderFemale                                      |       0.765|     0.344|    -0.778|   0.437|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.031|     1.291|     0.024|   0.981|
+|Adjusted   |raceAsian                                         |       0.776|     0.898|    -0.283|   0.777|
+|Adjusted   |raceBlack or African American                     | 3893059.682|   623.358|     0.024|   0.981|
+|Adjusted   |raceMultiple races                                |       1.398|     0.440|     0.762|   0.446|
+|Adjusted   |raceOther                                         |       5.370|     1.181|     1.424|   0.155|
+|Adjusted   |hispanicYes                                       |       0.757|     0.571|    -0.488|   0.625|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.263|     0.288|     0.810|   0.418|
+|Adjusted   |countSocialMediaExclFB                            |       1.169|     0.136|     1.147|   0.251|
+|Adjusted   |comm_inpersonOnce a week                          |       0.750|     0.450|    -0.638|   0.523|
+|Adjusted   |comm_inpersonA few times a week                   |       0.509|     0.377|    -1.790|   0.073|
+|Adjusted   |comm_inpersonOnce a day                           |       0.560|     0.489|    -1.186|   0.235|
+|Adjusted   |comm_inpersonSeveral times a day                  |       0.429|     0.339|    -2.498|   0.012|
+|Adjusted   |indSuicideConsideredEverTRUE                      |       2.088|     0.282|     2.616|   0.009|
+|Adjusted   |countSuicideAttempts                              |       1.551|     0.203|     2.165|   0.030|
 
 \newline
 
 
 |model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       369.970|     297| -182.510| 369.019| 376.413|  365.019|         296|
-|Adjusted   |       360.718|     291| -154.569| 345.139| 411.321|  309.139|         274|
+|Unadjusted |       412.901|     297| -203.862| 411.725| 419.119|  407.725|         296|
+|Adjusted   |       404.784|     291| -177.773| 391.545| 457.727|  355.545|         274|
 
 
 ### DSI-SS
