@@ -164,7 +164,7 @@ df0 <-
                 fmss_r14) %>% 
   mutate(fmssPerceivedSS = fmss_r1 + fmss_r2 + fmss_r3) %>% 
   mutate(fmssZ = scale(.$fmss) %>% as.numeric()) 
-df0 %>% select(fmss, fmssZ, fmssSubscore) %>% summary()
+df0 %>% select(fmss, fmssZ) %>% summary()
 df0 %>% select(fmss, fmssZ) %>% cor(use = "pairwise.complete.obs")
 df0 %>% select(fmss, fmssZ) %>% cov(use = "pairwise.complete.obs") %>% sqrt()
 breaks <- df0 %>% select(fmss) %>% quantile(., probs = seq(0, 1, 0.25), na.rm = TRUE)
@@ -209,6 +209,7 @@ Create FMSS subscore for items 1-3.
 df0 <- 
   df0 %>% 
   mutate(fmssSubscore = fmss_r1 + fmss_r2 + fmss_r3)
+df0 %>% select(fmssSubscore) %>% summary()
 ```
 
 ```{r, warning = FALSE}
