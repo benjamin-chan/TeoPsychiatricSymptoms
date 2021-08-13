@@ -89,7 +89,7 @@ df1 <-
 Set modeling covariates.
 
 ```{r}
-covar <- covarDemog
+covar <- c(covarDemog, covarPsySoc)
 covar
 ```
 
