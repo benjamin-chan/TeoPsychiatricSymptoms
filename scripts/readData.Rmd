@@ -457,6 +457,14 @@ df0 <-
   mutate(hispanic = factor(hispanic,
                            levels = c(1, 0),
                            labels = c("Yes", "No"))) %>%
+  mutate(raceNonHispWhite = case_when(race == "White" & hispanic == "No" ~ "Non-Hispanic White",
+                                      race != "White" | hispanic != "No" ~ "Not non-Hispanic White") %>%
+                            factor(levels = c("Not non-Hispanic White",
+                                              "Non-Hispanic White"))) %>%
+  mutate(educCollege = case_when(education %in% c(0, 1, 2, 3, 4) ~ "Some college or less",
+                                 education %in% c(5, 6) ~ "At least a college degree") %>%
+                       factor(levels = c("Some college or less",
+                                         "At least a college degree"))) %>%
   mutate(marital = factor(marital,
                           levels = c(0, 3, 5, 1, 2, 4),
                           labels = c("Single, never been married",
