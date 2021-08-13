@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 12:03:47"
+date: "2021-08-13 14:20:06"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -391,16 +391,16 @@ Mean (SD) age: 40.0 (12.0)
 
 |fct_explicit_na(hispanic) |   n|      prop|
 |:-------------------------|---:|---------:|
-|Yes                       |  34| 0.0579216|
 |No                        | 550| 0.9369676|
+|Yes                       |  34| 0.0579216|
 |(Missing)                 |   3| 0.0051107|
 
 
 
 |fct_explicit_na(raceNonHispWhite) |   n|      prop|
 |:---------------------------------|---:|---------:|
-|Not non-Hispanic White            | 112| 0.1908007|
 |Non-Hispanic White                | 473| 0.8057922|
+|Not non-Hispanic White            | 112| 0.1908007|
 |(Missing)                         |   2| 0.0034072|
 
 
@@ -504,7 +504,7 @@ Set modeling covariates.
 |:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |       2.299|     0.393|     2.119|   0.034|
 |Unadjusted |fmss                                              |       0.965|     0.013|    -2.655|   0.008|
-|Adjusted   |(Intercept)                                       |       1.360|     0.675|     0.455|   0.649|
+|Adjusted   |(Intercept)                                       |       1.520|     0.564|     0.742|   0.458|
 |Adjusted   |fmss                                              |       0.970|     0.015|    -2.092|   0.036|
 |Adjusted   |age                                               |       1.005|     0.008|     0.666|   0.505|
 |Adjusted   |genderFemale                                      |       0.908|     0.239|    -0.404|   0.687|
@@ -514,7 +514,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |       1.573|     0.820|     0.552|   0.581|
 |Adjusted   |raceMultiple races                                |       1.224|     0.325|     0.623|   0.533|
 |Adjusted   |raceOther                                         |       1.128|     0.613|     0.197|   0.844|
-|Adjusted   |hispanicNo                                        |       1.118|     0.418|     0.268|   0.789|
+|Adjusted   |hispanicYes                                       |       0.894|     0.418|    -0.268|   0.789|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.120|     0.200|     0.568|   0.570|
 |Adjusted   |countSocialMediaExclFB                            |       1.066|     0.096|     0.664|   0.507|
 |Adjusted   |comm_inpersonOnce a week                          |       0.802|     0.321|    -0.688|   0.491|
@@ -544,7 +544,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     1.087|     0.431|     0.194|   0.846|
 |Unadjusted |fmss                                              |     0.964|     0.015|    -2.454|   0.014|
-|Adjusted   |(Intercept)                                       |     0.839|     0.768|    -0.229|   0.819|
+|Adjusted   |(Intercept)                                       |     1.299|     0.624|     0.420|   0.675|
 |Adjusted   |fmss                                              |     0.975|     0.016|    -1.560|   0.119|
 |Adjusted   |age                                               |     0.986|     0.009|    -1.550|   0.121|
 |Adjusted   |genderFemale                                      |     0.800|     0.268|    -0.834|   0.404|
@@ -554,7 +554,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
 |Adjusted   |raceBlack or African American                     |     1.147|     0.926|     0.148|   0.882|
 |Adjusted   |raceMultiple races                                |     0.968|     0.348|    -0.095|   0.924|
 |Adjusted   |raceOther                                         |     2.139|     0.617|     1.232|   0.218|
-|Adjusted   |hispanicNo                                        |     1.549|     0.503|     0.870|   0.384|
+|Adjusted   |hispanicYes                                       |     0.646|     0.503|    -0.870|   0.384|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.124|     0.221|     0.528|   0.597|
 |Adjusted   |countSocialMediaExclFB                            |     0.943|     0.108|    -0.537|   0.591|
 |Adjusted   |comm_inpersonOnce a week                          |     0.725|     0.326|    -0.984|   0.325|
@@ -583,7 +583,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.857|     0.391|    -0.394|   0.694|
 |Unadjusted |fmss                                              |     0.993|     0.013|    -0.499|   0.618|
-|Adjusted   |(Intercept)                                       |     3.084|     0.672|     1.675|   0.094|
+|Adjusted   |(Intercept)                                       |     3.021|     0.565|     1.956|   0.050|
 |Adjusted   |fmss                                              |     0.988|     0.014|    -0.820|   0.412|
 |Adjusted   |age                                               |     0.968|     0.008|    -3.946|   0.000|
 |Adjusted   |genderFemale                                      |     0.701|     0.242|    -1.469|   0.142|
@@ -592,7 +592,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
 |Adjusted   |raceBlack or African American                     |     1.225|     0.808|     0.251|   0.802|
 |Adjusted   |raceMultiple races                                |     0.956|     0.315|    -0.142|   0.887|
 |Adjusted   |raceOther                                         |     0.186|     0.815|    -2.067|   0.039|
-|Adjusted   |hispanicNo                                        |     0.980|     0.412|    -0.050|   0.960|
+|Adjusted   |hispanicYes                                       |     1.021|     0.412|     0.050|   0.960|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.712|     0.197|     2.732|   0.006|
 |Adjusted   |countSocialMediaExclFB                            |     1.112|     0.095|     1.117|   0.264|
 |Adjusted   |comm_inpersonOnce a week                          |     1.190|     0.313|     0.557|   0.577|
@@ -622,7 +622,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     1.076|     0.462|     0.158|   0.874|
 |Unadjusted |fmss                                              |     0.955|     0.016|    -2.875|   0.004|
-|Adjusted   |(Intercept)                                       |     1.149|     0.835|     0.167|   0.868|
+|Adjusted   |(Intercept)                                       |     0.875|     0.708|    -0.189|   0.850|
 |Adjusted   |fmss                                              |     0.961|     0.018|    -2.140|   0.032|
 |Adjusted   |age                                               |     0.976|     0.011|    -2.261|   0.024|
 |Adjusted   |genderFemale                                      |     0.683|     0.303|    -1.255|   0.209|
@@ -632,7 +632,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
 |Adjusted   |raceBlack or African American                     |     1.262|     0.975|     0.239|   0.811|
 |Adjusted   |raceMultiple races                                |     1.267|     0.360|     0.656|   0.512|
 |Adjusted   |raceOther                                         |     0.870|     0.697|    -0.200|   0.842|
-|Adjusted   |hispanicNo                                        |     0.761|     0.505|    -0.540|   0.589|
+|Adjusted   |hispanicYes                                       |     1.314|     0.505|     0.540|   0.589|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.353|     0.243|     1.243|   0.214|
 |Adjusted   |countSocialMediaExclFB                            |     1.010|     0.116|     0.082|   0.935|
 |Adjusted   |comm_inpersonOnce a week                          |     0.766|     0.362|    -0.737|   0.461|
@@ -971,7 +971,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.391|     0.145|    -6.497|   0.000|
 |Unadjusted |fmssSubscore                                      |     0.996|     0.035|    -0.102|   0.919|
-|Adjusted   |(Intercept)                                       |     0.408|     0.618|    -1.451|   0.147|
+|Adjusted   |(Intercept)                                       |     0.619|     0.437|    -1.099|   0.272|
 |Adjusted   |fmssSubscore                                      |     0.991|     0.039|    -0.234|   0.815|
 |Adjusted   |age                                               |     0.988|     0.009|    -1.316|   0.188|
 |Adjusted   |genderFemale                                      |     0.744|     0.267|    -1.106|   0.269|
@@ -981,7 +981,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |Adjusted   |raceBlack or African American                     |     1.188|     0.932|     0.185|   0.853|
 |Adjusted   |raceMultiple races                                |     0.996|     0.347|    -0.010|   0.992|
 |Adjusted   |raceOther                                         |     2.007|     0.594|     1.173|   0.241|
-|Adjusted   |hispanicNo                                        |     1.517|     0.498|     0.837|   0.402|
+|Adjusted   |hispanicYes                                       |     0.659|     0.498|    -0.837|   0.402|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.069|     0.218|     0.304|   0.761|
 |Adjusted   |countSocialMediaExclFB                            |     0.913|     0.108|    -0.847|   0.397|
 |Adjusted   |comm_inpersonOnce a week                          |     0.791|     0.320|    -0.733|   0.464|
@@ -1007,7 +1007,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.340|     0.152|    -7.106|   0.000|
 |Unadjusted |fmssSubscore                                      |     0.950|     0.038|    -1.350|   0.177|
-|Adjusted   |(Intercept)                                       |     0.476|     0.662|    -1.122|   0.262|
+|Adjusted   |(Intercept)                                       |     0.369|     0.503|    -1.984|   0.047|
 |Adjusted   |fmssSubscore                                      |     0.916|     0.044|    -1.965|   0.049|
 |Adjusted   |age                                               |     0.976|     0.011|    -2.311|   0.021|
 |Adjusted   |genderFemale                                      |     0.666|     0.302|    -1.344|   0.179|
@@ -1017,7 +1017,7 @@ Closely exam FMSS items 1, 2, 3, and 11
 |Adjusted   |raceBlack or African American                     |     1.364|     0.972|     0.319|   0.750|
 |Adjusted   |raceMultiple races                                |     1.335|     0.359|     0.806|   0.420|
 |Adjusted   |raceOther                                         |     0.871|     0.679|    -0.204|   0.838|
-|Adjusted   |hispanicNo                                        |     0.775|     0.501|    -0.509|   0.610|
+|Adjusted   |hispanicYes                                       |     1.291|     0.501|     0.509|   0.610|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.427|     0.241|     1.477|   0.140|
 |Adjusted   |countSocialMediaExclFB                            |     0.985|     0.115|    -0.131|   0.896|
 |Adjusted   |comm_inpersonOnce a week                          |     0.722|     0.360|    -0.907|   0.365|
@@ -1095,7 +1095,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.568|     0.158|    -3.591|   0.000|
 |Unadjusted |fmssQuartileQ4: (34,48]                           |     0.562|     0.262|    -2.194|   0.028|
-|Adjusted   |(Intercept)                                       |     0.542|     0.814|    -0.753|   0.452|
+|Adjusted   |(Intercept)                                       |     0.935|     0.594|    -0.114|   0.910|
 |Adjusted   |fmssQuartileQ4: (34,48]                           |     0.650|     0.301|    -1.430|   0.153|
 |Adjusted   |age                                               |     0.980|     0.012|    -1.660|   0.097|
 |Adjusted   |genderFemale                                      |     0.541|     0.391|    -1.569|   0.117|
@@ -1104,7 +1104,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |Adjusted   |raceBlack or African American                     |     0.000|   989.665|    -0.014|   0.989|
 |Adjusted   |raceMultiple races                                |     1.157|     0.446|     0.327|   0.744|
 |Adjusted   |raceOther                                         |     3.652|     0.896|     1.446|   0.148|
-|Adjusted   |hispanicNo                                        |     1.725|     0.649|     0.840|   0.401|
+|Adjusted   |hispanicYes                                       |     0.580|     0.649|    -0.840|   0.401|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.213|     0.312|     0.619|   0.536|
 |Adjusted   |countSocialMediaExclFB                            |     0.945|     0.147|    -0.386|   0.699|
 |Adjusted   |comm_inpersonOnce a week                          |     1.260|     0.451|     0.513|   0.608|
@@ -1130,7 +1130,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
 |Unadjusted |(Intercept)                                       |     0.370|     0.171|    -5.822|   0.000|
 |Unadjusted |fmssQuartileQ4: (34,48]                           |     0.520|     0.298|    -2.197|   0.028|
-|Adjusted   |(Intercept)                                       |     0.365|     0.881|    -1.145|   0.252|
+|Adjusted   |(Intercept)                                       |     0.209|     0.710|    -2.201|   0.028|
 |Adjusted   |fmssQuartileQ4: (34,48]                           |     0.580|     0.355|    -1.534|   0.125|
 |Adjusted   |age                                               |     0.989|     0.014|    -0.800|   0.424|
 |Adjusted   |genderFemale                                      |     0.542|     0.455|    -1.349|   0.177|
@@ -1139,7 +1139,7 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 |Adjusted   |raceBlack or African American                     |     0.000|  1563.062|    -0.010|   0.992|
 |Adjusted   |raceMultiple races                                |     1.228|     0.490|     0.420|   0.675|
 |Adjusted   |raceOther                                         |     1.813|     0.913|     0.652|   0.515|
-|Adjusted   |hispanicNo                                        |     0.574|     0.662|    -0.838|   0.402|
+|Adjusted   |hispanicYes                                       |     1.742|     0.662|     0.838|   0.402|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.155|     0.348|     0.415|   0.678|
 |Adjusted   |countSocialMediaExclFB                            |     0.972|     0.168|    -0.168|   0.866|
 |Adjusted   |comm_inpersonOnce a week                          |     0.669|     0.497|    -0.808|   0.419|
@@ -1240,7 +1240,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |       2.882|     0.763|     1.387|   0.165|
 |Unadjusted |fb_freqOnce_a_day                                 |       2.935|     0.731|     1.474|   0.141|
 |Unadjusted |fb_freqSeveral_times_a_day                        |       1.750|     0.697|     0.803|   0.422|
-|Adjusted   |(Intercept)                                       |       0.385|     0.879|    -1.086|   0.278|
+|Adjusted   |(Intercept)                                       |       0.461|     0.798|    -0.971|   0.332|
 |Adjusted   |fb_freqEvery_few_weeks                            |       2.268|     1.296|     0.632|   0.527|
 |Adjusted   |fb_freqOnce_a_week                                |       0.785|     1.156|    -0.209|   0.834|
 |Adjusted   |fb_freqA_few_times_a_week                         |       2.993|     0.791|     1.386|   0.166|
@@ -1254,7 +1254,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.453|     0.824|     0.453|   0.650|
 |Adjusted   |raceMultiple races                                |       1.230|     0.326|     0.636|   0.525|
 |Adjusted   |raceOther                                         |       1.431|     0.590|     0.607|   0.544|
-|Adjusted   |hispanicNo                                        |       1.196|     0.411|     0.435|   0.664|
+|Adjusted   |hispanicYes                                       |       0.836|     0.411|    -0.435|   0.664|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.053|     0.199|     0.261|   0.794|
 |Adjusted   |countSocialMediaExclFB                            |       1.074|     0.095|     0.747|   0.455|
 |Adjusted   |comm_inpersonOnce a week                          |       0.801|     0.320|    -0.694|   0.488|
@@ -1291,7 +1291,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |       0.944|     0.303|    -0.189|   0.850|
 |Unadjusted |comm_facebookOnce_a_day                           |       0.766|     0.315|    -0.845|   0.398|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |       0.626|     0.271|    -1.731|   0.084|
-|Adjusted   |(Intercept)                                       |       0.633|     0.548|    -0.833|   0.405|
+|Adjusted   |(Intercept)                                       |       0.707|     0.411|    -0.843|   0.399|
 |Adjusted   |comm_facebookOnce_a_week                          |       1.094|     0.436|     0.207|   0.836|
 |Adjusted   |comm_facebookA_few_times_a_week                   |       0.942|     0.333|    -0.180|   0.857|
 |Adjusted   |comm_facebookOnce_a_day                           |       0.824|     0.353|    -0.547|   0.584|
@@ -1304,7 +1304,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.626|     0.829|     0.586|   0.558|
 |Adjusted   |raceMultiple races                                |       1.320|     0.324|     0.857|   0.392|
 |Adjusted   |raceOther                                         |       1.381|     0.591|     0.546|   0.585|
-|Adjusted   |hispanicNo                                        |       1.116|     0.414|     0.266|   0.790|
+|Adjusted   |hispanicYes                                       |       0.896|     0.414|    -0.266|   0.790|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.068|     0.199|     0.331|   0.741|
 |Adjusted   |countSocialMediaExclFB                            |       1.088|     0.096|     0.881|   0.378|
 |Adjusted   |comm_inpersonOnce a week                          |       0.820|     0.318|    -0.623|   0.533|
@@ -1341,7 +1341,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |       1.074|     0.227|     0.314|   0.754|
 |Unadjusted |sm_emot_supportUsually                            |       1.183|     0.326|     0.515|   0.606|
 |Unadjusted |sm_emot_supportAlways                             |       1.098|     0.777|     0.121|   0.904|
-|Adjusted   |(Intercept)                                       |       0.541|     0.522|    -1.177|   0.239|
+|Adjusted   |(Intercept)                                       |       0.604|     0.387|    -1.305|   0.192|
 |Adjusted   |sm_emot_supportRarely                             |       1.601|     0.229|     2.059|   0.039|
 |Adjusted   |sm_emot_supportSometimes                          |       0.902|     0.257|    -0.401|   0.688|
 |Adjusted   |sm_emot_supportUsually                            |       0.999|     0.373|    -0.004|   0.997|
@@ -1354,7 +1354,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       2.160|     0.834|     0.924|   0.356|
 |Adjusted   |raceMultiple races                                |       1.275|     0.324|     0.750|   0.453|
 |Adjusted   |raceOther                                         |       1.579|     0.589|     0.776|   0.438|
-|Adjusted   |hispanicNo                                        |       1.116|     0.415|     0.264|   0.792|
+|Adjusted   |hispanicYes                                       |       0.896|     0.415|    -0.264|   0.792|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.085|     0.198|     0.414|   0.679|
 |Adjusted   |countSocialMediaExclFB                            |       1.056|     0.098|     0.554|   0.579|
 |Adjusted   |comm_inpersonOnce a week                          |       0.806|     0.320|    -0.674|   0.500|
@@ -1391,7 +1391,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |       1.082|     0.226|     0.349|   0.727|
 |Unadjusted |sm_med_infoUsually                                |       1.262|     0.302|     0.770|   0.441|
 |Unadjusted |sm_med_infoAlways                                 |       0.529|     0.521|    -1.221|   0.222|
-|Adjusted   |(Intercept)                                       |       0.679|     0.530|    -0.730|   0.465|
+|Adjusted   |(Intercept)                                       |       0.772|     0.390|    -0.662|   0.508|
 |Adjusted   |sm_med_infoRarely                                 |       0.605|     0.250|    -2.013|   0.044|
 |Adjusted   |sm_med_infoSometimes                              |       0.966|     0.258|    -0.133|   0.894|
 |Adjusted   |sm_med_infoUsually                                |       1.051|     0.342|     0.145|   0.885|
@@ -1404,7 +1404,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.674|     0.825|     0.624|   0.532|
 |Adjusted   |raceMultiple races                                |       1.395|     0.327|     1.018|   0.309|
 |Adjusted   |raceOther                                         |       1.405|     0.591|     0.575|   0.565|
-|Adjusted   |hispanicNo                                        |       1.137|     0.415|     0.309|   0.757|
+|Adjusted   |hispanicYes                                       |       0.880|     0.415|    -0.309|   0.757|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.062|     0.198|     0.305|   0.760|
 |Adjusted   |countSocialMediaExclFB                            |       1.054|     0.099|     0.530|   0.596|
 |Adjusted   |comm_inpersonOnce a week                          |       0.821|     0.317|    -0.621|   0.534|
@@ -1441,7 +1441,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |       1.280|     0.221|     1.115|   0.265|
 |Unadjusted |sm_med_adviceUsually                              |       2.074|     0.367|     1.985|   0.047|
 |Unadjusted |sm_med_adviceAlways                               |       0.264|     0.786|    -1.694|   0.090|
-|Adjusted   |(Intercept)                                       |       0.567|     0.523|    -1.085|   0.278|
+|Adjusted   |(Intercept)                                       |       0.648|     0.384|    -1.130|   0.258|
 |Adjusted   |sm_med_adviceRarely                               |       0.918|     0.225|    -0.382|   0.703|
 |Adjusted   |sm_med_adviceSometimes                            |       1.279|     0.250|     0.982|   0.326|
 |Adjusted   |sm_med_adviceUsually                              |       1.747|     0.401|     1.392|   0.164|
@@ -1454,7 +1454,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.799|     0.831|     0.707|   0.480|
 |Adjusted   |raceMultiple races                                |       1.254|     0.324|     0.698|   0.485|
 |Adjusted   |raceOther                                         |       1.338|     0.601|     0.484|   0.628|
-|Adjusted   |hispanicNo                                        |       1.142|     0.419|     0.316|   0.752|
+|Adjusted   |hispanicYes                                       |       0.876|     0.419|    -0.316|   0.752|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.111|     0.199|     0.529|   0.597|
 |Adjusted   |countSocialMediaExclFB                            |       1.039|     0.098|     0.389|   0.697|
 |Adjusted   |comm_inpersonOnce a week                          |       0.783|     0.318|    -0.769|   0.442|
@@ -1491,7 +1491,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |       1.311|     0.236|     1.146|   0.252|
 |Unadjusted |sm_med_questionsUsually                           |       3.064|     0.401|     2.793|   0.005|
 |Unadjusted |sm_med_questionsAlways                            |       1.393|     0.644|     0.514|   0.607|
-|Adjusted   |(Intercept)                                       |       0.562|     0.520|    -1.107|   0.268|
+|Adjusted   |(Intercept)                                       |       0.655|     0.381|    -1.111|   0.267|
 |Adjusted   |sm_med_questionsRarely                            |       1.015|     0.220|     0.067|   0.946|
 |Adjusted   |sm_med_questionsSometimes                         |       1.343|     0.260|     1.135|   0.257|
 |Adjusted   |sm_med_questionsUsually                           |       2.358|     0.432|     1.984|   0.047|
@@ -1504,7 +1504,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.798|     0.823|     0.713|   0.476|
 |Adjusted   |raceMultiple races                                |       1.338|     0.324|     0.899|   0.369|
 |Adjusted   |raceOther                                         |       1.563|     0.587|     0.761|   0.447|
-|Adjusted   |hispanicNo                                        |       1.165|     0.415|     0.367|   0.714|
+|Adjusted   |hispanicYes                                       |       0.859|     0.415|    -0.367|   0.714|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.080|     0.198|     0.391|   0.696|
 |Adjusted   |countSocialMediaExclFB                            |       1.029|     0.097|     0.295|   0.768|
 |Adjusted   |comm_inpersonOnce a week                          |       0.829|     0.319|    -0.588|   0.556|
@@ -1541,7 +1541,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |       2.085|     0.256|     2.869|   0.004|
 |Unadjusted |sm_share_symptUsually                             |       4.915|     0.447|     3.561|   0.000|
 |Unadjusted |sm_share_symptAlways                              |       1.870|     0.681|     0.919|   0.358|
-|Adjusted   |(Intercept)                                       |       0.492|     0.527|    -1.346|   0.178|
+|Adjusted   |(Intercept)                                       |       0.619|     0.383|    -1.255|   0.209|
 |Adjusted   |sm_share_symptRarely                              |       0.875|     0.225|    -0.591|   0.555|
 |Adjusted   |sm_share_symptSometimes                           |       1.495|     0.283|     1.423|   0.155|
 |Adjusted   |sm_share_symptUsually                             |       3.104|     0.476|     2.380|   0.017|
@@ -1554,7 +1554,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.851|     0.841|     0.732|   0.464|
 |Adjusted   |raceMultiple races                                |       1.346|     0.325|     0.913|   0.361|
 |Adjusted   |raceOther                                         |       1.503|     0.591|     0.690|   0.490|
-|Adjusted   |hispanicNo                                        |       1.257|     0.420|     0.544|   0.586|
+|Adjusted   |hispanicYes                                       |       0.795|     0.420|    -0.544|   0.586|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.110|     0.198|     0.525|   0.599|
 |Adjusted   |countSocialMediaExclFB                            |       1.057|     0.097|     0.572|   0.567|
 |Adjusted   |comm_inpersonOnce a week                          |       0.891|     0.323|    -0.358|   0.721|
@@ -1591,7 +1591,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |       1.557|     0.266|     1.667|   0.095|
 |Unadjusted |sm_share_healthUsually                            |       9.330|     0.633|     3.527|   0.000|
 |Unadjusted |sm_share_healthAlways                             |       0.589|     0.846|    -0.625|   0.532|
-|Adjusted   |(Intercept)                                       |       0.507|     0.525|    -1.296|   0.195|
+|Adjusted   |(Intercept)                                       |       0.611|     0.387|    -1.275|   0.202|
 |Adjusted   |sm_share_healthRarely                             |       0.946|     0.207|    -0.269|   0.788|
 |Adjusted   |sm_share_healthSometimes                          |       1.089|     0.300|     0.284|   0.776|
 |Adjusted   |sm_share_healthUsually                            |       5.308|     0.664|     2.515|   0.012|
@@ -1604,7 +1604,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       2.210|     0.874|     0.907|   0.364|
 |Adjusted   |raceMultiple races                                |       1.197|     0.330|     0.544|   0.587|
 |Adjusted   |raceOther                                         |       1.491|     0.594|     0.672|   0.502|
-|Adjusted   |hispanicNo                                        |       1.205|     0.417|     0.447|   0.655|
+|Adjusted   |hispanicYes                                       |       0.830|     0.417|    -0.447|   0.655|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.087|     0.198|     0.422|   0.673|
 |Adjusted   |countSocialMediaExclFB                            |       1.049|     0.097|     0.489|   0.625|
 |Adjusted   |comm_inpersonOnce a week                          |       0.861|     0.321|    -0.468|   0.640|
@@ -1641,7 +1641,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |       5.791|     0.652|     2.694|   0.007|
 |Unadjusted |sm_share_suicideUsually                           |      11.582|     1.065|     2.301|   0.021|
 |Unadjusted |sm_share_suicideAlways                            |       1.448|     1.004|     0.368|   0.713|
-|Adjusted   |(Intercept)                                       |       0.460|     0.539|    -1.442|   0.149|
+|Adjusted   |(Intercept)                                       |       0.600|     0.384|    -1.331|   0.183|
 |Adjusted   |sm_share_suicideRarely                            |       2.527|     0.327|     2.834|   0.005|
 |Adjusted   |sm_share_suicideSometimes                         |       3.533|     0.701|     1.801|   0.072|
 |Adjusted   |sm_share_suicideUsually                           |      12.989|     1.123|     2.284|   0.022|
@@ -1654,7 +1654,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |       1.689|     0.869|     0.603|   0.546|
 |Adjusted   |raceMultiple races                                |       1.308|     0.330|     0.813|   0.416|
 |Adjusted   |raceOther                                         |       1.717|     0.594|     0.910|   0.363|
-|Adjusted   |hispanicNo                                        |       1.304|     0.443|     0.600|   0.548|
+|Adjusted   |hispanicYes                                       |       0.767|     0.443|    -0.600|   0.548|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.030|     0.201|     0.148|   0.882|
 |Adjusted   |countSocialMediaExclFB                            |       1.049|     0.097|     0.493|   0.622|
 |Adjusted   |comm_inpersonOnce a week                          |       0.817|     0.321|    -0.630|   0.529|
@@ -1692,7 +1692,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     3.667|     1.113|     1.167|   0.243|
 |Unadjusted |fb_freqOnce_a_day                                 |     4.404|     1.084|     1.367|   0.172|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     3.358|     1.059|     1.143|   0.253|
-|Adjusted   |(Intercept)                                       |     0.153|     1.241|    -1.511|   0.131|
+|Adjusted   |(Intercept)                                       |     0.237|     1.157|    -1.244|   0.213|
 |Adjusted   |fb_freqEvery_few_weeks                            |     0.000|   629.421|    -0.022|   0.983|
 |Adjusted   |fb_freqOnce_a_week                                |     3.419|     1.423|     0.864|   0.387|
 |Adjusted   |fb_freqA_few_times_a_week                         |     3.813|     1.140|     1.174|   0.240|
@@ -1706,7 +1706,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.131|     0.947|     0.130|   0.896|
 |Adjusted   |raceMultiple races                                |     0.956|     0.352|    -0.128|   0.898|
 |Adjusted   |raceOther                                         |     1.960|     0.596|     1.129|   0.259|
-|Adjusted   |hispanicNo                                        |     1.545|     0.498|     0.874|   0.382|
+|Adjusted   |hispanicYes                                       |     0.647|     0.498|    -0.874|   0.382|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.985|     0.221|    -0.067|   0.947|
 |Adjusted   |countSocialMediaExclFB                            |     0.905|     0.109|    -0.923|   0.356|
 |Adjusted   |comm_inpersonOnce a week                          |     0.773|     0.325|    -0.791|   0.429|
@@ -1743,7 +1743,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.713|     0.331|    -1.022|   0.307|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.759|     0.343|    -0.804|   0.421|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.735|     0.291|    -1.057|   0.291|
-|Adjusted   |(Intercept)                                       |     0.447|     0.638|    -1.263|   0.207|
+|Adjusted   |(Intercept)                                       |     0.662|     0.461|    -0.896|   0.370|
 |Adjusted   |comm_facebookOnce_a_week                          |     1.138|     0.476|     0.272|   0.785|
 |Adjusted   |comm_facebookA_few_times_a_week                   |     0.731|     0.371|    -0.845|   0.398|
 |Adjusted   |comm_facebookOnce_a_day                           |     0.928|     0.392|    -0.191|   0.849|
@@ -1756,7 +1756,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.082|     0.940|     0.084|   0.933|
 |Adjusted   |raceMultiple races                                |     0.995|     0.349|    -0.014|   0.989|
 |Adjusted   |raceOther                                         |     1.999|     0.596|     1.163|   0.245|
-|Adjusted   |hispanicNo                                        |     1.480|     0.497|     0.790|   0.429|
+|Adjusted   |hispanicYes                                       |     0.675|     0.497|    -0.790|   0.429|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.065|     0.221|     0.284|   0.777|
 |Adjusted   |countSocialMediaExclFB                            |     0.914|     0.108|    -0.834|   0.404|
 |Adjusted   |comm_inpersonOnce a week                          |     0.798|     0.322|    -0.703|   0.482|
@@ -1793,7 +1793,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.319|     0.250|     1.108|   0.268|
 |Unadjusted |sm_emot_supportUsually                            |     1.055|     0.371|     0.145|   0.884|
 |Unadjusted |sm_emot_supportAlways                             |     4.105|     0.781|     1.809|   0.070|
-|Adjusted   |(Intercept)                                       |     0.352|     0.625|    -1.671|   0.095|
+|Adjusted   |(Intercept)                                       |     0.551|     0.439|    -1.358|   0.175|
 |Adjusted   |sm_emot_supportRarely                             |     1.288|     0.260|     0.973|   0.331|
 |Adjusted   |sm_emot_supportSometimes                          |     1.361|     0.286|     1.076|   0.282|
 |Adjusted   |sm_emot_supportUsually                            |     1.092|     0.425|     0.207|   0.836|
@@ -1806,7 +1806,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.277|     0.956|     0.256|   0.798|
 |Adjusted   |raceMultiple races                                |     0.976|     0.351|    -0.070|   0.944|
 |Adjusted   |raceOther                                         |     2.166|     0.594|     1.301|   0.193|
-|Adjusted   |hispanicNo                                        |     1.565|     0.509|     0.879|   0.379|
+|Adjusted   |hispanicYes                                       |     0.639|     0.509|    -0.879|   0.379|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.077|     0.219|     0.339|   0.735|
 |Adjusted   |countSocialMediaExclFB                            |     0.901|     0.111|    -0.945|   0.345|
 |Adjusted   |comm_inpersonOnce a week                          |     0.767|     0.325|    -0.815|   0.415|
@@ -1843,7 +1843,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     1.235|     0.248|     0.850|   0.395|
 |Unadjusted |sm_med_infoUsually                                |     1.646|     0.319|     1.563|   0.118|
 |Unadjusted |sm_med_infoAlways                                 |     0.502|     0.656|    -1.052|   0.293|
-|Adjusted   |(Intercept)                                       |     0.472|     0.633|    -1.188|   0.235|
+|Adjusted   |(Intercept)                                       |     0.722|     0.444|    -0.734|   0.463|
 |Adjusted   |sm_med_infoRarely                                 |     0.730|     0.290|    -1.085|   0.278|
 |Adjusted   |sm_med_infoSometimes                              |     1.577|     0.290|     1.567|   0.117|
 |Adjusted   |sm_med_infoUsually                                |     1.980|     0.372|     1.833|   0.067|
@@ -1856,7 +1856,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.309|     0.918|     0.293|   0.770|
 |Adjusted   |raceMultiple races                                |     1.086|     0.354|     0.233|   0.816|
 |Adjusted   |raceOther                                         |     2.068|     0.599|     1.214|   0.225|
-|Adjusted   |hispanicNo                                        |     1.531|     0.508|     0.838|   0.402|
+|Adjusted   |hispanicYes                                       |     0.653|     0.508|    -0.838|   0.402|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.031|     0.222|     0.137|   0.891|
 |Adjusted   |countSocialMediaExclFB                            |     0.852|     0.113|    -1.422|   0.155|
 |Adjusted   |comm_inpersonOnce a week                          |     0.765|     0.326|    -0.821|   0.412|
@@ -1893,7 +1893,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     1.415|     0.242|     1.434|   0.152|
 |Unadjusted |sm_med_adviceUsually                              |     2.372|     0.369|     2.342|   0.019|
 |Unadjusted |sm_med_adviceAlways                               |     0.593|     0.790|    -0.662|   0.508|
-|Adjusted   |(Intercept)                                       |     0.429|     0.617|    -1.372|   0.170|
+|Adjusted   |(Intercept)                                       |     0.644|     0.434|    -1.013|   0.311|
 |Adjusted   |sm_med_adviceRarely                               |     0.982|     0.261|    -0.070|   0.944|
 |Adjusted   |sm_med_adviceSometimes                            |     1.797|     0.281|     2.082|   0.037|
 |Adjusted   |sm_med_adviceUsually                              |     2.522|     0.419|     2.205|   0.027|
@@ -1906,7 +1906,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.341|     0.932|     0.315|   0.753|
 |Adjusted   |raceMultiple races                                |     1.029|     0.349|     0.081|   0.935|
 |Adjusted   |raceOther                                         |     2.016|     0.614|     1.142|   0.253|
-|Adjusted   |hispanicNo                                        |     1.501|     0.502|     0.809|   0.419|
+|Adjusted   |hispanicYes                                       |     0.666|     0.502|    -0.809|   0.419|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.071|     0.222|     0.310|   0.756|
 |Adjusted   |countSocialMediaExclFB                            |     0.862|     0.112|    -1.334|   0.182|
 |Adjusted   |comm_inpersonOnce a week                          |     0.753|     0.325|    -0.870|   0.384|
@@ -1943,7 +1943,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     1.602|     0.257|     1.834|   0.067|
 |Unadjusted |sm_med_questionsUsually                           |     3.203|     0.381|     3.052|   0.002|
 |Unadjusted |sm_med_questionsAlways                            |     1.373|     0.705|     0.450|   0.653|
-|Adjusted   |(Intercept)                                       |     0.416|     0.622|    -1.410|   0.158|
+|Adjusted   |(Intercept)                                       |     0.630|     0.434|    -1.066|   0.287|
 |Adjusted   |sm_med_questionsRarely                            |     1.232|     0.255|     0.820|   0.412|
 |Adjusted   |sm_med_questionsSometimes                         |     1.946|     0.290|     2.293|   0.022|
 |Adjusted   |sm_med_questionsUsually                           |     3.361|     0.428|     2.833|   0.005|
@@ -1956,7 +1956,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.280|     0.929|     0.266|   0.791|
 |Adjusted   |raceMultiple races                                |     1.076|     0.350|     0.209|   0.835|
 |Adjusted   |raceOther                                         |     2.353|     0.590|     1.451|   0.147|
-|Adjusted   |hispanicNo                                        |     1.514|     0.509|     0.815|   0.415|
+|Adjusted   |hispanicYes                                       |     0.661|     0.509|    -0.815|   0.415|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.049|     0.223|     0.214|   0.830|
 |Adjusted   |countSocialMediaExclFB                            |     0.860|     0.111|    -1.353|   0.176|
 |Adjusted   |comm_inpersonOnce a week                          |     0.768|     0.327|    -0.805|   0.421|
@@ -1993,7 +1993,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     2.323|     0.269|     3.138|   0.002|
 |Unadjusted |sm_share_symptUsually                             |     5.396|     0.397|     4.241|   0.000|
 |Unadjusted |sm_share_symptAlways                              |     1.799|     0.720|     0.815|   0.415|
-|Adjusted   |(Intercept)                                       |     0.348|     0.626|    -1.687|   0.092|
+|Adjusted   |(Intercept)                                       |     0.572|     0.435|    -1.285|   0.199|
 |Adjusted   |sm_share_symptRarely                              |     1.116|     0.258|     0.426|   0.670|
 |Adjusted   |sm_share_symptSometimes                           |     1.927|     0.303|     2.163|   0.031|
 |Adjusted   |sm_share_symptUsually                             |     3.436|     0.433|     2.849|   0.004|
@@ -2006,7 +2006,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.154|     1.007|     0.142|   0.887|
 |Adjusted   |raceMultiple races                                |     1.029|     0.350|     0.083|   0.934|
 |Adjusted   |raceOther                                         |     2.060|     0.602|     1.201|   0.230|
-|Adjusted   |hispanicNo                                        |     1.644|     0.514|     0.967|   0.333|
+|Adjusted   |hispanicYes                                       |     0.608|     0.514|    -0.967|   0.333|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.081|     0.221|     0.350|   0.726|
 |Adjusted   |countSocialMediaExclFB                            |     0.897|     0.110|    -0.986|   0.324|
 |Adjusted   |comm_inpersonOnce a week                          |     0.797|     0.331|    -0.685|   0.494|
@@ -2043,7 +2043,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     1.413|     0.292|     1.184|   0.236|
 |Unadjusted |sm_share_healthUsually                            |     5.621|     0.465|     3.712|   0.000|
 |Unadjusted |sm_share_healthAlways                             |     0.535|     1.089|    -0.574|   0.566|
-|Adjusted   |(Intercept)                                       |     0.376|     0.616|    -1.589|   0.112|
+|Adjusted   |(Intercept)                                       |     0.575|     0.436|    -1.269|   0.205|
 |Adjusted   |sm_share_healthRarely                             |     1.033|     0.235|     0.137|   0.891|
 |Adjusted   |sm_share_healthSometimes                          |     1.108|     0.335|     0.306|   0.759|
 |Adjusted   |sm_share_healthUsually                            |     2.934|     0.510|     2.112|   0.035|
@@ -2056,7 +2056,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.258|     1.034|     0.222|   0.824|
 |Adjusted   |raceMultiple races                                |     0.981|     0.354|    -0.055|   0.956|
 |Adjusted   |raceOther                                         |     2.071|     0.598|     1.217|   0.223|
-|Adjusted   |hispanicNo                                        |     1.530|     0.500|     0.851|   0.395|
+|Adjusted   |hispanicYes                                       |     0.653|     0.500|    -0.851|   0.395|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.053|     0.219|     0.237|   0.813|
 |Adjusted   |countSocialMediaExclFB                            |     0.898|     0.109|    -0.983|   0.326|
 |Adjusted   |comm_inpersonOnce a week                          |     0.808|     0.325|    -0.656|   0.512|
@@ -2093,7 +2093,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     4.875|     0.538|     2.946|   0.003|
 |Unadjusted |sm_share_suicideUsually                           |    11.375|     0.809|     3.006|   0.003|
 |Unadjusted |sm_share_suicideAlways                            |     1.083|     1.160|     0.069|   0.945|
-|Adjusted   |(Intercept)                                       |     0.310|     0.656|    -1.784|   0.074|
+|Adjusted   |(Intercept)                                       |     0.589|     0.438|    -1.206|   0.228|
 |Adjusted   |sm_share_suicideRarely                            |     2.740|     0.323|     3.117|   0.002|
 |Adjusted   |sm_share_suicideSometimes                         |     3.492|     0.585|     2.137|   0.033|
 |Adjusted   |sm_share_suicideUsually                           |    15.068|     0.957|     2.834|   0.005|
@@ -2106,7 +2106,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     0.976|     1.034|    -0.023|   0.981|
 |Adjusted   |raceMultiple races                                |     0.989|     0.362|    -0.032|   0.975|
 |Adjusted   |raceOther                                         |     2.673|     0.603|     1.629|   0.103|
-|Adjusted   |hispanicNo                                        |     1.901|     0.546|     1.177|   0.239|
+|Adjusted   |hispanicYes                                       |     0.526|     0.546|    -1.177|   0.239|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.975|     0.225|    -0.114|   0.909|
 |Adjusted   |countSocialMediaExclFB                            |     0.882|     0.112|    -1.117|   0.264|
 |Adjusted   |comm_inpersonOnce a week                          |     0.802|     0.328|    -0.672|   0.502|
@@ -2144,7 +2144,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     5.040|     1.106|     1.463|   0.143|
 |Unadjusted |fb_freqOnce_a_day                                 |     7.579|     1.081|     1.874|   0.061|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     6.866|     1.058|     1.820|   0.069|
-|Adjusted   |(Intercept)                                       |     0.314|     1.184|    -0.978|   0.328|
+|Adjusted   |(Intercept)                                       |     0.340|     1.124|    -0.961|   0.337|
 |Adjusted   |fb_freqEvery_few_weeks                            |     4.859|     1.598|     0.989|   0.323|
 |Adjusted   |fb_freqOnce_a_week                                |     0.742|     1.731|    -0.172|   0.863|
 |Adjusted   |fb_freqA_few_times_a_week                         |     6.325|     1.121|     1.646|   0.100|
@@ -2157,7 +2157,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.192|     0.829|     0.212|   0.832|
 |Adjusted   |raceMultiple races                                |     0.903|     0.317|    -0.322|   0.748|
 |Adjusted   |raceOther                                         |     0.294|     0.692|    -1.768|   0.077|
-|Adjusted   |hispanicNo                                        |     1.082|     0.408|     0.192|   0.847|
+|Adjusted   |hispanicYes                                       |     0.924|     0.408|    -0.192|   0.847|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.724|     0.196|     2.774|   0.006|
 |Adjusted   |countSocialMediaExclFB                            |     1.098|     0.095|     0.991|   0.322|
 |Adjusted   |comm_inpersonOnce a week                          |     1.139|     0.315|     0.414|   0.679|
@@ -2194,7 +2194,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.808|     0.304|    -0.701|   0.483|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.607|     0.323|    -1.550|   0.121|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.900|     0.270|    -0.389|   0.697|
-|Adjusted   |(Intercept)                                       |     2.200|     0.552|     1.429|   0.153|
+|Adjusted   |(Intercept)                                       |     2.456|     0.417|     2.157|   0.031|
 |Adjusted   |comm_facebookOnce_a_week                          |     0.542|     0.439|    -1.394|   0.163|
 |Adjusted   |comm_facebookA_few_times_a_week                   |     0.869|     0.328|    -0.427|   0.669|
 |Adjusted   |comm_facebookOnce_a_day                           |     0.742|     0.351|    -0.850|   0.395|
@@ -2206,7 +2206,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.376|     0.815|     0.391|   0.696|
 |Adjusted   |raceMultiple races                                |     0.965|     0.315|    -0.114|   0.909|
 |Adjusted   |raceOther                                         |     0.282|     0.699|    -1.812|   0.070|
-|Adjusted   |hispanicNo                                        |     1.117|     0.412|     0.268|   0.789|
+|Adjusted   |hispanicYes                                       |     0.896|     0.412|    -0.268|   0.789|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.819|     0.197|     3.043|   0.002|
 |Adjusted   |countSocialMediaExclFB                            |     1.070|     0.095|     0.711|   0.477|
 |Adjusted   |comm_inpersonOnce a week                          |     1.247|     0.312|     0.708|   0.479|
@@ -2243,7 +2243,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.119|     0.227|     0.496|   0.620|
 |Unadjusted |sm_emot_supportUsually                            |     0.729|     0.345|    -0.917|   0.359|
 |Unadjusted |sm_emot_supportAlways                             |     2.008|     0.777|     0.897|   0.369|
-|Adjusted   |(Intercept)                                       |     2.049|     0.525|     1.366|   0.172|
+|Adjusted   |(Intercept)                                       |     2.143|     0.390|     1.956|   0.051|
 |Adjusted   |sm_emot_supportRarely                             |     1.480|     0.226|     1.736|   0.083|
 |Adjusted   |sm_emot_supportSometimes                          |     1.206|     0.253|     0.741|   0.459|
 |Adjusted   |sm_emot_supportUsually                            |     0.836|     0.372|    -0.483|   0.629|
@@ -2255,7 +2255,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.499|     0.825|     0.491|   0.623|
 |Adjusted   |raceMultiple races                                |     0.922|     0.316|    -0.258|   0.796|
 |Adjusted   |raceOther                                         |     0.294|     0.700|    -1.749|   0.080|
-|Adjusted   |hispanicNo                                        |     1.046|     0.412|     0.109|   0.913|
+|Adjusted   |hispanicYes                                       |     0.956|     0.412|    -0.109|   0.913|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.755|     0.195|     2.893|   0.004|
 |Adjusted   |countSocialMediaExclFB                            |     1.086|     0.096|     0.856|   0.392|
 |Adjusted   |comm_inpersonOnce a week                          |     1.175|     0.313|     0.516|   0.606|
@@ -2292,7 +2292,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     0.810|     0.227|    -0.931|   0.352|
 |Unadjusted |sm_med_infoUsually                                |     0.658|     0.309|    -1.352|   0.176|
 |Unadjusted |sm_med_infoAlways                                 |     0.528|     0.520|    -1.226|   0.220|
-|Adjusted   |(Intercept)                                       |     2.182|     0.528|     1.477|   0.140|
+|Adjusted   |(Intercept)                                       |     2.316|     0.393|     2.136|   0.033|
 |Adjusted   |sm_med_infoRarely                                 |     0.941|     0.241|    -0.254|   0.799|
 |Adjusted   |sm_med_infoSometimes                              |     1.022|     0.254|     0.085|   0.932|
 |Adjusted   |sm_med_infoUsually                                |     0.845|     0.342|    -0.494|   0.622|
@@ -2304,7 +2304,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.213|     0.812|     0.238|   0.812|
 |Adjusted   |raceMultiple races                                |     0.970|     0.314|    -0.097|   0.922|
 |Adjusted   |raceOther                                         |     0.275|     0.695|    -1.856|   0.063|
-|Adjusted   |hispanicNo                                        |     1.062|     0.407|     0.147|   0.883|
+|Adjusted   |hispanicYes                                       |     0.942|     0.407|    -0.147|   0.883|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.703|     0.194|     2.744|   0.006|
 |Adjusted   |countSocialMediaExclFB                            |     1.104|     0.097|     1.023|   0.306|
 |Adjusted   |comm_inpersonOnce a week                          |     1.213|     0.309|     0.625|   0.532|
@@ -2341,7 +2341,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     0.788|     0.224|    -1.061|   0.289|
 |Unadjusted |sm_med_adviceUsually                              |     1.031|     0.360|     0.085|   0.932|
 |Unadjusted |sm_med_adviceAlways                               |     0.384|     0.680|    -1.407|   0.159|
-|Adjusted   |(Intercept)                                       |     2.289|     0.522|     1.585|   0.113|
+|Adjusted   |(Intercept)                                       |     2.453|     0.387|     2.315|   0.021|
 |Adjusted   |sm_med_adviceRarely                               |     0.681|     0.221|    -1.737|   0.082|
 |Adjusted   |sm_med_adviceSometimes                            |     0.915|     0.244|    -0.364|   0.716|
 |Adjusted   |sm_med_adviceUsually                              |     1.084|     0.395|     0.204|   0.838|
@@ -2353,7 +2353,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.241|     0.819|     0.264|   0.792|
 |Adjusted   |raceMultiple races                                |     0.926|     0.316|    -0.242|   0.809|
 |Adjusted   |raceOther                                         |     0.252|     0.696|    -1.980|   0.048|
-|Adjusted   |hispanicNo                                        |     1.072|     0.410|     0.169|   0.866|
+|Adjusted   |hispanicYes                                       |     0.933|     0.410|    -0.169|   0.866|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.752|     0.194|     2.884|   0.004|
 |Adjusted   |countSocialMediaExclFB                            |     1.116|     0.096|     1.143|   0.253|
 |Adjusted   |comm_inpersonOnce a week                          |     1.211|     0.311|     0.617|   0.537|
@@ -2390,7 +2390,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     0.700|     0.244|    -1.460|   0.144|
 |Unadjusted |sm_med_questionsUsually                           |     1.261|     0.374|     0.619|   0.536|
 |Unadjusted |sm_med_questionsAlways                            |     0.540|     0.701|    -0.879|   0.380|
-|Adjusted   |(Intercept)                                       |     2.117|     0.521|     1.440|   0.150|
+|Adjusted   |(Intercept)                                       |     2.296|     0.385|     2.160|   0.031|
 |Adjusted   |sm_med_questionsRarely                            |     0.937|     0.215|    -0.305|   0.760|
 |Adjusted   |sm_med_questionsSometimes                         |     0.816|     0.263|    -0.776|   0.438|
 |Adjusted   |sm_med_questionsUsually                           |     1.358|     0.409|     0.748|   0.455|
@@ -2402,7 +2402,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.289|     0.815|     0.311|   0.756|
 |Adjusted   |raceMultiple races                                |     0.948|     0.315|    -0.169|   0.866|
 |Adjusted   |raceOther                                         |     0.290|     0.696|    -1.781|   0.075|
-|Adjusted   |hispanicNo                                        |     1.084|     0.409|     0.198|   0.843|
+|Adjusted   |hispanicYes                                       |     0.922|     0.409|    -0.198|   0.843|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.761|     0.194|     2.915|   0.004|
 |Adjusted   |countSocialMediaExclFB                            |     1.093|     0.095|     0.933|   0.351|
 |Adjusted   |comm_inpersonOnce a week                          |     1.182|     0.310|     0.540|   0.589|
@@ -2439,7 +2439,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     0.915|     0.258|    -0.343|   0.732|
 |Unadjusted |sm_share_symptUsually                             |     0.451|     0.449|    -1.773|   0.076|
 |Unadjusted |sm_share_symptAlways                              |     1.134|     0.681|     0.185|   0.854|
-|Adjusted   |(Intercept)                                       |     2.323|     0.525|     1.607|   0.108|
+|Adjusted   |(Intercept)                                       |     2.320|     0.386|     2.178|   0.029|
 |Adjusted   |sm_share_symptRarely                              |     1.356|     0.219|     1.387|   0.166|
 |Adjusted   |sm_share_symptSometimes                           |     0.969|     0.284|    -0.111|   0.912|
 |Adjusted   |sm_share_symptUsually                             |     0.417|     0.474|    -1.847|   0.065|
@@ -2451,7 +2451,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.396|     0.807|     0.413|   0.679|
 |Adjusted   |raceMultiple races                                |     0.914|     0.317|    -0.284|   0.777|
 |Adjusted   |raceOther                                         |     0.249|     0.706|    -1.970|   0.049|
-|Adjusted   |hispanicNo                                        |     0.999|     0.410|    -0.003|   0.997|
+|Adjusted   |hispanicYes                                       |     1.001|     0.410|     0.003|   0.997|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.712|     0.195|     2.761|   0.006|
 |Adjusted   |countSocialMediaExclFB                            |     1.087|     0.095|     0.874|   0.382|
 |Adjusted   |comm_inpersonOnce a week                          |     1.121|     0.314|     0.365|   0.715|
@@ -2488,7 +2488,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     0.766|     0.274|    -0.972|   0.331|
 |Unadjusted |sm_share_healthUsually                            |     1.233|     0.453|     0.461|   0.645|
 |Unadjusted |sm_share_healthAlways                             |     0.226|     1.087|    -1.368|   0.171|
-|Adjusted   |(Intercept)                                       |     2.055|     0.522|     1.379|   0.168|
+|Adjusted   |(Intercept)                                       |     2.251|     0.388|     2.093|   0.036|
 |Adjusted   |sm_share_healthRarely                             |     1.128|     0.203|     0.596|   0.551|
 |Adjusted   |sm_share_healthSometimes                          |     0.817|     0.302|    -0.668|   0.504|
 |Adjusted   |sm_share_healthUsually                            |     0.985|     0.488|    -0.031|   0.975|
@@ -2500,7 +2500,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.641|     0.825|     0.600|   0.548|
 |Adjusted   |raceMultiple races                                |     0.949|     0.317|    -0.164|   0.869|
 |Adjusted   |raceOther                                         |     0.293|     0.696|    -1.762|   0.078|
-|Adjusted   |hispanicNo                                        |     1.095|     0.408|     0.223|   0.824|
+|Adjusted   |hispanicYes                                       |     0.913|     0.408|    -0.223|   0.824|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.736|     0.193|     2.853|   0.004|
 |Adjusted   |countSocialMediaExclFB                            |     1.106|     0.095|     1.065|   0.287|
 |Adjusted   |comm_inpersonOnce a week                          |     1.169|     0.311|     0.502|   0.615|
@@ -2537,7 +2537,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     1.436|     0.542|     0.667|   0.505|
 |Unadjusted |sm_share_suicideUsually                           |     1.149|     0.677|     0.205|   0.838|
 |Unadjusted |sm_share_suicideAlways                            |     0.000|   441.372|    -0.032|   0.974|
-|Adjusted   |(Intercept)                                       |     2.264|     0.525|     1.555|   0.120|
+|Adjusted   |(Intercept)                                       |     2.286|     0.384|     2.155|   0.031|
 |Adjusted   |sm_share_suicideRarely                            |     1.283|     0.308|     0.808|   0.419|
 |Adjusted   |sm_share_suicideSometimes                         |     1.512|     0.586|     0.705|   0.481|
 |Adjusted   |sm_share_suicideUsually                           |     1.005|     0.736|     0.007|   0.994|
@@ -2549,7 +2549,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.146|     0.833|     0.164|   0.870|
 |Adjusted   |raceMultiple races                                |     0.936|     0.316|    -0.209|   0.835|
 |Adjusted   |raceOther                                         |     0.275|     0.697|    -1.848|   0.065|
-|Adjusted   |hispanicNo                                        |     1.010|     0.417|     0.024|   0.981|
+|Adjusted   |hispanicYes                                       |     0.990|     0.417|    -0.024|   0.981|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.727|     0.195|     2.805|   0.005|
 |Adjusted   |countSocialMediaExclFB                            |     1.090|     0.094|     0.915|   0.360|
 |Adjusted   |comm_inpersonOnce a week                          |     1.159|     0.313|     0.471|   0.638|
@@ -2587,7 +2587,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |fb_freqA_few_times_a_week                         |     0.727|     0.907|    -0.351|   0.725|
 |Unadjusted |fb_freqOnce_a_day                                 |     1.385|     0.837|     0.389|   0.697|
 |Unadjusted |fb_freqSeveral_times_a_day                        |     1.164|     0.799|     0.190|   0.849|
-|Adjusted   |(Intercept)                                       |     0.499|     1.073|    -0.647|   0.518|
+|Adjusted   |(Intercept)                                       |     0.388|     0.977|    -0.969|   0.333|
 |Adjusted   |fb_freqEvery_few_weeks                            |     6.675|     1.438|     1.320|   0.187|
 |Adjusted   |fb_freqOnce_a_week                                |     0.405|     1.492|    -0.606|   0.545|
 |Adjusted   |fb_freqA_few_times_a_week                         |     0.553|     0.971|    -0.611|   0.541|
@@ -2601,7 +2601,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.365|     0.974|     0.320|   0.749|
 |Adjusted   |raceMultiple races                                |     1.346|     0.360|     0.825|   0.409|
 |Adjusted   |raceOther                                         |     0.922|     0.678|    -0.120|   0.905|
-|Adjusted   |hispanicNo                                        |     0.777|     0.498|    -0.507|   0.612|
+|Adjusted   |hispanicYes                                       |     1.287|     0.498|     0.507|   0.612|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.400|     0.239|     1.410|   0.158|
 |Adjusted   |countSocialMediaExclFB                            |     0.962|     0.114|    -0.339|   0.734|
 |Adjusted   |comm_inpersonOnce a week                          |     0.737|     0.360|    -0.848|   0.396|
@@ -2638,7 +2638,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |comm_facebookA_few_times_a_week                   |     0.926|     0.342|    -0.226|   0.821|
 |Unadjusted |comm_facebookOnce_a_day                           |     0.671|     0.372|    -1.074|   0.283|
 |Unadjusted |comm_facebookSeveral_times_a_day                  |     0.697|     0.310|    -1.163|   0.245|
-|Adjusted   |(Intercept)                                       |     0.476|     0.676|    -1.098|   0.272|
+|Adjusted   |(Intercept)                                       |     0.367|     0.522|    -1.919|   0.055|
 |Adjusted   |comm_facebookOnce_a_week                          |     0.731|     0.533|    -0.586|   0.558|
 |Adjusted   |comm_facebookA_few_times_a_week                   |     0.752|     0.403|    -0.709|   0.479|
 |Adjusted   |comm_facebookOnce_a_day                           |     0.612|     0.437|    -1.124|   0.261|
@@ -2651,7 +2651,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.293|     0.984|     0.261|   0.794|
 |Adjusted   |raceMultiple races                                |     1.351|     0.358|     0.841|   0.400|
 |Adjusted   |raceOther                                         |     0.844|     0.669|    -0.254|   0.799|
-|Adjusted   |hispanicNo                                        |     0.771|     0.496|    -0.524|   0.601|
+|Adjusted   |hispanicYes                                       |     1.296|     0.496|     0.524|   0.601|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.371|     0.240|     1.317|   0.188|
 |Adjusted   |countSocialMediaExclFB                            |     0.968|     0.115|    -0.287|   0.774|
 |Adjusted   |comm_inpersonOnce a week                          |     0.734|     0.359|    -0.859|   0.390|
@@ -2688,7 +2688,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_emot_supportSometimes                          |     1.012|     0.276|     0.043|   0.966|
 |Unadjusted |sm_emot_supportUsually                            |     1.180|     0.385|     0.429|   0.668|
 |Unadjusted |sm_emot_supportAlways                             |     0.643|     1.094|    -0.403|   0.687|
-|Adjusted   |(Intercept)                                       |     0.405|     0.643|    -1.403|   0.161|
+|Adjusted   |(Intercept)                                       |     0.303|     0.497|    -2.401|   0.016|
 |Adjusted   |sm_emot_supportRarely                             |     1.165|     0.282|     0.542|   0.588|
 |Adjusted   |sm_emot_supportSometimes                          |     0.810|     0.325|    -0.651|   0.515|
 |Adjusted   |sm_emot_supportUsually                            |     0.994|     0.454|    -0.013|   0.990|
@@ -2701,7 +2701,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.482|     0.961|     0.410|   0.682|
 |Adjusted   |raceMultiple races                                |     1.347|     0.358|     0.834|   0.405|
 |Adjusted   |raceOther                                         |     0.896|     0.679|    -0.162|   0.871|
-|Adjusted   |hispanicNo                                        |     0.747|     0.493|    -0.591|   0.554|
+|Adjusted   |hispanicYes                                       |     1.338|     0.493|     0.591|   0.554|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.323|     0.238|     1.175|   0.240|
 |Adjusted   |countSocialMediaExclFB                            |     0.958|     0.118|    -0.362|   0.717|
 |Adjusted   |comm_inpersonOnce a week                          |     0.734|     0.363|    -0.853|   0.394|
@@ -2738,7 +2738,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_infoSometimes                              |     0.936|     0.272|    -0.242|   0.809|
 |Unadjusted |sm_med_infoUsually                                |     1.089|     0.356|     0.240|   0.811|
 |Unadjusted |sm_med_infoAlways                                 |     0.410|     0.773|    -1.153|   0.249|
-|Adjusted   |(Intercept)                                       |     0.333|     0.657|    -1.676|   0.094|
+|Adjusted   |(Intercept)                                       |     0.272|     0.503|    -2.590|   0.010|
 |Adjusted   |sm_med_infoRarely                                 |     1.235|     0.304|     0.696|   0.486|
 |Adjusted   |sm_med_infoSometimes                              |     1.080|     0.324|     0.239|   0.811|
 |Adjusted   |sm_med_infoUsually                                |     1.087|     0.421|     0.199|   0.843|
@@ -2751,7 +2751,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.364|     0.971|     0.320|   0.749|
 |Adjusted   |raceMultiple races                                |     1.286|     0.359|     0.700|   0.484|
 |Adjusted   |raceOther                                         |     0.842|     0.677|    -0.254|   0.800|
-|Adjusted   |hispanicNo                                        |     0.817|     0.495|    -0.408|   0.683|
+|Adjusted   |hispanicYes                                       |     1.224|     0.495|     0.408|   0.683|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.418|     0.239|     1.461|   0.144|
 |Adjusted   |countSocialMediaExclFB                            |     0.945|     0.118|    -0.475|   0.635|
 |Adjusted   |comm_inpersonOnce a week                          |     0.712|     0.358|    -0.950|   0.342|
@@ -2788,7 +2788,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_adviceSometimes                            |     0.913|     0.269|    -0.337|   0.736|
 |Unadjusted |sm_med_adviceUsually                              |     1.327|     0.405|     0.700|   0.484|
 |Unadjusted |sm_med_adviceAlways                               |     0.314|     1.056|    -1.098|   0.272|
-|Adjusted   |(Intercept)                                       |     0.369|     0.648|    -1.539|   0.124|
+|Adjusted   |(Intercept)                                       |     0.290|     0.495|    -2.503|   0.012|
 |Adjusted   |sm_med_adviceRarely                               |     1.022|     0.275|     0.078|   0.938|
 |Adjusted   |sm_med_adviceSometimes                            |     0.948|     0.317|    -0.170|   0.865|
 |Adjusted   |sm_med_adviceUsually                              |     1.278|     0.467|     0.526|   0.599|
@@ -2801,7 +2801,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.329|     0.966|     0.295|   0.768|
 |Adjusted   |raceMultiple races                                |     1.286|     0.357|     0.704|   0.481|
 |Adjusted   |raceOther                                         |     0.818|     0.676|    -0.298|   0.766|
-|Adjusted   |hispanicNo                                        |     0.785|     0.497|    -0.487|   0.626|
+|Adjusted   |hispanicYes                                       |     1.274|     0.497|     0.487|   0.626|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.396|     0.239|     1.400|   0.162|
 |Adjusted   |countSocialMediaExclFB                            |     0.948|     0.117|    -0.456|   0.648|
 |Adjusted   |comm_inpersonOnce a week                          |     0.715|     0.360|    -0.930|   0.352|
@@ -2838,7 +2838,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_med_questionsSometimes                         |     1.135|     0.277|     0.458|   0.647|
 |Unadjusted |sm_med_questionsUsually                           |     1.591|     0.409|     1.137|   0.256|
 |Unadjusted |sm_med_questionsAlways                            |     0.389|     1.064|    -0.888|   0.375|
-|Adjusted   |(Intercept)                                       |     0.373|     0.649|    -1.522|   0.128|
+|Adjusted   |(Intercept)                                       |     0.316|     0.492|    -2.346|   0.019|
 |Adjusted   |sm_med_questionsRarely                            |     0.874|     0.279|    -0.483|   0.629|
 |Adjusted   |sm_med_questionsSometimes                         |     1.248|     0.321|     0.690|   0.490|
 |Adjusted   |sm_med_questionsUsually                           |     1.413|     0.473|     0.731|   0.464|
@@ -2851,7 +2851,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.377|     0.957|     0.335|   0.738|
 |Adjusted   |raceMultiple races                                |     1.335|     0.361|     0.801|   0.423|
 |Adjusted   |raceOther                                         |     1.039|     0.682|     0.056|   0.955|
-|Adjusted   |hispanicNo                                        |     0.847|     0.497|    -0.335|   0.738|
+|Adjusted   |hispanicYes                                       |     1.181|     0.497|     0.335|   0.738|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.427|     0.240|     1.481|   0.139|
 |Adjusted   |countSocialMediaExclFB                            |     0.938|     0.118|    -0.538|   0.591|
 |Adjusted   |comm_inpersonOnce a week                          |     0.733|     0.360|    -0.863|   0.388|
@@ -2888,7 +2888,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_symptSometimes                           |     2.030|     0.291|     2.436|   0.015|
 |Unadjusted |sm_share_symptUsually                             |     3.295|     0.403|     2.962|   0.003|
 |Unadjusted |sm_share_symptAlways                              |     0.618|     1.071|    -0.449|   0.653|
-|Adjusted   |(Intercept)                                       |     0.387|     0.649|    -1.464|   0.143|
+|Adjusted   |(Intercept)                                       |     0.289|     0.496|    -2.504|   0.012|
 |Adjusted   |sm_share_symptRarely                              |     1.459|     0.274|     1.381|   0.167|
 |Adjusted   |sm_share_symptSometimes                           |     1.422|     0.341|     1.034|   0.301|
 |Adjusted   |sm_share_symptUsually                             |     1.650|     0.455|     1.100|   0.271|
@@ -2901,7 +2901,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.464|     1.021|     0.373|   0.709|
 |Adjusted   |raceMultiple races                                |     1.263|     0.360|     0.649|   0.516|
 |Adjusted   |raceOther                                         |     0.751|     0.693|    -0.413|   0.680|
-|Adjusted   |hispanicNo                                        |     0.747|     0.499|    -0.583|   0.560|
+|Adjusted   |hispanicYes                                       |     1.338|     0.499|     0.583|   0.560|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.395|     0.239|     1.393|   0.164|
 |Adjusted   |countSocialMediaExclFB                            |     0.956|     0.115|    -0.387|   0.699|
 |Adjusted   |comm_inpersonOnce a week                          |     0.660|     0.368|    -1.127|   0.260|
@@ -2938,7 +2938,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_healthSometimes                          |     1.277|     0.323|     0.758|   0.449|
 |Unadjusted |sm_share_healthUsually                            |     4.471|     0.454|     3.301|   0.001|
 |Unadjusted |sm_share_healthAlways                             |     0.000|   550.089|    -0.026|   0.980|
-|Adjusted   |(Intercept)                                       |     0.337|     0.653|    -1.665|   0.096|
+|Adjusted   |(Intercept)                                       |     0.282|     0.499|    -2.539|   0.011|
 |Adjusted   |sm_share_healthRarely                             |     1.192|     0.257|     0.685|   0.494|
 |Adjusted   |sm_share_healthSometimes                          |     0.815|     0.379|    -0.540|   0.589|
 |Adjusted   |sm_share_healthUsually                            |     1.946|     0.526|     1.266|   0.205|
@@ -2951,7 +2951,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.558|     1.081|     0.410|   0.681|
 |Adjusted   |raceMultiple races                                |     1.240|     0.364|     0.591|   0.555|
 |Adjusted   |raceOther                                         |     0.957|     0.678|    -0.065|   0.949|
-|Adjusted   |hispanicNo                                        |     0.835|     0.500|    -0.360|   0.719|
+|Adjusted   |hispanicYes                                       |     1.197|     0.500|     0.360|   0.719|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.378|     0.239|     1.343|   0.179|
 |Adjusted   |countSocialMediaExclFB                            |     0.955|     0.116|    -0.400|   0.689|
 |Adjusted   |comm_inpersonOnce a week                          |     0.722|     0.365|    -0.893|   0.372|
@@ -2988,7 +2988,7 @@ Relabel factors; replace spaces with underscores.
 |Unadjusted |sm_share_suicideSometimes                         |     5.260|     0.531|     3.128|   0.002|
 |Unadjusted |sm_share_suicideUsually                           |     5.753|     0.681|     2.569|   0.010|
 |Unadjusted |sm_share_suicideAlways                            |     0.000|   727.699|    -0.019|   0.985|
-|Adjusted   |(Intercept)                                       |     0.344|     0.678|    -1.574|   0.116|
+|Adjusted   |(Intercept)                                       |     0.288|     0.503|    -2.478|   0.013|
 |Adjusted   |sm_share_suicideRarely                            |     4.664|     0.345|     4.466|   0.000|
 |Adjusted   |sm_share_suicideSometimes                         |     2.959|     0.607|     1.786|   0.074|
 |Adjusted   |sm_share_suicideUsually                           |     4.320|     0.768|     1.906|   0.057|
@@ -3001,7 +3001,7 @@ Relabel factors; replace spaces with underscores.
 |Adjusted   |raceBlack or African American                     |     1.173|     1.060|     0.151|   0.880|
 |Adjusted   |raceMultiple races                                |     1.379|     0.373|     0.861|   0.389|
 |Adjusted   |raceOther                                         |     1.166|     0.681|     0.225|   0.822|
-|Adjusted   |hispanicNo                                        |     0.836|     0.529|    -0.340|   0.734|
+|Adjusted   |hispanicYes                                       |     1.197|     0.529|     0.340|   0.734|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.234|     0.247|     0.853|   0.393|
 |Adjusted   |countSocialMediaExclFB                            |     0.912|     0.121|    -0.760|   0.447|
 |Adjusted   |comm_inpersonOnce a week                          |     0.735|     0.375|    -0.820|   0.412|
@@ -3179,7 +3179,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.927|     0.058|    -1.290|   0.197|
 |Unadjusted |indNotPTSDTRUE                                    |     2.625|     0.288|     3.355|   0.001|
 |Unadjusted |fmssSubscore:indNotPTSDTRUE                       |     1.011|     0.073|     0.155|   0.877|
-|Adjusted   |(Intercept)                                       |     1.267|     0.568|     0.417|   0.677|
+|Adjusted   |(Intercept)                                       |     0.768|     0.456|    -0.579|   0.563|
 |Adjusted   |fmssSubscore                                      |     0.955|     0.060|    -0.774|   0.439|
 |Adjusted   |age                                               |     0.980|     0.008|    -2.439|   0.015|
 |Adjusted   |genderFemale                                      |     0.797|     0.258|    -0.879|   0.379|
@@ -3189,7 +3189,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.419|     1.130|    -0.769|   0.442|
 |Adjusted   |raceMultiple races                                |     0.732|     0.364|    -0.856|   0.392|
 |Adjusted   |raceOther                                         |     1.214|     0.635|     0.305|   0.761|
-|Adjusted   |hispanicNo                                        |     0.606|     0.420|    -1.192|   0.233|
+|Adjusted   |hispanicYes                                       |     1.649|     0.420|     1.192|   0.233|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.082|     0.209|     0.377|   0.706|
 |Adjusted   |countSocialMediaExclFB                            |     0.810|     0.108|    -1.952|   0.051|
 |Adjusted   |comm_inpersonOnce a week                          |     1.051|     0.347|     0.143|   0.887|
@@ -3220,7 +3220,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.856|     0.074|    -2.109|   0.035|
 |Unadjusted |indNotPHQTRUE                                     |     1.353|     0.310|     0.976|   0.329|
 |Unadjusted |fmssSubscore:indNotPHQTRUE                        |     1.123|     0.083|     1.394|   0.163|
-|Adjusted   |(Intercept)                                       |     2.049|     0.581|     1.235|   0.217|
+|Adjusted   |(Intercept)                                       |     1.283|     0.462|     0.539|   0.590|
 |Adjusted   |fmssSubscore                                      |     0.872|     0.074|    -1.860|   0.063|
 |Adjusted   |age                                               |     0.978|     0.008|    -2.730|   0.006|
 |Adjusted   |genderFemale                                      |     0.799|     0.256|    -0.877|   0.381|
@@ -3230,7 +3230,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.355|     1.149|    -0.901|   0.368|
 |Adjusted   |raceMultiple races                                |     0.728|     0.356|    -0.893|   0.372|
 |Adjusted   |raceOther                                         |     1.173|     0.618|     0.258|   0.796|
-|Adjusted   |hispanicNo                                        |     0.626|     0.408|    -1.146|   0.252|
+|Adjusted   |hispanicYes                                       |     1.597|     0.408|     1.146|   0.252|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.044|     0.206|     0.209|   0.834|
 |Adjusted   |countSocialMediaExclFB                            |     0.800|     0.106|    -2.100|   0.036|
 |Adjusted   |comm_inpersonOnce a week                          |     0.980|     0.344|    -0.060|   0.952|
@@ -3261,7 +3261,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.894|     0.056|    -2.008|   0.045|
 |Unadjusted |indNotAuditCTRUE                                  |     0.613|     0.277|    -1.765|   0.078|
 |Unadjusted |fmssSubscore:indNotAuditCTRUE                     |     1.083|     0.071|     1.124|   0.261|
-|Adjusted   |(Intercept)                                       |     2.838|     0.549|     1.900|   0.057|
+|Adjusted   |(Intercept)                                       |     1.756|     0.428|     1.315|   0.188|
 |Adjusted   |fmssSubscore                                      |     0.914|     0.059|    -1.525|   0.127|
 |Adjusted   |age                                               |     0.980|     0.008|    -2.450|   0.014|
 |Adjusted   |genderFemale                                      |     0.863|     0.256|    -0.576|   0.565|
@@ -3270,7 +3270,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.395|     1.136|    -0.818|   0.413|
 |Adjusted   |raceMultiple races                                |     0.735|     0.355|    -0.865|   0.387|
 |Adjusted   |raceOther                                         |     1.256|     0.612|     0.372|   0.710|
-|Adjusted   |hispanicNo                                        |     0.619|     0.409|    -1.174|   0.240|
+|Adjusted   |hispanicYes                                       |     1.616|     0.409|     1.174|   0.240|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.951|     0.209|    -0.242|   0.809|
 |Adjusted   |countSocialMediaExclFB                            |     0.802|     0.106|    -2.077|   0.038|
 |Adjusted   |comm_inpersonOnce a week                          |     1.036|     0.343|     0.103|   0.918|
@@ -3301,7 +3301,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     1.068|     0.075|     0.881|   0.378|
 |Unadjusted |indNotDSISSTRUE                                   |     1.871|     0.335|     1.872|   0.061|
 |Unadjusted |fmssSubscore:indNotDSISSTRUE                      |     0.849|     0.084|    -1.948|   0.051|
-|Adjusted   |(Intercept)                                       |     1.671|     0.603|     0.851|   0.395|
+|Adjusted   |(Intercept)                                       |     0.996|     0.501|    -0.009|   0.993|
 |Adjusted   |fmssSubscore                                      |     1.089|     0.078|     1.086|   0.278|
 |Adjusted   |age                                               |     0.979|     0.008|    -2.545|   0.011|
 |Adjusted   |genderFemale                                      |     0.808|     0.256|    -0.834|   0.404|
@@ -3311,7 +3311,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.381|     1.151|    -0.837|   0.402|
 |Adjusted   |raceMultiple races                                |     0.693|     0.356|    -1.030|   0.303|
 |Adjusted   |raceOther                                         |     1.133|     0.612|     0.203|   0.839|
-|Adjusted   |hispanicNo                                        |     0.596|     0.409|    -1.266|   0.206|
+|Adjusted   |hispanicYes                                       |     1.678|     0.409|     1.266|   0.206|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.099|     0.208|     0.453|   0.651|
 |Adjusted   |countSocialMediaExclFB                            |     0.812|     0.105|    -1.981|   0.048|
 |Adjusted   |comm_inpersonOnce a week                          |     1.039|     0.343|     0.112|   0.910|
@@ -3347,7 +3347,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.963|     0.047|    -0.789|   0.430|
 |Unadjusted |indNotPTSDTRUE                                    |     3.674|     0.276|     4.712|   0.000|
 |Unadjusted |fmssSubscore:indNotPTSDTRUE                       |     0.954|     0.065|    -0.712|   0.476|
-|Adjusted   |(Intercept)                                       |     3.188|     0.570|     2.035|   0.042|
+|Adjusted   |(Intercept)                                       |     1.703|     0.428|     1.244|   0.214|
 |Adjusted   |fmssSubscore                                      |     0.990|     0.050|    -0.198|   0.843|
 |Adjusted   |age                                               |     0.981|     0.008|    -2.493|   0.013|
 |Adjusted   |genderFemale                                      |     0.559|     0.238|    -2.447|   0.014|
@@ -3357,7 +3357,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.854|     0.824|    -0.191|   0.849|
 |Adjusted   |raceMultiple races                                |     0.629|     0.329|    -1.408|   0.159|
 |Adjusted   |raceOther                                         |     1.211|     0.604|     0.317|   0.751|
-|Adjusted   |hispanicNo                                        |     0.534|     0.446|    -1.404|   0.160|
+|Adjusted   |hispanicYes                                       |     1.871|     0.446|     1.404|   0.160|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.853|     0.200|    -0.795|   0.426|
 |Adjusted   |countSocialMediaExclFB                            |     0.991|     0.098|    -0.095|   0.924|
 |Adjusted   |comm_inpersonOnce a week                          |     1.136|     0.318|     0.401|   0.689|
@@ -3388,7 +3388,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.896|     0.061|    -1.801|   0.072|
 |Unadjusted |indNotPHQTRUE                                     |     2.216|     0.292|     2.729|   0.006|
 |Unadjusted |fmssSubscore:indNotPHQTRUE                        |     1.071|     0.072|     0.959|   0.338|
-|Adjusted   |(Intercept)                                       |     3.914|     0.583|     2.340|   0.019|
+|Adjusted   |(Intercept)                                       |     2.344|     0.439|     1.939|   0.052|
 |Adjusted   |fmssSubscore                                      |     0.918|     0.062|    -1.365|   0.172|
 |Adjusted   |age                                               |     0.977|     0.008|    -2.960|   0.003|
 |Adjusted   |genderFemale                                      |     0.556|     0.235|    -2.496|   0.013|
@@ -3398,7 +3398,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.738|     0.848|    -0.358|   0.720|
 |Adjusted   |raceMultiple races                                |     0.601|     0.323|    -1.577|   0.115|
 |Adjusted   |raceOther                                         |     1.209|     0.603|     0.314|   0.753|
-|Adjusted   |hispanicNo                                        |     0.599|     0.434|    -1.182|   0.237|
+|Adjusted   |hispanicYes                                       |     1.670|     0.434|     1.182|   0.237|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.822|     0.198|    -0.994|   0.320|
 |Adjusted   |countSocialMediaExclFB                            |     0.961|     0.097|    -0.409|   0.683|
 |Adjusted   |comm_inpersonOnce a week                          |     1.081|     0.316|     0.247|   0.805|
@@ -3429,7 +3429,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.918|     0.053|    -1.620|   0.105|
 |Unadjusted |indNotAuditCTRUE                                  |     0.692|     0.271|    -1.360|   0.174|
 |Unadjusted |fmssSubscore:indNotAuditCTRUE                     |     1.046|     0.066|     0.681|   0.496|
-|Adjusted   |(Intercept)                                       |     7.283|     0.556|     3.573|   0.000|
+|Adjusted   |(Intercept)                                       |     4.185|     0.416|     3.441|   0.001|
 |Adjusted   |fmssSubscore                                      |     0.935|     0.057|    -1.197|   0.231|
 |Adjusted   |age                                               |     0.981|     0.008|    -2.502|   0.012|
 |Adjusted   |genderFemale                                      |     0.614|     0.232|    -2.102|   0.036|
@@ -3438,7 +3438,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.750|     0.819|    -0.352|   0.725|
 |Adjusted   |raceMultiple races                                |     0.615|     0.318|    -1.528|   0.126|
 |Adjusted   |raceOther                                         |     1.177|     0.580|     0.281|   0.779|
-|Adjusted   |hispanicNo                                        |     0.575|     0.431|    -1.286|   0.198|
+|Adjusted   |hispanicYes                                       |     1.740|     0.431|     1.286|   0.198|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.762|     0.197|    -1.381|   0.167|
 |Adjusted   |countSocialMediaExclFB                            |     0.970|     0.095|    -0.317|   0.751|
 |Adjusted   |comm_inpersonOnce a week                          |     1.145|     0.311|     0.433|   0.665|
@@ -3469,7 +3469,7 @@ Set modeling covariates.
 |Unadjusted |fmssSubscore                                      |     0.934|     0.072|    -0.959|   0.337|
 |Unadjusted |indNotDSISSTRUE                                   |     1.801|     0.311|     1.895|   0.058|
 |Unadjusted |fmssSubscore:indNotDSISSTRUE                      |     1.006|     0.080|     0.075|   0.940|
-|Adjusted   |(Intercept)                                       |     5.124|     0.602|     2.714|   0.007|
+|Adjusted   |(Intercept)                                       |     2.877|     0.473|     2.233|   0.026|
 |Adjusted   |fmssSubscore                                      |     0.935|     0.075|    -0.889|   0.374|
 |Adjusted   |age                                               |     0.978|     0.008|    -2.897|   0.004|
 |Adjusted   |genderFemale                                      |     0.578|     0.232|    -2.366|   0.018|
@@ -3479,7 +3479,7 @@ Set modeling covariates.
 |Adjusted   |raceBlack or African American                     |     0.748|     0.827|    -0.352|   0.725|
 |Adjusted   |raceMultiple races                                |     0.615|     0.319|    -1.526|   0.127|
 |Adjusted   |raceOther                                         |     1.086|     0.581|     0.142|   0.887|
-|Adjusted   |hispanicNo                                        |     0.562|     0.430|    -1.342|   0.179|
+|Adjusted   |hispanicYes                                       |     1.781|     0.430|     1.342|   0.179|
 |Adjusted   |marital2Single/Divorced/Widowed/Separated         |     0.823|     0.196|    -0.993|   0.321|
 |Adjusted   |countSocialMediaExclFB                            |     0.977|     0.095|    -0.248|   0.804|
 |Adjusted   |comm_inpersonOnce a week                          |     1.115|     0.312|     0.348|   0.728|
