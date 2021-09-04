@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 11:56:32"
+date: "2021-09-03 17:38:53"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -932,6 +932,35 @@ Closely exam FMSS items 1, 2, 3, and 11
 
 
 
+### PC-PTSD
+
+
+|model      |term                                              |   oddsratio| std.error| statistic| p.value|
+|:----------|:-------------------------------------------------|-----------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                       |       0.841|     0.130|    -1.330|   0.183|
+|Unadjusted |fmssSubscore                                      |       0.996|     0.031|    -0.120|   0.905|
+|Adjusted   |(Intercept)                                       |       0.531|     0.489|    -1.296|   0.195|
+|Adjusted   |fmssSubscore                                      |       0.989|     0.032|    -0.329|   0.742|
+|Adjusted   |age                                               |       0.997|     0.007|    -0.376|   0.707|
+|Adjusted   |genderFemale                                      |       1.049|     0.220|     0.216|   0.829|
+|Adjusted   |genderA gender not listed here                    | 2614732.177|   620.381|     0.024|   0.981|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |       1.654|     0.774|     0.650|   0.516|
+|Adjusted   |raceAsian                                         |       1.296|     0.718|     0.361|   0.718|
+|Adjusted   |raceBlack or African American                     |       1.806|     0.777|     0.760|   0.447|
+|Adjusted   |raceMultiple races                                |       1.686|     0.297|     1.756|   0.079|
+|Adjusted   |raceOther                                         |       2.069|     0.555|     1.311|   0.190|
+|Adjusted   |hispanicNo                                        |       1.481|     0.396|     0.991|   0.322|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |       1.360|     0.179|     1.721|   0.085|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       789.437|     572| -394.712| 793.423| 802.125|  789.423|         571|
+|Adjusted   |       789.437|     572| -388.323| 800.646| 852.856|  776.646|         561|
+
+
 ### PHQ-2
 
 
@@ -959,6 +988,34 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
 |Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|
 |Adjusted   |       679.346|     573| -333.503| 691.006| 743.238|  667.006|         562|
+
+
+### AUDIT-C
+
+
+|model      |term                                              | oddsratio| std.error| statistic| p.value|
+|:----------|:-------------------------------------------------|---------:|---------:|---------:|-------:|
+|Unadjusted |(Intercept)                                       |     0.793|     0.131|    -1.767|   0.077|
+|Unadjusted |fmssSubscore                                      |     0.971|     0.032|    -0.924|   0.355|
+|Adjusted   |(Intercept)                                       |     2.565|     0.508|     1.854|   0.064|
+|Adjusted   |fmssSubscore                                      |     0.958|     0.034|    -1.282|   0.200|
+|Adjusted   |age                                               |     0.967|     0.008|    -4.229|   0.000|
+|Adjusted   |genderFemale                                      |     0.732|     0.236|    -1.320|   0.187|
+|Adjusted   |raceAmerican Indian/Alaska Native/Native Hawaiian |     9.466|     1.101|     2.041|   0.041|
+|Adjusted   |raceAsian                                         |     0.166|     1.095|    -1.641|   0.101|
+|Adjusted   |raceBlack or African American                     |     1.251|     0.802|     0.279|   0.780|
+|Adjusted   |raceMultiple races                                |     1.010|     0.305|     0.033|   0.974|
+|Adjusted   |raceOther                                         |     0.318|     0.680|    -1.685|   0.092|
+|Adjusted   |hispanicNo                                        |     1.068|     0.404|     0.164|   0.870|
+|Adjusted   |marital2Single/Divorced/Widowed/Separated         |     1.780|     0.186|     3.108|   0.002|
+
+\newline
+
+
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
+|Unadjusted |       778.099|     571| -388.621| 781.241| 789.940|  777.241|         570|
+|Adjusted   |       778.099|     571| -363.968| 749.937| 797.777|  727.937|         561|
 
 
 ### DSI-SS
