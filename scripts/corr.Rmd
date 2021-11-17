@@ -1,0 +1,103 @@
+# Correlation matrix for subset of variables
+
+Context:
+
+```
+From: "Zhu, Yiqin" <Yiqin.Zhu@Pennmedicine.upenn.edu>  
+Date: Tuesday, November 16, 2021 at 10:18 AM  
+To: Alan Teo <teoa@ohsu.edu>  
+Subject: [EXTERNAL] Correlation Matrix of your Paper - Request from a Researcher at UPenn  
+
+Dear Dr. Alan Teo
+
+My name is Yiqin Zhu and I am a research assistant under Dr. Lily Brown at the
+University of Pennsylvania. Dr. Brown is working on a review paper and
+meta-analysis. In the process, she came across your article entitled "Frequency
+of social contact in-person vs. on Facebook: An examination of associations with
+psychiatric symptoms in military veterans". She would be very interested in
+including the paper in the analysis, but would need a correlation matrix from
+the variables that you included in order to do so. I am writing on her behalf to
+inquire about whether you might be willing to share the correlation matrix that
+corresponds to the dataset from this article.
+
+If you have any questions or concerns about this, you are welcome to contact Dr.
+Lily Brown – her email address is lilybr@pennmedicine.upenn.edu and her office
+phone number is 215-746-3346. She is happy to answer any questions that you
+have, or to arrange for a time to speak if that would be helpful.
+
+Thank you very much for considering.
+
+Sincerely,
+
+Yiqin Zhu
+Center for the Treatment and Study of Anxiety
+Research Assistant
+University of Pennsylvania
+```
+
+and
+
+```
+Dear Dr. Teo,
+
+Thank you so much! For this paper, we are interested in the correlations between
+the following:
+
+PC-PTSD
+In-person social interaction
+Social media social contact
+DSI-SS
+
+Please let me know if you need additional information. Thank you!
+
+Lily A. Brown, PhD
+Director
+Center for the Treatment and Study of Anxiety
+Assistant Professor
+```
+
+* `ptsd` PC-PTSD
+  * Name of scale: PC-PTSD 
+  * 6-point scale
+  * Positive screen: `ptsd_intrusive` + `ptsd_avoidant` + `ptsd_guarded` + `ptsd_numb` + `ptsd_guilty` $\ge$ 3
+* `comm_inperson` In-person social interaction
+  * 5-point scale
+* `fmss` Social media social contact
+  * Modified Facebook Measure of Social Support (FMSS)
+  * Continuous scale
+  * Reverse-scored items are `fmss_r7` through `fmss_r10`
+* `dsiss` DSI-SS
+  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
+  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
+
+Univariate frequency tables or histogram.
+
+```{r}
+freq <- function(data, group_var) {
+  group_var <- enquo(group_var)
+  data %>%
+    group_by(!!group_var) %>%
+    summarize(freq = n()) %>%
+    ungroup() %>%
+    mutate(prop = freq / sum(freq))
+}
+df0 %>% freq(ptsd) %>% kable()
+df0 %>%
+  mutate(comm_inperson = sprintf("(%d) %s", as.numeric(unclass(comm_inperson)), comm_inperson)) %>%
+  freq(comm_inperson) %>%
+  kable()
+df0 %>% freq(dsiss) %>% kable()
+```
+
+![../figures/histogramFMSS-1.png](../figures/histogramFMSS-1.png)
+
+Correlation matrix.
+
+```{r}
+df0 %>%
+  select(ptsd, comm_inperson, fmss, dsiss) %>%
+  mutate(comm_inperson_numeric = as.numeric(unclass(comm_inperson))) %>%
+  select(ptsd, comm_inperson_numeric, fmss, dsiss) %>%
+  cor(use = "pairwise.complete.obs") %>%
+  kable()
+```

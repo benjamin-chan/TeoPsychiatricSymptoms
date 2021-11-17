@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-08-13 16:17:17"
+date: "2021-11-17 10:59:18"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -3751,3 +3751,126 @@ that were slightly away from the null; but still not significantly different
 from the null
 * Conclusion: the correlation between `comm_inperson` and `comm_facebook` does
 not greatly bias the association between `comm_facebook` and any of the outcomes
+# Correlation matrix for subset of variables
+
+Context:
+
+```
+From: "Zhu, Yiqin" <Yiqin.Zhu@Pennmedicine.upenn.edu>  
+Date: Tuesday, November 16, 2021 at 10:18 AM  
+To: Alan Teo <teoa@ohsu.edu>  
+Subject: [EXTERNAL] Correlation Matrix of your Paper - Request from a Researcher at UPenn  
+
+Dear Dr. Alan Teo
+
+My name is Yiqin Zhu and I am a research assistant under Dr. Lily Brown at the
+University of Pennsylvania. Dr. Brown is working on a review paper and
+meta-analysis. In the process, she came across your article entitled "Frequency
+of social contact in-person vs. on Facebook: An examination of associations with
+psychiatric symptoms in military veterans". She would be very interested in
+including the paper in the analysis, but would need a correlation matrix from
+the variables that you included in order to do so. I am writing on her behalf to
+inquire about whether you might be willing to share the correlation matrix that
+corresponds to the dataset from this article.
+
+If you have any questions or concerns about this, you are welcome to contact Dr.
+Lily Brown – her email address is lilybr@pennmedicine.upenn.edu and her office
+phone number is 215-746-3346. She is happy to answer any questions that you
+have, or to arrange for a time to speak if that would be helpful.
+
+Thank you very much for considering.
+
+Sincerely,
+
+Yiqin Zhu
+Center for the Treatment and Study of Anxiety
+Research Assistant
+University of Pennsylvania
+```
+
+and
+
+```
+Dear Dr. Teo,
+
+Thank you so much! For this paper, we are interested in the correlations between
+the following:
+
+PC-PTSD
+In-person social interaction
+Social media social contact
+DSI-SS
+
+Please let me know if you need additional information. Thank you!
+
+Lily A. Brown, PhD
+Director
+Center for the Treatment and Study of Anxiety
+Assistant Professor
+```
+
+* `ptsd` PC-PTSD
+  * Name of scale: PC-PTSD 
+  * 6-point scale
+  * Positive screen: `ptsd_intrusive` + `ptsd_avoidant` + `ptsd_guarded` + `ptsd_numb` + `ptsd_guilty` $\ge$ 3
+* `comm_inperson` In-person social interaction
+  * 5-point scale
+* `fmss` Social media social contact
+  * Modified Facebook Measure of Social Support (FMSS)
+  * Continuous scale
+  * Reverse-scored items are `fmss_r7` through `fmss_r10`
+* `dsiss` DSI-SS
+  * See [Joiner 2002](http://www.sciencedirect.com/science/article/pii/S0005796701000171)
+  * *Scores on each item range from 0 to 3 and, for the inventory, from 0 to 12, with higher scores reflecting greater severity of suicidal ideation.*
+
+Univariate frequency tables or histogram.
+
+
+| ptsd| freq|      prop|
+|----:|----:|---------:|
+|    0|  184| 0.3134583|
+|    1|   60| 0.1022147|
+|    2|   75| 0.1277683|
+|    3|   71| 0.1209540|
+|    4|   72| 0.1226576|
+|    5|  123| 0.2095400|
+|   NA|    2| 0.0034072|
+
+
+
+|comm_inperson                     | freq|      prop|
+|:---------------------------------|----:|---------:|
+|(1) Every few weeks or less often |  169| 0.2879046|
+|(2) Once a week                   |   70| 0.1192504|
+|(3) A few times a week            |  114| 0.1942078|
+|(4) Once a day                    |   58| 0.0988075|
+|(5) Several times a day           |  175| 0.2981261|
+|(NA) NA                           |    1| 0.0017036|
+
+
+
+| dsiss| freq|      prop|
+|-----:|----:|---------:|
+|     0|  411| 0.7001704|
+|     1|   42| 0.0715503|
+|     2|   29| 0.0494037|
+|     3|   36| 0.0613288|
+|     4|   28| 0.0477002|
+|     5|   21| 0.0357751|
+|     6|    6| 0.0102215|
+|     7|    7| 0.0119250|
+|     8|    3| 0.0051107|
+|     9|    2| 0.0034072|
+|    NA|    2| 0.0034072|
+
+![../figures/histogramFMSS-1.png](../figures/histogramFMSS-1.png)
+
+Correlation matrix.
+
+
+|                      |       ptsd| comm_inperson_numeric|       fmss|      dsiss|
+|:---------------------|----------:|---------------------:|----------:|----------:|
+|ptsd                  |  1.0000000|            -0.2384990| -0.1295715|  0.3446499|
+|comm_inperson_numeric | -0.2384990|             1.0000000|  0.0928634| -0.1300879|
+|fmss                  | -0.1295715|             0.0928634|  1.0000000| -0.1428703|
+|dsiss                 |  0.3446499|            -0.1300879| -0.1428703|  1.0000000|

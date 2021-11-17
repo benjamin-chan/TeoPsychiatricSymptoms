@@ -12,7 +12,8 @@ files <- c("header.yaml",
            "analyzeRQ1.Rmd",
            "analyzeRQ2.Rmd",
            "analyzeRQ3.Rmd",
-           "respondToComments.Rmd")
+           "respondToComments.Rmd",
+           "corr.Rmd")
 f <- file("master.Rmd", open = "w")
 for (i in 1:length(files)) {
     x <- readLines(files[i])
