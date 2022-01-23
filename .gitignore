@@ -29,7 +29,7 @@ scratch.*
 
 # R logs
 script.log
-session.log
+# session.log
 
 # OS files
 *.lnk

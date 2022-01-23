@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2021-11-17 10:59:18"
+date: "2022-01-23 03:17:56"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -527,10 +527,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       775.487|     562| -384.156| 772.311| 780.978|  768.311|         561|
-|Adjusted   |       775.487|     562| -347.336| 732.671| 815.003|  694.671|         544|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       775.487|     562| -384.156| 772.311| 780.978|  768.311|         561|  563|
+|Adjusted   |       775.487|     562| -347.336| 732.671| 815.003|  694.671|         544|  563|
 
 
 
@@ -567,10 +567,10 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       665.192|     563| -329.524| 663.048| 671.718|  659.048|         562|
-|Adjusted   |       665.192|     563| -291.661| 621.323| 703.689|  583.323|         545|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       665.192|     563| -329.524| 663.048| 671.718|  659.048|         562|  564|
+|Adjusted   |       665.192|     563| -291.661| 621.323| 703.689|  583.323|         545|  564|
 
 
 
@@ -605,10 +605,10 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       762.618|     561| -381.184| 766.369| 775.032|  762.369|         560|
-|Adjusted   |       762.618|     561| -353.837| 743.675| 821.642|  707.675|         544|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       762.618|     561| -381.184| 766.369| 775.032|  762.369|         560|  562|
+|Adjusted   |       762.618|     561| -353.837| 743.675| 821.642|  707.675|         544|  562|
 
 
 
@@ -645,10 +645,10 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       599.174|     563| -295.329| 594.658| 603.328|  590.658|         562|
-|Adjusted   |       599.174|     563| -243.010| 524.019| 606.385|  486.019|         545|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       599.174|     563| -295.329| 594.658| 603.328|  590.658|         562|  564|
+|Adjusted   |       599.174|     563| -243.010| 524.019| 606.385|  486.019|         545|  564|
 
 
 
@@ -994,10 +994,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       789.437|     572| -394.712| 793.423| 802.125|  789.423|         571|
-|Adjusted   |       789.437|     572| -355.970| 749.939| 832.606|  711.939|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       789.437|     572| -394.712| 793.423| 802.125|  789.423|         571|  573|
+|Adjusted   |       789.437|     572| -355.970| 749.939| 832.606|  711.939|         554|  573|
 
 
 ### PHQ-2
@@ -1030,10 +1030,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|
-|Adjusted   |       679.346|     573| -297.961| 633.923| 716.623|  595.923|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|  574|
+|Adjusted   |       679.346|     573| -297.961| 633.923| 716.623|  595.923|         555|  574|
 
 
 ### AUDIT-C
@@ -1065,10 +1065,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       778.099|     571| -388.621| 781.241| 789.940|  777.241|         570|
-|Adjusted   |       778.099|     571| -360.216| 756.431| 834.716|  720.431|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       778.099|     571| -388.621| 781.241| 789.940|  777.241|         570|  572|
+|Adjusted   |       778.099|     571| -360.216| 756.431| 834.716|  720.431|         554|  572|
 
 
 ### DSI-SS
@@ -1101,10 +1101,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       611.701|     573| -304.922| 613.844| 622.549|  609.844|         572|
-|Adjusted   |       611.701|     573| -248.169| 534.337| 617.037|  496.337|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       611.701|     573| -304.922| 613.844| 622.549|  609.844|         572|  574|
+|Adjusted   |       611.701|     573| -248.169| 534.337| 617.037|  496.337|         555|  574|
 
 
 ## FMSS quartiles
@@ -1188,10 +1188,10 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       412.901|     297| -203.862| 411.725| 419.119|  407.725|         296|
-|Adjusted   |       404.784|     291| -177.773| 391.545| 457.727|  355.545|         274|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       412.901|     297| -203.862| 411.725| 419.119|  407.725|         296|  298|
+|Adjusted   |       404.784|     291| -177.773| 391.545| 457.727|  355.545|         274|  292|
 
 
 ### PHQ-2
@@ -1228,10 +1228,10 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       665.192|     563| -327.955| 663.910| 681.250|  655.910|         560|
-|Adjusted   |       665.192|     563| -290.279| 622.558| 713.595|  580.558|         543|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       665.192|     563| -327.955| 663.910| 681.250|  655.910|         560|  564|
+|Adjusted   |       665.192|     563| -290.279| 622.558| 713.595|  580.558|         543|  564|
 
 
 ### AUDIT-C
@@ -1267,10 +1267,10 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       762.618|     561| -376.331| 760.662| 777.988|  752.662|         558|
-|Adjusted   |       762.618|     561| -350.161| 740.323| 826.953|  700.323|         542|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       762.618|     561| -376.331| 760.662| 777.988|  752.662|         558|  562|
+|Adjusted   |       762.618|     561| -350.161| 740.323| 826.953|  700.323|         542|  562|
 
 
 ### DSI-SS
@@ -1302,10 +1302,10 @@ Stratify by FMSS quartile and compare Q1 vs Q4.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       317.642|     297| -156.291| 316.581| 323.975|  312.581|         296|
-|Adjusted   |       310.129|     292| -121.940| 279.881| 346.124|  243.881|         275|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       317.642|     297| -156.291| 316.581| 323.975|  312.581|         296|  298|
+|Adjusted   |       310.129|     292| -121.940| 279.881| 346.124|  243.881|         275|  293|
 # Research Question 2
 
 **Are certains features of social media use are associated with positive screens for psychiatric disorders or a positive screen for suicidality?**
@@ -1417,10 +1417,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       792.655|     575| -392.834| 797.668| 823.805|  785.668|         570|
-|Adjusted   |       792.655|     575| -353.897| 753.795| 853.985|  707.795|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       792.655|     575| -392.834| 797.668| 823.805|  785.668|         570|  576|
+|Adjusted   |       792.655|     575| -353.897| 753.795| 853.985|  707.795|         553|  576|
 
 
 ### PC-PTSD vs Active use of Facebook
@@ -1467,10 +1467,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       794.252|     576| -393.962| 797.924| 819.713|  787.924|         572|
-|Adjusted   |       794.252|     576| -355.650| 755.300| 851.172|  711.300|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       794.252|     576| -393.962| 797.924| 819.713|  787.924|         572|  577|
+|Adjusted   |       794.252|     576| -355.650| 755.300| 851.172|  711.300|         555|  577|
 
 
 ### PC-PTSD vs Get emotional support from others
@@ -1517,10 +1517,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       794.252|     576| -394.195| 798.390| 820.179|  788.390|         572|
-|Adjusted   |       794.252|     576| -354.761| 753.523| 849.395|  709.523|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       794.252|     576| -394.195| 798.390| 820.179|  788.390|         572|  577|
+|Adjusted   |       794.252|     576| -354.761| 753.523| 849.395|  709.523|         555|  577|
 
 
 ### PC-PTSD vs Get information about health or medical topics
@@ -1567,10 +1567,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       792.655|     575| -393.113| 796.226| 818.007|  786.226|         571|
-|Adjusted   |       792.655|     575| -354.415| 752.829| 848.663|  708.829|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       792.655|     575| -393.113| 796.226| 818.007|  786.226|         571|  576|
+|Adjusted   |       792.655|     575| -354.415| 752.829| 848.663|  708.829|         554|  576|
 
 
 ### PC-PTSD vs Get advice about health or medical topics
@@ -1617,10 +1617,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|  logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|-------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       794.252|     576| -392.32| 794.641| 816.430|  784.641|         572|
-|Adjusted   |       794.252|     576| -353.19| 750.381| 846.253|  706.381|         555|
+|model      | null.deviance| df.null|  logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|-------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       794.252|     576| -392.32| 794.641| 816.430|  784.641|         572|  577|
+|Adjusted   |       794.252|     576| -353.19| 750.381| 846.253|  706.381|         555|  577|
 
 
 ### PC-PTSD vs Ask questions about health or medical issues
@@ -1667,10 +1667,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       794.252|     576| -392.522| 795.043| 816.832|  785.043|         572|
-|Adjusted   |       794.252|     576| -355.582| 755.164| 851.036|  711.164|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       794.252|     576| -392.522| 795.043| 816.832|  785.043|         572|  577|
+|Adjusted   |       794.252|     576| -355.582| 755.164| 851.036|  711.164|         555|  577|
 
 
 ### PC-PTSD vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -1717,10 +1717,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       793.052|     575| -385.446| 780.893| 802.674|  770.893|         571|
-|Adjusted   |       793.052|     575| -353.085| 750.170| 846.004|  706.170|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       793.052|     575| -385.446| 780.893| 802.674|  770.893|         571|  576|
+|Adjusted   |       793.052|     575| -353.085| 750.170| 846.004|  706.170|         554|  576|
 
 
 ### PC-PTSD vs Share information related to your health
@@ -1767,10 +1767,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       792.655|     575| -385.961| 781.921| 803.702|  771.921|         571|
-|Adjusted   |       792.655|     575| -350.926| 745.852| 841.687|  701.852|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       792.655|     575| -385.961| 781.921| 803.702|  771.921|         571|  576|
+|Adjusted   |       792.655|     575| -350.926| 745.852| 841.687|  701.852|         554|  576|
 
 
 ### PC-PTSD vs Share thoughts about suicide or hurting yourself in some way
@@ -1817,10 +1817,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |        791.85|     574| -380.941| 771.882| 793.654|  761.882|         570|
-|Adjusted   |        791.85|     574| -347.290| 738.580| 834.377|  694.580|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |        791.85|     574| -380.941| 771.882| 793.654|  761.882|         570|  575|
+|Adjusted   |        791.85|     574| -347.290| 738.580| 834.377|  694.580|         553|  575|
 
 
 ### PHQ-2 vs Frequency of Facebook use
@@ -1869,10 +1869,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       679.376|     576| -336.901| 685.802| 711.949|  673.802|         571|
-|Adjusted   |       679.376|     576| -294.643| 635.286| 735.517|  589.286|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       679.376|     576| -336.901| 685.802| 711.949|  673.802|         571|  577|
+|Adjusted   |       679.376|     576| -294.643| 635.286| 735.517|  589.286|         554|  577|
 
 
 ### PHQ-2 vs Active use of Facebook
@@ -1919,10 +1919,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|  logLik|    AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|-------:|------:|-------:|--------:|-----------:|
-|Unadjusted |       681.949|     577| -340.02| 690.04| 711.838|   680.04|         573|
-|Adjusted   |       681.949|     577| -298.33| 640.66| 736.571|   596.66|         556|
+|model      | null.deviance| df.null|  logLik|    AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|-------:|------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       681.949|     577| -340.02| 690.04| 711.838|   680.04|         573|  578|
+|Adjusted   |       681.949|     577| -298.33| 640.66| 736.571|   596.66|         556|  578|
 
 
 ### PHQ-2 vs Get emotional support from others
@@ -1969,10 +1969,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       681.949|     577| -338.802| 687.603| 709.401|  677.603|         573|
-|Adjusted   |       681.949|     577| -296.793| 637.585| 733.496|  593.585|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       681.949|     577| -338.802| 687.603| 709.401|  677.603|         573|  578|
+|Adjusted   |       681.949|     577| -296.793| 637.585| 733.496|  593.585|         556|  578|
 
 
 ### PHQ-2 vs Get information about health or medical topics
@@ -2019,10 +2019,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       679.376|     576| -334.901| 679.803| 701.592|  669.803|         572|
-|Adjusted   |       679.376|     576| -292.522| 629.045| 724.917|  585.045|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       679.376|     576| -334.901| 679.803| 701.592|  669.803|         572|  577|
+|Adjusted   |       679.376|     576| -292.522| 629.045| 724.917|  585.045|         555|  577|
 
 
 ### PHQ-2 vs Get advice about health or medical topics
@@ -2069,10 +2069,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       681.949|     577| -336.856| 683.713| 705.511|  673.713|         573|
-|Adjusted   |       681.949|     577| -293.981| 631.962| 727.873|  587.962|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       681.949|     577| -336.856| 683.713| 705.511|  673.713|         573|  578|
+|Adjusted   |       681.949|     577| -293.981| 631.962| 727.873|  587.962|         556|  578|
 
 
 ### PHQ-2 vs Ask questions about health or medical issues
@@ -2119,10 +2119,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       681.949|     577| -335.503| 681.005| 702.803|  671.005|         573|
-|Adjusted   |       681.949|     577| -293.348| 630.696| 726.607|  586.696|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       681.949|     577| -335.503| 681.005| 702.803|  671.005|         573|  578|
+|Adjusted   |       681.949|     577| -293.348| 630.696| 726.607|  586.696|         556|  578|
 
 
 ### PHQ-2 vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -2169,10 +2169,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |         681.3|     576| -328.454| 666.909| 688.698|  656.909|         572|
-|Adjusted   |         681.3|     576| -293.084| 630.168| 726.041|  586.168|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |         681.3|     576| -328.454| 666.909| 688.698|  656.909|         572|  577|
+|Adjusted   |         681.3|     576| -293.084| 630.168| 726.041|  586.168|         555|  577|
 
 
 ### PHQ-2 vs Share information related to your health
@@ -2219,10 +2219,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|    BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|------:|--------:|-----------:|
-|Unadjusted |         681.3|     576| -332.820| 675.641| 697.43|  665.641|         572|
-|Adjusted   |         681.3|     576| -295.489| 634.978| 730.85|  590.978|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|    BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|------:|--------:|-----------:|----:|
+|Unadjusted |         681.3|     576| -332.820| 675.641| 697.43|  665.641|         572|  577|
+|Adjusted   |         681.3|     576| -295.489| 634.978| 730.85|  590.978|         555|  577|
 
 
 ### PHQ-2 vs Share thoughts about suicide or hurting yourself in some way
@@ -2269,10 +2269,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |        680.65|     575| -324.204| 658.408| 680.189|  648.408|         571|
-|Adjusted   |        680.65|     575| -286.604| 617.208| 713.042|  573.208|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |        680.65|     575| -324.204| 658.408| 680.189|  648.408|         571|  576|
+|Adjusted   |        680.65|     575| -286.604| 617.208| 713.042|  573.208|         554|  576|
 
 
 ### AUDIT-C vs Frequency of Facebook use
@@ -2320,10 +2320,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       782.657|     574| -387.022| 786.044| 812.170|  774.044|         569|
-|Adjusted   |       782.657|     574| -358.336| 760.672| 856.468|  716.672|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       782.657|     574| -387.022| 786.044| 812.170|  774.044|         569|  575|
+|Adjusted   |       782.657|     574| -358.336| 760.672| 856.468|  716.672|         553|  575|
 
 
 ### AUDIT-C vs Active use of Facebook
@@ -2369,10 +2369,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       783.748|     575| -389.612| 789.223| 811.004|  779.223|         571|
-|Adjusted   |       783.748|     575| -361.394| 764.789| 856.267|  722.789|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       783.748|     575| -389.612| 789.223| 811.004|  779.223|         571|  576|
+|Adjusted   |       783.748|     575| -361.394| 764.789| 856.267|  722.789|         555|  576|
 
 
 ### AUDIT-C vs Get emotional support from others
@@ -2418,10 +2418,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       783.748|     575| -389.976| 789.953| 811.733|  779.953|         571|
-|Adjusted   |       783.748|     575| -361.718| 765.436| 856.915|  723.436|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       783.748|     575| -389.976| 789.953| 811.733|  779.953|         571|  576|
+|Adjusted   |       783.748|     575| -361.718| 765.436| 856.915|  723.436|         555|  576|
 
 
 ### AUDIT-C vs Get information about health or medical topics
@@ -2467,10 +2467,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       782.011|     574| -389.509| 789.018| 810.790|  779.018|         570|
-|Adjusted   |       782.011|     574| -363.448| 768.895| 860.337|  726.895|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       782.011|     574| -389.509| 789.018| 810.790|  779.018|         570|  575|
+|Adjusted   |       782.011|     574| -363.448| 768.895| 860.337|  726.895|         554|  575|
 
 
 ### AUDIT-C vs Get advice about health or medical topics
@@ -2516,10 +2516,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       783.748|     575| -389.173| 788.346| 810.127|  778.346|         571|
-|Adjusted   |       783.748|     575| -362.364| 766.728| 858.206|  724.728|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       783.748|     575| -389.173| 788.346| 810.127|  778.346|         571|  576|
+|Adjusted   |       783.748|     575| -362.364| 766.728| 858.206|  724.728|         555|  576|
 
 
 ### AUDIT-C vs Ask questions about health or medical issues
@@ -2565,10 +2565,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       783.748|     575| -390.053| 790.105| 811.886|  780.105|         571|
-|Adjusted   |       783.748|     575| -363.518| 769.035| 860.514|  727.035|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       783.748|     575| -390.053| 790.105| 811.886|  780.105|         571|  576|
+|Adjusted   |       783.748|     575| -363.518| 769.035| 860.514|  727.035|         555|  576|
 
 
 ### AUDIT-C vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -2614,10 +2614,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       782.657|     574| -387.906| 785.811| 807.583|  775.811|         570|
-|Adjusted   |       782.657|     574| -360.401| 762.802| 854.244|  720.802|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       782.657|     574| -387.906| 785.811| 807.583|  775.811|         570|  575|
+|Adjusted   |       782.657|     574| -360.401| 762.802| 854.244|  720.802|         554|  575|
 
 
 ### AUDIT-C vs Share information related to your health
@@ -2663,10 +2663,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       782.657|     574| -389.209| 788.419| 810.191|  778.419|         570|
-|Adjusted   |       782.657|     574| -362.452| 766.905| 858.346|  724.905|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       782.657|     574| -389.209| 788.419| 810.191|  778.419|         570|  575|
+|Adjusted   |       782.657|     574| -362.452| 766.905| 858.346|  724.905|         554|  575|
 
 
 ### AUDIT-C vs Share thoughts about suicide or hurting yourself in some way
@@ -2712,10 +2712,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       781.563|     573| -387.044| 784.088| 805.851|  774.088|         569|
-|Adjusted   |       781.563|     573| -360.668| 763.335| 854.740|  721.335|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       781.563|     573| -387.044| 784.088| 805.851|  774.088|         569|  574|
+|Adjusted   |       781.563|     573| -360.668| 763.335| 854.740|  721.335|         553|  574|
 
 
 ### DSI-SS vs Frequency of Facebook use
@@ -2764,10 +2764,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       615.704|     576| -306.231| 624.463| 650.610|  612.463|         571|
-|Adjusted   |       615.704|     576| -252.473| 550.946| 651.176|  504.946|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       615.704|     576| -306.231| 624.463| 650.610|  612.463|         571|  577|
+|Adjusted   |       615.704|     576| -252.473| 550.946| 651.176|  504.946|         554|  577|
 
 
 ### DSI-SS vs Active use of Facebook
@@ -2814,10 +2814,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       616.214|     577| -306.928| 623.857| 645.655|  613.857|         573|
-|Adjusted   |       616.214|     577| -253.649| 551.298| 647.209|  507.298|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       616.214|     577| -306.928| 623.857| 645.655|  613.857|         573|  578|
+|Adjusted   |       616.214|     577| -253.649| 551.298| 647.209|  507.298|         556|  578|
 
 
 ### DSI-SS vs Get emotional support from others
@@ -2864,10 +2864,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       616.214|     577| -306.996| 623.992| 645.790|  613.992|         573|
-|Adjusted   |       616.214|     577| -253.444| 550.888| 646.798|  506.888|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       616.214|     577| -306.996| 623.992| 645.790|  613.992|         573|  578|
+|Adjusted   |       616.214|     577| -253.444| 550.888| 646.798|  506.888|         556|  578|
 
 
 ### DSI-SS vs Get information about health or medical topics
@@ -2914,10 +2914,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       615.704|     576| -306.534| 623.068| 644.858|  613.068|         572|
-|Adjusted   |       615.704|     576| -253.210| 550.421| 646.293|  506.421|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       615.704|     576| -306.534| 623.068| 644.858|  613.068|         572|  577|
+|Adjusted   |       615.704|     576| -253.210| 550.421| 646.293|  506.421|         555|  577|
 
 
 ### DSI-SS vs Get advice about health or medical topics
@@ -2964,10 +2964,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       616.214|     577| -306.831| 623.663| 645.461|  613.663|         573|
-|Adjusted   |       616.214|     577| -253.358| 550.715| 646.626|  506.715|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       616.214|     577| -306.831| 623.663| 645.461|  613.663|         573|  578|
+|Adjusted   |       616.214|     577| -253.358| 550.715| 646.626|  506.715|         556|  578|
 
 
 ### DSI-SS vs Ask questions about health or medical issues
@@ -3014,10 +3014,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       616.214|     577| -306.671| 623.343| 645.140|  613.343|         573|
-|Adjusted   |       616.214|     577| -252.293| 548.587| 644.498|  504.587|         556|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       616.214|     577| -306.671| 623.343| 645.140|  613.343|         573|  578|
+|Adjusted   |       616.214|     577| -252.293| 548.587| 644.498|  504.587|         556|  578|
 
 
 ### DSI-SS vs Share symptoms such as mood swings, depression, anxiety, or sleep problems
@@ -3064,10 +3064,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       615.704|     576| -299.948| 609.897| 631.686|  599.897|         572|
-|Adjusted   |       615.704|     576| -251.415| 546.831| 642.703|  502.831|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       615.704|     576| -299.948| 609.897| 631.686|  599.897|         572|  577|
+|Adjusted   |       615.704|     576| -251.415| 546.831| 642.703|  502.831|         555|  577|
 
 
 ### DSI-SS vs Share information related to your health
@@ -3114,10 +3114,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       615.704|     576| -299.782| 609.565| 631.354|  599.565|         572|
-|Adjusted   |       615.704|     576| -250.137| 544.273| 640.146|  500.273|         555|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       615.704|     576| -299.782| 609.565| 631.354|  599.565|         572|  577|
+|Adjusted   |       615.704|     576| -250.137| 544.273| 640.146|  500.273|         555|  577|
 
 
 ### DSI-SS vs Share thoughts about suicide or hurting yourself in some way
@@ -3164,10 +3164,10 @@ Relabel factors; replace spaces with underscores.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       615.193|     575| -285.859| 581.718| 603.498|  571.718|         571|
-|Adjusted   |       615.193|     575| -239.300| 522.601| 618.435|  478.601|         554|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       615.193|     575| -285.859| 581.718| 603.498|  571.718|         571|  576|
+|Adjusted   |       615.193|     575| -239.300| 522.601| 618.435|  478.601|         554|  576|
 
 
 ## F-tests
@@ -3354,10 +3354,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       726.641|     572| -346.909| 701.819| 719.222|  693.819|         569|
-|Adjusted   |       726.641|     572| -331.281| 704.561| 795.930|  662.561|         552|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       726.641|     572| -346.909| 701.819| 719.222|  693.819|         569|  573|
+|Adjusted   |       726.641|     572| -331.281| 704.561| 795.930|  662.561|         552|  573|
 
 **PHQ-2**
 
@@ -3395,10 +3395,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       728.856|     573| -356.950| 721.900| 739.311|  713.900|         570|
-|Adjusted   |       728.856|     573| -338.029| 718.058| 809.463|  676.058|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       728.856|     573| -356.950| 721.900| 739.311|  713.900|         570|  574|
+|Adjusted   |       728.856|     573| -338.029| 718.058| 809.463|  676.058|         553|  574|
 
 **AUDIT-C**
 
@@ -3435,10 +3435,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       724.419|     571| -358.757| 725.514| 742.910|  717.514|         568|
-|Adjusted   |       724.419|     571| -338.018| 716.035| 803.018|  676.035|         552|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       724.419|     571| -358.757| 725.514| 742.910|  717.514|         568|  572|
+|Adjusted   |       724.419|     571| -338.018| 716.035| 803.018|  676.035|         552|  572|
 
 **DSI-SS**
 
@@ -3476,10 +3476,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       728.856|     573| -360.533| 729.065| 746.476|  721.065|         570|
-|Adjusted   |       728.856|     573| -339.481| 720.961| 812.367|  678.961|         553|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       728.856|     573| -360.533| 729.065| 746.476|  721.065|         570|  574|
+|Adjusted   |       728.856|     573| -339.481| 720.961| 812.367|  678.961|         553|  574|
 
 
 ### Did not use VA health services in prior 12 months
@@ -3522,10 +3522,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       787.069|     571| -369.382| 746.763| 764.160|  738.763|         568|
-|Adjusted   |       787.069|     571| -352.144| 746.287| 837.619|  704.287|         551|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       787.069|     571| -369.382| 746.763| 764.160|  738.763|         568|  572|
+|Adjusted   |       787.069|     571| -352.144| 746.287| 837.619|  704.287|         551|  572|
 
 **PHQ-2**
 
@@ -3563,10 +3563,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       788.261|     572| -377.901| 763.803| 781.206|  755.803|         569|
-|Adjusted   |       788.261|     572| -357.593| 757.186| 848.555|  715.186|         552|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       788.261|     572| -377.901| 763.803| 781.206|  755.803|         569|  573|
+|Adjusted   |       788.261|     572| -357.593| 757.186| 848.555|  715.186|         552|  573|
 
 **AUDIT-C**
 
@@ -3603,10 +3603,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |       785.467|     570| -389.900| 787.799| 805.189|  779.799|         567|
-|Adjusted   |       785.467|     570| -364.576| 769.153| 856.101|  729.153|         551|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |       785.467|     570| -389.900| 787.799| 805.189|  779.799|         567|  571|
+|Adjusted   |       785.467|     570| -364.576| 769.153| 856.101|  729.153|         551|  571|
 
 **DSI-SS**
 
@@ -3644,10 +3644,10 @@ Set modeling covariates.
 \newline
 
 
-|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual|
-|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|
-|Unadjusted |        787.84|     572| -387.732| 783.464| 800.868|  775.464|         569|
-|Adjusted   |        787.84|     572| -365.252| 772.505| 863.873|  730.505|         552|
+|model      | null.deviance| df.null|   logLik|     AIC|     BIC| deviance| df.residual| nobs|
+|:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
+|Unadjusted |        787.84|     572| -387.732| 783.464| 800.868|  775.464|         569|  573|
+|Adjusted   |        787.84|     572| -365.252| 772.505| 863.873|  730.505|         552|  573|
 # Respond to peer review comments
 
 > On Jul 25, 2018, at 1:46 PM, Alan Teo <teoa@ohsu.edu> wrote:
@@ -3677,7 +3677,7 @@ Set modeling covariates.
 ## 
 ## data:  age by fb_freq
 ## t = 2.9466, df = 198.73, p-value = 0.003597
-## alternative hypothesis: true difference in means is not equal to 0
+## alternative hypothesis: true difference in means between group Less_than_several_times_a_day and group Several_times_a_day is not equal to 0
 ## 95 percent confidence interval:
 ##  1.214001 6.126840
 ## sample estimates:
@@ -3698,8 +3698,8 @@ Set modeling covariates.
 |A gender not listed here |Several_times_a_day           |  2  |  2  | 1.000 |
 
 ```
-## Warning in chisq.test(dfTemp$gender, dfTemp$fb_freq): Chi-squared
-## approximation may be incorrect
+## Warning in chisq.test(dfTemp$gender, dfTemp$fb_freq): Chi-squared approximation
+## may be incorrect
 ```
 
 ```
