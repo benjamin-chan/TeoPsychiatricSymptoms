@@ -105,13 +105,6 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
-beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
-```
-
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
-
 **PHQ-2**
 
 ```{r}
@@ -133,13 +126,6 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
           M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
-
-```{r}
-beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
-```
-
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 **AUDIT-C**
 
@@ -163,13 +149,6 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
-beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
-```
-
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
-
 **DSI-SS**
 
 ```{r}
@@ -191,13 +170,6 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
           M[["modelObject"]] %>% glance() %>% mutate(model = "Adjusted") %>% select(model, everything())) %>% 
   kable(digits = 3)
 ```
-
-```{r}
-beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
-```
-
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 
 ### Did not use VA health services in prior 12 months
