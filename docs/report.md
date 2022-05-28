@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2022-01-23 03:17:56"
+date: "2022-05-28 00:13:47"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -534,7 +534,7 @@ Set modeling covariates.
 
 
 
-For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
+For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.759.
 
 
 ### PHQ-2
@@ -574,7 +574,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.736.
 
 
 
-For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
+For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.796.
 
 ### AUDIT-C
 
@@ -612,7 +612,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.776.
 
 
 
-For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
+For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.900.
 
 
 ### DSI-SS
@@ -652,7 +652,7 @@ For a 10-point increase in FMSS, the adjusted odds ratio is 0.889.
 
 
 
-For a 10-point increase in FMSS, the adjusted odds ratio is 0.675.
+For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.702.
 
 
 ## Additional questions
