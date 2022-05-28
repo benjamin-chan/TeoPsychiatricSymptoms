@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2022-05-28 00:13:47"
+date: "2022-05-28 00:47:28"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -1000,6 +1000,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 |Adjusted   |       789.437|     572| -355.970| 749.939| 832.606|  711.939|         554|  573|
 
 
+
+For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.886.
+
+
 ### PHQ-2
 
 
@@ -1034,6 +1038,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
 |Unadjusted |       679.346|     573| -339.668| 683.335| 692.041|  679.335|         572|  574|
 |Adjusted   |       679.346|     573| -297.961| 633.923| 716.623|  595.923|         555|  574|
+
+
+
+For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.956.
 
 
 ### AUDIT-C
@@ -1071,6 +1079,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 |Adjusted   |       778.099|     571| -360.216| 756.431| 834.716|  720.431|         554|  572|
 
 
+
+For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.799.
+
+
 ### DSI-SS
 
 
@@ -1105,6 +1117,10 @@ Closely exam FMSS items 1, 2, 3, and 11
 |:----------|-------------:|-------:|--------:|-------:|-------:|--------:|-----------:|----:|
 |Unadjusted |       611.701|     573| -304.922| 613.844| 622.549|  609.844|         572|  574|
 |Adjusted   |       611.701|     573| -248.169| 534.337| 617.037|  496.337|         555|  574|
+
+
+
+For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.647.
 
 
 ## FMSS quartiles
