@@ -113,10 +113,10 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- 10
+delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ```
 
-For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 
 ### PHQ-2
@@ -140,10 +140,10 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- 10
+delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ```
 
-For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 ### AUDIT-C
 
@@ -166,10 +166,10 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- 10
+delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ```
 
-For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 
 ### DSI-SS
@@ -193,10 +193,10 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
-delta <- 10
+delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ```
 
-For a `r delta`-point increase in FMSS, the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
 
 
 ## Additional questions
