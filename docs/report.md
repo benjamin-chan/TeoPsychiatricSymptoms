@@ -1,6 +1,6 @@
 ---
 title: "Psychiatric Symptoms of Veterans Surveyed Through Facebook Ads"
-date: "2022-06-03 18:39:52"
+date: "2022-06-03 18:50:45"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -536,6 +536,9 @@ Set modeling covariates.
 
 For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.759
 (95% CI: 0.584, 0.981).
+Or, for a 9-point increase in FMSS (the IQR), the effect is a 24.1%
+(95% CI: 1.9%, 41.6%)
+decrease.
 
 
 ### PHQ-2
@@ -577,6 +580,10 @@ For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.759
 
 For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.796
 (95% CI: 0.597, 1.059).
+Or, for a 9-point increase in FMSS (the IQR), the effect is a 20.4%
+(95% CI: -5.9%, 40.3%)
+decrease.
+
 
 ### AUDIT-C
 
@@ -616,6 +623,9 @@ For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.796
 
 For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.900
 (95% CI: 0.698, 1.157).
+Or, for a 9-point increase in FMSS (the IQR), the effect is a 10.0%
+(95% CI: -15.7%, 30.2%)
+decrease.
 
 
 ### DSI-SS
@@ -657,6 +667,9 @@ For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.900
 
 For a 9-point increase in FMSS (the IQR), the adjusted odds ratio is 0.702
 (95% CI: 0.505, 0.967).
+Or, for a 9-point increase in FMSS (the IQR), the effect is a 29.8%
+(95% CI: 3.3%, 49.5%)
+decrease.
 
 
 ## Additional questions
@@ -1007,6 +1020,9 @@ Closely exam FMSS items 1, 2, 3, and 11
 
 For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.886
 (95% CI: 0.630, 1.242).
+Or, for a 5-point increase in FMSS subscore (the IQR), the effect is a 11.4%
+(95% CI: -24.2%, 37.0%)
+decrease.
 
 
 ### PHQ-2
@@ -1048,6 +1064,9 @@ For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.
 
 For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.956
 (95% CI: 0.653, 1.393).
+Or, for a 5-point increase in FMSS subscore (the IQR), the effect is a 4.4%
+(95% CI: -39.3%, 34.7%)
+decrease.
 
 
 ### AUDIT-C
@@ -1088,6 +1107,9 @@ For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.
 
 For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.799
 (95% CI: 0.570, 1.114).
+Or, for a 5-point increase in FMSS subscore (the IQR), the effect is a 20.1%
+(95% CI: -11.4%, 43.0%)
+decrease.
 
 
 ### DSI-SS
@@ -1129,6 +1151,9 @@ For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.
 
 For a 5-point increase in FMSS subscore (the IQR), the adjusted odds ratio is 0.647
 (95% CI: 0.415, 0.992).
+Or, for a 5-point increase in FMSS subscore (the IQR), the effect is a 35.3%
+(95% CI: 0.8%, 58.5%)
+decrease.
 
 
 ## FMSS quartiles

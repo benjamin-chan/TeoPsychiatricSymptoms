@@ -126,6 +126,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ### PHQ-2
@@ -162,6 +165,10 @@ ci <-
 
 For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
+
 
 ### AUDIT-C
 
@@ -197,6 +204,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ### DSI-SS
@@ -233,6 +243,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ## Additional questions
@@ -403,6 +416,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS subscore (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ### PHQ-2
@@ -439,6 +455,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS subscore (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ### AUDIT-C
@@ -475,6 +494,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS subscore (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ### DSI-SS
@@ -511,6 +533,9 @@ ci <-
 
 For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
 (95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
+Or, for a `r delta`-point increase in FMSS subscore (the IQR), the effect is a `r sprintf("%.01f%%", 100 * (1 - exp(beta * delta)))`
+(95% CI: `r sprintf("%.01f%%", 100 * (1 - exp(ci[2] * delta)))`, `r sprintf("%.01f%%", 100 * (1 - exp(ci[1] * delta)))`)
+`r if (beta < 1) {"decrease"} else if (beta > 1) {"increase"}`.
 
 
 ## FMSS quartiles
