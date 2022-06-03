@@ -114,9 +114,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ### PHQ-2
@@ -141,9 +150,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 ### AUDIT-C
 
@@ -167,9 +185,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ### DSI-SS
@@ -194,9 +221,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ## Additional questions
@@ -355,9 +391,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ### PHQ-2
@@ -382,9 +427,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ### AUDIT-C
@@ -409,9 +463,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ### DSI-SS
@@ -436,9 +499,18 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
 ```{r}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
+ci <-
+  M[["modelObject"]] %>%
+  confint() %>%
+  data.frame() %>%
+  rownames_to_column() %>%
+  rename(lower = X2.5.., upper = X97.5..) %>%
+  filter(rowname == x) %>%
+  select(-rowname)
 ```
 
-For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`.
+For a `r delta`-point increase in FMSS subscore (the IQR), the adjusted odds ratio is `r sprintf("%.03f", exp(beta * delta))`
+(95% CI: `r sprintf("%.03f", exp(ci[1] * delta))`, `r sprintf("%.03f", exp(ci[2] * delta))`).
 
 
 ## FMSS quartiles
