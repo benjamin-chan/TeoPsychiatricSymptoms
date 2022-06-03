@@ -111,7 +111,7 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
+```{r, warning = FALSE}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ci <-
@@ -218,7 +218,7 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
+```{r, warning = FALSE}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmss) %>% IQR(, na.rm = TRUE)
 ci <-
@@ -388,7 +388,7 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
+```{r, warning = FALSE}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
 ci <-
@@ -496,7 +496,7 @@ bind_rows(M0[["modelObject"]] %>% glance() %>% mutate(model = "Unadjusted") %>% 
   kable(digits = 3)
 ```
 
-```{r}
+```{r, warning = FALSE}
 beta <- M[["modelObject"]][["coefficients"]][[x]]
 delta <- df0 %>% pull(fmssSubscore) %>% IQR(, na.rm = TRUE)
 ci <-
